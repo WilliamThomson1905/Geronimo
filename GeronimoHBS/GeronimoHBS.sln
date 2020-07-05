@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeronimoHBS", "GeronimoHBS\GeronimoHBS.csproj", "{67B6C202-E6B5-46FB-BEA9-0C1B4EE2F5EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeronimoHBS.Tests", "GeronimoHBS.Tests\GeronimoHBS.Tests.csproj", "{273B4195-1D23-4314-BEF9-47B3E1744441}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67B6C202-E6B5-46FB-BEA9-0C1B4EE2F5EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B6C202-E6B5-46FB-BEA9-0C1B4EE2F5EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B6C202-E6B5-46FB-BEA9-0C1B4EE2F5EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B6C202-E6B5-46FB-BEA9-0C1B4EE2F5EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273B4195-1D23-4314-BEF9-47B3E1744441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273B4195-1D23-4314-BEF9-47B3E1744441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273B4195-1D23-4314-BEF9-47B3E1744441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273B4195-1D23-4314-BEF9-47B3E1744441}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE05A2A9-FED2-45B6-B883-B4A9FD30FEB4}
+	EndGlobalSection
+EndGlobal
