@@ -1,0 +1,48 @@
+﻿body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+.sideNav {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.7s;
+}
+
+.sideNav-content {
+    position: relative;
+    top: 60px;
+    left: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.sideNav a {
+    padding: 15px;
+    text-decoration: none;
+    text-align: left;
+    color: azure;
+    display: block;
+}
+
+    .sideNav a:hover, .sideNav a:focus {
+        color: #808080;
+    }
+
+
+
+.sideNav .closebtn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 40px;
+}
