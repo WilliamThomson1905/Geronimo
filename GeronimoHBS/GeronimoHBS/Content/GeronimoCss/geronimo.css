@@ -1,5 +1,11 @@
-﻿body {
-    font-family: 'Montserrat', sans-serif;
+﻿
+
+
+.iconDropdown div {
+    width: 25px;
+    height: 5px;
+    background-color: black;
+    margin: 4px 0;
 }
 
 
@@ -45,4 +51,12 @@
     top: 30px;
     right: 30px;
     font-size: 40px;
+}
+
+
+
+
+.container {
+    display: block;
+    width: 100%; 
 }
