@@ -38,7 +38,7 @@
 				hideOnSwipe: true,
 				resetScroll: true,
 				resetForms: true,
-				side: 'right'
+				side: 'left'
 			});
 
 	// Banner.

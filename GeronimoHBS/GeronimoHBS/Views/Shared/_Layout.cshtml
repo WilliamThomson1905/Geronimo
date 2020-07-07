@@ -8,23 +8,12 @@
         @Scripts.Render("~/bundles/modernizr")*@
 
     <link href="~/Content/GeronimoCss/formula-main.css" rel="stylesheet" />
+    <link href="~/Content/GeronimoCss/geronimo.css" rel="stylesheet" />
 </head>
 <body>
     <div class="is-preload">
 
         <div id="page-wrapper">
-            <!-- Header -->
-            <header id="header">
-
-                @Html.Partial("_LoginPartial")
-                <a href="/" class="logo" style="font-size: xx-large;">G</a>
-                <nav>
-                    <ul>
-                        <li><a style="font-size: 24px;" href="#menu">&#9776;</a></li>
-                    </ul>
-                </nav>
-
-            </header>
 
             <!-- Menu -->
             <nav id="menu">
@@ -36,6 +25,22 @@
 
                 @Html.Partial("_LoginPartial")
             </nav>
+
+            <!-- Header -->
+            <header id="header">
+
+                <nav>
+                    <ul>
+                        <li><a style="font-size: 24px;" href="#menu">&#9776;</a></li>
+                    </ul>
+                </nav>
+                <a href="/" class="logo" style="font-size: xx-large;">G</a>
+                @Html.Partial("_LoginPartial")
+
+            </header>
+
+
+
 
             @RenderBody()
 

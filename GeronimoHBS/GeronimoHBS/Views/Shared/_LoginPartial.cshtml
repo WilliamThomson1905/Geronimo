@@ -22,10 +22,9 @@ else
         </li>
     </ul>*@
         <span>
-            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
-
-            &ensp;&ensp;
             @Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            &ensp;|&ensp;
+            @Html.ActionLink("Sign Up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
         </span>
 
 }
