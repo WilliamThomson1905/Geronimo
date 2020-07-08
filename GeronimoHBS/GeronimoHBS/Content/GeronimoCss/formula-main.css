@@ -180,16 +180,15 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 500;
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0 0 1em 0;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    /*font-family: "Roboto", Helvetica, sans-serif;*/
-    font-family: "Oswald", sans-serif;
-}
+
+        line-height: 1.5;
+        margin: 0 0 1em 0;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        /*font-family: "Roboto", Helvetica, sans-serif;*/
+        font-family: "Oswald", sans-serif;
+    }
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
