@@ -4,22 +4,89 @@
 
 
 <!-- Banner-->
-<section id="banner"  data-video="images/banner">
-    <div class="inner centeredBox">
+<section id="banner" data-video="images/banner">
+    <div class="inner">
         <header>
-            <h1>Welcome to Geronimo</h1>
-            <p>
-                Sed efficitur nisi ac turpis venenatis varius. Suspendisse sed dictum leo veroeros<br />
-                sed ipsum amet pellentesque venenatis magna hendrerit blandit veroeros.
-            </p>
+            <div class="centeredBox">
+
+                <h5>Welcome to</h5>
+                <h1 id="welcome">Geronimo Hotel</h1>
+                <div id="locationSearch">
+                    <select class="form-control" id="chooseLocation" name="ChooseLocation">
+                        <option>Choose Location</option>
+                        <option value="1">Glasgow</option>
+                        <option value="2">London</option>
+                        <option value="3">Amsterdam</option>
+                        <option value="4">New York</option>
+                        <option value="5">Paris</option>
+                    </select>
+                    <button type="submit" name="name" class="btn btn-primary"><i class="fa fa-search"></i></button>
+
+                </div>
+
+
+
+
+
+
+                @*<input type="text" id="filterHotelsSearchBar" onkeyup="filterHotels()" placeholder="Choose a hotel..." title="Type in a name">
+
+                    <ul id="locations">
+                        <li><a href="#">Glasgow</a></li>
+                        <li><a href="#">London</a></li>
+                        <li><a href="#">Amsterdam</a></li>
+                        <li><a href="#">New York</a></li>
+                        <li><a href="#">Paris</a></li>
+                    </ul>*@
+                @*<ul class="actions special">
+                        <li><a href="#" class="button primary large">Get Started</a></li>
+                    </ul>*@
+            </div>
+
+
         </header>
-        <ul class="actions special">
-            <li><a href="#" class="button primary large">Get Started</a></li>
-        </ul>
+
+    </div>
+
+    <div class="btn-group socialMediaIcons">
+        <a class="btn btn-default btn-primary" href="#">
+            <i class="fa fa-facebook" title="Geronimo Hotel: Facebook"></i>
+        </a>
+        &nbsp;
+        <a class="btn btn-default" href="#">
+            <i class="fa fa-twitter" title="Geronimo Hotel: Twitter"></i>
+        </a>
+        &nbsp;
+        <a class="btn btn-default" href="#">
+            <i class="fa fa-instagram" title="Geronimo Hotel: Instagram"></i>
+        </a>
+
     </div>
 </section>
 
+<script>
+    function filterHotels() {
+        var input, filter, ul, li, a, i, txtValue;
 
+        input = document.getElementById("filterHotelsSearchBar");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("locations");
+        li = ul.getElementsByTagName("li");
+
+
+        for (i = 0; i < li.length; i++) {
+            
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
 
 @*<div class="jumbotron">
         <h1>@ViewBag.Title</h1>

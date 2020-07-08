@@ -6,6 +6,9 @@
     <title>Geronimo - @ViewBag.Title</title>
     @*@Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
+    <script src="https://use.fontawesome.com/806df349e3.js"></script>
+
+
 
     <link href="~/Content/GeronimoCss/formula-main.css" rel="stylesheet" />
     <link href="~/Content/GeronimoCss/geronimo.css" rel="stylesheet" />
@@ -20,13 +23,13 @@
                 <ul class="links">
                     <li>@Html.ActionLink("Make a Room Booking", "Index", "Home")</li>
                     <li>@Html.ActionLink("Choose a Hotel", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("About", "Index", "Hotel")</li>
 
-                    <li>@Html.ActionLink("> Glasgow", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("> Glasgow", "Index", "Home")</li>
                     <li>@Html.ActionLink("> London", "Index", "Home")</li>
                     <li>@Html.ActionLink("> New York", "Index", "Home")</li>
                     <li>@Html.ActionLink("> Paris", "Index", "Home")</li>
-                    <li>@Html.ActionLink("> Amsterdam", "Index", "Home")</li>
+                    <li>@Html.ActionLink("> Amsterdam", "Index", "Home")</li>*@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Restaurant", "Index", "Home")</li>
 
@@ -43,15 +46,16 @@
                         <li><a style="font-size: 24px;" href="#menu">&#9776;</a></li>
                     </ul>
                 </nav>
-                <a href="/" class="logo" style="font-size: xx-large;">G</a>
+                <a href="/" class="logo" style="font-size: xx-large;">G</a> 
                 @Html.Partial("_LoginPartial")
 
             </header>
 
-
-
-
             @RenderBody()
+
+
+
+
 
             @if (ViewBag.Title != "Index")
             {

@@ -1,70 +1,70 @@
-﻿
+﻿.logo {
+    font-family: "Roboto", Helvetica, sans-serif; 
+}
 
 
-.iconDropdown div {
-    width: 25px;
-    height: 5px;
-    background-color: black;
-    margin: 4px 0;
+#welcome {
+    margin: 10px;
+    color: #ff7473;
+    padding-bottom: 10px;
+    font-size: 2em;
 }
 
 
 
-
-
-.sideNav {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    transition: 0.7s;
+.centeredBox {
+    padding: 30px 70px 50px 70px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    
 }
 
-.sideNav-content {
-    position: relative;
-    top: 60px;
-    left: 20px;
-    text-align: left;
-    margin-top: 20px;
+#chooseLocation {
+    display: inline;
 }
 
-.sideNav a {
-    padding: 15px;
-    text-decoration: none;
-    text-align: left;
-    color: azure;
+
+#search {
+    min-width: 33%;
+    display: inline;
+}
+
+.socialMediaIcons {
     display: block;
+    position: fixed;
+    bottom: 15px;
+    right: 25px;
 }
 
-    .sideNav a:hover, .sideNav a:focus {
-        color: #808080;
+
+
+#filterHotelsSearchBar {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#chooseLocation {
+
+}
+
+    #locations li a {
+        border: 1px solid #ddd;
+        margin-top: -1px; /* Prevent double borders */
+        background-color: #f6f6f6;
+        padding: 8px;
+        text-decoration: none;
+        font-size: 12px;
+        color: black;
+        display: block
     }
 
-
-
-.sideNav .closebtn {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 40px;
-}
-
-
-
-
-.container {
-    display: block;
-    width: 100%; 
-}
-
-
-
-
-
-
-
-
+        #locations li a:hover:not(.header) {
+            background-color: #808080;
+        }
