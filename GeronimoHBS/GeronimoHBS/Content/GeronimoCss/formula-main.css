@@ -3617,8 +3617,8 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		padding: 5em 0 3em 0 ;
-		background-color: #f7f7f7;
+		padding: 3em 0 1em 0 ;
+		background-color: #555555;
 		text-align: center;
 	}
 

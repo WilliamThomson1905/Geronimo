@@ -8,7 +8,6 @@
     <div class="inner">
         <header>
             <div class="centeredBox">
-
                 <h5>Welcome to</h5>
                 <h1 id="welcome">Geronimo Hotel</h1>
                 <div id="locationSearch">
@@ -23,29 +22,8 @@
                     <button type="submit" name="name" class="btn btn-primary"><i class="fa fa-search"></i></button>
 
                 </div>
-
-
-
-
-
-
-                @*<input type="text" id="filterHotelsSearchBar" onkeyup="filterHotels()" placeholder="Choose a hotel..." title="Type in a name">
-
-                    <ul id="locations">
-                        <li><a href="#">Glasgow</a></li>
-                        <li><a href="#">London</a></li>
-                        <li><a href="#">Amsterdam</a></li>
-                        <li><a href="#">New York</a></li>
-                        <li><a href="#">Paris</a></li>
-                    </ul>*@
-                @*<ul class="actions special">
-                        <li><a href="#" class="button primary large">Get Started</a></li>
-                    </ul>*@
             </div>
-
-
         </header>
-
     </div>
 
     <div class="btn-group socialMediaIcons">
@@ -63,33 +41,3 @@
 
     </div>
 </section>
-
-<script>
-    function filterHotels() {
-        var input, filter, ul, li, a, i, txtValue;
-
-        input = document.getElementById("filterHotelsSearchBar");
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("locations");
-        li = ul.getElementsByTagName("li");
-
-
-        for (i = 0; i < li.length; i++) {
-            
-            a = li[i].getElementsByTagName("a")[0];
-            txtValue = a.textContent || a.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-
-            } else {
-                li[i].style.display = "none";
-            }
-        }
-    }
-</script>
-
-@*<div class="jumbotron">
-        <h1>@ViewBag.Title</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>*@
