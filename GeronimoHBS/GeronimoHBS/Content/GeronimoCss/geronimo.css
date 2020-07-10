@@ -1,10 +1,51 @@
 ﻿
 
+
+
+
+        .sideNav a:hover, .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
+
+
+
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+    .sideNav {
+        padding-top: 15px;
+    }
+
+        .sideNav a {
+            font-size: 12px;
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container {
-    margin: 0px 10%;
-    padding: 30px 40px;
+    margin: 0px auto;
+    padding: 30px 50px;
     min-width: 80%;
     display: block;
+    background-color: rgba(888, 888, 888, 0.7);
 }
 
 
@@ -99,18 +140,18 @@
 
 
 
-/* Fixed sideNav, full height */
+/*/* Fixed sideNav, full height * /
 .sideNav {
     height: 60%;
     width: 20%;
-    position: sticky;
+    position: sticky ;
     z-index: 1;
     top: 50px;
     left: 0;
     background-color: transparent;
     overflow-x: hidden;
     /*padding-top: 20px;
-    margin-top: 20px;*/
+    margin-top: 20px;* / 
     padding-right: 20px;
     float: left;
     display: inline;
@@ -139,7 +180,7 @@
             color: #f1f1f1;
         }
 
-/* Main content */
+/* Main content * /
 .main {
     float: left;
     width: 80%;
@@ -149,7 +190,7 @@
 
 
 
-/* Some media queries for responsiveness */
+/* Some media queries for responsiveness * /
 @media screen and (max-height: 450px) {
     .sideNav {
         padding-top: 15px;
@@ -158,20 +199,127 @@
         .sideNav a {
             font-size: 12px;
         }
+}*/
+
+
+
+.activeTab {
+    color: white;
 }
 
 
-
-
-
-
-
-
 .pageOverview {
-
+    background-color: rgba(55, 71, 79, 0.1);
+    fill-opacity: 0.6;
+    padding: 50px 60px;
+    height: 50vh;
 }
 
 .pageOverview > h1, h2, h3 {
     color: #555555 ;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#grid-container {
+    height: auto;
+}
+
+.sideNav {
+    background: #37474F;
+    white-space: nowrap;
+    top: 100px;
+    left: 0;
+    background-color: transparent;
+    /*overflow-x: hidden;
+    padding-top: 20px;
+    margin-top: 20px;*/
+    padding-right: 20px;
+    float: left;
+    display: inline;
+
+
+    height: auto;
+}
+
+
+
+
+    .sideNav .servicesLinks a {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: white;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 100;
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #818181;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: right;
+        cursor: pointer;
+        outline: none;
+        letter-spacing: 0.19em;
+        line-height: 1.9em;
+    }
+
+        .sideNav .servicesLinks a.current {
+            color: #555555;
+        }
+
+div.main {
+    float: left;
+    width: 80%;
+    display: inline;
+    padding-left: 20px;
+}
+
+section {
+}
+
+@media (min-height: 300px) {
+
+    .servicesLinks {
+        position: sticky;
+        top: 0px;
+    }
+}
+
+footer {
+    grid-column: 1 / 3;
+    padding: 15rem 1rem;
+}
+
+
+
+
+
+
+
+
+
+/*########################*/

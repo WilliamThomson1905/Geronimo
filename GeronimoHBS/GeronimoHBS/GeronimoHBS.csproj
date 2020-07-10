@@ -308,6 +308,7 @@
     <Content Include="Views\Shared\_SpaOverview.cshtml" />
     <Content Include="Views\Shared\_RestaurantOverview.cshtml" />
     <Content Include="Views\Shared\_EventsOverview.cshtml" />
+    <Content Include="Views\Home\StickyTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
