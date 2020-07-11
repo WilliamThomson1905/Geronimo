@@ -3,7 +3,7 @@
 
 
 
-        .sideNav a:hover, .dropdown-btn:hover {
+        .sideNav a:hover {
             color: #f1f1f1;
         }
 
@@ -41,11 +41,11 @@
 
 
 .container {
-    margin: 0px auto;
+    margin: 0px 10%;
     padding: 30px 50px;
     min-width: 80%;
-    display: block;
-    background-color: rgba(888, 888, 888, 0.7);
+    display: inline-block;
+    /*background-color: rgba(888, 888, 888, 0.7);*/
 }
 
 
@@ -211,7 +211,7 @@
 .pageOverview {
     background-color: rgba(55, 71, 79, 0.1);
     fill-opacity: 0.6;
-    padding: 50px 60px;
+    padding: 20px 30px;
     height: 50vh;
 }
 
@@ -258,12 +258,18 @@
     float: left;
     display: inline;
 
+    width: 20%;
+    min-height: inherit;
 
-    height: auto;
+
+    position: sticky;
 }
 
 
-
+.servicesLinks {
+    /*position: sticky;*/
+    top: 20px;
+}
 
     .sideNav .servicesLinks a {
         display: block;
@@ -288,7 +294,7 @@
     }
 
         .sideNav .servicesLinks a.current {
-            color: #555555;
+            color: black;
         }
 
 div.main {
@@ -301,13 +307,13 @@ div.main {
 section {
 }
 
-@media (min-height: 300px) {
+/*@media (min-height: 300px) {
 
     .servicesLinks {
         position: sticky;
         top: 0px;
     }
-}
+}*/
 
 footer {
     grid-column: 1 / 3;
