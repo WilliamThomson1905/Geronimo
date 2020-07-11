@@ -20,8 +20,8 @@
 </div>
 
 
+<div id="sideNavScroll"></div>
 <br /><br /><br />
-
 <div class="container">
     
         <div class="sideNav">
@@ -154,7 +154,7 @@
     function openTabContent(evt, serviceName) {
         var i, x, tablinks;
         x = document.getElementsByClassName("services");
-
+        
 
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
@@ -166,8 +166,14 @@
             tablinks[i].className = tablinks[i].className.replace(" current", "");
         }
         document.getElementById(serviceName).style.display = "block";
-        evt.className += " current";
+        evt.currentTarget.className += " current";
+
+        $('html,body').animate({
+            scrollTop: $("#sideNavScroll").offset().top
+        }, 'slow');
     }
+
+  
 </script>
 
 
