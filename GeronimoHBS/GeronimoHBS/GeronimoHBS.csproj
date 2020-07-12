@@ -306,8 +306,9 @@
     <Content Include="Views\Shared\_RoomsOverview.cshtml" />
     <Content Include="Views\Shared\_GymOverview.cshtml" />
     <Content Include="Views\Shared\_SpaOverview.cshtml" />
-    <Content Include="Views\Shared\_RestaurantOverview.cshtml" />
+    <Content Include="Views\Shared\_DiningOverview.cshtml" />
     <Content Include="Views\Shared\_EventsOverview.cshtml" />
+    <Content Include="Views\Shared\_ImageGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

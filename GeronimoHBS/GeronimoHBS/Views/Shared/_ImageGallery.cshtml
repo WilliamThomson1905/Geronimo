@@ -1,0 +1,67 @@
+﻿
+<div class="slideshowDashes">
+    <span class="dash" onclick="currentSlide(1)"></span>
+    <span class="dash" onclick="currentSlide(2)"></span>
+    <span class="dash" onclick="currentSlide(3)"></span>
+</div>
+<div class="slideshow-container">
+
+    <div class="imageSlides fade">
+        <div class="imageNumber">1 / 3</div>
+        <img src="../../images/hotel/hotelroom2blur.jpg" style="width:100%">
+        <div class="text">Two Bed Room</div>
+    </div>
+
+    <div class="imageSlides fade">
+        <div class="imageNumber">2 / 3</div>
+        <img src="../../images/hotel/hotelroom.jpg" style="width:100%">
+        <div class="text">Hotel Suite</div>
+    </div>
+
+    <div class="imageSlides fade">
+        <div class="imageNumber">3 / 3</div>
+        <img src="../../images/hotel/hotelroom3.jpg" style="width:100%">
+        <div class="text"></div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">
+        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+
+    </a>
+    <a class="next" onclick="plusSlides(1)">
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+    </a>
+
+</div>
+<br>
+
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("imageSlides");
+        var dots = document.getElementsByClassName("dash");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>

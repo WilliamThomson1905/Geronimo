@@ -29,8 +29,8 @@
                 <a class="tablink current" onclick="openTabContent(event, 'Rooms')" href="#rooms">ROOMS</a>
                 <a class="tablink" onclick="openTabContent(event, 'Gym')" href="#gym">GYM</a>
                 <a class="tablink" onclick="openTabContent(event, 'Spa')" href="#spa">SPA</a>
-                <a class="tablink" onclick="openTabContent(event, 'Restaurant')" href="#restaurant">RESTAURANT</a>
                 <a class="tablink" onclick="openTabContent(event, 'Events')" href="#events">EVENTS</a>
+                <a class="tablink" onclick="openTabContent(event, 'Dining')" href="#dining">FINE DINING</a>
             </div>
         </div>
 
@@ -40,6 +40,7 @@
 
                 <section id="Rooms" class="services">
                     @{Html.RenderPartial("_RoomsOverview");}
+                    @{Html.RenderPartial("_ImageGallery"); }
                 </section>
 
                 <section id="Gym" class="services" style="display:none">
@@ -50,8 +51,8 @@
                     @{Html.RenderPartial("_SpaOverview");}
                 </section>
 
-                <section id="Restaurant" class="services" style="display:none">
-                    @{Html.RenderPartial("_RestaurantOverview");}
+                <section id="Dining" class="services" style="display:none">
+                    @{Html.RenderPartial("_DiningOverview");}                    
                 </section>
 
                 <section id="Events" class="services" style="display:none">
@@ -59,6 +60,7 @@
                 </section>
 
             </div>
+
 
 
         </div>
