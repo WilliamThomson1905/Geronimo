@@ -1,5 +1,7 @@
 ﻿
 
+
+
 <h2>Rooms</h2>
 <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -11,38 +13,65 @@
 </p>
 
 
-<h3>Rooms Standard</h3>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.
-</p>
+<div class="headersTogether">
+    <h3><a class="tablinks current" onclick="openRoomDetails(event, 'roomtype1')">Standard Room</a></h3>
+    <h3><a class="tablinks" onclick="openRoomDetails(event, 'roomtype2')">Premium Room</a></h3>
+</div>
+
+<div id="roomtype1" class="tabcontent" style="display: block;">
+    <p>
+        Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
+        Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
+
+    </p>
+    <p>
+        Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
+        Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.        Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
+        Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.        Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
+        Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
+    </p>
+    <p>
+        Free Wifi is available throughout all our Hotels.   
+    </p>
+    <button class="btn primary align-right">Book Now</button>
+   
+</div>
+
+<div id="roomtype2" class="tabcontent">
+    <p>
+        Premium rooms are the exact same as standard rooms - the difference being, you get to brag about going Premium at Geronimo Hotels.
+        Premium rooms are the exact same as standard rooms - the difference being, you get to brag about going Premium at Geronimo Hotels.rooms - the difference being, you get to brag about going Premium at Geronimo Hotels.
+        Premium rooms are the exact same as standard rooms - the difference being, you get to brag about going Premium at Geronimo Hotels.rooms - the difference being, you get to brag about going Premium at Geronimo Hotels.
+        Premium rooms are the exact same as standard rooms - the difference being, you get to brag about going Premium at Geronimo Hotels.
+    </p>
+    <p>
+        Free Wifi is available throughout all our Hotels.
+    </p>
+    <button class="btn primary align-right">Book Now</button>
+
+</div>
 
 
-<h3>Rooms Premium</h3>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.
-</p>
+<script>
+    function openRoomDetails(evt, roomType) {
+
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" current", "");
+        }
+
+        document.getElementById(roomType).style.display = "block";
+        evt.currentTarget.className += " current";
+    }
+</script>
+
+
+
+

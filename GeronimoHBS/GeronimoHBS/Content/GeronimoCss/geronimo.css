@@ -182,7 +182,7 @@
         line-height: 1.9em;
     }
 
-        .sideNav .servicesLinks a.current {
+        .sideNav .servicesLinks a.current, a.current {
             color: #000000;
         }
 
@@ -302,7 +302,7 @@ img {
 }
 
     .active, .dot:hover {
-        background-color: #717171;
+        background-color: #555555;
     }
 
 /* Fading animation */
@@ -336,3 +336,58 @@ img {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* tab content for headers */
+.headersTogether {
+    width: 100%;
+}
+
+
+.headersTogether h3 {
+    padding-right: 10%;
+    display: inline;
+}
+
+.tabLinks {
+    cursor: pointer;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 0px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
