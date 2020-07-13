@@ -31,10 +31,10 @@
         Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
     </p>
     <p>
-        Free Wifi is available throughout all our Hotels.   
+        Free Wifi is available throughout all our Hotels.
     </p>
-    <button class="btn primary align-right">Book Now</button>
-   
+    @Html.ActionLink("Book Now", "RoomAvailability", new { controller = "Rooms" },  htmlAttributes: new { @class = "btn primary" })
+
 </div>
 
 <div id="roomtype2" class="tabcontent">
@@ -47,7 +47,7 @@
     <p>
         Free Wifi is available throughout all our Hotels.
     </p>
-    <button class="btn primary align-right">Book Now</button>
+    @Html.ActionLink("Book Now", "RoomAvailability", new { controller = "Rooms" },  htmlAttributes: new { @class = "btn primary" })
 
 </div>
 
