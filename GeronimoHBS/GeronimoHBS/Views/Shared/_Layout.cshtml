@@ -20,10 +20,24 @@
 
             <!-- Menu -->
             <nav id="menu">
-                <ul class="links">
-                    <li>@Html.ActionLink("Make a Room Booking", "Index", "Home")</li>
+                <ul class="links headingNavigation">
+                    <li>@Html.ActionLink("Make a Room Booking" , "Index", "Home")</li>
                     <li>@Html.ActionLink("Choose a Hotel", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "Index", "Hotel")</li>
+                </ul>
+
+
+                <ul class="links">
+                    <li>
+                        @Html.ActionLink("Geronimo Hotels", "Index", "Hotel")
+                        <ul class="dropdownSubList">
+                            <li>@Html.ActionLink("Glasgow", "Index", "Hotel")
+                            <li>@Html.ActionLink("Amsterdam", "Index", "Hotel")
+                            <li>@Html.ActionLink("Pairis", "Index", "Hotel")
+                            <li>@Html.ActionLink("London", "Index", "Hotel")
+                            <li>@Html.ActionLink("New York", "Index", "Hotel")
+
+                        </ul>
+                    </li>
 
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Restaurant", "Index", "Home")</li>
