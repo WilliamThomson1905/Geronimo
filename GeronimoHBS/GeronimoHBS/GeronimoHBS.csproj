@@ -311,6 +311,7 @@
     <Content Include="Views\Shared\_EventsOverview.cshtml" />
     <Content Include="Views\Shared\_ImageGallery.cshtml" />
     <Content Include="Views\Rooms\RoomAvailability.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
