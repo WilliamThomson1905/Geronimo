@@ -302,7 +302,7 @@ input, select, textarea {
 	}
 
 	a:hover {
-		color: #84dbbd !important;
+		/*color: #84dbbd !important;*/
 	}
 
 	strong, b {
@@ -1839,7 +1839,7 @@ input, select, textarea {
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.8em;
-		font-weight: 500;
+		font-weight: 700;
 		height: 3.5em;
 		letter-spacing: 0.25em;
 		line-height: 3.5em;
@@ -1926,31 +1926,30 @@ input, select, textarea {
 			background-color: rgba(132, 219, 189, 0.25);
 		}
 
-		input[type="submit"].primary,
-		input[type="reset"].primary,
-		input[type="button"].primary,
-		button.primary,
-		.button.primary {
-			box-shadow: none;
-			background-color: #84dbbd;
-			color: #ffffff !important;
-		}
+        input[type="submit"].primary,
+        input[type="reset"].primary,
+        input[type="button"].primary,
+        button.primary,
+        .button.primary {
+            box-shadow: none;
+            border-bottom: 1px dotted #555555;
+            color: #555555 !important;
+        }
 
-			input[type="submit"].primary:hover,
-			input[type="reset"].primary:hover,
-			input[type="button"].primary:hover,
-			button.primary:hover,
-			.button.primary:hover {
-				background-color: #70d5b2;
-				color: #ffffff !important;
-			}
+            input[type="submit"].primary:hover,
+            input[type="reset"].primary:hover,
+            input[type="button"].primary:hover,
+            button.primary:hover,
+            .button.primary:hover {
+                border-bottom: 1px dotted black;
+                color: black !important;
+            }
 
 			input[type="submit"].primary:active,
 			input[type="reset"].primary:active,
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #49ca9d;
 				color: #ffffff !important;
 			}
 
@@ -3780,3 +3779,14 @@ ul.socialLinks > li {
 		min-height: 100vh;
 		opacity: 1;
 	}
+
+
+
+
+a.paragraphLink {
+    border-bottom: 1px solid #555555;
+
+}
+a.paragraphLink:hover {
+   color: black;
+}
