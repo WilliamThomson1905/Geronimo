@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "RoomAvailability";
+}
+
+
+@{ Html.RenderPartial("_Breadcrumbs");}
+
+
+<div class="container">
+
+    <h2>Gym Details</h2>
+    <p>
+        Everything that's in overview -> but extended.
+        <ol>
+            <li>
+                Show classes
+                @Html.ActionLink("Visit Classes", "ClassesDetails", "Gym")
+            </li>
+            <li>
+                Show equipment
+            </li>
+
+        </ol>
+    </p>
+
+</div>

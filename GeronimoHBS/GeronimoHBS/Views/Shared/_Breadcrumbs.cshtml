@@ -1,0 +1,41 @@
+﻿<style>
+    ul.breadcrumb {
+        margin-bottom:  50px;
+        padding: 10px 16px;
+        list-style: none;
+        background-color: #eee;
+    }
+
+        ul.breadcrumb li {
+            display: inline;
+            font-size: 14px;
+        }
+
+            ul.breadcrumb li + li:before {
+                padding: 8px;
+                color: black;
+                content: "/\00a0";
+            }
+
+            ul.breadcrumb li a {
+                color: #555555;
+                text-decoration: none;
+            }
+
+                ul.breadcrumb li a:hover {
+                    color: black;
+                    text-decoration: underline;
+                }
+</style>
+
+
+<ul class="breadcrumb">
+    <li>
+        @Html.ActionLink("Geronimo Hotels", "Index", "Hotel")
+    </li>
+    <li>
+        @Html.ActionLink("Glasgow", "Index", "Hotel")
+    </li>
+    <li><a href="#">Gym</a></li>
+    <li>Classes</li>
+</ul>

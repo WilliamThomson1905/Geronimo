@@ -9,7 +9,7 @@ namespace GeronimoHBS.Controllers
     public class RoomsController : Controller
     {
         // GET: Rooms
-        public ActionResult RoomAvailability()
+        public ActionResult Index()
         {
             return View();
         }

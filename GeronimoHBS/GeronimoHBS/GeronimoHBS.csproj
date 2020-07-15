@@ -168,10 +168,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DiningController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\GymController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\SpaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -310,8 +314,15 @@
     <Content Include="Views\Shared\_DiningOverview.cshtml" />
     <Content Include="Views\Shared\_EventsOverview.cshtml" />
     <Content Include="Views\Shared\_ImageGallery.cshtml" />
-    <Content Include="Views\Rooms\RoomAvailability.cshtml" />
+    <Content Include="Views\Rooms\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Breadcrumbs.cshtml" />
+    <Content Include="Views\Gym\Index.cshtml" />
+    <Content Include="Views\Gym\ClassesDetails.cshtml" />
+    <Content Include="Views\Spa\Index.cshtml" />
+    <Content Include="Views\Dining\Index.cshtml" />
+    <Content Include="Views\Dining\Menu.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
