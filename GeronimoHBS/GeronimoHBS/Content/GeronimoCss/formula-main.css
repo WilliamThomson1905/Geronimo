@@ -3647,19 +3647,19 @@ ul.headingNavigation > li > a {
 
 /* Footer */
 
-	footer {
-		padding: 3em 0 1em 0 ;
-        margin-bottom: 7px;
-		background-color: rgba(111, 111, 111, .9);
-		text-align: center;
-        width: 100%;
-        position: relative;
-        display: block;
+footer {
+	padding: 3em 0 1em 0 ;
+    margin-bottom: 7px;
+	background-color: rgba(111, 111, 111, .9);
+	text-align: center;
+    width: 100%;
+    position: relative;
+    display: block;
 
-        color: white;
-        font-size: 0.9em;
+    color: white;
+    font-size: 0.9em;
 
-	}
+}
 
 footer h2 {
     color: white;
@@ -3673,42 +3673,52 @@ footer h2 {
     margin: 0px auto;
     display: inline-block;
 }
+	@media screen and (max-width: 736px) {
 
-
-		@media screen and (max-width: 736px) {
-
-			footer {
-				padding: 3.75em 0 1.75em 0 ;
-			}
-
+		footer {
+			padding: 3.75em 0 1.75em 0 ;
 		}
+
+	}
 
 .columns {
     position: relative;
 }
 .footerColumn {
-    width: 33%;
+    width: 40%;
+    margin: 0px 2%;
     display: inline-block;
 }
-    .footerColumn > ul.socialLinks {
-        padding-left: 0px;
-    }
-    .footerColumn > ul > li {
-        list-style: none;
+.footerColumn > ul.socialLinks {
+    padding-left: 0px;
+}
+.footerColumn > ul > li {
+    list-style: none;
 
-    }
-    .footerColumn > ul.socialLinks > li {
-        margin-bottom: 30px;
-        list-style: none;
-    }
+}
+
+
 
 
 .socialLinks {
-    display: block;
+    padding-top: 25px;
+    width: 100%;
+    padding-left: 0px;
 }
 .socialLink {
-    width: 100%;
-    font-size: 2em;
+    padding: 0px 5px;
+    font-size: 1.4em;
+}
+ul.socialLinks > li {
+    list-style: none;
+   display: inline-block;
+   padding-left: 0px;
+}
+
+.copyright > li {
+    padding-top: 5px;
+    font-size: 0.9em;
+    list-style: none;
 }
 
 
@@ -3717,17 +3727,16 @@ footer h2 {
     position: absolute;
     left: 50%;
     margin-left: -30px;
-    top: -35px;
+    top: -30px;
 }
     #backToTop a {
         display: block;
-        width: 75px;
-        height: 75px;
+        width: 55px;
+        height: 55px;
         border-radius: 100%;
         background-color: #555555;
-        font-size: 2em;
+        font-size: 2.1em;
         align-content: center;
-        padding-top: 5px;
     }
 
 
