@@ -11,8 +11,9 @@ namespace GeronimoHBS.DAL
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-       
-        public DbSet<Staff> Staff { get; set; } 
+
+        public DbSet<Staff> Staff { get; set; }
+        public DbSet<Location> Location { get; set; }
 
 
 

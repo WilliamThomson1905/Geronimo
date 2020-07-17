@@ -1,4 +1,6 @@
-﻿
+﻿@model GeronimoHBS.Models.Location
+
+
 @{
     ViewBag.Title = "Welcome to Geronimo Hotel";
 }
@@ -15,6 +17,15 @@
         </p>
     </div>
 </div>
+
+<h2>Model Moagic</h2>
+<p>
+    @Html.DisplayFor(modelItem => Model.LocationName)
+    @Html.DisplayFor(modelItem => Model.LocationIntroduction)
+</p>
+        
+ 
+
 
 
 <div class="container">

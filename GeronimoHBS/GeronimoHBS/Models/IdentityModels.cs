@@ -55,11 +55,16 @@ namespace GeronimoHBS.Models
     /// </summary>
     public class Location
     {
+        //Primary Key  
         public int LocationID { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(500)]
         public string LocationName { get; set; }
+
+        [Required]
+        [StringLength(500)]
+        public string LocationIntroduction { get; set; }
 
 
 

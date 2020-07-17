@@ -17,15 +17,8 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-group">
-                        @Html.DropDownList("location", new List<SelectListItem>
-                        {
-                            new SelectListItem{ Text="Choose a Hotel", Value = "default" },
-                            new SelectListItem{ Text="Glasgow", Value = "Glasgow" },
-                            new SelectListItem{ Text="Paris", Value = "Paris" },
-                            new SelectListItem{ Text="New York", Value = "New York" },
-                            new SelectListItem{ Text="Amsterdam", Value = "Amsterdam" },
-                            new SelectListItem{ Text="London", Value = "London" }
-                        }, new { id = "chooseLocation" })
+                        @Html.DropDownList("LocationID", null, "Choose a location?", htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
+
                         <button type="submit" name="name" class="btn btn-primary"><i class="fa fa-search"></i></button>
                     </div>
                     

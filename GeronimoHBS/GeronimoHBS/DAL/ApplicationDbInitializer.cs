@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace GeronimoHBS.DAL
 {
-    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
+    public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -106,9 +106,6 @@ namespace GeronimoHBS.DAL
             }
             context.SaveChanges();
 
-
-
-
             // Seeding Manager staff
             var staffUsers = new List<Staff>
             {
@@ -178,6 +175,18 @@ namespace GeronimoHBS.DAL
             context.SaveChanges();
 
 
+
+            var locations = new List<Location>
+            {
+                new Location{LocationName="Glasgow", LocationIntroduction="Glasgow Introduction details. Glasgow Introduction details. Glasgow Introduction details. "},
+                new Location{LocationName="Paris", LocationIntroduction="Paris Introductions details"},
+                new Location{LocationName="Amsterdam", LocationIntroduction="Amsterdam Introduction details."},
+                new Location{LocationName="New York", LocationIntroduction="New York Introduction details."},
+                new Location{LocationName="London", LocationIntroduction="London Introduction details."}
+
+            };
+            locations.ForEach(l => context.Location.Add(l));
+            context.SaveChanges();
 
 
 

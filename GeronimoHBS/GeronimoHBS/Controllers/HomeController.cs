@@ -10,6 +10,8 @@ namespace GeronimoHBS.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName");
+
 
             return View();
         }

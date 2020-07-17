@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeronimoHBS.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,28 +8,33 @@ using System.Web.Mvc;
 namespace GeronimoHBS.Controllers
 {
     public class HotelController : BaseController
-    {
+    { 
+
         // GET: Hotel
         public ActionResult Index()
         {
             ViewBag.Location = "Welcome to Geronimo Hotel";
 
-            return View();
+            var locations = from l in db.Location
+                           select l;
+
+
+            return View(locations.ToList());
         }
 
         [HttpPost]
-        public ActionResult Index(FormCollection form)
+        public ActionResult Index(int? LocationID)
         {
-           string locationChosen = form["location"].ToString();
 
-
-            if (locationChosen == "default")
+            if (LocationID == null)
             {
                 ViewBag.Location = "Welcome to Geronimo Hotel";
             }
             else
             {
-                ViewBag.Location = "Geronimo Hotel: " + locationChosen;
+                var location = db.Location.Find(LocationID);
+                ViewBag.Location = "Geronimo Hotel: " + location.LocationName.ToString();
+                return View(location);
             }
             return View();
         }
