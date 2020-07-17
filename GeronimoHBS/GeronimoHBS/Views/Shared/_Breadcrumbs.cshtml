@@ -1,6 +1,6 @@
 ﻿<style>
     ul.breadcrumb {
-        margin-bottom:  50px;
+        margin-bottom: 50px;
         padding: 10px 16px;
         list-style: none;
         background-color: #eee;
@@ -30,12 +30,31 @@
 
 
 <ul class="breadcrumb">
-    <li>
-        @Html.ActionLink("Geronimo Hotels", "Index", "Hotel")
-    </li>
-    <li>
-        @Html.ActionLink("Glasgow", "Index", "Hotel")
-    </li>
-    <li><a href="#">Gym</a></li>
-    <li>Classes</li>
+    @for (int i = 0; i < ViewBag.Collection.Length; i++)
+    {
+
+        <li>
+            <a href="@ViewBag.Collection[i][1]">@ViewBag.Collection[i][0]</a>
+        </li>
+        
+    }
+
+    @*@foreach (var breadcrumb in ViewBag.Collection)
+        {
+            <li>
+                <a>
+                    @Html.Raw(breadcrumb)
+                </a>
+            </li>
+        }*@
+
+    @*<li>
+            @Html.ActionLink("Geronimo Hotels", "Index", "Hotel")
+        </li>
+
+        <li>
+            @Html.ActionLink("Glasgow", "Index", "Hotel")
+        </li>
+        <li><a href="#">Gym</a></li>
+        <li>Classes</li>*@
 </ul>

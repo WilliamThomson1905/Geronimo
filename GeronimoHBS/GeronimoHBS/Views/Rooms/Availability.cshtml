@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "RoomAvailability";
+}
+
+@{ Html.RenderPartial("_Breadcrumbs");}
+
+<div class="container">
+
+    <h2>Room Availability</h2>
+    <p>
+        <ol>
+            <li>
+                All the rooms that are available for the booking. <br />
+                With an option(s) to select options to book. 
+            </li>
+         
+           
+        </ol>
+        @Html.ActionLink("Payment", "Payment", "Rooms", new { @class= "button primary" })
+    </p>
+</div> 

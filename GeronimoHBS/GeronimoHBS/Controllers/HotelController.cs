@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace GeronimoHBS.Controllers
 {
-    public class HotelController : Controller
+    public class HotelController : BaseController
     {
         // GET: Hotel
         public ActionResult Index()

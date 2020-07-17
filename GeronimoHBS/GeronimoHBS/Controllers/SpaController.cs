@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace GeronimoHBS.Controllers
 {
-    public class SpaController : Controller
+    public class SpaController : BaseController
     {
         // GET: Spa
         public ActionResult Index()

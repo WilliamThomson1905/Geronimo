@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace GeronimoHBS.Controllers
 {
-    public class EventsController : Controller
+    public class EventsController : BaseController
     {
         // GET: Events
         public ActionResult Index()
