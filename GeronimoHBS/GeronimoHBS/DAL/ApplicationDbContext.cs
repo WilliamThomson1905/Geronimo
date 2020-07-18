@@ -13,6 +13,8 @@ namespace GeronimoHBS.DAL
     {
 
         public DbSet<Staff> Staff { get; set; }
+        public DbSet<RoomType> RoomType { get; set; }
+        public DbSet<RoomOverview> RoomOverview { get; set; }
         public DbSet<Location> Location { get; set; }
 
 

@@ -15,26 +15,27 @@ namespace GeronimoHBS.Controllers
         {
             ViewBag.Location = "Welcome to Geronimo Hotel";
 
-            var locations = from l in db.Location
-                           select l;
+            var defaultLocation = db.Location.Find(0);
 
-
-            return View(locations.ToList());
+            return View(defaultLocation);
         }
 
         [HttpPost]
         public ActionResult Index(int? LocationID)
         {
-
-            if (LocationID == null)
-            {
-                ViewBag.Location = "Welcome to Geronimo Hotel";
-            }
-            else
+            if (LocationID != null)
             {
                 var location = db.Location.Find(LocationID);
-                ViewBag.Location = "Geronimo Hotel: " + location.LocationName.ToString();
-                return View(location);
+
+                if (location.LocationName.Equals("Default"))
+                {
+                    ViewBag.Location = "Welcome to Geronimo Hotel";
+                }
+                else
+                {
+                    ViewBag.Location = "Geronimo Hotel: " + location.LocationName.ToString();
+                    return View(location);
+                }
             }
             return View();
         }

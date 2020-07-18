@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
@@ -22,7 +23,7 @@ namespace GeronimoHBS.Models
         public string Surname { get; set; }
 
 
-    
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -32,11 +33,9 @@ namespace GeronimoHBS.Models
             return userIdentity;
         }
     }
-
     public class Guest : ApplicationUser
     {
     }
-
     public class Staff : ApplicationUser
     {
     }
@@ -45,7 +44,7 @@ namespace GeronimoHBS.Models
         // the hotel location that they manage
         public string Location { get; set; }
     }
-    public class Admin : Manager
+    public class Admin : Staff
     {
     }
 
@@ -55,7 +54,8 @@ namespace GeronimoHBS.Models
     /// </summary>
     public class Location
     {
-        //Primary Key  
+
+        [Key]
         public int LocationID { get; set; }
 
         [Required]
@@ -68,10 +68,95 @@ namespace GeronimoHBS.Models
 
 
 
+        // Foriegn key 
+        public int RoomOverviewID { get; set; }
+        // Corresponding navigation property - each hotel has rooms 
+        public virtual RoomOverview RoomOverview { get; set; }
+    }
+
+
+    public class RoomOverview
+    {
+        [Key]
+        public int RoomOverviewID { get; set; }
+
+        public string Header { get; set; }
+
+        public string Content { get; set; }
+
+        // Navigation property - multiple types of room:  standard, premium etc. 
+        public virtual ICollection<RoomType> RoomType { get; set; }
+    }
+
+
+    public class RoomType 
+    {
+        [Key]
+        public int RoomTypeID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 
 
 
+
+
+    public class Room
+    {
+        //Primary Key  
+        public int RoomID { get; set; }
+
+        public int FloorNumber { get; set; }
+        public int RoomNumber { get; set; }
+        public int NumberOfBeds { get; set; }
+
+
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public double Price { get; set; }
+
+
+    }
+
+
+    // Example: wifi
+    public class Amenity
+    {
+        public int AmenityID { get; set; }
+
+        public string AmenityName { get; set; }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    public class Gym
+    {
+
+    }
+    public class Spa
+    {
+
+    }
+
+    public class Events
+    {
+
+
+    }
+    public class Dining
+    {
+
+    }
 
 
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -176,13 +177,97 @@ namespace GeronimoHBS.DAL
 
 
 
+            var roomTypes = new List<RoomType>
+            {
+                new RoomType
+                {
+                    Name = "Standard Suite",
+                    Description = "Standard Suite description extraordinaire. " +
+                    "Standard Suite description extraordinaire. Standard Suite description extraordinaire. "
+                },
+                new RoomType
+                {
+                    Name = "Premium Suite",
+                    Description = "Premium Suite description extraordinaire. " +
+                    "Premium Suite description extraordinaire. Premium Suite description extraordinaire. Premium Suite description extraordinaire. "
+                }
+            };
+
+            roomTypes.ForEach(l => context.RoomType.Add(l));
+            context.SaveChanges();
+
+            var roomOverview = new List<RoomOverview>
+            {
+                new RoomOverview
+                {
+                    Header = "Default Rooms",
+                    Content = "dssssss"
+                },
+                new RoomOverview
+                {
+                    Header = "Glasgow Rooms",
+                    Content = "gssssss"
+                },
+                new RoomOverview
+                {
+                    Header = "Paris Rooms",
+                    Content = "ssgggssss"
+                },
+                new RoomOverview
+                {
+                    Header = "Amsterdam Rooms",
+                    Content = "ssssdassss"
+                }, 
+                new RoomOverview
+                {
+                    Header = "New York Rooms",
+                    Content = "ssaassss"
+                },
+                new RoomOverview
+                {
+                    Header = "London Rooms",
+                    Content = "ssaassss"
+                },
+
+            };
+            roomOverview.ForEach(l => context.RoomOverview.Add(l));
+            context.SaveChanges();
+
+
             var locations = new List<Location>
             {
-                new Location{LocationName="Glasgow", LocationIntroduction="Glasgow Introduction details. Glasgow Introduction details. Glasgow Introduction details. "},
-                new Location{LocationName="Paris", LocationIntroduction="Paris Introductions details"},
-                new Location{LocationName="Amsterdam", LocationIntroduction="Amsterdam Introduction details."},
-                new Location{LocationName="New York", LocationIntroduction="New York Introduction details."},
-                new Location{LocationName="London", LocationIntroduction="London Introduction details."}
+                new Location{
+                    LocationName="Default", 
+                    LocationIntroduction="Default Data Introduction details. ",
+                    RoomOverviewID = 1
+                },
+                new Location{
+                    LocationName="Glasgow", 
+                    LocationIntroduction="Glasgow Introduction details. Glasgow Introduction details. Glasgow Introduction details. ",
+                    RoomOverviewID = 2
+
+                },
+                new Location{
+                    LocationName="Paris", 
+                    LocationIntroduction="Paris Introductions details",
+                    RoomOverviewID = 3
+
+                },
+                new Location{
+                    LocationName="Amsterdam", 
+                    LocationIntroduction="Amsterdam Introduction details.",                 
+                    RoomOverviewID = 4
+                },
+                new Location{
+                    LocationName="New York", 
+                    LocationIntroduction="New York Introduction details.",
+                    RoomOverviewID = 5
+                },
+                new Location{
+                    LocationName="London", 
+                    LocationIntroduction="London Introduction details.",                    
+                    RoomOverviewID = 5
+}
 
             };
             locations.ForEach(l => context.Location.Add(l));
