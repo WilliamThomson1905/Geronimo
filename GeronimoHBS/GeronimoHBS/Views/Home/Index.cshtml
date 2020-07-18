@@ -17,7 +17,7 @@
                     @Html.AntiForgeryToken()
 
                     <div class="form-group">
-                        @Html.DropDownList("LocationID", null, "Choose a location?", htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
+                        @Html.DropDownList("LocationID", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
 
                         <button type="submit" name="name" class="btn btn-primary"><i class="fa fa-search"></i></button>
                     </div>

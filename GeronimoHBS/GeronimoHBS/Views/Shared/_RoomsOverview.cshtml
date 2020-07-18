@@ -19,7 +19,7 @@
 <div class="headersTogether">
     @foreach (var item in Model.RoomOverview.RoomType)
     {
-        <h3><a class="tablinks current" onclick="openRoomDetails(event, 'roomtype@(i)')">@item.Name</a></h3>
+        <h3><a class="tablinks @if(i == 1) { @Html.Raw(" current");  }" onclick="openRoomDetails(event, 'roomtype@(i)')">@item.Name</a></h3>
         i++;
     }
 </div>
@@ -29,8 +29,8 @@
 
 @foreach (var item in Model.RoomOverview.RoomType)
 {
-    
-    <div id="roomtype@(i)" class="tabcontent" style="display: block;">
+
+    <div id="roomtype@(i)" class="tabcontent" @if(i == 1) { @Html.Raw("style = \"display: block;\"");  }>
         <p>
             @item.Description
         </p>
