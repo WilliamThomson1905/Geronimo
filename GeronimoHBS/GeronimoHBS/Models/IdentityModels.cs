@@ -84,6 +84,9 @@ namespace GeronimoHBS.Models
 
         public string Content { get; set; }
 
+      
+
+
         // Navigation property - multiple types of room:  standard, premium etc. 
         public virtual ICollection<RoomType> RoomType { get; set; }
     }
@@ -95,6 +98,10 @@ namespace GeronimoHBS.Models
         public int RoomTypeID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        public virtual ICollection<RoomOverview> RoomOverview { get; set; }
+
+
     }
 
 
@@ -124,7 +131,7 @@ namespace GeronimoHBS.Models
     {
         public int AmenityID { get; set; }
 
-        public string AmenityName { get; set; }
+        public string Name { get; set; }
 
     }
 
@@ -139,7 +146,7 @@ namespace GeronimoHBS.Models
 
 
 
-    public class Gym
+    public class Gymm
     {
 
     }

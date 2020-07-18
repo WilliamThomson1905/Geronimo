@@ -177,7 +177,7 @@ namespace GeronimoHBS.DAL
 
 
 
-            var roomTypes = new List<RoomType>
+            List<RoomType> roomTypes = new List<RoomType>
             {
                 new RoomType
                 {
@@ -201,32 +201,38 @@ namespace GeronimoHBS.DAL
                 new RoomOverview
                 {
                     Header = "Default Rooms",
-                    Content = "dssssss"
+                    Content = "dssssss",
+                    RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Glasgow Rooms",
-                    Content = "gssssss"
+                    Content = "gssssss",
+                    RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Paris Rooms",
-                    Content = "ssgggssss"
+                    Content = "ssgggssss",
+                    RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Amsterdam Rooms",
-                    Content = "ssssdassss"
+                    Content = "ssssdassss",
+                    RoomType = roomTypes
                 }, 
                 new RoomOverview
                 {
                     Header = "New York Rooms",
-                    Content = "ssaassss"
+                    Content = "ssaassss",
+                    RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "London Rooms",
-                    Content = "ssaassss"
+                    Content = "ssaassss",
+                    RoomType = roomTypes
                 },
 
             };

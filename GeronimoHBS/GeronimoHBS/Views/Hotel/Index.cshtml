@@ -18,14 +18,6 @@
     </div>
 </div>
 
-<h2>Model Moagic</h2>
-<p>
-    @Html.DisplayFor(modelItem => Model.LocationName)
-    @Html.DisplayFor(modelItem => Model.LocationIntroduction)
-</p>
-        
- 
-
 
 
 <div class="container">
@@ -66,7 +58,11 @@
 
     <div class="sideNav">
         <div class="servicesLinks">
+            
+            @if (Model.RoomOverview != null)
+            {
             <a class="tablink current" onclick="openTabContent(event, 'Rooms')" href="#rooms">ROOMS</a>
+            }
             <a class="tablink" onclick="openTabContent(event, 'Gym')" href="#gym">GYM</a>
             <a class="tablink" onclick="openTabContent(event, 'Spa')" href="#spa">SPA</a>
             <a class="tablink" onclick="openTabContent(event, 'Events')" href="#events">EVENTS</a>
@@ -78,12 +74,14 @@
 
         <div style="">
 
+            @if (Model.RoomOverview != null)
+            {
             <section id="Rooms" class="services">
-                @{Html.RenderPartial("_RoomsOverview");}
+                @{Html.RenderPartial("_RoomsOverview", Model);}
             </section>
-
+            }
             <section id="Gym" class="services" style="display:none">
-                @{Html.RenderPartial("_GymOverview");}
+                @{Html.RenderPartial("_GymOverview");}z
             </section>
 
             <section id="Spa" class="services" style="display:none">
