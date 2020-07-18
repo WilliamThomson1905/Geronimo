@@ -3783,10 +3783,10 @@ ul.socialLinks > li {
 
 
 
-a.paragraphLink {
+a.secondaryLink {
     border-bottom: 1px solid #555555;
 
 }
-a.paragraphLink:hover {
-   color: black;
-}
+	a.secondaryLink:hover {
+		color: black;
+	}
