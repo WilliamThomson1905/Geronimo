@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace GeronimoHBS.DAL
 {
-    public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -243,7 +243,7 @@ namespace GeronimoHBS.DAL
             var locations = new List<Location>
             {
                 new Location{
-                    LocationName="Default", 
+                    LocationName="Geronimo Hotels", 
                     LocationIntroduction="Default Data Introduction details. ",
                     RoomOverviewID = 1
                 },

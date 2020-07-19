@@ -8,37 +8,31 @@ using System.Web.Mvc;
 namespace GeronimoHBS.Controllers
 {
     public class HotelController : BaseController
-    { 
+    {
 
-        // GET: Hotel
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(int Id, string name)
         {
-            ViewBag.Location = "Welcome to Geronimo Hotel";
+            var searchLocation = db.Location.Find(Id);
+            ViewBag.Location = "Geronimo: " + searchLocation.LocationName.ToString();
 
-            var defaultLocation = db.Location.Find(0);
-
-            return View(defaultLocation);
+            return View(searchLocation);
         }
 
         [HttpPost]
         public ActionResult Index(int? LocationID)
         {
-            if (LocationID != null)
+            var location = db.Location.Find(LocationID);
+
+            if (location.LocationName.Equals("Default"))
             {
-                var location = db.Location.Find(LocationID);
-
-                if (location.LocationName.Equals("Default"))
-                {
-                    ViewBag.Location = "Welcome to Geronimo Hotel";
-                }
-                else
-                {
-                    ViewBag.Location = "Geronimo Hotel: " + location.LocationName.ToString();
-                    return View(location);
-                }
+                ViewBag.Location = "Welcome to Geronimo Hotel";
             }
-            return View();
+            else
+            {
+                ViewBag.Location = "Geronimo: " + location.LocationName.ToString();
+            }
+            return View(location);
         }
-
     }
 }
