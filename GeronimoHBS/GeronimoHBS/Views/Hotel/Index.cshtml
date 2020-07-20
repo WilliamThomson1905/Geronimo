@@ -58,12 +58,15 @@
 
     <div class="sideNav">
         <div class="servicesLinks">
-            
+
             @if (Model.RoomOverview != null)
             {
-            <a class="tablink current" onclick="openTabContent(event, 'Rooms')" href="#rooms">ROOMS</a>
+                <a class="tablink current" onclick="openTabContent(event, 'Rooms')" href="#rooms">ROOMS</a>
             }
-            <a class="tablink" onclick="openTabContent(event, 'Gym')" href="#gym">GYM</a>
+            @if (Model.GymOverview != null)
+            {
+                <a class="tablink" onclick="openTabContent(event, 'Gym')" href="#gym">GYM</a>
+            }
             <a class="tablink" onclick="openTabContent(event, 'Spa')" href="#spa">SPA</a>
             <a class="tablink" onclick="openTabContent(event, 'Events')" href="#events">EVENTS</a>
             <a class="tablink" onclick="openTabContent(event, 'Dining')" href="#dining">DINING</a>
@@ -80,10 +83,13 @@
                 @{Html.RenderPartial("_RoomsOverview", Model);}
             </section>
             }
+
+            @if (Model.RoomOverview != null)
+            {          
             <section id="Gym" class="services" style="display:none">
                 @{Html.RenderPartial("_GymOverview");}z
             </section>
-
+            }
             <section id="Spa" class="services" style="display:none">
                 @{Html.RenderPartial("_SpaOverview");}
             </section>

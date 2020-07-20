@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace GeronimoHBS.DAL
 {
-    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
+    public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -240,39 +240,130 @@ namespace GeronimoHBS.DAL
             context.SaveChanges();
 
 
+
+
+
+
+
+
+            var equipment = new List<Equipment>
+            {
+                new Equipment
+                {
+                    Name = "item1",
+                    Description = "item1 description item1 description item1 description. ",
+                    Quantity = 13
+                },
+                new Equipment
+                {
+                    Name = "item2",
+                    Description = "item2 description item2 description item2 description. ",
+                    Quantity = 21
+
+                },new Equipment
+                {
+                    Name = "item3",
+                    Description = "item3 description item3 description item3 description. ",
+                    Quantity = 7
+
+                }
+
+            };
+            equipment.ForEach(l => context.Equipment.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+
+
+
+            var gymOverview = new List<GymOverview>
+            {
+                new GymOverview
+                {
+                    Header = "Default Gym",
+                    Content = "dssssss",
+                    Equipment = equipment
+                },
+                new GymOverview
+                {
+                    Header = "Glasgow Gym",
+                    Content = "gssssss",                    
+                    Equipment = equipment
+
+                },
+                new GymOverview
+                {
+                    Header = "Paris Gym",
+                    Content = "ssgggssss",
+                    Equipment = equipment
+                },
+                new GymOverview
+                {
+                    Header = "Amsterdam Gym",
+                    Content = "ssssdassss",
+                    Equipment = equipment
+                },
+                new GymOverview
+                {
+                    Header = "New York Gym",
+                    Content = "ssaassss",
+                    Equipment = equipment
+                },
+                new GymOverview
+                {
+                    Header = "London Gym",
+                    Content = "ssaassss",
+                    Equipment = equipment
+                }
+
+            };
+            gymOverview.ForEach(l => context.GymOverview.Add(l));
+            context.SaveChanges();
+
+
+
             var locations = new List<Location>
             {
                 new Location{
                     LocationName="Geronimo Hotels", 
                     LocationIntroduction="Default Data Introduction details. ",
-                    RoomOverviewID = 1
+                    RoomOverviewID = 1,
+                    GymOverviewID = 1
                 },
                 new Location{
                     LocationName="Glasgow", 
                     LocationIntroduction="Glasgow Introduction details. Glasgow Introduction details. Glasgow Introduction details. ",
-                    RoomOverviewID = 2
+                    RoomOverviewID = 2,
+                    GymOverviewID = 2
 
                 },
                 new Location{
                     LocationName="Paris", 
                     LocationIntroduction="Paris Introductions details",
-                    RoomOverviewID = 3
+                    RoomOverviewID = 3,
+                    GymOverviewID = 3
 
                 },
                 new Location{
                     LocationName="Amsterdam", 
                     LocationIntroduction="Amsterdam Introduction details.",                 
-                    RoomOverviewID = 4
+                    RoomOverviewID = 4,
+                    GymOverviewID = 4
                 },
                 new Location{
                     LocationName="New York", 
                     LocationIntroduction="New York Introduction details.",
-                    RoomOverviewID = 5
+                    RoomOverviewID = 5,
+                    GymOverviewID = 5
                 },
                 new Location{
                     LocationName="London", 
                     LocationIntroduction="London Introduction details.",                    
-                    RoomOverviewID = 5
+                    RoomOverviewID = 6,
+                    GymOverviewID = 6
 }
 
             };

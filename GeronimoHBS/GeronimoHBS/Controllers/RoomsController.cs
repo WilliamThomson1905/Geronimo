@@ -42,5 +42,11 @@ namespace GeronimoHBS.Controllers
         }
 
 
+        public ActionResult Payment()
+        {
+            return View();
+        }
+
+
     }
 }
