@@ -325,6 +325,127 @@ namespace GeronimoHBS.DAL
 
 
 
+
+
+
+
+            // Seeding five classes that guest can attend at the gym - these will be used with the Timetable instanes below 
+            var gymClasses = new List<GymClasses>()
+            {
+                new GymClasses {
+                    Title ="Gym Class 1",
+                    Description = "Gym Class 1 description. "
+                },
+                new GymClasses {
+                    Title ="Gym Class 2",
+                    Description = "Gym Class 2 description. "
+                },
+                new GymClasses {
+                    Title ="Gym Class 3",
+                    Description = "Gym Class 3 description. "
+                },
+                new GymClasses {
+                    Title ="Gym Class 4",
+                    Description = "Gym Class 4 description. "
+                },
+                new GymClasses {
+                    Title ="Gym Class 5",
+                    Description = "Gym Class 5 description. "
+                },
+
+
+            };
+
+            gymClasses.ForEach(l => context.GymClasses.Add(l));
+            context.SaveChanges();
+
+
+
+            var timetable = new List<Timetable>
+            {
+                // MONDAY
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    GymClasses = gymClasses[0],
+                    GymClassesID = gymClasses[0].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.TUESDAY,
+                    StartTime = new TimeSpan(8, 0, 0),
+                    EndTime = new TimeSpan(10, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    GymClasses = gymClasses[0],
+                    GymClassesID = gymClasses[0].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.WEDNESDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    GymClasses = gymClasses[1],
+                    GymClassesID = gymClasses[1].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.THURSDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    GymClasses = gymClasses[3],
+                    GymClassesID = gymClasses[3].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.FRIDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    GymClasses = gymClasses[1],
+                    GymClassesID = gymClasses[1].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.SATURDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    GymClasses = gymClasses[4],
+                    GymClassesID = gymClasses[4].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.SUNDAY,
+                    StartTime = new TimeSpan(14, 0, 0),
+                    EndTime = new TimeSpan(18, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    GymClasses = gymClasses[2],
+                    GymClassesID = gymClasses[2].GymClassesID
+                }
+
+
+            };
+
+
+            timetable.ForEach(l => context.Timetable.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+
+
+
+
+
+
+
             var locations = new List<Location>
             {
                 new Location{
@@ -369,6 +490,9 @@ namespace GeronimoHBS.DAL
             };
             locations.ForEach(l => context.Location.Add(l));
             context.SaveChanges();
+
+
+
 
 
 

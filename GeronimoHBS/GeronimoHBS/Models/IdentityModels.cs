@@ -179,6 +179,71 @@ namespace GeronimoHBS.Models
     }
 
 
+    public class GymClasses
+    {
+        [Key]
+        public int GymClassesID { get; set; }
+
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+
+
+    }
+
+
+    public class Timetable
+    {
+        public Timetable()
+        {
+            GymClassStatus = GymClassStatus.AVAILABLE;
+        }
+
+
+        [Key]
+        public int TimetableID { get; set; }
+
+        [Required]
+        public Day Day { get; set; }
+
+        [Required]
+        [DataType(DataType.Time)]
+        public TimeSpan StartTime { get; set; }
+
+        [Required]
+        [DataType(DataType.Time)]
+        public TimeSpan EndTime { get; set; }
+
+        [Required]
+        public GymClassStatus GymClassStatus { get; set; }
+
+        [Required]
+        // Foriegn key - Trainer will do class
+        public int GymClassesID { get; set; }
+        // Corresponding navigation property 
+        public virtual GymClasses GymClasses { get; set; }
+
+   
+
+
+    }
+
+
+    public enum GymClassStatus
+    {
+        AVAILABLE, FULLYBOOKED, CANCELLED
+    }
+
+    public enum Day
+    {
+        // Days of gym classes
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+
+
+
+
 
     public class Spa
     {
