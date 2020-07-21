@@ -152,7 +152,8 @@ What constraints exist for the system?
 
 
 
-
+## Ideas for Features
+1. When a gym class is cancelled everyone who was supposed to be attending gets a notification - publish/subscribe pattern. 
 
 
 
