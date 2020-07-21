@@ -161,8 +161,6 @@ namespace GeronimoHBS.Models
         // Navigation property. 
         public virtual ICollection<Equipment> Equipment { get; set; }
 
-
-
         // Navigation property. 
         public virtual ICollection<GymClasses> GymClasses { get; set; }
 
@@ -223,6 +221,12 @@ namespace GeronimoHBS.Models
         [Required]
         [DataType(DataType.Time)]
         public TimeSpan EndTime { get; set; }
+
+
+        public string Instructor { get; set; }
+
+
+
 
         [Required]
         public GymClassStatus GymClassStatus { get; set; }
