@@ -166,6 +166,9 @@ namespace GeronimoHBS.Models
         // Navigation property. 
         public virtual ICollection<GymClasses> GymClasses { get; set; }
 
+        // Navigation property. 
+        public virtual ICollection<Timetable> Timetable { get; set; }
+
     }
 
     public class Equipment
@@ -256,7 +259,7 @@ namespace GeronimoHBS.Models
 
     }
 
-    public class Events
+    public class Event
     {
 
 

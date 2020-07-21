@@ -1,4 +1,4 @@
-﻿@model GeronimoHBS.Models.GymOverview
+﻿@model GeronimoHBS.Models.Location
 
 @{
     ViewBag.Title = "RoomAvailability";
@@ -9,6 +9,7 @@
 
 
     <div class="container">
+        <a href="/Gym/Timetable/@Model.GymOverviewID" class="button primary">Timetable</a>
 
         <h2>Gym Details</h2>
 
@@ -21,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.GymClasses)
+                    @foreach (var item in Model.GymOverview.GymClasses)
                     {
                         <tr>
                             <td>@item.Title</td>
@@ -44,7 +45,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.Equipment)
+                    @foreach (var item in Model.GymOverview.Equipment)
                     {
                         <tr>
                             <td>@item.Name</td>

@@ -401,7 +401,8 @@ namespace GeronimoHBS.DAL
                     Header = "Glasgow Gym",
                     Content = "gssssss",                    
                     Equipment = equipment,
-                    GymClasses = gymClasses
+                    GymClasses = gymClasses,
+                    Timetable = timetable
 
                 },
                 new GymOverview

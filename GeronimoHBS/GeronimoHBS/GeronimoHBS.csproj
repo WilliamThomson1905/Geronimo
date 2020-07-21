@@ -323,7 +323,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Breadcrumbs.cshtml" />
     <Content Include="Views\Gym\Index.cshtml" />
-    <Content Include="Views\Gym\ClassesDetails.cshtml" />
+    <Content Include="Views\Gym\Timetable.cshtml" />
     <Content Include="Views\Spa\Index.cshtml" />
     <Content Include="Views\Dining\Index.cshtml" />
     <Content Include="Views\Dining\Menu.cshtml" />

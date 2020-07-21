@@ -1,0 +1,37 @@
+﻿@model GeronimoHBS.Models.Location
+
+@{
+    ViewBag.Title = "RoomAvailability";
+}
+
+@{ Html.RenderPartial("_Breadcrumbs");}
+
+    <div class="container">
+
+        <h2>@Model.LocationName Timetable</h2>
+        <p>
+        </p>
+
+        <div class="table-wrapper">
+            <table class="alt">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>Finishing Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.GymOverview.Timetable)
+                    {
+                        <tr>
+                            <td>@item.Day</td>
+                            <td>@item.StartTime</td>
+                            <td>@item.EndTime</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
