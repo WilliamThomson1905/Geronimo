@@ -10,19 +10,21 @@ namespace GeronimoHBS.Controllers
     {
 
         // GET: Rooms
-        public ActionResult Index()
+        public ActionResult Index(int Id)
         {
+            var currentGym = db.GymOverview.Find(Id);
             ViewBag.Collection = breadcrumbs;
 
 
-            return View();
+            return View(currentGym);
         }
 
-        // GET: Rooms/Details/5
-        public ActionResult ClassesDetails()
+        // GET: Gym/ClassesDetails/5
+        public ActionResult ClassesDetails(int Id)
         {
+            var currentGym = db.GymOverview.Find(Id);
 
-            return View();
+            return View(currentGym);
         }
         
     }

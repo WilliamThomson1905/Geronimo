@@ -1,19 +1,44 @@
-﻿
+﻿@model GeronimoHBS.Models.GymOverview
+
 @{
     ViewBag.Title = "RoomAvailability";
 }
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
-<div class="container">
+    <div class="container">
 
-    <h2>Classes Details - pass id of selected class</h2>
-    <p>
-        <ol>
-            <li>
-                Instructor, class name, description,
-            </li>
-        </ol>
-    </p>
+        <h2>Classes Details - pass id of selected class</h2>
+        <p>
+            <ol>
+                <li>
+                    @Model.Header
+                    @Model.Content
+                    Instructor, class name, description,
+                </li>
+            </ol>
+        </p>
 
-</div>
+        <div class="table-wrapper">
+            <table class="alt">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Description</td>
+                            <td>@item.Quantity</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>

@@ -7,6 +7,12 @@
     @Html.DisplayFor(modelItem => Model.GymOverview.Content)
 </p>
 
+<p>
+    @*@Html.ActionLink("Gym", "Index", new { controller = "Gym" }, htmlAttributes: new { Id = Model.GymOverviewID, @class = "button primary" })*@
+    <a href="/Gym/Index/@Model.GymOverviewID" class = "button primary">Gym</a>
+
+</p>
+
 <h3>Gym Classes</h3>
 <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -54,11 +60,11 @@
         <tbody>
             @foreach (var item in Model.GymOverview.Equipment)
             {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.Description</td>
-                <td>@item.Quantity</td>
-            </tr>
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Quantity</td>
+                </tr>
             }
         </tbody>
 

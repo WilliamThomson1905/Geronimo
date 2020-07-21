@@ -276,65 +276,13 @@ namespace GeronimoHBS.DAL
 
 
 
-
-
-
-            var gymOverview = new List<GymOverview>
-            {
-                new GymOverview
-                {
-                    Header = "Default Gym",
-                    Content = "dssssss",
-                    Equipment = equipment
-                },
-                new GymOverview
-                {
-                    Header = "Glasgow Gym",
-                    Content = "gssssss",                    
-                    Equipment = equipment
-
-                },
-                new GymOverview
-                {
-                    Header = "Paris Gym",
-                    Content = "ssgggssss",
-                    Equipment = equipment
-                },
-                new GymOverview
-                {
-                    Header = "Amsterdam Gym",
-                    Content = "ssssdassss",
-                    Equipment = equipment
-                },
-                new GymOverview
-                {
-                    Header = "New York Gym",
-                    Content = "ssaassss",
-                    Equipment = equipment
-                },
-                new GymOverview
-                {
-                    Header = "London Gym",
-                    Content = "ssaassss",
-                    Equipment = equipment
-                }
-
-            };
-            gymOverview.ForEach(l => context.GymOverview.Add(l));
-            context.SaveChanges();
-
-
-
-
-
-
-
             // Seeding five classes that guest can attend at the gym - these will be used with the Timetable instanes below 
             var gymClasses = new List<GymClasses>()
             {
                 new GymClasses {
                     Title ="Gym Class 1",
-                    Description = "Gym Class 1 description. "
+                    Description = "Gym Class 1 description. ",
+
                 },
                 new GymClasses {
                     Title ="Gym Class 2",
@@ -434,6 +382,65 @@ namespace GeronimoHBS.DAL
 
             timetable.ForEach(l => context.Timetable.Add(l));
             context.SaveChanges();
+
+
+
+
+
+            var gymOverview = new List<GymOverview>
+            {
+                new GymOverview
+                {
+                    Header = "Default Gym",
+                    Content = "dssssss",
+                    Equipment = equipment,
+                    GymClasses = gymClasses
+                },
+                new GymOverview
+                {
+                    Header = "Glasgow Gym",
+                    Content = "gssssss",                    
+                    Equipment = equipment,
+                    GymClasses = gymClasses
+
+                },
+                new GymOverview
+                {
+                    Header = "Paris Gym",
+                    Content = "ssgggssss",
+                    Equipment = equipment,
+                    GymClasses = gymClasses
+                },
+                new GymOverview
+                {
+                    Header = "Amsterdam Gym",
+                    Content = "ssssdassss",
+                    Equipment = equipment,
+                    GymClasses = gymClasses
+                },
+                new GymOverview
+                {
+                    Header = "New York Gym",
+                    Content = "ssaassss",
+                    Equipment = equipment,
+                    GymClasses = gymClasses
+                },
+                new GymOverview
+                {
+                    Header = "London Gym",
+                    Content = "ssaassss",
+                    Equipment = equipment,
+                    GymClasses = gymClasses
+                }
+
+            };
+            gymOverview.ForEach(l => context.GymOverview.Add(l));
+            context.SaveChanges();
+
+
+
+
+
 
 
 
