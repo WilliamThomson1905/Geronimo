@@ -232,7 +232,7 @@ namespace GeronimoHBS.Models
         public GymClassStatus GymClassStatus { get; set; }
 
         [Required]
-        // Foriegn key - Trainer will do class
+        // Foriegn key 
         public int GymClassesID { get; set; }
         // Corresponding navigation property 
         public virtual GymClasses GymClasses { get; set; }

@@ -7,6 +7,8 @@ namespace GeronimoHBS.Models
 {
     public class TimetableViewModel
     {
+        public Location CurrentLocation { get; set; }
+
         public List<Timetable> Monday { get; set; }
         public List<Timetable> Tuesday { get; set; }
         public List<Timetable> Wednesday { get; set; }
