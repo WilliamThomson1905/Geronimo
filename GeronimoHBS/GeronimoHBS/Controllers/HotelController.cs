@@ -22,16 +22,16 @@ namespace GeronimoHBS.Controllers
         [HttpPost]
         public ActionResult Index(int? LocationID)
         {
-            var location = db.Location.Find(LocationID);
-
-            if (location.LocationName.Equals("Default"))
+            var location = db.Location.First();  
+            if(LocationID == null)
             {
                 ViewBag.Location = "Welcome to Geronimo Hotel";
-            }
-            else
+            } else
             {
+                location = db.Location.Find(LocationID);
                 ViewBag.Location = "Geronimo: " + location.LocationName.ToString();
             }
+
             return View(location);
         }
     }
