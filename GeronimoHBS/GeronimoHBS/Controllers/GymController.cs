@@ -13,21 +13,36 @@ namespace GeronimoHBS.Controllers
         // GET: Rooms
         public ActionResult Index(int? Id)
         {
-            var currentLocation = db.Location.Find(Id);
+            var currentLocation = db.Location.First();
+            if (Id == null)
+            {
+                ViewBag.Location = "Welcome to Geronimo Hotel";
+            }
+            else
+            {
+                currentLocation = db.Location.Find(Id);
+                ViewBag.Location = "Geronimo: " + currentLocation.LocationName.ToString();
+            }
+
             ViewBag.Collection = breadcrumbs;
-
-
             return View(currentLocation);
         }
 
         // GET: Gym/ClassesDetails/5
-        public ActionResult Timetable(int Id)
+        public ActionResult Timetable(int? Id)
         {
-            ViewBag.Location = db.Location.Find(Id);
 
-            var location = db.Location.Find(Id);
-
-            var locationTimetable = location.GymOverview.Timetable;
+            var currentLocation = db.Location.First();
+            if (Id == null)
+            {
+                ViewBag.Location = "Welcome to Geronimo Hotel";
+            }
+            else
+            {
+                currentLocation = db.Location.Find(Id);
+                ViewBag.Location = currentLocation;
+            }
+            var locationTimetable = currentLocation.GymOverview.Timetable;
 
             //monday classes
             var monday = from day1 in locationTimetable
