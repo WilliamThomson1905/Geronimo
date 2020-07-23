@@ -553,12 +553,12 @@ namespace GeronimoHBS.DAL
             {
                 new GymClasses {
                     Title ="P_Gym Class 1",
-                    Description = "Gym Class 1 description. ",
+                    Description = "Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. ",
 
                 },
                 new GymClasses {
                     Title ="P_Gym Class 2",
-                    Description = "Gym Class 2 description. "
+                    Description = "Gym Class 2 description. Gym Class 2 description. Gym Class 2 description. "
                 },
                 new GymClasses {
                     Title ="Gym Class 3",

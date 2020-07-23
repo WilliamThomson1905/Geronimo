@@ -1950,7 +1950,39 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
+				box-shadow: none;
 				color: #ffffff !important;
+			}
+
+		input[type="submit"].default,
+		input[type="reset"].default,
+		input[type="button"].default,
+		button.default,
+		.button.default {
+			box-shadow: none;
+			border: 2px solid #555555;
+			background-color: #555555;
+			color: #ffffff !important;
+		}
+
+			input[type="submit"].default:hover,
+			input[type="reset"].default:hover,
+			input[type="button"].default:hover,
+			button.default:hover,
+			.button.default:hover {
+				border: 2px solid #555555;
+				background-color: #ffffff;
+				color: #555555 !important;
+			}
+
+			input[type="submit"].default:active,
+			input[type="reset"].default:active,
+			input[type="button"].default:active,
+			button.default:active,
+			.button.primary:active {
+				border: 2px solid #555555;
+				background-color: #ffffff;
+				color: #555555 !important;
 			}
 
 /* Form */

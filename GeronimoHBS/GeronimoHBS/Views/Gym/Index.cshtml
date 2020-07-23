@@ -1,4 +1,5 @@
 ﻿@model GeronimoHBS.Models.Location
+@using GeronimoHBS.Models
 
 @{
     ViewBag.Title = "RoomAvailability";
@@ -8,71 +9,147 @@
 @{ Html.RenderPartial("_Breadcrumbs");}
 
 
-    <div class="container">
-        <a href="/Gym/Timetable/@Model.LocationID" class="button primary">Timetable</a>
-        <br />
-        <h2>Gym Details</h2>
+<!-- MAIN (Center website) -->
+<div class="secondaryContainer">
 
-        <div class="table-wrapper">
-            <table class="alt">
-                <thead>
-                    <tr>
-                        <th>Equipment</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.GymOverview.GymClasses)
-                    {
-                        <tr>
-                            <td>@item.Title</td>
-                            <td>@item.Description</td>
-                        </tr>
-                    }
-                </tbody>
-
-            </table>
-        </div>
-
-
-        <div class="table-wrapper">
-            <table class="alt">
-                <thead>
-                    <tr>
-                        <th>Equipment</th>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.GymOverview.Equipment)
-                    {
-                        <tr>
-                            <td>@item.Name</td>
-                            <td>@item.Description</td>
-                            <td>@item.Quantity</td>
-                        </tr>
-                    }
-                </tbody>
-
-            </table>
-        </div>
-        <p>
-            Everything that's in overview -> but extended.
-            <ol>
-                <li>
-                    Show classes
-                    @Html.ActionLink("Visit Classes", "ClassesDetails", "Gym")
-                </li>
-                <li>
-                    Show equipment
-                </li>
-
-            </ol>
-        </p>
-        <p>
-            @Html.ActionLink("Visit Classes", "ClassesDetails", new { controller = "Gym" }, htmlAttributes: new { Id = Model.GymOverviewID, @class = "button primary" })
-        </p>
-
-
+    <h2>Gym Classes</h2>
+    <p>Geronimo @Model.LocationName has a range of classes that anyone can attend. </p>
+ 
+    <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('cardio')">Cardio</button>
+        <button class="btn" onclick="filterSelection('strength')">Strength</button>
+        <button class="btn" onclick="filterSelection('flexibility')"> Mobility</button>
     </div>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+
+
+
+        @foreach (var item in Model.GymOverview.GymClasses)
+        {
+            <div class="column cardio">
+                <div class="content">
+                    <img src="../../images/hotel/hotel1.jpg" alt="Mountains" style="width:100%">
+                    <div class="innerContent">
+                        <h2>@item.Title</h2>
+                        <p>@item.Description</p>
+                        <a href="/" class="button default small fit">View</a>
+
+                    </div>
+                </div>
+            </div>
+                 
+        }
+
+
+        <!-- END GRID -->
+    </div>
+    <a href="/Gym/Timetable/@Model.LocationID" class="button primary">Timetable</a>
+
+    <!-- END MAIN -->
+</div>
+
+<script>
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+</script>
+
+
+
+@*<div class="secondaryContainer">
+        <h2>Gym Classes</h2>
+        <p>Geronimo @Model.LocationName has a range of classes that anyone can attend. </p>
+        @foreach (var item in Model.GymOverview.GymClasses)
+        {
+        <div class="gymClass">
+            <p>@item.Title</p>
+            <p>@item.Description</p>
+        </div>
+        }
+
+    </div>*@
+
+
+@*<div class="table-wrapper">
+        <table class="alt">
+            <thead>
+                <tr>
+                    <th>Equipment</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.GymOverview.Equipment)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>@item.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>*@
+@*<p>
+        Everything that's in overview -> but extended.
+        <ol>
+            <li>
+                Show classes
+                @Html.ActionLink("Visit Classes", "ClassesDetails", "Gym")
+            </li>
+            <li>
+                Show equipment
+            </li>
+
+        </ol>
+    </p>
+    <p>
+        @Html.ActionLink("Visit Classes", "ClassesDetails", new { controller = "Gym" }, htmlAttributes: new { Id = Model.GymOverviewID, @class = "button primary" })
+    </p>*@
+
+
