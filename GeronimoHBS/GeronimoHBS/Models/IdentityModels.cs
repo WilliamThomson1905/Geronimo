@@ -208,6 +208,7 @@ namespace GeronimoHBS.Models
         public int ClassFocusID { get; set; }
 
         public string Title { get; set; }
+        public string DisplayTitle { get; set; }
         public virtual ICollection<GymClasses> GymClasses { get; set; }
 
     }

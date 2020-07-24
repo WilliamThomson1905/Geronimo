@@ -389,27 +389,34 @@ namespace GeronimoHBS.DAL
             {
                 new ClassFocus
                 {
-                    Title = "FLEXIBILITY"
+                    Title = "FLEXIBILITY",
+                    DisplayTitle = "Flexibility"
                 },
                 new ClassFocus
                 {
-                    Title = "MOBILITY"
+                    Title = "MOBILITY",
+                    DisplayTitle = "Mobility"
 
                 },new ClassFocus
                 {
-                    Title = "MUSCULAR ENDURANCE"
+                    Title = "MUSCULARENDURANCE",
+                    DisplayTitle = "Muscular Endurance"
                 },
                  new ClassFocus
                 {
-                    Title = "MUSCULAR STRENGTH"
+                    Title = "MUSCULARSTRENGTH",
+                    DisplayTitle = "Muscular Strength"
                 },
                 new ClassFocus
                 {
-                    Title = "CARDIOVASCULAR ENDURANCE"
+                    Title = "CARDIOVASCULARENDURANCE",
+                    DisplayTitle = "Cardiovascular Endurance"
 
-                },new ClassFocus
+                },
+                new ClassFocus
                 {
-                    Title = "BODYCOMPOSITION"
+                    Title = "BODYCOMPOSITION",
+                    DisplayTitle = "Body Composition"
                 },
 
             };

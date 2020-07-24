@@ -10,16 +10,20 @@
 
 
 <!-- MAIN (Center website) -->
-<div class="secondaryContainer">
+<div class="container">
 
     <h2>Gym Classes</h2>
     <p>Geronimo @Model.LocationName has a range of classes that anyone can attend. </p>
  
     <div id="myBtnContainer">
-        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-        <button class="btn" onclick="filterSelection('cardio')">Cardio</button>
-        <button class="btn" onclick="filterSelection('strength')">Strength</button>
-        <button class="btn" onclick="filterSelection('flexibility')"> Mobility</button>
+        <button class=" primary small btn active" onclick="filterSelection('all')"> All</button>
+        @foreach(ClassFocus item in ViewBag.ClassFocus)
+        {
+            <button class="primary small btn" onclick="filterSelection('@item.Title')">@item.DisplayTitle</button>
+
+        }
+        @*<button class="btn" onclick="filterSelection('strength')">Strength</button>
+        <button class="btn" onclick="filterSelection('flexibility')"> Mobility</button>*@
     </div>
 
     <!-- Portfolio Gallery Grid -->
@@ -29,9 +33,9 @@
 
         @foreach (var item in Model.GymOverview.GymClasses)
         {
-            <div class="column cardio">
+            <div class="column @foreach (var focus in item.Focus) { @Html.Raw(focus.Title + " ") }">
                 <div class="content">
-                    <img src="../../images/hotel/hotel1.jpg" alt="Mountains" style="width:100%">
+                    <img src="../../images/hotel/hotel1.jpg" alt="Gym Class" style="width:100%">
                     <div class="innerContent">
                         <h2>@item.Title</h2>
                         <p>@item.Description</p>
@@ -96,60 +100,4 @@
         });
     }
 </script>
-
-
-
-@*<div class="secondaryContainer">
-        <h2>Gym Classes</h2>
-        <p>Geronimo @Model.LocationName has a range of classes that anyone can attend. </p>
-        @foreach (var item in Model.GymOverview.GymClasses)
-        {
-        <div class="gymClass">
-            <p>@item.Title</p>
-            <p>@item.Description</p>
-        </div>
-        }
-
-    </div>*@
-
-
-@*<div class="table-wrapper">
-        <table class="alt">
-            <thead>
-                <tr>
-                    <th>Equipment</th>
-                    <th>Description</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.GymOverview.Equipment)
-                {
-                    <tr>
-                        <td>@item.Name</td>
-                        <td>@item.Description</td>
-                        <td>@item.Quantity</td>
-                    </tr>
-                }
-            </tbody>
-
-        </table>
-    </div>*@
-@*<p>
-        Everything that's in overview -> but extended.
-        <ol>
-            <li>
-                Show classes
-                @Html.ActionLink("Visit Classes", "ClassesDetails", "Gym")
-            </li>
-            <li>
-                Show equipment
-            </li>
-
-        </ol>
-    </p>
-    <p>
-        @Html.ActionLink("Visit Classes", "ClassesDetails", new { controller = "Gym" }, htmlAttributes: new { Id = Model.GymOverviewID, @class = "button primary" })
-    </p>*@
-
 
