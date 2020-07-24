@@ -28,6 +28,15 @@ namespace GeronimoHBS.Controllers
             return View(currentLocation);
         }
 
+        // GET: Gym/GymClassDetails/Id
+        public ActionResult GymClassDetails(int Id)
+        {
+            var currentClassDetails = db.GymClasses.Find(Id);
+            
+            ViewBag.Collection = breadcrumbs;
+            return View(currentClassDetails);
+        }
+
         // GET: Gym/ClassesDetails/5
         public ActionResult Timetable(int? Id)
         {

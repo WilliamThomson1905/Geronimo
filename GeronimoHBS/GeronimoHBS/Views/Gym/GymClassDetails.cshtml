@@ -1,0 +1,22 @@
+﻿@model GeronimoHBS.Models.GymClasses
+@using GeronimoHBS.Models
+
+@{ Html.RenderPartial("_Breadcrumbs");}
+
+
+<div class="container">
+    <h2>Gym Class Details - @Model.Title</h2>
+
+    <div class="gymClass">
+        <p>@Model.Description</p>
+    </div>
+        
+    @foreach (var item in Model.Focus)
+    {
+        <p>@item.Title</p>
+    }
+
+</div>
+    
+
+

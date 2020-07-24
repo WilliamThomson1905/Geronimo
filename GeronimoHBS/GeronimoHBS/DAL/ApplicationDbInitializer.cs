@@ -381,6 +381,45 @@ namespace GeronimoHBS.DAL
             context.SaveChanges();
 
 
+            // FLEXIBILITY, MOBILITY, MUSCULARENDURANCE, MUSCULARSTRENGTH, CARDIOVASCULARENDURANCE, BODYCOMPOSITION
+
+            // GLASGOW DATA
+            // Seeded Equipment - Glasgow
+            var classFocus = new List<ClassFocus>
+            {
+                new ClassFocus
+                {
+                    Title = "FLEXIBILITY"
+                },
+                new ClassFocus
+                {
+                    Title = "MOBILITY"
+
+                },new ClassFocus
+                {
+                    Title = "MUSCULAR ENDURANCE"
+                },
+                 new ClassFocus
+                {
+                    Title = "MUSCULAR STRENGTH"
+                },
+                new ClassFocus
+                {
+                    Title = "CARDIOVASCULAR ENDURANCE"
+
+                },new ClassFocus
+                {
+                    Title = "BODYCOMPOSITION"
+                },
+
+            };
+            classFocus.ForEach(l => context.ClassFocus.Add(l));
+            context.SaveChanges();
+
+
+
+
+
             // GLASGOW DATA
             // Seeded Equipment - Glasgow
             var equipmentGlasgow = new List<Equipment>
@@ -415,23 +454,53 @@ namespace GeronimoHBS.DAL
                 new GymClasses {
                     Title ="G_Gym Class 1",
                     Description = "Gym Class 1 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[0],
+                        classFocus[1]
+                    }
+
 
                 },
                 new GymClasses {
                     Title ="G_Gym Class 2",
-                    Description = "Gym Class 2 description. "
+                    Description = "Gym Class 2 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[2],
+                        classFocus[3]
+                    }
                 },
                 new GymClasses {
                     Title ="G_Gym Class 3",
-                    Description = "Gym Class 3 description. "
+                    Description = "Gym Class 3 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[4],
+                        classFocus[5]
+                    }
+
                 },
                 new GymClasses {
                     Title ="G_Gym Class 4",
-                    Description = "Gym Class 4 description. "
+                    Description = "Gym Class 4 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[0],
+                        classFocus[2]
+                    }
+
                 },
                 new GymClasses {
                     Title ="G_Gym Class 5",
-                    Description = "Gym Class 5 description. "
+                    Description = "Gym Class 5 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[0],
+                        classFocus[1],
+                        classFocus[3]
+                    }
+
                 },
 
 

@@ -15,6 +15,7 @@ namespace GeronimoHBS.DAL
         public DbSet<Staff> Staff { get; set; }
         public DbSet<RoomType> RoomType { get; set; }
         public DbSet<GymOverview> GymOverview { get; set; }
+        public DbSet<ClassFocus> ClassFocus { get; set; }
         public DbSet<GymClasses> GymClasses { get; set; }
         public DbSet<Timetable> Timetable { get; set; }
         public DbSet<Equipment> Equipment { get; set; }
