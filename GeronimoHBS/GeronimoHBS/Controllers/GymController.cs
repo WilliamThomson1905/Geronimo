@@ -13,6 +13,9 @@ namespace GeronimoHBS.Controllers
         // GET: Rooms
         public ActionResult Index(int? Id)
         {
+            ViewBag.ClassFocus = from classFocus in db.ClassFocus
+                              select classFocus;
+
             var currentLocation = db.Location.First();
             if (Id == null)
             {
