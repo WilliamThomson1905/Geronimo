@@ -194,10 +194,25 @@ namespace GeronimoHBS.Models
 
         public string Description { get; set; }
 
+
+        public virtual ICollection<ClassFocus> Focus { get; set; }
+
         public virtual ICollection<GymOverview> GymOverview { get; set; }
 
 
     }
+
+    public class ClassFocus
+    {
+        [Key]
+        public int ClassFocusID { get; set; }
+
+        public string Title { get; set; }
+        public virtual ICollection<GymClasses> GymClasses { get; set; }
+
+    }
+
+
 
 
     public class Timetable
