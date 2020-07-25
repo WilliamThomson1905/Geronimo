@@ -16,12 +16,27 @@
     display: inline-block;
 }
 
+.tertiaryContainer {
+    background-color: rgba(85, 85, 85, 0.1);
+    padding: 40px 15%;
+    min-width: 100%;
+    display: inline-block;
+}
+
 .innerContainer {
     margin: 0px;
 }
 
+.jumbo {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0px;
+}
 
 
+.introductionPara {
+    text-decoration: underline;
+}
 
 
 .logo {
@@ -551,7 +566,7 @@ li {
 
 .timetableKey {
     width: 100%;
-    padding: 20px 20px 0px 0px;
+    padding: 10px 20px 0px 0px;
     text-align: right;
 }
 
@@ -662,3 +677,16 @@ li {
     border-bottom: 1px dotted black;
     color: black !important;
 }
+
+
+
+/* Individual class specifics */
+.classFocus {
+    background-color: #555555;
+    color: white;
+    width: auto;
+    padding: 10px 30px 10px 0px;
+    text-align: right;
+
+}
+
