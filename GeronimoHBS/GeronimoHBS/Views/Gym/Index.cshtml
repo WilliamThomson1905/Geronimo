@@ -2,7 +2,7 @@
 @using GeronimoHBS.Models
 
 @{
-    ViewBag.Title = "RoomAvailability";
+    ViewBag.Title = Model.LocationName + " Gym Classes";
 }
 
 
@@ -14,16 +14,16 @@
 
     <h2>Gym Classes</h2>
     <p>Geronimo @Model.LocationName has a range of classes that anyone can attend. </p>
- 
+
     <div id="myBtnContainer">
         <button class=" primary small btn active" onclick="filterSelection('all')"> All</button>
-        @foreach(ClassFocus item in ViewBag.ClassFocus)
+        @foreach (ClassFocus item in ViewBag.ClassFocus)
         {
             <button class="primary small btn" onclick="filterSelection('@item.Title')">@item.DisplayTitle</button>
 
         }
         @*<button class="btn" onclick="filterSelection('strength')">Strength</button>
-        <button class="btn" onclick="filterSelection('flexibility')"> Mobility</button>*@
+            <button class="btn" onclick="filterSelection('flexibility')"> Mobility</button>*@
     </div>
 
     <!-- Portfolio Gallery Grid -->
@@ -36,24 +36,33 @@
             <div class="column @foreach (var focus in item.Focus) { @Html.Raw(focus.Title + " ") }">
                 <div class="content">
                     <img src="../../images/hotel/hotel1.jpg" alt="Gym Class" style="width:100%">
-                    <div class="innerContent">
-                        <h2>@item.Title</h2>
-                        <p>@item.Description</p>
-                        <a href="../../Gym/GymClassDetails/@item.GymClassesID" class="button default small fit">View</a>
-
-                    </div>
+                    <div class="centeredBoxText"><h2>@item.Title</h2></div>
                 </div>
+                <div class="innerContent">
+                    <p>@item.Description.Substring(0, (item.Description.Length > 100) ? 100 : item.Description.Length )</p>
+
+                </div>
+                <a href="../../Gym/GymClassDetails/@item.GymClassesID" class="button default small fit">View</a>
+
             </div>
-                 
+
         }
 
 
         <!-- END GRID -->
     </div>
-    <a href="/Gym/Timetable/@Model.LocationID" class="button primary">Timetable</a>
 
     <!-- END MAIN -->
 </div>
+<div class="tertiaryContainer">
+    <div class="align-center">
+        <a href="/Gym/Timetable/@Model.LocationID" class="button primary">View @Model.LocationName Timetable</a>
+
+    </div>
+</div>
+
+
+
 
 <script>
     filterSelection("all")
