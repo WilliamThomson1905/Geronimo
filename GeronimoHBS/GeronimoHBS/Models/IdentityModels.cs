@@ -192,7 +192,9 @@ namespace GeronimoHBS.Models
 
         public string Title { get; set; }
 
+        public string Introduction { get; set; }
         public string Description { get; set; }
+        public string Benefits { get; set; }
 
 
         public virtual ICollection<ClassFocus> Focus { get; set; }

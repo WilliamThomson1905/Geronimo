@@ -460,53 +460,78 @@ namespace GeronimoHBS.DAL
             {
                 new GymClasses {
                     Title ="G_Gym Class 1",
-                    Description = "Gym Class 1 description. ",
+                    Introduction = "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
+                    Description = "Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. ",
                     Focus = new List<ClassFocus>
                     {
                         classFocus[0],
                         classFocus[1]
-                    }
+                    },
+                    Benefits = "A1 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. "
 
 
                 },
                 new GymClasses {
-                    Title ="G_Gym Class 2",
+                    Title ="G_Gym Class 2", 
+                    Introduction = "Gym Class 2 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
                     Description = "Gym Class 2 description. ",
                     Focus = new List<ClassFocus>
                     {
                         classFocus[2],
                         classFocus[3]
-                    }
+                    }, 
+                    Benefits = "A2 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. "
                 },
                 new GymClasses {
                     Title ="G_Gym Class 3",
                     Description = "Gym Class 3 description. ",
+                     Introduction = "Gym Class 3 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
                     Focus = new List<ClassFocus>
                     {
                         classFocus[4],
                         classFocus[5]
-                    }
+                    },
+                    Benefits = "A3 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. "
 
                 },
                 new GymClasses {
                     Title ="G_Gym Class 4",
+                     Introduction = "Gym Class 4 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
                     Description = "Gym Class 4 description. ",
                     Focus = new List<ClassFocus>
                     {
                         classFocus[0],
                         classFocus[2]
-                    }
+                    },
+                    Benefits = "A4 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. "
 
                 },
                 new GymClasses {
                     Title ="G_Gym Class 5",
+                    Introduction = "Gym Class 5 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
                     Description = "Gym Class 5 description. ",
                     Focus = new List<ClassFocus>
                     {
                         classFocus[0],
                         classFocus[1],
                         classFocus[3]
-                    }
+                    },
+                    Benefits = "A5 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. "
 
                 },
 

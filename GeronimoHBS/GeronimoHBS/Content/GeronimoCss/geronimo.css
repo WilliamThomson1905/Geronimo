@@ -16,12 +16,27 @@
     display: inline-block;
 }
 
+.tertiaryContainer {
+    background-color: rgba(85, 85, 85, 0.1);
+    padding: 40px 15%;
+    min-width: 100%;
+    display: inline-block;
+}
+
 .innerContainer {
     margin: 0px;
 }
 
+.jumbo {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0px;
+}
 
 
+.introductionPara {
+    text-decoration: underline;
+}
 
 
 .logo {
@@ -551,7 +566,7 @@ li {
 
 .timetableKey {
     width: 100%;
-    padding: 20px 20px 0px 0px;
+    padding: 10px 20px 0px 0px;
     text-align: right;
 }
 
@@ -635,15 +650,33 @@ li {
 .content {
     background-color: white;
     color: #555555;
+    position: relative; 
 }
 
+.centeredBoxText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+    .centeredBoxText > h2 {
+        margin: 0 0 0 0;
+        padding: 5px 8px;
+        text-align: center;
+    }
+
+
 .innerContent {
-    padding: 15px;
+    padding: 5px 15px;
+    height: auto;
     background-color: rgba(85, 85, 85, 0.06);
 }
 
     .innerContent p {
         font-size: 0.8em;
+        min-height: 50px;
+        margin-bottom: 0px;
     }
 
 /* The "show" class is added to the filtered elements */
@@ -651,7 +684,7 @@ li {
     display: block;
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 796px) {
 
     .column {
         width: 100%;
@@ -662,3 +695,16 @@ li {
     border-bottom: 1px dotted black;
     color: black !important;
 }
+
+
+
+/* Individual class specifics */
+.classFocus {
+    background-color: #555555;
+    color: white;
+    width: auto;
+    padding: 10px 30px 10px 0px;
+    text-align: right;
+
+}
+
