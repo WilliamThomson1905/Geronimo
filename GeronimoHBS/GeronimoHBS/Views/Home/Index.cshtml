@@ -10,7 +10,7 @@
             <div class="centeredBox">
                 <h5>Welcome to</h5>
                 <h1 id="welcome">Geronimo Hotel</h1>
-
+                <p>Choose from one of our @ViewBag.LocationsCount amazing locations! </p>
 
                 @using (Html.BeginForm("Index", "Hotel", FormMethod.Post))
                 {
@@ -19,7 +19,7 @@
                     <div class="form-group">
                         @Html.DropDownList("LocationID", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
 
-                        <button type="submit" name="name" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        <button type="submit" name="name" class="button btn-primary"><i class="fa fa-search"></i></button>
                     </div>
                     
                 }
@@ -28,15 +28,15 @@
     </div>
 
     <div class="btn-group socialMediaIcons">
-        <a class="btn btn-default btn-primary" href="#">
+        <a target="_blank" class="btn btn-default" href="https://www.youtube.com">
             <i class="fa fa-facebook" title="Geronimo Hotel: Facebook"></i>
         </a>
         &nbsp;
-        <a class="btn btn-default" href="#">
+        <a target="_blank" class="btn btn-default" href="https://www.youtube.com">
             <i class="fa fa-twitter" title="Geronimo Hotel: Twitter"></i>
         </a>
         &nbsp;
-        <a class="btn btn-default" href="#">
+        <a target="_blank" class="btn btn-default" href="https://www.youtube.com">
             <i class="fa fa-instagram" title="Geronimo Hotel: Instagram"></i>
         </a>
 

@@ -3606,8 +3606,8 @@ ul.headingNavigation > li > a {
 		@media screen and (max-width: 736px) {
 
 			#banner {
-				padding: 6em 2em 2em 2em ;
-				min-height: 0;
+				height: 101.5vh;
+				padding: 6em 2em 2em 2em;
 			}
 
 				#banner .inner {
@@ -3633,7 +3633,8 @@ ul.headingNavigation > li > a {
 		@media screen and (max-width: 480px) {
 
 			#banner {
-				padding: 8em 2em 4em 2em ;
+				padding: 8em 2em 4em 2em;
+				height: 101.5vh;
 			}
 
 		}
@@ -3641,7 +3642,7 @@ ul.headingNavigation > li > a {
 		@media screen and (max-width: 360px) {
 
 			#banner {
-				padding: 6em 2em 2em 2em ;
+				padding: 6em 2em 2em 2em;
 			}
 
 		}

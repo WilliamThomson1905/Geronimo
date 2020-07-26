@@ -54,11 +54,35 @@
 
 
 .centeredBox {
-    padding: 30px 70px 50px 70px;
+    padding: 30px 60px 30px 60px;
     margin-top: 40px;
     margin-bottom: 40px;
     background-color: rgba(255, 255, 255, 0.8);
-    
+    color: #555555;
+    line-height: 0.7;
+}
+.centeredBox p{
+
+    line-height: 0.9;
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+
+    .centeredBox {
+        padding: 10px 30px;
+        margin: 5px 0px;
+        line-height: 0.9;
+    }
+
+    h1#welcome {
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+    }
+
+
 }
 
 
@@ -77,6 +101,7 @@
     position: fixed;
     bottom: 15px;
     right: 25px;
+    z-index: 10005;
 }
 
 
@@ -93,23 +118,22 @@
 }
 
 #chooseLocation {
-
 }
 
-    #locations li a {
-        border: 1px solid #ddd;
-        margin-top: -1px; /* Prevent double borders */
-        background-color: #f6f6f6;
-        padding: 8px;
-        text-decoration: none;
-        font-size: 12px;
-        color: black;
-        display: block
-    }
+#locations li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    display: block
+}
 
-        #locations li a:hover:not(.header) {
-            background-color: #808080;
-        }
+    #locations li a:hover:not(.header) {
+        background-color: #808080;
+    }
 
 
 
@@ -128,9 +152,9 @@
     height: 50vh;
 }
 
-.pageOverview > h1, h2, h3 {
-    color: #555555 ;
-}
+    .pageOverview > h1, h2, h3 {
+        color: #555555;
+    }
 
 
 
@@ -164,15 +188,11 @@
     top: 100px;
     left: 0;
     background-color: transparent;
-  
     padding-right: 20px;
     float: left;
     display: inline;
-
     width: 20%;
     min-height: inherit;
-
-
     position: sticky;
 }
 
@@ -181,37 +201,37 @@
     top: 20px;
 }
 
-    .sideNav .servicesLinks a {
-        display: block;
-        padding: 0.5rem 1rem;
-        color: white;
-        text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 100;
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 14px;
-        color: #818181;
-        display: block;
-        border: none;
-        background: none;
-        width: 100%;
-        text-align: right;
-        cursor: pointer;
-        outline: none;
-        letter-spacing: 0.19em;
-        line-height: 1.9em;
+.sideNav .servicesLinks a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 0.19em;
+    line-height: 1.9em;
+}
+
+    .sideNav .servicesLinks a.current, a.current {
+        color: #000000;
     }
 
-        .sideNav .servicesLinks a.current, a.current {
-            color: #000000;
-        }
 
 
-
-.sideNav .servicesLinks a:hover {
-    color: #000000 !important;
-}
+    .sideNav .servicesLinks a:hover {
+        color: #000000 !important;
+    }
 
 
 
@@ -290,7 +310,6 @@ img {
     padding: 4px 10px;
     position: absolute;
     top: 8px;
-
     width: 100%;
     text-align: left;
 }
@@ -308,8 +327,6 @@ img {
 /* The dots/bullets/indicators */
 .slideshowDashes {
     text-align: right;
-
-
 }
 
 
@@ -322,9 +339,9 @@ img {
     transition: background-color 0.6s ease;
 }
 
-    .active, .dot:hover {
-        background-color: white;
-    }
+.active, .dot:hover {
+    background-color: white;
+}
 
 /* Fading animation */
 .fade {
@@ -376,10 +393,10 @@ img {
 }
 
 
-.headersTogether h3 {
-    padding-right: 10%;
-    display: inline;
-}
+    .headersTogether h3 {
+        padding-right: 10%;
+        display: inline;
+    }
 
 .tabLinks {
     cursor: pointer;
@@ -575,7 +592,7 @@ li {
     padding: 10px 15px;
     margin: 0px 5px;
     display: inline;
-    font-family: "Roboto", Helvetica, sans-serif; 
+    font-family: "Roboto", Helvetica, sans-serif;
     font-weight: 200;
     text-transform: uppercase;
 }
@@ -650,7 +667,7 @@ li {
 .content {
     background-color: white;
     color: #555555;
-    position: relative; 
+    position: relative;
 }
 
 .centeredBoxText {
@@ -660,6 +677,7 @@ li {
     transform: translate(-50%, -50%);
     background-color: white;
 }
+
     .centeredBoxText > h2 {
         margin: 0 0 0 0;
         padding: 5px 8px;
@@ -705,6 +723,5 @@ li {
     width: auto;
     padding: 10px 30px 10px 0px;
     text-align: right;
-
 }
 
