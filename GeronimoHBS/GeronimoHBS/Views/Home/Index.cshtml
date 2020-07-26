@@ -10,7 +10,7 @@
             <div class="centeredBox">
                 <h5>Welcome to</h5>
                 <h1 id="welcome">Geronimo Hotel</h1>
-
+                <p>Choose from one of our @ViewBag.LocationsCount amazing locations! </p>
 
                 @using (Html.BeginForm("Index", "Hotel", FormMethod.Post))
                 {
@@ -19,7 +19,7 @@
                     <div class="form-group">
                         @Html.DropDownList("LocationID", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
 
-                        <button type="submit" name="name" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        <button type="submit" name="name" class="button btn-primary"><i class="fa fa-search"></i></button>
                     </div>
                     
                 }

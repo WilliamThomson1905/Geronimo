@@ -11,7 +11,7 @@ namespace GeronimoHBS.Controllers
         public ActionResult Index()
         {
             ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName");
-
+            ViewBag.LocationsCount = db.Location.Count() - 1;
 
             return View();
         }
