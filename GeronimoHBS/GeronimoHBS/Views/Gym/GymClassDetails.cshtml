@@ -31,10 +31,19 @@
     <h2>About @Model.Title</h2>
     <p>@Model.Description</p>
 
+
     <h2>Identified Benefits</h2>
     <p>@Model.Benefits</p>
 
 </div>
-    
+
+<div class="secondaryContainer">
+    <div class="">
+        @{Html.RenderPartial("_ImageGallery");}
+
+    </div>
+</div>
+
+
 
 

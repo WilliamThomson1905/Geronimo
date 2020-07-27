@@ -16,7 +16,7 @@
     <p>Geronimo @Model.LocationName has a range of classes that anyone can attend. </p>
 
     <div id="myBtnContainer">
-        <button class=" primary small btn active" onclick="filterSelection('all')"> All</button>
+        <button class=" primary small btn activeTabOption" onclick="filterSelection('all')"> All</button>
         @foreach (ClassFocus item in ViewBag.ClassFocus)
         {
             <button class="primary small btn" onclick="filterSelection('@item.Title')">@item.DisplayTitle</button>
@@ -103,9 +103,9 @@
     var btns = btnContainer.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
+            var current = document.getElementsByClassName("activeTabOption");
+            current[0].className = current[0].className.replace(" activeTabOption", "");
+            this.className += " activeTabOption";
         });
     }
 </script>
