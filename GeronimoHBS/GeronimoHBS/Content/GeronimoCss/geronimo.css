@@ -340,7 +340,7 @@ img {
 }
 
 .active, .dot:hover {
-    background-color: white;
+    background-color: #555555;
 }
 
 /* Fading animation */
@@ -710,7 +710,12 @@ li {
 }
 
 .active {
-    border-bottom: 1px dotted black;
+    /*  border-bottom: 1px dotted black; */
+    color: black !important;
+}
+
+.activeTabOption {
+    border-bottom: 1px dotted black; 
     color: black !important;
 }
 
