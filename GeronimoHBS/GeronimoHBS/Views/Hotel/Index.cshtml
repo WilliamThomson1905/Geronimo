@@ -10,11 +10,23 @@
     <div class="container">
         <h1>@ViewBag.Location</h1>
         <p>
-            Loved and adored by every damn person on the planet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            @Html.DisplayFor(modelItem => Model.LocationIntroduction)
+
         </p>
+ 
+        <p>Choose from one of our locations:  
+            @Html.RouteLink("Geronimo Hotels", "GetHotel", new { Id = 1, Name = "Geronimo" }, new { @class = " primary small btn activeTabOption" }) - 
+
+            @Html.RouteLink("Glasgow", "GetHotel", new { Id = 2, Name = "Glasgow" }, new { @class = " primary small btn activeTabOption" }) - 
+            @Html.RouteLink("Paris", "GetHotel", new { Id = 3, Name = "Paris" }, new { @class = " primary small btn activeTabOption" }) - 
+            @Html.RouteLink("Amsterdam", "GetHotel", new { Id = 4, Name = "Amsterdam" }, new { @class = " primary small btn activeTabOption" }) - 
+            @Html.RouteLink("New York", "GetHotel", new { Id = 5, Name = "New York" }, new { @class = " primary small btn activeTabOption" }) - 
+
+            @Html.RouteLink("London", "GetHotel", new { Id = 6, Name = "London" }, new { @class = " primary small btn activeTabOption" }) 
+
+        </p>
+        
+
     </div>
 </div>
 
@@ -87,7 +99,7 @@
             @if (Model.RoomOverview != null)
             {          
             <section id="Gym" class="services" style="display:none">
-                @{Html.RenderPartial("_GymOverview");}z
+                @{Html.RenderPartial("_GymOverview");}
             </section>
             }
             <section id="Spa" class="services" style="display:none">

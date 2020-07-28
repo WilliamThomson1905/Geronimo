@@ -200,38 +200,50 @@ namespace GeronimoHBS.DAL
             {
                 new RoomOverview
                 {
-                    Header = "Default Rooms",
-                    Content = "dssssss",
+                    Header = "Geronimo Rooms",
+                    Content = "Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available. ",
                     RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Glasgow Rooms",
-                    Content = "gssssss",
+                    Content = "When booking a room at the Glasgow Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
                     RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Paris Rooms",
-                    Content = "ssgggssss",
+                    Content = "When booking a room at the Paris Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",                    
                     RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Amsterdam Rooms",
-                    Content = "ssssdassss",
+                    Content = "When booking a room at the Amsterdam Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. " +
+                    "When booking a room at the Amsterdam Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
                     RoomType = roomTypes
                 }, 
                 new RoomOverview
                 {
                     Header = "New York Rooms",
-                    Content = "ssaassss",
+                    Content = "When booking a room at the New York New York Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. "+
+                    "When booking a room at the New York Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
                     RoomType = roomTypes
                 },
                 new RoomOverview
                 {
-                    Header = "London Rooms",
-                    Content = "ssaassss",
+                    Header = "London Rooms", 
+                    Content = "When booking a room at the London Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. "+
+                    "When booking a room at the London Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
                     RoomType = roomTypes
                 },
 
@@ -245,140 +257,140 @@ namespace GeronimoHBS.DAL
 
             // DEFAULTY DATA
             // Seeded Equipment - Default
-            var equipmentDefault = new List<Equipment>
-            {
-                new Equipment
-                {
-                    Name = "D_item1",
-                    Description = "item1 description item1 description item1 description. ",
-                    Quantity = 13
-                },
-                new Equipment
-                {
-                    Name = "D_item2",
-                    Description = "item2 description item2 description item2 description. ",
-                    Quantity = 21
+            //var equipmentDefault = new List<Equipment>
+            //{
+            //    new Equipment
+            //    {
+            //        Name = "D_item1",
+            //        Description = "item1 description item1 description item1 description. ",
+            //        Quantity = 13
+            //    },
+            //    new Equipment
+            //    {
+            //        Name = "D_item2",
+            //        Description = "item2 description item2 description item2 description. ",
+            //        Quantity = 21
 
-                },
-                new Equipment
-                {
-                    Name = "D_item3",
-                    Description = "item3 description item3 description item3 description. ",
-                    Quantity = 7
+            //    },
+            //    new Equipment
+            //    {
+            //        Name = "D_item3",
+            //        Description = "item3 description item3 description item3 description. ",
+            //        Quantity = 7
 
-                }
+            //    }
 
-            };
-            equipmentDefault.ForEach(l => context.Equipment.Add(l));
-            context.SaveChanges();
+            //};
+            //equipmentDefault.ForEach(l => context.Equipment.Add(l));
+            //context.SaveChanges();
 
             // Seeded Gym Classes - Default    
-            var gymClassesDefault = new List<GymClasses>()
-            {
-                new GymClasses {
-                    Title ="D_Gym Class 1",
-                    Description = "Gym Class 1 description. ",
+            //var gymClassesDefault = new List<GymClasses>()
+            //{
+            //    new GymClasses {
+            //        Title ="D_Gym Class 1",
+            //        Description = "Gym Class 1 description. ",
 
-                },
-                new GymClasses {
-                    Title ="D_Gym Class 2",
-                    Description = "Gym Class 2 description. "
-                },
-                new GymClasses {
-                    Title ="D_Gym Class 3",
-                    Description = "Gym Class 3 description. "
-                },
-                new GymClasses {
-                    Title ="D_Gym Class 4",
-                    Description = "Gym Class 4 description. "
-                },
-                new GymClasses {
-                    Title ="D_Gym Class 5",
-                    Description = "Gym Class 5 description. "
-                },
+            //    },
+            //    new GymClasses {
+            //        Title ="D_Gym Class 2",
+            //        Description = "Gym Class 2 description. "
+            //    },
+            //    new GymClasses {
+            //        Title ="D_Gym Class 3",
+            //        Description = "Gym Class 3 description. "
+            //    },
+            //    new GymClasses {
+            //        Title ="D_Gym Class 4",
+            //        Description = "Gym Class 4 description. "
+            //    },
+            //    new GymClasses {
+            //        Title ="D_Gym Class 5",
+            //        Description = "Gym Class 5 description. "
+            //    },
 
 
-            };
-            gymClassesDefault.ForEach(l => context.GymClasses.Add(l));
-            context.SaveChanges();
+            //};
+            //gymClassesDefault.ForEach(l => context.GymClasses.Add(l));
+            //context.SaveChanges();
 
             // Seeded Timetable - Default
-            var timetableDefault = new List<Timetable>
-            {
-                // MONDAY
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "Tim Timothy",
-                    GymClasses = gymClassesDefault[0],
-                    GymClassesID = gymClassesDefault[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.TUESDAY,
-                    StartTime = new TimeSpan(8, 0, 0),
-                    EndTime = new TimeSpan(10, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "Tim Timothy",
-                    GymClasses = gymClassesDefault[0],
-                    GymClassesID = gymClassesDefault[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.WEDNESDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "Tim Timothy",
-                    GymClasses = gymClassesDefault[1],
-                    GymClassesID = gymClassesDefault[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.THURSDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.CANCELLED,
-                    Instructor = "Tim Timothy",
-                    GymClasses = gymClassesDefault[3],
-                    GymClassesID = gymClassesDefault[3].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.FRIDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "Tim Timothy",
-                    GymClasses = gymClassesDefault[1],
-                    GymClassesID = gymClassesDefault[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SATURDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "Tim Timothy",
-                    GymClasses = gymClassesDefault[4],
-                    GymClassesID = gymClassesDefault[4].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SUNDAY,
-                    StartTime = new TimeSpan(14, 0, 0),
-                    EndTime = new TimeSpan(18, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "Tim Timothy",
-                    GymClasses = gymClassesDefault[2],
-                    GymClassesID = gymClassesDefault[2].GymClassesID
-                }
-            };
-            timetableDefault.ForEach(l => context.Timetable.Add(l));
-            context.SaveChanges();
+            //var timetableDefault = new List<Timetable>
+            //{
+            //    // MONDAY
+            //    new Timetable()
+            //    {
+            //        Day = Day.MONDAY,
+            //        StartTime = new TimeSpan(7, 0, 0),
+            //        EndTime = new TimeSpan(12, 0, 0),
+            //        GymClassStatus = GymClassStatus.FULLYBOOKED,
+            //        Instructor = "Tim Timothy",
+            //        GymClasses = gymClassesDefault[0],
+            //        GymClassesID = gymClassesDefault[0].GymClassesID
+            //    },
+            //    new Timetable()
+            //    {
+            //        Day = Day.TUESDAY,
+            //        StartTime = new TimeSpan(8, 0, 0),
+            //        EndTime = new TimeSpan(10, 0, 0),
+            //        GymClassStatus = GymClassStatus.AVAILABLE,
+            //        Instructor = "Tim Timothy",
+            //        GymClasses = gymClassesDefault[0],
+            //        GymClassesID = gymClassesDefault[0].GymClassesID
+            //    },
+            //    new Timetable()
+            //    {
+            //        Day = Day.WEDNESDAY,
+            //        StartTime = new TimeSpan(7, 0, 0),
+            //        EndTime = new TimeSpan(12, 0, 0),
+            //        GymClassStatus = GymClassStatus.AVAILABLE,
+            //        Instructor = "Tim Timothy",
+            //        GymClasses = gymClassesDefault[1],
+            //        GymClassesID = gymClassesDefault[1].GymClassesID
+            //    },
+            //    new Timetable()
+            //    {
+            //        Day = Day.THURSDAY,
+            //        StartTime = new TimeSpan(7, 0, 0),
+            //        EndTime = new TimeSpan(12, 0, 0),
+            //        GymClassStatus = GymClassStatus.CANCELLED,
+            //        Instructor = "Tim Timothy",
+            //        GymClasses = gymClassesDefault[3],
+            //        GymClassesID = gymClassesDefault[3].GymClassesID
+            //    },
+            //    new Timetable()
+            //    {
+            //        Day = Day.FRIDAY,
+            //        StartTime = new TimeSpan(7, 0, 0),
+            //        EndTime = new TimeSpan(12, 0, 0),
+            //        GymClassStatus = GymClassStatus.AVAILABLE,
+            //        Instructor = "Tim Timothy",
+            //        GymClasses = gymClassesDefault[1],
+            //        GymClassesID = gymClassesDefault[1].GymClassesID
+            //    },
+            //    new Timetable()
+            //    {
+            //        Day = Day.SATURDAY,
+            //        StartTime = new TimeSpan(7, 0, 0),
+            //        EndTime = new TimeSpan(12, 0, 0),
+            //        GymClassStatus = GymClassStatus.AVAILABLE,
+            //        Instructor = "Tim Timothy",
+            //        GymClasses = gymClassesDefault[4],
+            //        GymClassesID = gymClassesDefault[4].GymClassesID
+            //    },
+            //    new Timetable()
+            //    {
+            //        Day = Day.SUNDAY,
+            //        StartTime = new TimeSpan(14, 0, 0),
+            //        EndTime = new TimeSpan(18, 0, 0),
+            //        GymClassStatus = GymClassStatus.AVAILABLE,
+            //        Instructor = "Tim Timothy",
+            //        GymClasses = gymClassesDefault[2],
+            //        GymClassesID = gymClassesDefault[2].GymClassesID
+            //    }
+            //};
+            //timetableDefault.ForEach(l => context.Timetable.Add(l));
+            //context.SaveChanges();
 
 
             // FLEXIBILITY, MOBILITY, MUSCULARENDURANCE, MUSCULARSTRENGTH, CARDIOVASCULARENDURANCE, BODYCOMPOSITION
@@ -433,19 +445,19 @@ namespace GeronimoHBS.DAL
             {
                 new Equipment
                 {
-                    Name = "G_item1",
-                    Description = "item1 description item1 description item1 description. ",
+                    Name = "Glasgow Gym Item 1",
+                    Description = "Glasgow Gym Item 1 description item1 description item1 description. Glasgow Gym Item 1 description item1 description item1 description. ",
                     Quantity = 13
                 },
                 new Equipment
                 {
-                    Name = "G_item2",
+                    Name = "Glasgow Gym Item 2",
                     Description = "item2 description item2 description item2 description. ",
                     Quantity = 21
 
                 },new Equipment
                 {
-                    Name = "G_item3",
+                    Name = "Glasgow Gym Item 3",
                     Description = "item3 description item3 description item3 description. ",
                     Quantity = 7
 
@@ -459,8 +471,8 @@ namespace GeronimoHBS.DAL
             var gymClassesGlasgow = new List<GymClasses>()
             {
                 new GymClasses {
-                    Title ="G_Gym Class 1",
-                    Introduction = "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    Title ="HIIT the Floor",
+                    Introduction = "HIIT the Floor introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
                     "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
                     Description = "Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. ",
                     Focus = new List<ClassFocus>
@@ -1179,49 +1191,56 @@ namespace GeronimoHBS.DAL
             {
                 new GymOverview
                 {
-                    Header = "Default Gym",
-                    Content = "dssssss",
-                    Equipment = equipmentDefault,
-                    GymClasses = gymClassesDefault,
-                    Timetable = timetableDefault
+                    GymOverviewID = 1,
+                    Header = "Geronimo Gym",
+                    Content = "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. " +
+                    "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. ",
+                    // Equipment = equipmentDefault,
+                    // GymClasses = gymClassesDefault,
+                    // Timetable = timetableDefault
                 },
                 new GymOverview
                 {
+                    GymOverviewID = 2,
                     Header = "Glasgow Gym",
-                    Content = "gssssss",
+                    Content = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentGlasgow,
                     GymClasses = gymClassesGlasgow,
                     Timetable = timetableGlasgow
 
                 },
                 new GymOverview
-                {
+                {                    
+                    GymOverviewID = 3,
                     Header = "Paris Gym",
-                    Content = "ssgggssss",
+                    Content = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentParis,
                     GymClasses = gymClassesParis,
                     Timetable = timetableParis
                 },
                 new GymOverview
                 {
+                    GymOverviewID = 4,
                     Header = "Amsterdam Gym",
-                    Content = "ssssdassss",
+                    Content = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentAmsterdam,
                     GymClasses = gymClassesAmsterdam,
                     Timetable = timetableAmsterdam
                 },
                 new GymOverview
                 {
+                    GymOverviewID = 5,
                     Header = "New York Gym",
-                    Content = "ssaassss",
+                    Content = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentNewYork,
                     GymClasses = gymClassesNewYork,
                     Timetable = timetableNewYork
                 },
                 new GymOverview
                 {
+                    GymOverviewID = 6,
                     Header = "London Gym",
-                    Content = "ssaassss",
+                    Content = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentLondon,
                     GymClasses = gymClassesLondon,
                     Timetable = timetableLondon
@@ -1251,42 +1270,59 @@ namespace GeronimoHBS.DAL
             {
                 new Location{
                     LocationName="Geronimo Hotels", 
-                    LocationIntroduction="Default Data Introduction details. ",
+                    LocationIntroduction="Geronimo Hotels is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " + 
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " + 
+                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " + 
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
                     RoomOverviewID = 1,
                     GymOverviewID = 1
                 },
                 new Location{
-                    LocationName="Glasgow", 
-                    LocationIntroduction="Glasgow Introduction details. Glasgow Introduction details. Glasgow Introduction details. ",
-                    RoomOverviewID = 2,
+                    LocationName="Glasgow",
+                    LocationIntroduction="Geronimo Hotels - Glasgow is a lovely hotel - but there's more - anyone who attends the gym acquires great Scottish powers. They can speak sooo fast that it's almost incomprehensible. Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur aliqua consectetur consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                     RoomOverviewID = 2,
                     GymOverviewID = 2
 
                 },
                 new Location{
-                    LocationName="Paris", 
-                    LocationIntroduction="Paris Introductions details",
+                    LocationName="Paris",
+                    LocationIntroduction="Geronimo Hotels - Paris is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur amet, consectetur amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "incididunt ut labore et doloredoloredoloredolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 3,
                     GymOverviewID = 3
 
                 },
                 new Location{
-                    LocationName="Amsterdam", 
-                    LocationIntroduction="Amsterdam Introduction details.",                 
+                    LocationName="Amsterdam",
+                    LocationIntroduction="Geronimo Hotels - Amsterdam is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 4,
                     GymOverviewID = 4
                 },
                 new Location{
-                    LocationName="New York", 
-                    LocationIntroduction="New York Introduction details.",
+                    LocationName="New York",
+                    LocationIntroduction="Geronimo Hotels - New York is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "incididunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 5,
                     GymOverviewID = 5
                 },
                 new Location{
-                    LocationName="London", 
-                    LocationIntroduction="London Introduction details.",                    
+                    LocationName="London",
+                    LocationIntroduction="Geronimo Hotels - London is located in the centre of London - but there's more - it's situated . Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",                     
                     RoomOverviewID = 6,
                     GymOverviewID = 6
-}
+                }
 
             };
             locations.ForEach(l => context.Location.Add(l));
