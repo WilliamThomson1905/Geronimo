@@ -568,6 +568,46 @@ namespace GeronimoHBS.DAL
                 },
                 new Timetable()
                 {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[0],
+                    GymClassesID = gymClassesGlasgow[0].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(14, 0, 0),
+                    EndTime = new TimeSpan(17, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[0],
+                    GymClassesID = gymClassesGlasgow[0].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(8, 0, 0),
+                    EndTime = new TimeSpan(11, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[1],
+                    GymClassesID = gymClassesGlasgow[1].GymClassesID
+                },
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(17, 0, 0),
+                    EndTime = new TimeSpan(19, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[2],
+                    GymClassesID = gymClassesGlasgow[2].GymClassesID
+                },
+                new Timetable()
+                {
                     Day = Day.TUESDAY,
                     StartTime = new TimeSpan(8, 0, 0),
                     EndTime = new TimeSpan(10, 0, 0),
