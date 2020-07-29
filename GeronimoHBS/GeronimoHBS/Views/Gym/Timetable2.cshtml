@@ -84,8 +84,13 @@
                 <div id="@days[i]" class="container tabcontent"  @if(i == 0) { @Html.Raw("style=\"display: block;\"") }>
                     @foreach (var item in listOfClasses)
                     {
-                        <div class="classBoard">
-                            <div class="className">@item.GymClasses.Title</div>
+                        <div class="classBoard @if (item.GymClassStatus == GymClassStatus.FULLYBOOKED) { @Html.Raw(" bookedClass")}">
+                            <div class="classMore">
+                                <a target="_blank" href="../../Gym/GymClassDetails/@item.GymClassesID" class="button primary">Class Details</a>
+
+
+                            </div>
+                            <div class="className"><h2>@item.GymClasses.Title</h2></div>
                             <div class="classTime">
                                 @string.Format("{0:00}:{1:00}", item.StartTime.Hours, item.StartTime.Minutes)
                                 &nbsp;-&nbsp;
@@ -121,76 +126,6 @@
 
 
 
-            @*@for (int i = 0; i <= 6; i++)
-        {
-            string[] days = { "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY" };
-            var day = days[i];
-            var listOfClasses = Model.Monday;
-
-            switch (day)
-            {
-                case "MONDAY":
-                    listOfClasses = Model.Monday;
-                    break;
-                case "TUESDAY":
-                    listOfClasses = Model.Tuesday;
-                    break;
-                case "WEDNESDAY":
-                    listOfClasses = Model.Wednesday;
-                    break;
-                case "THURSDAY":
-                    listOfClasses = Model.Thursday;
-                    break;
-                case "FRIDAY":
-                    listOfClasses = Model.Friday;
-                    break;
-                case "SATURDAY":
-                    listOfClasses = Model.Saturday;
-                    break;
-                default:
-                    listOfClasses = Model.Sunday;
-                    break;
-            }
-            <div class="timetableColumn">
-                <h2 class="timetableColumnTitle">@days[i].Substring(0, 3).</h2>
-                <ul>
-                    @foreach (var item in listOfClasses)
-                    {
-                        switch (item.GymClassStatus)
-                        {
-                            case GymClassStatus.FULLYBOOKED:
-                                classBoard = "classBoardBooked";
-                                break;
-                            case GymClassStatus.CANCELLED:
-                                classBoard = "classBoardCancelled";
-                                break;
-                            default:
-                                classBoard = "classBoardAvailable";
-                                break;
-                        }
-
-
-                        <li class="classBoard @classBoard">
-                            <article class="">
-                                <div class="classStatus"></div>
-                                <a href="#">
-                                    <div class="className">@item.GymClasses.Title</div>
-                                    <div class="classTime">
-                                        @string.Format("{0:00}:{1:00}", item.StartTime.Hours, item.StartTime.Minutes)
-                                        &nbsp;-&nbsp;
-                                        @string.Format("{0:00}:{1:00}", item.EndTime.Hours, item.EndTime.Minutes)
-
-                                    </div>
-                                    <div class="classInstructor">@item.Instructor </div>
-                                </a>
-
-                            </article>
-                        </li>
-                    }
-                </ul>
-
-            </div>
-        }*@
 
 
         </div>
