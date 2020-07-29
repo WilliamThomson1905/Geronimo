@@ -15,7 +15,7 @@
         </p>
  
         <p>Choose from one of our locations:  
-            @Html.RouteLink("Geronimo Hotels", "GetHotel", new { Id = 1, Name = "Geronimo" }, new { @class = " primary small btn activeTabOption" }) - 
+            @Html.RouteLink("Geronimo Overview", "GetHotel", new { Id = 1, Name = "Geronimo" }, new { @class = " primary small btn activeTabOption" }) - 
 
             @Html.RouteLink("Glasgow", "GetHotel", new { Id = 2, Name = "Glasgow" }, new { @class = " primary small btn activeTabOption" }) - 
             @Html.RouteLink("Paris", "GetHotel", new { Id = 3, Name = "Paris" }, new { @class = " primary small btn activeTabOption" }) - 
@@ -96,7 +96,7 @@
             </section>
             }
 
-            @if (Model.RoomOverview != null)
+            @if (Model.GymOverview != null)
             {          
             <section id="Gym" class="services" style="display:none">
                 @{Html.RenderPartial("_GymOverview");}

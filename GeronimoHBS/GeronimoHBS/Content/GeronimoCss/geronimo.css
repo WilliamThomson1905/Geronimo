@@ -455,93 +455,70 @@ li {
     width: 13.1%;
 }
 
+.timetableColumnTitle:hover {
+    background-color: azure;
+    color: #555555;
+    border: 6px solid;  
+}
+
+.activeDaySelected {
+    background-color: azure !important;
+    color: #555555 !important;
+    border: 6px solid !important;
+}
+
+
 .timetableColumnTitle {
     padding-top: 35px;
     padding-bottom: 35px;
     text-align: center;
     background-color: #555555;
     color: white;
+    border: 6px solid transparent;
+}
+
+#dayFilter {
+    width: 100%;
+    height: 160px;
+    display: block;
 }
 
 .classBoard {
-    background-color: rgba(128, 128, 128, 0.1);
+    border: 2px solid transparent;
+    width: 100%;
+    display: block;
+    background-color: rgba(128, 128, 128, 0.01);
     margin: 10px 0px;
-    height: 160px;
     font-weight: 200;
     font-family: "Roboto", Helvetica, sans-serif;
-}
-
-.classBoardAvailable {
-    background-color: rgba(85, 85, 85, 0.1);
-}
-
-.classBoardBooked {
-    background-color: rgba(125, 125, 125, 0.5);
-    color: white;
-}
-
-.classBoardCancelled {
-    background-color: rgba(35, 35, 35, 0.5);
-    color: white;
-}
-
-
-    .classBoardBooked:hover, .classBoardCancelled:hover {
-        color: rgba(132, 153, 231, 0);
-    }
-
-    .classBoardBooked a:hover, .classBoardCancelled a:hover {
-        color: rgba(132, 153, 231, 0) !important;
-        pointer-events: none !important;
-        cursor: default;
-        height: auto;
-    }
-
-.classBoardBooked:hover:after {
+    padding: 10px 20px;
     position: relative;
-    content: "Fully Booked";
-    color: white;
-    text-transform: uppercase;
-    top: -50px;
 }
 
-.classBoardCancelled:hover:after {
-    position: relative;
-    content: "Cancelled";
-    color: white;
-    text-transform: uppercase;
-    top: -50px;
+.classMore {
+    position: absolute;
+    top: 50px;
+    right: 20px;
 }
 
+.bookedClass {
+    background-color: rgba(128, 128, 128, 0.2);
+}
 
-
-
-
-
-
-
-
-
-
+.classTime,
+.classInstructor {
+   
+}
 
 .className {
-    font-weight: 200;
     padding-top: 10px;
     font-size: 1.0em;
     display: block;
+    width: 100%;
     text-transform: uppercase;
     font-family: "Roboto", Helvetica, sans-serif;
 }
 
-.classTime {
-    font-style: oblique;
-    font-size: small;
-}
-
-.classInstructor {
-    font-style: oblique;
-    font-size: small;
-}
 
 @media only screen and (max-width: 1000px) {
 
@@ -620,6 +597,8 @@ li {
         margin: 0px 2px;
     }
 }
+
+
 
 
 

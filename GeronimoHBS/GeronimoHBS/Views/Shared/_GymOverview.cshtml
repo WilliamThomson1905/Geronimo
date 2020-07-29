@@ -9,7 +9,8 @@
 
 <p>
     @*@Html.ActionLink("Gym", "Index", new { controller = "Gym" }, htmlAttributes: new { Id = Model.GymOverviewID, @class = "button primary" })*@
-    <a href="/Gym/Index/@Model.GymOverviewID" class = "button primary">Gym</a>
+    <a href="/Gym/Index/@Model.GymOverviewID" class = "button primary">View @Model.LocationName Gym Classes</a>
+    <a href="/Gym/Timetable/@Model.LocationID" class="button primary">View @Model.LocationName Timetable</a>
 
 </p>
 
@@ -27,6 +28,10 @@
     in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
     sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
     laborum.
+
+
+    
+    
 </p>
 
 

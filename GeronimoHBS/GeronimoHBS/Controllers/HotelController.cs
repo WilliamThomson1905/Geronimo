@@ -14,7 +14,7 @@ namespace GeronimoHBS.Controllers
         public ActionResult Index(int Id, string name)
         {
             var searchLocation = db.Location.Find(Id);
-            ViewBag.Location = "Geronimo Hotels - " + searchLocation.LocationName.ToString();
+            ViewBag.Location = searchLocation.LocationName.ToString();
 
             return View(searchLocation);
         }
