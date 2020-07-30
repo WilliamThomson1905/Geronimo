@@ -580,52 +580,6 @@ li {
 
 
 
-.timetableKey {
-    width: 100%;
-    padding: 10px 20px 0px 0px;
-    text-align: right;
-}
-
-.statusKey {
-    width: 33%;
-    padding: 10px 15px;
-    margin: 0px 5px;
-    display: inline;
-    font-family: "Roboto", Helvetica, sans-serif;
-    font-weight: 200;
-    text-transform: uppercase;
-}
-
-.statusKeyFullyBooked {
-    background-color: rgba(199, 91, 155, 0.45);
-    color: white;
-}
-
-
-.statusKeyCancelled {
-    background-color: rgba(174, 133, 202, 0.35);
-    color: white;
-}
-
-
-
-
-@media only screen and (max-width: 1000px) {
-
-    .statusKey {
-        min-width: 100%;
-        display: block;
-        padding: 8px 5px;
-        margin: 0px 2px;
-    }
-}
-
-
-
-
-
-
-
 
 
 
