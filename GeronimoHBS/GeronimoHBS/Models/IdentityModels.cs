@@ -73,12 +73,17 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel has rooms 
         public virtual RoomOverview RoomOverview { get; set; }
 
-
-
         // Foriegn key 
         public int GymOverviewID { get; set; }
         // Corresponding navigation property - each hotel might have a gym 
         public virtual GymOverview GymOverview { get; set; }
+
+
+
+        // Foriegn key 
+        public int SpaOverviewID { get; set; }
+        // Corresponding navigation property - each hotel might have a gym 
+        public virtual SpaOverview SpaOverview { get; set; }
     }
 
     public class RoomOverview
@@ -275,11 +280,58 @@ namespace GeronimoHBS.Models
 
 
 
-
-    public class Spa
+    public class SpaOverview
     {
+        [Key]
+        public int SpaOverviewID { get; set; }
+
+        public string Header { get; set; }
+
+        public string IntroductionParagraph { get; set; }
+        public string MainContent { get; set; }
+
+        public string SecondaryContent { get; set; }
+
+
+        // Navigation property - multiple promotions per spa:  
+        // the same promotions can be used between locations. 
+        public virtual ICollection<SpaPromotion> SpaPromotions { get; set; }
+    }
+
+
+
+    public class SpaPromotion
+    {
+        public int SpaPromotionID { get; set; }
+
+        public string Title { get; set; }
+        public string Description { get; set; }
+
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+
+
+        public virtual ICollection<SpaOverview> SpaOverview { get; set; }
+
+        // Foriegn key 
+        public int PromotionCategoryID { get; set; }
+        // Corresponding navigation property - each promotion has a type/category 
+        public virtual PromotionCategory PromotionCategory { get; set; }
+
 
     }
+
+    public class PromotionCategory
+    {
+        public int PromotionCategoryID { get; set; }
+
+        public string PromotionName { get; set; }
+    }
+
+
+
+
+
 
     public class Event
     {

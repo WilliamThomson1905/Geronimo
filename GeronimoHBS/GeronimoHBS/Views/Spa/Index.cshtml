@@ -1,28 +1,33 @@
-﻿
+﻿@model GeronimoHBS.Models.SpaOverview
+@using GeronimoHBS.Models
+
+
 @{
-    ViewBag.Title = "RoomAvailability";
+    ViewBag.Title = "Geronimo Spa";
 }
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
 
 <div class="container">
+    <h2>Promotions - Events</h2>
+    @foreach (var item in Model.SpaPromotions)
+    {
+        <h3>@item.Title</h3>
+        <p>@item.StartDate</p>
+        <p>@item.EndDate</p>
+        <p>@item.PromotionCategory.PromotionName</p>
+        <p>@item.Description</p>
+        <hr />
+    }
 
-    <h2>Spa Details</h2>
-    <p>
-        Everything that's in overview -> but extended.
-        <ol>
-            <li>
-                Show availability
-            </li>
-            <li>
-                Show equipment/setup
-            </li>
-            <li>
-                link to gym (Gym/Index.cshtml)
-            </li>
+   
+</div>
 
-        </ol>
-    </p>
+<div class="tertiaryContainer">
+    <div class="align-center">
+        <a href="/Gym/Index/@ViewBag.Location.LocationID" class="button primary">Visit @ViewBag.Location.LocationName Gym</a>
+        <a href="/Gym/Timetable/@ViewBag.Location.LocationID" class="button primary">View @ViewBag.Location.LocationName Timetable</a>
 
-</div> 
+    </div>
+</div>

@@ -13,13 +13,24 @@ namespace GeronimoHBS.DAL
     {
 
         public DbSet<Staff> Staff { get; set; }
-        public DbSet<RoomType> RoomType { get; set; }
+
+
         public DbSet<GymOverview> GymOverview { get; set; }
-        public DbSet<ClassFocus> ClassFocus { get; set; }
         public DbSet<GymClasses> GymClasses { get; set; }
         public DbSet<Timetable> Timetable { get; set; }
         public DbSet<Equipment> Equipment { get; set; }
+        public DbSet<ClassFocus> ClassFocus { get; set; }
+
+
+        public DbSet<SpaOverview> SpaOverview { get; set; }
+        public DbSet<SpaPromotion> SpaPromotion { get; set; }
+        public DbSet<PromotionCategory> PromotionCategory { get; set; }
+
+
         public DbSet<RoomOverview> RoomOverview { get; set; }
+        public DbSet<RoomType> RoomType { get; set; }
+
+
         public DbSet<Location> Location { get; set; }
 
 
