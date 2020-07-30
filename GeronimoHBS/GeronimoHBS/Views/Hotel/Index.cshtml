@@ -5,7 +5,6 @@
     ViewBag.Title = "Welcome to Geronimo Hotel";
 }
 
-
 <div class="pageOverview">
     <div class="container">
         <h1>@ViewBag.Location</h1>
@@ -14,22 +13,24 @@
 
         </p>
  
-        <p>Choose from one of our locations:  
-            @Html.RouteLink("Geronimo Overview", "GetHotel", new { Id = 1, Name = "Geronimo" }, new { @class = " primary small btn activeTabOption" }) - 
-
-            @Html.RouteLink("Glasgow", "GetHotel", new { Id = 2, Name = "Glasgow" }, new { @class = " primary small btn activeTabOption" }) - 
-            @Html.RouteLink("Paris", "GetHotel", new { Id = 3, Name = "Paris" }, new { @class = " primary small btn activeTabOption" }) - 
-            @Html.RouteLink("Amsterdam", "GetHotel", new { Id = 4, Name = "Amsterdam" }, new { @class = " primary small btn activeTabOption" }) - 
-            @Html.RouteLink("New York", "GetHotel", new { Id = 5, Name = "New York" }, new { @class = " primary small btn activeTabOption" }) - 
-
-            @Html.RouteLink("London", "GetHotel", new { Id = 6, Name = "London" }, new { @class = " primary small btn activeTabOption" }) 
-
-        </p>
-        
 
     </div>
 </div>
 
+<div class="scrollmenu">
+        Choose from one of our locations:
+    <p>
+        @Html.RouteLink("Geronimo Overview", "GetHotel", new { Id = 1, Name = "Geronimo" }, new { @class = " primary small btn activeTabOption" }) -
+
+        @Html.RouteLink("Glasgow", "GetHotel", new { Id = 2, Name = "Glasgow" }, new { @class = " primary small btn activeTabOption" }) -
+        @Html.RouteLink("Paris", "GetHotel", new { Id = 3, Name = "Paris" }, new { @class = " primary small btn activeTabOption" }) -
+        @Html.RouteLink("Amsterdam", "GetHotel", new { Id = 4, Name = "Amsterdam" }, new { @class = " primary small btn activeTabOption" }) -
+        @Html.RouteLink("New York", "GetHotel", new { Id = 5, Name = "New York" }, new { @class = " primary small btn activeTabOption" }) -
+
+        @Html.RouteLink("London", "GetHotel", new { Id = 6, Name = "London" }, new { @class = " primary small btn activeTabOption" })
+
+    </p>
+</div>
 
 
 <div class="container">

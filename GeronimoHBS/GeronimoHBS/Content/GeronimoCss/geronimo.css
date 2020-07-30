@@ -23,6 +23,31 @@
     display: inline-block;
 }
 
+
+@media only screen and (max-width: 736px) {
+    .container {
+        margin: 0px 5%;
+        padding: 15px 25px;
+        min-width: 90%;
+        display: inline-block;
+        /*background-color: rgba(888, 888, 888, 0.7);*/
+    }
+
+    .secondaryContainer {
+        margin: 0px 5% 80px 5%;
+        padding: 20px 40px;
+        min-width: 90%;
+        display: inline-block;
+    }
+
+    .tertiaryContainer {
+        background-color: rgba(85, 85, 85, 0.1);
+        padding: 40px 15%;
+        min-width: 100%;
+        display: inline-block;
+    }
+}
+
 .innerContainer {
     margin: 0px;
 }
@@ -149,12 +174,32 @@
     background-color: rgba(55, 71, 79, 0.1);
     fill-opacity: 0.6;
     padding: 20px 30px;
-    height: 50vh;
+    height: auto;
+  
 }
 
     .pageOverview > h1, h2, h3 {
         color: #555555;
     }
+
+
+
+@media only screen and (max-width: 736px) {
+    .pageOverview {
+        background-color: rgba(55, 71, 79, 0.1);
+        fill-opacity: 0.6;
+        padding: 10px 15px;
+        height: auto;
+    }
+
+        .pageOverview > h1, h2, h3 {
+            color: #555555;
+        }
+
+   
+}
+
+
 
 
 
@@ -684,4 +729,29 @@ li {
     padding: 10px 30px 10px 0px;
     text-align: right;
 }
+
+
+
+
+/* scroll horizontal menu */
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    border-top: 1px solid #555555;
+    border-bottom: 1px solid #555555;
+    padding: 15px 10px 0px 10px;
+    margin: 0px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollmenu::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollmenu {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
 
