@@ -484,10 +484,10 @@ li {
 }
 
 .classBoard {
-    border: 2px solid transparent;
+    border-left: 2px solid #555555;
     width: 100%;
     display: block;
-    background-color: rgba(128, 128, 128, 0.01);
+    background-color: rgba(128, 128, 128, 0.1);
     margin: 10px 0px;
     font-weight: 200;
     font-family: "Roboto", Helvetica, sans-serif;
@@ -501,9 +501,7 @@ li {
     right: 20px;
 }
 
-.bookedClass {
-    background-color: rgba(128, 128, 128, 0.2);
-}
+
 
 .classTime,
 .classInstructor {
@@ -520,87 +518,65 @@ li {
 }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1044px) {
 
     .timetable {
         text-align: center;
     }
 
     .timetableColumn {
-        padding: 0 5%;
+        padding: 0 5px;
         float: left;
         width: 100%;
     }
 
+    #dayFilter {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+    }
+
     .timetableColumnTitle {
-        margin-top: 50px;
+        margin: 2px;
+        padding: 5px 0px;
+        font-size: 0.9em;
+        border: 2px solid transparent;
+    }
+        .timetableColumnTitle:hover {
+            background-color: azure;
+            color: #555555;
+            border: 2px solid;
+        }
+
+    .activeDaySelected {
+        background-color: azure !important;
+        color: #555555 !important;
+        border: 2px solid !important;
+    }
+
+    .tabcontent {
+        
     }
 
     .classBoard {
-        margin: 10px 0px;
-        padding: 10px 0px;
-        height: auto;
-        border-radius: 5px;
+        margin: 5px 0px;
+        padding: 5px 0px;
+        border-left: 2px solid #555555;
+        border-right: 2px solid #555555;
     }
 
-    .className, .classTime {
-        padding: 0px;
-        font-size: medium;
-        display: block;
+  
+
+    .classMore {
+        position: unset;
+        top: 50px;
+        right: 20px;
     }
 
-    .classInstructor {
-        width: 100%;
-        font-size: medium;
-        font-style: normal;
-    }
+
 }
-
-
-
-.timetableKey {
-    width: 100%;
-    padding: 10px 20px 0px 0px;
-    text-align: right;
-}
-
-.statusKey {
-    width: 33%;
-    padding: 10px 15px;
-    margin: 0px 5px;
-    display: inline;
-    font-family: "Roboto", Helvetica, sans-serif;
-    font-weight: 200;
-    text-transform: uppercase;
-}
-
-.statusKeyFullyBooked {
-    background-color: rgba(199, 91, 155, 0.45);
-    color: white;
-}
-
-
-.statusKeyCancelled {
-    background-color: rgba(174, 133, 202, 0.35);
-    color: white;
-}
-
-
-
-
-@media only screen and (max-width: 1000px) {
-
-    .statusKey {
-        min-width: 100%;
-        display: block;
-        padding: 8px 5px;
-        margin: 0px 2px;
-    }
-}
-
-
-
-
 
 
 
