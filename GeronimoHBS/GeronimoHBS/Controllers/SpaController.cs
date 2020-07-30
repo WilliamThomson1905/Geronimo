@@ -9,9 +9,14 @@ namespace GeronimoHBS.Controllers
     public class SpaController : BaseController
     {
         // GET: Spa
-        public ActionResult Index()
+        public ActionResult Index(int Id)
         {
-            return View();
+            var currentSpaDetails = db.SpaOverview.Find(Id);
+
+            ViewBag.Collection = breadcrumbs;
+            ViewBag.Location = db.Location.Find(Id);
+
+            return View(currentSpaDetails);
         }
     }
 }

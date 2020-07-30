@@ -73,12 +73,17 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel has rooms 
         public virtual RoomOverview RoomOverview { get; set; }
 
-
-
         // Foriegn key 
         public int GymOverviewID { get; set; }
         // Corresponding navigation property - each hotel might have a gym 
         public virtual GymOverview GymOverview { get; set; }
+
+
+
+        // Foriegn key 
+        public int SpaOverviewID { get; set; }
+        // Corresponding navigation property - each hotel might have a gym 
+        public virtual SpaOverview SpaOverview { get; set; }
     }
 
     public class RoomOverview
@@ -305,6 +310,8 @@ namespace GeronimoHBS.Models
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
 
+
+        public virtual ICollection<SpaOverview> SpaOverview { get; set; }
 
         // Foriegn key 
         public int PromotionCategoryID { get; set; }

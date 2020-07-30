@@ -1306,6 +1306,166 @@ namespace GeronimoHBS.DAL
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // SPA DATA
+            // Seeded Promotion Categories
+            var promotionCategories = new List<PromotionCategory>
+            {
+                new PromotionCategory
+                {
+                    PromotionName = "Coupon Promotion"
+                },
+                new PromotionCategory
+                {
+                    PromotionName = "Loyalty Promotion"
+                },
+                new PromotionCategory
+                {
+                    PromotionName = "Marketing Promotion"
+                }
+
+
+            };
+            promotionCategories.ForEach(l => context.PromotionCategory.Add(l));
+            context.SaveChanges();
+
+
+            // Seeded Spa Promotions - Using PromotionCategories above    
+            var spaPromotions = new List<SpaPromotion>()
+            {
+                new SpaPromotion {
+                    Title ="Spa Promotion 1",
+                    Description = "Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. ",
+                    StartDate = new DateTime(2020, 9, 21),
+                    EndDate = new DateTime(2020, 10, 21),
+                    PromotionCategoryID = 1,
+                    PromotionCategory = promotionCategories[0]
+                    
+                },
+                new SpaPromotion {
+                    Title ="Spa Promotion 2",
+                    Description = "Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. ",
+                    StartDate = new DateTime(2020, 9, 21),
+                    EndDate = new DateTime(2020, 10, 21),
+                    PromotionCategoryID = 2,
+                    PromotionCategory = promotionCategories[1]
+
+                },
+                new SpaPromotion {
+                    Title ="Spa Promotion 3",
+                    Description = "Spa Promotion 3 description. ",
+                    StartDate = new DateTime(2020, 9, 21),
+                    EndDate = new DateTime(2020, 10, 21),
+                    PromotionCategoryID = 2,
+                    PromotionCategory = promotionCategories[1]
+                },
+                new SpaPromotion {
+                    Title ="Spa Promotion 4",
+                    Description = "Spa Promotion 4 description. ",
+                    StartDate = new DateTime(2020, 9, 21),
+                    EndDate = new DateTime(2021, 10, 21),
+                    PromotionCategoryID = 3,
+                    PromotionCategory = promotionCategories[2]
+                },
+                new SpaPromotion {
+                    Title ="Spa Promotion 5",
+                    Description = "Spa Promotion 5 description. ",
+                    StartDate = new DateTime(2020, 7, 10),
+                    EndDate = new DateTime(2020, 11, 1),
+                    PromotionCategoryID = 1,
+                    PromotionCategory = promotionCategories[0]
+                },
+
+
+            };
+            spaPromotions.ForEach(l => context.SpaPromotion.Add(l));
+            context.SaveChanges();
+
+        
+            // Seeding GymOverview data for each hotel instance
+            var spaOverview = new List<SpaOverview>
+            {
+                new SpaOverview
+                {
+                    SpaOverviewID = 1,
+                    Header = "Geronimo Spa",
+                    MainContent = "All Geronimo Hotels sports a fantabulous spa, equipped with  the lastest and greatest gym equipment. " +
+                    "All Geronimo Hotels sports a fantabulous spa, equipped with  the lastest and greatest gym equipment. ",
+                    // Equipment = equipmentDefault,
+                    // GymClasses = gymClassesDefault,
+                    // Timetable = timetableDefault
+                },
+                new SpaOverview
+                {
+                    SpaOverviewID = 2,
+                    Header = "Glasgow Spa",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SpaPromotions = spaPromotions
+                },
+                new SpaOverview
+                {
+                    SpaOverviewID = 3,
+                    Header = "Paris Spa",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SpaPromotions = spaPromotions
+                },
+                new SpaOverview
+                {
+                    SpaOverviewID = 4,
+                    Header = "Amsterdam Spa",
+                    MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SpaPromotions = spaPromotions
+                },
+                new SpaOverview
+                {
+                    SpaOverviewID = 5,
+                    Header = "New York Spa",
+                    MainContent = "Geronimo Hotels - New York sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SpaPromotions = spaPromotions
+                },
+                new SpaOverview
+                {
+                    SpaOverviewID = 6,
+                    Header = "London Spa",
+                    MainContent = "Geronimo Hotels - London sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - London sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SpaPromotions = spaPromotions
+                }
+
+            };
+            spaOverview.ForEach(l => context.SpaOverview.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+
+
+
+
+
+
+
+
             var locations = new List<Location>
             {
                 new Location{
@@ -1315,7 +1475,8 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " + 
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
                     RoomOverviewID = 1,
-                    GymOverviewID = 1
+                    GymOverviewID = 1,
+                    SpaOverviewID = 1
                 },
                 new Location{
                     LocationName="Glasgow",
@@ -1323,8 +1484,9 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur aliqua consectetur consectetur adipiscing elit, sed do eiusmod tempor " +
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                     RoomOverviewID = 2,
-                    GymOverviewID = 2
+                    RoomOverviewID = 2,
+                    GymOverviewID = 2,
+                    SpaOverviewID = 2
 
                 },
                 new Location{
@@ -1334,7 +1496,8 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et doloredoloredoloredolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 3,
-                    GymOverviewID = 3
+                    GymOverviewID = 3,
+                    SpaOverviewID = 3
 
                 },
                 new Location{
@@ -1344,7 +1507,8 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 4,
-                    GymOverviewID = 4
+                    GymOverviewID = 4,
+                    SpaOverviewID = 4
                 },
                 new Location{
                     LocationName="New York",
@@ -1353,7 +1517,8 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 5,
-                    GymOverviewID = 5
+                    GymOverviewID = 5,
+                    SpaOverviewID = 5
                 },
                 new Location{
                     LocationName="London",
@@ -1361,7 +1526,8 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",                     
                     RoomOverviewID = 6,
-                    GymOverviewID = 6
+                    GymOverviewID = 6,
+                    SpaOverviewID = 6
                 }
 
             };
