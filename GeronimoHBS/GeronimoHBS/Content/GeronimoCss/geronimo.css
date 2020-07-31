@@ -781,3 +781,20 @@ div.scrollmenu {
 
 
 
+
+
+/* Spa Promotions */
+.spaPromotions {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.spaPromotions p {
+    padding: 0px;
+    margin: 0px;
+    font-size: 0.9em;
+}
+
+
+
