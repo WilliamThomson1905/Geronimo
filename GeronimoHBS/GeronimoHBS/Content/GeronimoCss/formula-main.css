@@ -3204,7 +3204,6 @@ input, select, textarea {
 
 			#header nav ul li a[href="#menu"]:only-child {
 				width: 6em;
-				text-indent: 6em;
 				white-space: nowrap;
 			}
 
