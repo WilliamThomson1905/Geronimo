@@ -207,8 +207,33 @@
 
 
 
+/* Breadcrumbs */
+ul.breadcrumb {
+    margin-bottom: 0px;
+    padding: 10px 16px;
+    list-style: none;
+}
 
+    ul.breadcrumb li {
+        display: inline;
+        font-size: 14px;
+    }
 
+        ul.breadcrumb li + li:before {
+            padding: 8px;
+            color: #555555;
+            content: "\003e";
+        }
+
+        ul.breadcrumb li a {
+            color: #555555;
+            text-decoration: none;
+        }
+
+            ul.breadcrumb li a:hover {
+                color: black;
+                text-decoration: underline;
+            }
 
 
 
@@ -753,5 +778,6 @@ div.scrollmenu {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
+
 
 
