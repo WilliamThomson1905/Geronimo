@@ -24,18 +24,19 @@
 @if (Model.SpaPromotions != null) {
     <div class="container">
         <h2>Promotions - Events</h2>
-        @foreach (var item in Model.SpaPromotions)
-        {
-            <h3>@item.Title</h3>
+
+        <div class="spaPromotions">
+            @foreach (var item in Model.SpaPromotions)
+            {
+                <h3>@item.Title</h3>
 
 
-            <p>Promotion available from: </p>
-            <p>@Html.DisplayFor(modelItem => item.StartDate) - @Html.DisplayFor(modelItem => item.EndDate)</p>
-            <p>@item.PromotionCategory.PromotionName</p>
-            <p>@item.Description</p>
-            <hr />
-        }
-
+                <p>@item.PromotionCategory.PromotionName</p>
+                <p>Promotion available from: @Html.DisplayFor(modelItem => item.StartDate) - @Html.DisplayFor(modelItem => item.EndDate)</p>
+                <p>@item.Description</p>
+                <hr />
+            }
+        </div>
 
     </div>
 } else
