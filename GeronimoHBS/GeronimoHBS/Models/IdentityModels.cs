@@ -307,7 +307,12 @@ namespace GeronimoHBS.Models
         public string Title { get; set; }
         public string Description { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime? StartDate { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime? EndDate { get; set; }
 
 

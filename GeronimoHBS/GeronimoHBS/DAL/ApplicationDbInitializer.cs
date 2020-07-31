@@ -1349,7 +1349,7 @@ namespace GeronimoHBS.DAL
             {
                 new SpaPromotion {
                     Title ="Spa Promotion 1",
-                    Description = "Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. ",
+                    Description = "Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. ",
                     StartDate = new DateTime(2020, 9, 21),
                     EndDate = new DateTime(2020, 10, 21),
                     PromotionCategoryID = 1,
@@ -1358,7 +1358,7 @@ namespace GeronimoHBS.DAL
                 },
                 new SpaPromotion {
                     Title ="Spa Promotion 2",
-                    Description = "Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. ",
+                    Description = "Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. ",
                     StartDate = new DateTime(2020, 9, 21),
                     EndDate = new DateTime(2020, 10, 21),
                     PromotionCategoryID = 2,
@@ -1367,7 +1367,7 @@ namespace GeronimoHBS.DAL
                 },
                 new SpaPromotion {
                     Title ="Spa Promotion 3",
-                    Description = "Spa Promotion 3 description. ",
+                    Description = "Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. ",
                     StartDate = new DateTime(2020, 9, 21),
                     EndDate = new DateTime(2020, 10, 21),
                     PromotionCategoryID = 2,
@@ -1375,7 +1375,7 @@ namespace GeronimoHBS.DAL
                 },
                 new SpaPromotion {
                     Title ="Spa Promotion 4",
-                    Description = "Spa Promotion 4 description. ",
+                    Description = "Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. ",
                     StartDate = new DateTime(2020, 9, 21),
                     EndDate = new DateTime(2021, 10, 21),
                     PromotionCategoryID = 3,
@@ -1383,7 +1383,7 @@ namespace GeronimoHBS.DAL
                 },
                 new SpaPromotion {
                     Title ="Spa Promotion 5",
-                    Description = "Spa Promotion 5 description. ",
+                    Description = "Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. ",
                     StartDate = new DateTime(2020, 7, 10),
                     EndDate = new DateTime(2020, 11, 1),
                     PromotionCategoryID = 1,
@@ -1413,14 +1413,20 @@ namespace GeronimoHBS.DAL
                 {
                     SpaOverviewID = 2,
                     Header = "Glasgow Spa",
-                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    IntroductionParagraph = "Glasgow Spa - basic overview of location's spa. Glasgow Spa - basic overview of location's spa. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SpaPromotions = spaPromotions
                 },
                 new SpaOverview
                 {
                     SpaOverviewID = 3,
                     Header = "Paris Spa",
+                    IntroductionParagraph = "Paris Spa - basic overview of location's spa. ",
                     MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SpaPromotions = spaPromotions
@@ -1429,6 +1435,7 @@ namespace GeronimoHBS.DAL
                 {
                     SpaOverviewID = 4,
                     Header = "Amsterdam Spa",
+                    IntroductionParagraph = "Amsterdam Spa - basic overview of location's spa. ",
                     MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SpaPromotions = spaPromotions
@@ -1437,6 +1444,7 @@ namespace GeronimoHBS.DAL
                 {
                     SpaOverviewID = 5,
                     Header = "New York Spa",
+                    IntroductionParagraph = "New York Spa - basic overview of location's spa. ",
                     MainContent = "Geronimo Hotels - New York sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SpaPromotions = spaPromotions
@@ -1445,6 +1453,7 @@ namespace GeronimoHBS.DAL
                 {
                     SpaOverviewID = 6,
                     Header = "London Spa",
+                    IntroductionParagraph = "London Spa - basic overview of location's spa. ",
                     MainContent = "Geronimo Hotels - London sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SecondaryContent = "Geronimo Hotels - London sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
                     SpaPromotions = spaPromotions

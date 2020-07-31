@@ -9,20 +9,41 @@
 @{ Html.RenderPartial("_Breadcrumbs");}
 
 
-<div class="container">
-    <h2>Promotions - Events</h2>
-    @foreach (var item in Model.SpaPromotions)
-    {
-        <h3>@item.Title</h3>
-        <p>@item.StartDate</p>
-        <p>@item.EndDate</p>
-        <p>@item.PromotionCategory.PromotionName</p>
-        <p>@item.Description</p>
-        <hr />
-    }
-
-   
+<div class="pageOverview">
+    <div class="container">
+        <h2>@Html.DisplayFor(modelItem => Model.Header)</h2>
+        <p>@Html.DisplayFor(modelItem => Model.IntroductionParagraph)</p>
+    </div>
 </div>
+
+<div class="container">
+    <p>@Html.DisplayFor(modelItem => Model.MainContent)</p>
+    <p>@Html.DisplayFor(modelItem => Model.SecondaryContent)</p>
+</div>
+
+@if (Model.SpaPromotions != null) {
+    <div class="container">
+        <h2>Promotions - Events</h2>
+        @foreach (var item in Model.SpaPromotions)
+        {
+            <h3>@item.Title</h3>
+
+
+            <p>Promotion available from: </p>
+            <p>@Html.DisplayFor(modelItem => item.StartDate) - @Html.DisplayFor(modelItem => item.EndDate)</p>
+            <p>@item.PromotionCategory.PromotionName</p>
+            <p>@item.Description</p>
+            <hr />
+        }
+
+
+    </div>
+} else
+{
+    <div>
+        No Promotions Right Now
+    </div>
+}
 
 <div class="tertiaryContainer">
     <div class="align-center">
