@@ -33,13 +33,13 @@
                 <p>Menu available from: @Html.DisplayFor(modelItem => item.AvailableFrom) - @Html.DisplayFor(modelItem => item.AvailableTo)</p>
                 
                 <h4>Menu Items</h4>
-                @*foreach (MenuItem menuItem in item.MenuItems)
+                foreach (MenuItem menuItem in item.MenuItems)
                 {
                     <h3>@menuItem.MenuItemName</h3>
                     <p>@menuItem.MenuItemDescription</p>
                     <p>@menuItem.MenuItemCost </p>
                     <hr />
-                }*@
+                }
                 <hr />
             }
         </div>

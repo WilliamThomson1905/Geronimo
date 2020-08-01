@@ -375,7 +375,7 @@ namespace GeronimoHBS.Models
 
         public virtual ICollection<DiningOverview> DiningOverview { get; set; }
 
-        // public virtual ICollection<MenuItem> MenuItems { get; set; }
+        public virtual ICollection<MenuItem> MenuItems { get; set; }
 
     }
 
@@ -390,7 +390,7 @@ namespace GeronimoHBS.Models
 
 
         // Each menuItem can belong to multiple menus
-        // public virtual ICollection<Menu> Menus { get; set; }
+        public virtual ICollection<Menu> Menus { get; set; }
 
 
     }
