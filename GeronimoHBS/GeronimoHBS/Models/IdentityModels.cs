@@ -82,8 +82,15 @@ namespace GeronimoHBS.Models
 
         // Foriegn key 
         public int SpaOverviewID { get; set; }
-        // Corresponding navigation property - each hotel might have a gym 
+        // Corresponding navigation property - each hotel might have a spa 
         public virtual SpaOverview SpaOverview { get; set; }
+
+
+        // Foriegn key 
+        public int DiningOverviewID { get; set; }
+        // Corresponding navigation property - each hotel might have a restaurant  
+        public virtual DiningOverview DiningOverview { get; set; }
+
     }
 
     public class RoomOverview
@@ -334,19 +341,68 @@ namespace GeronimoHBS.Models
     }
 
 
+    public class DiningOverview
+    {
+        [Key]
+        public int DiningOverviewID { get; set; }
+
+        public string Header { get; set; }
+
+        public string IntroductionParagraph { get; set; }
+        public string MainContent { get; set; }
+
+        public string SecondaryContent { get; set; }
+
+        public virtual ICollection<Menu> Menus { get; set; }
 
 
+    }
+
+    public class Menu
+    {
+        public int MenuID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime? AvailableFrom { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime? AvailableTo { get; set; }
+
+        public virtual ICollection<DiningOverview> DiningOverview { get; set; }
+
+        public virtual ICollection<MenuItem> MenuItems { get; set; }
+
+    }
+
+    public class MenuItem
+    {
+        [Key]
+        public int MenuItemID { get; set; }
+
+        public string MenuItemName { get; set; }
+        public double MenuItemCost { get; set; }
+        public string MenuItemDescription { get; set; }
+
+
+        // Each menuItem can belong to multiple menus
+        public virtual ICollection<Menu> Menus { get; set; }
+
+
+    }
 
 
     public class Event
     {
 
 
-    }
-    public class Dining
-    {
+    } 
 
-    }
+
 
 
 }
