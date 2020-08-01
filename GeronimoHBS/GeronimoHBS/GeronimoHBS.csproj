@@ -269,6 +269,7 @@
     <Content Include="Scripts\GeronimoScripts\formula\jquery.scrolly.min.js" />
     <Content Include="Scripts\GeronimoScripts\formula\main.js" />
     <Content Include="Scripts\GeronimoScripts\formula\util.js" />
+    <Content Include="Scripts\GeronimoScripts\geronimo\tabContent.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />

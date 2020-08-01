@@ -20,7 +20,72 @@
 </div>
 @if (Model.DiningOverview.Menus != null)
 {
+
     <div class="container">
+
+        <div class="timetable">
+
+            <div id="dayFilter">
+                @* Loop seven days of the week *@
+                @foreach (var item in Model.DiningOverview.Menus)
+                {
+                    <a class="timetableColumn">
+                        <h2 class="timetableColumnTitle " onclick="showGymClasses(event, '@item.Name')">@item.Name</h2>
+                    </a>
+
+                }
+            </div>
+
+
+
+            @* Loop each item in Menus *@
+            @foreach (var item in Model.DiningOverview.Menus)
+            {
+
+
+
+                <div id="@item.Name" class="container tabcontent">
+                    @foreach (MenuItem menuItem in item.MenuItems)
+                    {
+                        <div class="spaPromotions">
+
+                            <h3>@menuItem.MenuItemName</h3>
+                            <p>@menuItem.MenuItemDescription</p>
+                            <p>@menuItem.MenuItemCost </p>
+                            <hr />
+
+                        </div>
+                    }
+                </div>
+
+
+
+            }
+
+
+            <script src="~/Scripts/GeronimoScripts/geronimo/tabContent.js"></script>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+}
+else
+{
+    <div>
+        No Menus Right Now
+    </div>
+}
+
+
+@* <div class="container">
         <h2>All Menus - Won't display all in future</h2>
 
         <div class="spaPromotions">
@@ -31,7 +96,7 @@
 
                 <p>@item.Description</p>
                 <p>Menu available from: @Html.DisplayFor(modelItem => item.AvailableFrom) - @Html.DisplayFor(modelItem => item.AvailableTo)</p>
-                
+
                 <h4>Menu Items</h4>
                 foreach (MenuItem menuItem in item.MenuItems)
                 {
@@ -44,29 +109,4 @@
             }
         </div>
 
-    </div>
-}
-else
-{
-    <div>
-        No Menus Right Now
-    </div>
-}
-
-
-
-<div class="container">
-    <h2>Dining - Show Seating Availability</h2>
-    <p>
-        Everything that's in overview -> but extended.
-        <ol>
-            <li>
-                Show seating availability
-            </li>
-            <li>
-                Show costs,
-            </li>
-
-        </ol>
-    </p>
-</div>
+    </div> *@
