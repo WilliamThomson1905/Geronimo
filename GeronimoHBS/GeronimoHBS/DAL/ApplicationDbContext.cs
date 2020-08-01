@@ -25,6 +25,15 @@ namespace GeronimoHBS.DAL
         public DbSet<SpaOverview> SpaOverview { get; set; }
         public DbSet<SpaPromotion> SpaPromotion { get; set; }
         public DbSet<PromotionCategory> PromotionCategory { get; set; }
+        
+        
+        
+        public DbSet<DiningOverview> DiningOverview { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
+
+
+
 
 
         public DbSet<RoomOverview> RoomOverview { get; set; }
