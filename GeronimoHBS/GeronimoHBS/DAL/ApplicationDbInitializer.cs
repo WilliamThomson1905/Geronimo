@@ -1475,40 +1475,6 @@ namespace GeronimoHBS.DAL
 
 
             // DINING DATA
-            // Seeded Menus for restaurants    
-            var menus = new List<Menu>()
-            {
-                new Menu {
-                    Name ="Autumn Time Menu",
-                    Description = "Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. ",
-                    AvailableFrom = new DateTime(2020, 9, 22),
-                    AvailableTo = new DateTime(2020, 12, 21)
-                },
-                new Menu {
-                    Name ="Winter Time Menu",
-                    Description = "Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. ",
-                    AvailableFrom = new DateTime(2020, 12, 21),
-                    AvailableTo = new DateTime(2020, 3, 20)
-                },
-                new Menu {
-                    Name ="Spring Time Menu",
-                    Description = "Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. ",
-                    AvailableFrom = new DateTime(2020, 3, 20),
-                    AvailableTo = new DateTime(2020, 6, 21)
-                },
-                new Menu {
-                    Name ="Summer Time Menu",
-                    Description = "Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. ",
-                    AvailableFrom = new DateTime(2020, 6, 21),
-                    AvailableTo = new DateTime(2020, 9, 22)
-                },
-
-
-            };
-            menus.ForEach(l => context.Menus.Add(l));
-            context.SaveChanges();
-
-
             // Seeded Menu Items 
             var menuItems = new List<MenuItem>
             {
@@ -1517,70 +1483,61 @@ namespace GeronimoHBS.DAL
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 20,
-                    Menu = menus
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 21,
-                    Menu = menus
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 22,
-                    Menu = menus
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 23,
-                    Menu = menus
+
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 24,
-                    Menu = menus
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 25,
-                    Menu = menus
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 26,
-                    Menu = menus
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 27,
-                    Menu = menus
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 28,
-                    Menu = menus
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 29,
-                    Menu = menus
                 },
 
 
@@ -1588,7 +1545,42 @@ namespace GeronimoHBS.DAL
             menuItems.ForEach(l => context.MenuItems.Add(l));
             context.SaveChanges();
 
+            // Seeded Menus for restaurants    
+            var menus = new List<Menu>()
+            {
+                new Menu {
+                    Name ="Autumn Time Menu",
+                    Description = "Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. ",
+                    AvailableFrom = new DateTime(2020, 9, 22),
+                    AvailableTo = new DateTime(2020, 12, 21),
+                    //MenuItems = menuItems
+                },
+                new Menu {
+                    Name ="Winter Time Menu",
+                    Description = "Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. ",
+                    AvailableFrom = new DateTime(2020, 12, 21),
+                    AvailableTo = new DateTime(2020, 3, 20),
+                    //MenuItems = menuItems
+                },
+                new Menu {
+                    Name ="Spring Time Menu",
+                    Description = "Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. ",
+                    AvailableFrom = new DateTime(2020, 3, 20),
+                    AvailableTo = new DateTime(2020, 6, 21),
+                    //MenuItems = menuItems
+                },
+                new Menu {
+                    Name ="Summer Time Menu",
+                    Description = "Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. ",
+                    AvailableFrom = new DateTime(2020, 6, 21),
+                    AvailableTo = new DateTime(2020, 9, 22),
+                    //MenuItems = menuItems
+                }
 
+
+            };
+            menus.ForEach(l => context.Menus.Add(l));
+            context.SaveChanges();
 
 
             // Seeding SpaOverview data for each hotel instance
@@ -1600,7 +1592,7 @@ namespace GeronimoHBS.DAL
                     Header = "Geronimo Dining",
                     MainContent = "All Geronimo Hotels sports a fantabulous Dining, equipped with  the lastest and greatest gym equipment. " +
                     "All Geronimo Hotels sports a fantabulous Dining, equipped with  the lastest and greatest gym equipment. ",
-                    // Equipment = equipmentDefault,
+                    // Menus = menus,
                     // GymClasses = gymClassesDefault,
                     // Timetable = timetableDefault
                 },
@@ -1614,7 +1606,8 @@ namespace GeronimoHBS.DAL
                     "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
                     SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. " +
                     "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. " +
-                    "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. "                
+                    "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
+                    Menus = menus
                 },
                 new DiningOverview
                 {
@@ -1622,7 +1615,8 @@ namespace GeronimoHBS.DAL
                     Header = "Paris Dining",
                     IntroductionParagraph = "Paris Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. "                
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
+                    Menus = menus
                 },
                 new DiningOverview
                 {
@@ -1630,7 +1624,8 @@ namespace GeronimoHBS.DAL
                     Header = "Amsterdam Dining",
                     IntroductionParagraph = "Amsterdam Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Dining with the lastest and greatest Dining equipment. "
+                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
+                    Menus = menus 
                 },
                 new DiningOverview
                 {
@@ -1638,7 +1633,8 @@ namespace GeronimoHBS.DAL
                     Header = "New York Dining",
                     IntroductionParagraph = "New York Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - New York sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Dining with the lastest and greatest Dining equipment. "
+                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Dining with the lastest and greatest Dining equipment. " ,
+                    Menus = menus 
                 },
                 new DiningOverview
                 {
@@ -1647,7 +1643,7 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "London Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - London sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
                     SecondaryContent = "Geronimo Hotels - London sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-   
+                    Menus = menus
                 }
 
             };

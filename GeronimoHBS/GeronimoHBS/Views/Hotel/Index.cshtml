@@ -67,8 +67,11 @@
             {
                 <a class="tablink" onclick="openTabContent(event, 'Spa')" href="#spa">SPA</a>
             }
+            @if (Model.DiningOverview != null)
+            {
+                <a class="tablink" onclick="openTabContent(event, 'Dining')" href="#dining">DINING</a>
+            }
             <a class="tablink" onclick="openTabContent(event, 'Events')" href="#events">EVENTS</a>
-            <a class="tablink" onclick="openTabContent(event, 'Dining')" href="#dining">DINING</a>
         </div>
     </div>
 
@@ -95,11 +98,12 @@
                     @{Html.RenderPartial("_SpaOverview");}
                 </section>
             }
-            
-
-            <section id="Dining" class="services" style="display:none">
-                @{Html.RenderPartial("_DiningOverview");}
-            </section>
+            @if (Model.SpaOverview != null)
+            {
+                <section id="Dining" class="services" style="display:none">
+                    @{Html.RenderPartial("_DiningOverview");}
+                </section>
+            }
 
             <section id="Events" class="services" style="display:none">
                 @{Html.RenderPartial("_EventsOverview");}

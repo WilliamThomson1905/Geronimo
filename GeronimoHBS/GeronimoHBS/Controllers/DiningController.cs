@@ -9,9 +9,21 @@ namespace GeronimoHBS.Controllers
     public class DiningController : BaseController
     {
         // GET: Dining
-        public ActionResult Index()
+        public ActionResult Index(int? Id)
         {
-            return View();
+            var currentLocation = db.Location.First();
+            if (Id == null)
+            {
+                ViewBag.Location = "Welcome to Geronimo Hotel";
+            }
+            else
+            {
+                currentLocation = db.Location.Find(Id);
+            }
+
+            ViewBag.Location = db.Location.Find(Id);
+            ViewBag.Collection = breadcrumbs;
+            return View(currentLocation);
         }
 
         // GET: Dining/Menu

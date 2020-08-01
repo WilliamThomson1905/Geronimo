@@ -1,9 +1,59 @@
-﻿
+﻿@model GeronimoHBS.Models.Location
+@using GeronimoHBS.Models
+
+
+
 @{
     ViewBag.Title = "Dining";
 }
 
 @{ Html.RenderPartial("_Breadcrumbs");}
+
+<div class="pageOverview">
+    <div class="container">
+        <h2>@Html.DisplayFor(modelItem => Model.DiningOverview.Header)</h2>
+        <p>@Html.DisplayFor(modelItem => Model.DiningOverview.IntroductionParagraph)</p>
+        <p>@Html.DisplayFor(modelItem => Model.DiningOverview.MainContent)</p>
+        <p>@Html.DisplayFor(modelItem => Model.DiningOverview.SecondaryContent)</p>
+
+    </div>
+</div>
+@if (Model.DiningOverview.Menus != null)
+{
+    <div class="container">
+        <h2>All Menus - Won't display all in future</h2>
+
+        <div class="spaPromotions">
+            @foreach (var item in Model.DiningOverview.Menus)
+            {
+                <h3>@item.Name</h3>
+
+
+                <p>@item.Description</p>
+                <p>Menu available from: @Html.DisplayFor(modelItem => item.AvailableFrom) - @Html.DisplayFor(modelItem => item.AvailableTo)</p>
+                
+                <h4>Menu Items</h4>
+                @*foreach (MenuItem menuItem in item.MenuItems)
+                {
+                    <h3>@menuItem.MenuItemName</h3>
+                    <p>@menuItem.MenuItemDescription</p>
+                    <p>@menuItem.MenuItemCost </p>
+                    <hr />
+                }*@
+                <hr />
+            }
+        </div>
+
+    </div>
+}
+else
+{
+    <div>
+        No Menus Right Now
+    </div>
+}
+
+
 
 <div class="container">
     <h2>Dining - Show Seating Availability</h2>

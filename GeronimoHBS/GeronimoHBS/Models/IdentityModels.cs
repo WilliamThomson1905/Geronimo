@@ -353,15 +353,13 @@ namespace GeronimoHBS.Models
 
         public string SecondaryContent { get; set; }
 
-
-        public virtual ICollection<Menu> Menu { get; set; }
+        public virtual ICollection<Menu> Menus { get; set; }
 
 
     }
 
     public class Menu
     {
-        [Key]
         public int MenuID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -375,7 +373,9 @@ namespace GeronimoHBS.Models
         [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime? AvailableTo { get; set; }
 
-        public virtual ICollection<MenuItem> MenuItem { get; set; }
+        public virtual ICollection<DiningOverview> DiningOverview { get; set; }
+
+        // public virtual ICollection<MenuItem> MenuItems { get; set; }
 
     }
 
@@ -386,12 +386,11 @@ namespace GeronimoHBS.Models
 
         public string MenuItemName { get; set; }
         public double MenuItemCost { get; set; }
-
         public string MenuItemDescription { get; set; }
 
 
-        // Each menuItem can belong to multiple menu
-        public virtual ICollection<Menu> Menu { get; set; }
+        // Each menuItem can belong to multiple menus
+        // public virtual ICollection<Menu> Menus { get; set; }
 
 
     }
