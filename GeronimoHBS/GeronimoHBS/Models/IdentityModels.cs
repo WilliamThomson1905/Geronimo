@@ -91,6 +91,13 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel might have a restaurant  
         public virtual DiningOverview DiningOverview { get; set; }
 
+
+
+        // Foriegn key 
+        public int EventOverviewID { get; set; }
+        // Corresponding navigation property - each hotel might have events  
+        public virtual EventOverview EventOverview { get; set; }
+
     }
 
     public class RoomOverview
@@ -481,7 +488,7 @@ namespace GeronimoHBS.Models
 
         public string VenueName { get; set; }
 
-        public string VenueCapacity { get; set; }
+        public int VenueCapacity { get; set; }
 
         public double RateForDay { get; set; }
 
@@ -498,7 +505,7 @@ namespace GeronimoHBS.Models
     public class VenueStatus
     {
         public int VenueStatusID { get; set; }
-        public int VenueStatusName { get; set; }
+        public string VenueStatusName { get; set; }
     }
 
 
