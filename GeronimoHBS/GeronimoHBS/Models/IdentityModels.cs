@@ -398,11 +398,108 @@ namespace GeronimoHBS.Models
     }
 
 
+
+
+
+
+    public class EventOverview
+    {
+        [Key]
+        public int EventOverviewID { get; set; }
+
+        public string Header { get; set; }
+
+        public string IntroductionParagraph { get; set; }
+        public string MainContent { get; set; }
+
+        public string SecondaryContent { get; set; }
+
+        public virtual ICollection<Event> Events { get; set; }
+
+
+    }
+
+
+    /// <summary>
+    /// EventStatus... 
+    /// </summary>
+    public class EventStatus
+    {
+        public int EventStatusID { get; set; }
+
+
+        // Registered, on-hold, booked, requested, 
+        public string EventStatusName { get; set; }
+
+    }
+
+
+    // Two types of events:
+    // 1. Created by Admin - events at hotel
+    // 2. Requested/Created by guest/user - bday parties, conferences, concerts, etc... 
     public class Event
     {
+        public int EventID { get; set; }
+
+        public string EventName { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime? StartDate { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime? EndDate { get; set; }
+
+        public int NoOfParticipants { get; set; }
+
+        public double AmountPaid { get; set; }
+        public double CalculatedCost { get; set; }
+        public double ExtraCost { get; set; }
 
 
-    } 
+        public bool PublicEvent { get; set; }
+
+
+        // Foriegn key 
+        public int EventStatusID { get; set; }
+        // Corresponding navigation property - each event will have a status 
+        public virtual EventStatus EventStatus { get; set; }
+
+
+
+        // Foriegn key 
+        public int VenueID { get; set; }
+        // Corresponding navigation property - each event will have a Venue -  
+        public virtual Venue Venue { get; set; }
+    }
+
+
+    public class Venue
+    {
+        public int VenueID { get; set; }
+
+        public string VenueName { get; set; }
+
+        public string VenueCapacity { get; set; }
+
+        public double RateForDay { get; set; }
+
+        // Foriegn key 
+        public int VenueStatusID { get; set; }
+        // Corresponding navigation property - each event will have a Venue -  
+        public virtual VenueStatus VenueStatus { get; set; }
+    }
+
+    /// <summary>
+    /// Each venue will need its own status - to check its availability 
+    /// - Confirmed, 
+    /// </summary>
+    public class VenueStatus
+    {
+        public int VenueStatusID { get; set; }
+        public int VenueStatusName { get; set; }
+    }
 
 
 
