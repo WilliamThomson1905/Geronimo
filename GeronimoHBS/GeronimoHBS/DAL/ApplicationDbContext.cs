@@ -36,6 +36,16 @@ namespace GeronimoHBS.DAL
 
 
 
+        public DbSet<EventOverview> EventOverview { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<EventStatus> EventsStatus { get; set; }
+        public DbSet<Venue> Venues { get; set; }
+        public DbSet<VenueStatus> VenuesStatus { get; set; }
+
+
+
+
+
         public DbSet<RoomOverview> RoomOverview { get; set; }
         public DbSet<RoomType> RoomType { get; set; }
 

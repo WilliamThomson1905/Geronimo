@@ -1474,6 +1474,205 @@ namespace GeronimoHBS.DAL
 
 
 
+            // EVENTS DATA
+            // Seeded EventsStatus  
+            var eventsStatus = new List<EventStatus>
+            {
+                new EventStatus
+                {
+                    EventStatusName = "Requested"
+                },
+                new EventStatus
+                {
+                    EventStatusName = "On-hold"
+                },
+                new EventStatus
+                {
+                    EventStatusName = "Booked"
+                },
+                new EventStatus
+                {
+                    EventStatusName = "Registered"
+                }
+
+
+            };
+            eventsStatus.ForEach(l => context.EventsStatus.Add(l));
+            context.SaveChanges();
+
+
+
+            // Seeded VenueStatus     
+            var venueStatus = new List<VenueStatus>()
+            {
+                new VenueStatus {
+                    VenueStatusName = "Unavailable"
+                },
+                new VenueStatus {
+                    VenueStatusName = "Available"
+                }
+            };
+            venueStatus.ForEach(l => context.VenuesStatus.Add(l));
+            context.SaveChanges();
+
+
+
+            // Seeded Venues     
+            var venues = new List<Venue>()
+            {
+                new Venue {
+                    VenueName = "Hall A",
+                    VenueCapacity = 150,
+                    RateForDay = 200.00,
+                    VenueStatusID = 1
+                },
+                new Venue {
+                    VenueName = "Hall B",
+                    VenueCapacity = 250,
+                    RateForDay = 300.00,
+                    VenueStatusID = 1                }
+            };
+            venues.ForEach(l => context.Venues.Add(l));
+            context.SaveChanges();
+
+
+            // Seeded Events     
+            var events = new List<Event>()
+            {
+                new Event {
+                    EventName = "BDay Party 2020!!",
+                    StartDate = new DateTime(2020, 9, 29),
+                    EndDate = new DateTime(2020, 9, 29),
+                    AmountPaid = 0.00,
+                    CalculatedCost = 350.00,
+                    PublicEvent = false,
+                    ExtraCost = 0.00,
+                    NoOfParticipants = 100,
+                    VenueID = venues[0].VenueID,
+                    Venue = venues[0],
+                    EventStatusID = 1,
+                    EventStatus = eventsStatus[0]
+                },
+                new Event {
+                    EventName = "Man-Droid Conference",
+                    StartDate = new DateTime(2020, 9, 29),
+                    EndDate = new DateTime(2020, 9, 29),
+                    AmountPaid = 0.00,
+                    CalculatedCost = 350.00,
+                    PublicEvent = false,
+                    ExtraCost = 0.00,
+                    NoOfParticipants = 100,
+                    VenueID = venues[0].VenueID,
+                    Venue = venues[0],
+                    EventStatusID = 1,
+                    EventStatus = eventsStatus[0]
+                },
+                new Event {
+                    EventName = "Wedding 2020",
+                    StartDate = new DateTime(2020, 9, 29),
+                    EndDate = new DateTime(2020, 9, 29),
+                    AmountPaid = 0.00,
+                    CalculatedCost = 350.00,
+                    PublicEvent = false,
+                    ExtraCost = 0.00,
+                    NoOfParticipants = 100,
+                    VenueID = venues[0].VenueID,
+                    Venue = venues[0],
+                    EventStatusID = 1,
+                    EventStatus = eventsStatus[0]
+                },
+
+            };
+            events.ForEach(l => context.Events.Add(l));
+            context.SaveChanges();
+
+
+
+            // Seeding EventOverview data for each hotel instance
+            var eventOverview = new List<EventOverview>
+            {
+                new EventOverview
+                {
+                    EventOverviewID = 1,
+                    Header = "Geronimo Events",
+                    MainContent = "All Geronimo Hotels sports a fantabulous Events, equipped with  the lastest and greatest gym equipment. " +
+                    "All Geronimo Hotels sports a fantabulous Events, equipped with  the lastest and greatest gym equipment. ",
+                    // Menus = menus,
+                    // GymClasses = gymClassesDefault,
+                    // Timetable = timetableDefault
+                },
+                new EventOverview
+                {
+                    EventOverviewID = 2,
+                    Header = "Glasgow Events ",
+                    IntroductionParagraph = "Glasgow Events - basic overview of location's Events. Glasgow Events - basic overview of location's Events. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    Events = events
+                    
+                },
+                new EventOverview
+                {
+                    EventOverviewID = 3,
+                    Header = "Paris Events",
+                    IntroductionParagraph = "Paris Events - basic overview of location's Events. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    Events = events
+                },
+                new EventOverview
+                {
+                    EventOverviewID = 4,
+                    Header = "Amsterdam Events",
+                    IntroductionParagraph = "Amsterdam Events - basic overview of location's Events. ",
+                    MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    Events = events
+                },
+                new EventOverview
+                {
+                    EventOverviewID = 5,
+                    Header = "New York Events",
+                    IntroductionParagraph = "New York Events - basic overview of location's Events. ",
+                    MainContent = "Geronimo Hotels - New York sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Events with the lastest and greatest Events equipment. " ,
+                    Events = events
+                },
+                new EventOverview
+                {
+                    EventOverviewID = 6,
+                    Header = "London Events",
+                    IntroductionParagraph = "London Events - basic overview of location's Events. ",
+                    MainContent = "Geronimo Hotels - London sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    SecondaryContent = "Geronimo Hotels - London sports a fantabulous Events with the lastest and greatest Events equipment. ",
+                    Events = events
+                }
+
+            };
+
+            eventOverview.ForEach(l => context.EventOverview.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             // DINING DATA
             // Seeded Menu Items 
             var menuItems = new List<MenuItem>
@@ -1553,6 +1752,7 @@ namespace GeronimoHBS.DAL
                     Description = "Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. ",
                     AvailableFrom = new DateTime(2020, 9, 22),
                     AvailableTo = new DateTime(2020, 12, 21),
+                    IsAvailable = false,
                     MenuItems = menuItems
                 },
                 new Menu {
@@ -1560,6 +1760,7 @@ namespace GeronimoHBS.DAL
                     Description = "Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. ",
                     AvailableFrom = new DateTime(2020, 12, 21),
                     AvailableTo = new DateTime(2020, 3, 20),
+                    IsAvailable = false,
                     MenuItems = menuItems
                 },
                 new Menu {
@@ -1567,6 +1768,7 @@ namespace GeronimoHBS.DAL
                     Description = "Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. ",
                     AvailableFrom = new DateTime(2020, 3, 20),
                     AvailableTo = new DateTime(2020, 6, 21),
+                    IsAvailable = false,
                     MenuItems = menuItems
                 },
                 new Menu {
@@ -1574,6 +1776,7 @@ namespace GeronimoHBS.DAL
                     Description = "Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. ",
                     AvailableFrom = new DateTime(2020, 6, 21),
                     AvailableTo = new DateTime(2020, 9, 22),
+                    IsAvailable = true,
                     MenuItems = menuItems
                 }
 
@@ -1625,7 +1828,7 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "Amsterdam Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
                     SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-                    Menus = menus 
+                    Menus = menus
                 },
                 new DiningOverview
                 {
@@ -1634,7 +1837,7 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "New York Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - New York sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
                     SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Dining with the lastest and greatest Dining equipment. " ,
-                    Menus = menus 
+                    Menus = menus
                 },
                 new DiningOverview
                 {
@@ -1656,6 +1859,23 @@ namespace GeronimoHBS.DAL
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             var locations = new List<Location>
             {
                 new Location{
@@ -1667,7 +1887,8 @@ namespace GeronimoHBS.DAL
                     RoomOverviewID = 1,
                     GymOverviewID = 1,
                     SpaOverviewID = 1,
-                    DiningOverviewID = 1
+                    DiningOverviewID = 1,
+                    EventOverviewID = 1
                 },
                 new Location{
                     LocationName="Glasgow",
@@ -1678,7 +1899,8 @@ namespace GeronimoHBS.DAL
                     RoomOverviewID = 2,
                     GymOverviewID = 2,
                     SpaOverviewID = 2,
-                    DiningOverviewID = 2
+                    DiningOverviewID = 2,
+                    EventOverviewID = 2
 
                 },
                 new Location{
@@ -1690,7 +1912,8 @@ namespace GeronimoHBS.DAL
                     RoomOverviewID = 3,
                     GymOverviewID = 3,
                     SpaOverviewID = 3,
-                    DiningOverviewID = 3
+                    DiningOverviewID = 3,
+                    EventOverviewID = 3
 
                 },
                 new Location{
@@ -1702,7 +1925,8 @@ namespace GeronimoHBS.DAL
                     RoomOverviewID = 4,
                     GymOverviewID = 4,
                     SpaOverviewID = 4,
-                    DiningOverviewID = 4
+                    DiningOverviewID = 4,
+                    EventOverviewID = 4
                 },
                 new Location{
                     LocationName="New York",
@@ -1713,7 +1937,8 @@ namespace GeronimoHBS.DAL
                     RoomOverviewID = 5,
                     GymOverviewID = 5,
                     SpaOverviewID = 5,
-                    DiningOverviewID = 5
+                    DiningOverviewID = 5,
+                    EventOverviewID = 5
                 },
                 new Location{
                     LocationName="London",
@@ -1723,7 +1948,8 @@ namespace GeronimoHBS.DAL
                     RoomOverviewID = 6,
                     GymOverviewID = 6,
                     SpaOverviewID = 6,
-                    DiningOverviewID = 6
+                    DiningOverviewID = 6,
+                    EventOverviewID = 6
                 }
 
             };
