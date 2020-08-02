@@ -1553,6 +1553,7 @@ namespace GeronimoHBS.DAL
                     Description = "Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. ",
                     AvailableFrom = new DateTime(2020, 9, 22),
                     AvailableTo = new DateTime(2020, 12, 21),
+                    IsAvailable = false,
                     MenuItems = menuItems
                 },
                 new Menu {
@@ -1560,6 +1561,7 @@ namespace GeronimoHBS.DAL
                     Description = "Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. ",
                     AvailableFrom = new DateTime(2020, 12, 21),
                     AvailableTo = new DateTime(2020, 3, 20),
+                    IsAvailable = false,
                     MenuItems = menuItems
                 },
                 new Menu {
@@ -1567,6 +1569,7 @@ namespace GeronimoHBS.DAL
                     Description = "Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. ",
                     AvailableFrom = new DateTime(2020, 3, 20),
                     AvailableTo = new DateTime(2020, 6, 21),
+                    IsAvailable = false,
                     MenuItems = menuItems
                 },
                 new Menu {
@@ -1574,6 +1577,7 @@ namespace GeronimoHBS.DAL
                     Description = "Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. ",
                     AvailableFrom = new DateTime(2020, 6, 21),
                     AvailableTo = new DateTime(2020, 9, 22),
+                    IsAvailable = true,
                     MenuItems = menuItems
                 }
 

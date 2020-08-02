@@ -373,6 +373,8 @@ namespace GeronimoHBS.Models
         [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime? AvailableTo { get; set; }
 
+        public bool IsAvailable { get; set; }
+
         public virtual ICollection<DiningOverview> DiningOverview { get; set; }
 
         public virtual ICollection<MenuItem> MenuItems { get; set; }
