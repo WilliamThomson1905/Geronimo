@@ -11,10 +11,12 @@
 
 
 <p>
-    Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.
+    @Html.DisplayFor(modelItem => Model.EventOverview.MainContent)
+
+</p>
+<p>
+    @Html.DisplayFor(modelItem => Model.EventOverview.SecondaryContent)
+
 </p>
 @foreach (var item in Model.EventOverview.Events)
 {
@@ -22,9 +24,9 @@
     <p>
         @item.StartDate
         @item.EndDate
-        @item.AmountPaid 
+        @item.AmountPaid
         @item.CalculatedCost
-        @item.ExtraCost 
+        @item.ExtraCost
         @item.EventStatus.EventStatusName
         @item.Venue.VenueName
         @item.PublicEvent
@@ -49,5 +51,7 @@
 </p>
 
 <p>
+    <a href="/Events/Index/@Model.LocationID" class="button primary">Current Events</a>
+
     @Html.ActionLink("Current Events", "Index", new { controller = "Events" }, htmlAttributes: new { @class = "button primary" })
 </p>

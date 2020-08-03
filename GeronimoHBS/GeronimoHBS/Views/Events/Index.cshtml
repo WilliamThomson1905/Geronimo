@@ -1,12 +1,71 @@
-﻿@{
+﻿@model GeronimoHBS.Models.Location
+@using GeronimoHBS.Models
+
+@{
     ViewBag.Title = "Events";
 }
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
-<div class="container">
+<div class="pageOverview">
+    <div class="container">
+        <h2>@Html.DisplayFor(modelItem => Model.EventOverview.Header)</h2>
+        <p>@Html.DisplayFor(modelItem => Model.EventOverview.IntroductionParagraph)</p>
 
+    </div>
+</div>
+<div class="container">
+    <p>@Html.DisplayFor(modelItem => Model.EventOverview.MainContent)</p>
+    <p>@Html.DisplayFor(modelItem => Model.EventOverview.SecondaryContent)</p>
+</div>
+@if (Model.EventOverview.Events.Count() != 0)
+{
+
+<div class="container">
+    <h3>All Events</h3>
+    @foreach (var item in Model.EventOverview.Events)
+    {
+        <h3>@item.EventName</h3>
+        <p>
+            Start Date: @item.StartDate
+        </p>
+        <p>
+            End Date: @item.EndDate
+        </p>
+        <p>
+            Amount Paid: @item.AmountPaid
+        </p>
+        <p>
+            Aditional Cost: @item.ExtraCost
+        </p>
+        <p>
+            Total Cost: @item.CalculatedCost
+        </p>
+        <p>
+            Event Status: @item.EventStatus.EventStatusName
+        </p>
+        <p>
+            Venue: @item.Venue.VenueName
+        </p>
+        <p>
+            Public Event: @item.PublicEvent
+        </p>
+        <p>
+            # of Participants: @item.NoOfParticipants
+        </p>
+        }
+    </div>
+}
+else
+{
+    <div>
+        No Events Details Right Now
+    </div>
+}
+
+
+<div class="container">
     <h2>Events Display</h2>
-    <p>Show all events</p>
-    <p>Might have an Eventbrite API integration. Watch this space. </p>
-</div> 
+    <p>Show all events - that were created by staff/admin</p>
+    <p>Might have an Eventbrite API integration...watch this space. </p>
+</div>
