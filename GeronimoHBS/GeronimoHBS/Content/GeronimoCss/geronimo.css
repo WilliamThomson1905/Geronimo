@@ -525,16 +525,31 @@ li {
     width: 13.1%;
 }
 
-.timetableColumn {
+.menuColumn {
     margin: 0 5px;
-    float: left;
     width: 13.1%;
 }
+
+
+.menuColumnTitle {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    background-color: #555555;
+    color: white;
+    border: 2px solid transparent;
+}
+
+    .menuColumnTitle:hover {
+        background-color: azure;
+        color: #555555;
+        border: 2px solid;
+    }
 
 .timetableColumnTitle:hover {
     background-color: azure;
     color: #555555;
-    border: 6px solid;  
+    border: 6px solid;
 }
 
 .activeDaySelected {
@@ -556,7 +571,7 @@ li {
 #dayFilter {
     width: 100%;
     height: 160px;
-    display: block;
+    display: inline-block;
   
 }
 

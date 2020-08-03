@@ -6,11 +6,13 @@
 
                 <h2>Locations</h2>
                 <ul class="links">
-                    <li><a href="" target="_blank">Glasgow</a></li>
-                    <li><a href="" target="_blank">Paris</a></li>
-                    <li><a href="" target="_blank">London</a></li>
-                    <li><a href="" target="_blank">Amsterdam</a></li>
-                    <li><a href="" target="_blank">New York</a></li>
+                    <li>@Html.RouteLink("Glasgow", "GetHotel", new { Id = 2, Name = "Glasgow" })</li>
+
+                    <li>@Html.RouteLink("Paris", "GetHotel", new { Id = 3, Name = "Paris" })</li>
+                    <li>@Html.RouteLink("Amsterdam", "GetHotel", new { Id = 4, Name = "Amsterdam" })</li>
+                    <li>@Html.RouteLink("New York", "GetHotel", new { Id = 5, Name = "New York" })</li>
+                    <li>@Html.RouteLink("London", "GetHotel", new { Id = 6, Name = "London" })</li>
+
                 </ul>
 
             </div>
@@ -18,11 +20,11 @@
             <div class="footerColumn">
                 <h2>Services</h2>
                 <ul class="links">
-                    <li><a href="" target="_blank">Rooms</a></li>
-                    <li><a href="" target="_blank">Gym</a></li>
-                    <li><a href="" target="_blank">Spa</a></li>
-                    <li><a href="" target="_blank">Events</a></li>
-                    <li><a href="" target="_blank">Dining</a></li>
+                    <li><a href="/Rooms/Index/1">Rooms</a></li>
+                    <li><a href="/Gym/Index/1">Gym</a></li>
+                    <li><a href="/Spa/Index/1">Spa</a></li>
+                    <li><a href="/Events/Index/1">Events</a></li>
+                    <li><a href="/Dining/Index/1">Dining</a></li>
                 </ul>
 
             </div>

@@ -1682,24 +1682,36 @@ namespace GeronimoHBS.DAL
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 20,
+                    MealType = MealType.MAINCOURSE,
+                    IsVegan = false,
+                    IsVegetarian = false
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 21,
+                    MealType = MealType.MAINCOURSE,
+                    IsVegan = true,
+                    IsVegetarian = false
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 22,
+                    MealType = MealType.MAINCOURSE,
+                    IsVegan = false,
+                    IsVegetarian = false
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 23,
+                    MealType = MealType.STARTER,
+                    IsVegan = false,
+                    IsVegetarian = false
 
                 },
                 new MenuItem
@@ -1707,36 +1719,54 @@ namespace GeronimoHBS.DAL
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 24,
+                    MealType = MealType.STARTER,
+                    IsVegan = false,
+                    IsVegetarian = false
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 25,
+                    MealType = MealType.MAINCOURSE,
+                    IsVegan = true,
+                    IsVegetarian = true
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 26,
+                    MealType = MealType.MAINCOURSE,
+                    IsVegan = true,
+                    IsVegetarian = true
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 27,
+                    MealType = MealType.STARTER,
+                    IsVegan = false,
+                    IsVegetarian = true
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 28,
+                    MealType = MealType.DESSERT,
+                    IsVegan = false,
+                    IsVegetarian = true
                 },
                 new MenuItem
                 {
                     MenuItemName = "Salmon w/ Ayrshire Potatoes",
                     MenuItemDescription = "Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. Salmon with Ayrshire Potatoes. ",
                     MenuItemCost = 29,
+                    MealType = MealType.STARTER,
+                    IsVegan = true,
+                    IsVegetarian = true
                 },
 
 
