@@ -48,10 +48,12 @@
                     @foreach (MenuItem menuItem in item.MenuItems)
                     {
                         <div class="spaPromotions">
-
-                            <h3>@menuItem.MenuItemName</h3>
+                            <p>@menuItem.MealType </p>
+                            <h4>@menuItem.MenuItemName</h4>
                             <p>@menuItem.MenuItemDescription</p>
                             <p>@menuItem.MenuItemCost </p>
+                            <p>Vegetarian: @menuItem.IsVegetarian </p>
+                            <p>Vegan: @menuItem.IsVegan </p>
                             <hr />
 
                         </div>

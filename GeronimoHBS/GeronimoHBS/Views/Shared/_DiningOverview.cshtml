@@ -40,9 +40,12 @@
         foreach (var menuItem in item.MenuItems)
         {
 
+            <p>@menuItem.MealType </p>
             <h4>@menuItem.MenuItemName</h4>
             <p>@menuItem.MenuItemDescription</p>
             <p>@menuItem.MenuItemCost </p>
+            <p>Vegetarian: @menuItem.IsVegetarian </p>
+            <p>Vegan: @menuItem.IsVegan </p>
             <hr />
 
         }

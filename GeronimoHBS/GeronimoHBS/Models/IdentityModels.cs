@@ -397,14 +397,21 @@ namespace GeronimoHBS.Models
         public double MenuItemCost { get; set; }
         public string MenuItemDescription { get; set; }
 
+        public bool IsVegan { get; set; }
 
+        public bool IsVegetarian { get; set; }
+
+        public MealType MealType { get; set; }
         // Each menuItem can belong to multiple menus
         public virtual ICollection<Menu> Menus { get; set; }
 
 
     }
 
-
+    public enum MealType
+    {
+        STARTER, MAINCOURSE, DESSERT
+    }
 
 
 
