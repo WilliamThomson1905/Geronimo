@@ -13,10 +13,15 @@
     <div class="container">
         <h2>@Html.DisplayFor(modelItem => Model.DiningOverview.Header)</h2>
         <p>@Html.DisplayFor(modelItem => Model.DiningOverview.IntroductionParagraph)</p>
-        <p>@Html.DisplayFor(modelItem => Model.DiningOverview.MainContent)</p>
-        <p>@Html.DisplayFor(modelItem => Model.DiningOverview.SecondaryContent)</p>
-
     </div>
+</div>
+
+<div class="container">
+    <p>@Html.DisplayFor(modelItem => Model.DiningOverview.MainContent)</p>
+    <p>@Html.DisplayFor(modelItem => Model.DiningOverview.SecondaryContent)</p>
+
+
+
 </div>
 @if (Model.DiningOverview.Menus != null)
 {
@@ -29,40 +34,30 @@
                 @* Loop seven days of the week *@
                 @foreach (var item in Model.DiningOverview.Menus)
                 {
-                    <a class="timetableColumn">
-                        <h2 class="timetableColumnTitle " onclick="showGymClasses(event, '@item.Name')">@item.Name</h2>
+                    <a class="menuColumn">
+                        <h3 class="timetableColumnTitle " onclick="showGymClasses(event, '@item.Name')">@item.Name</h3>
                     </a>
+                    <div id="@item.Name" class="container tabcontent">
+                        @foreach (MenuItem menuItem in item.MenuItems)
+                        {
+                            <div class="spaPromotions">
+                                <p>@menuItem.MealType </p>
+                                <h4>@menuItem.MenuItemName</h4>
+                                <p>@menuItem.MenuItemDescription</p>
+                                <p>@menuItem.MenuItemCost </p>
+                                <p>Vegetarian: @menuItem.IsVegetarian </p>
+                                <p>Vegan: @menuItem.IsVegan </p>
+                                <hr />
+
+                            </div>
+                        }
+                    </div>
 
                 }
             </div>
 
 
 
-            @* Loop each item in Menus *@
-            @foreach (var item in Model.DiningOverview.Menus)
-            {
-
-
-
-                <div id="@item.Name" class="container tabcontent">
-                    @foreach (MenuItem menuItem in item.MenuItems)
-                    {
-                        <div class="spaPromotions">
-                            <p>@menuItem.MealType </p>
-                            <h4>@menuItem.MenuItemName</h4>
-                            <p>@menuItem.MenuItemDescription</p>
-                            <p>@menuItem.MenuItemCost </p>
-                            <p>Vegetarian: @menuItem.IsVegetarian </p>
-                            <p>Vegan: @menuItem.IsVegan </p>
-                            <hr />
-
-                        </div>
-                    }
-                </div>
-
-
-
-            }
 
 
             <script src="~/Scripts/GeronimoScripts/geronimo/tabContent.js"></script>
