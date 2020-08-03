@@ -467,6 +467,9 @@ namespace GeronimoHBS.Models
 
         public bool PublicEvent { get; set; }
 
+        public virtual ICollection<EventOverview> EventOverview { get; set; }
+
+
 
         // Foriegn key 
         public int EventStatusID { get; set; }
