@@ -9,27 +9,38 @@ namespace GeronimoHBS.Controllers
     public class RoomsController : BaseController
     {
         // GET: Rooms
-        public ActionResult Index()
+        public ActionResult Index(int? Id)
         {
+       
+            var currentLocation = db.Location.First();
+            if (Id != null)
+            {
+                currentLocation = db.Location.Find(Id);
+            }
+
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/2" }
             };
-            ViewBag.Collection = breadcrumbs;
 
-            return View();
+            ViewBag.Collection = breadcrumbs;
+            return View(currentLocation);            
         }
-        public ActionResult RoomSelection()
+
+
+
+        public ActionResult RoomSelection(int? Id)
         {
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
                 new string []{ "Room Info", "../../Rooms/Index"}
             };
             ViewBag.Collection = breadcrumbs;
+            var currentLocation = db.Location.Find(Id);
 
-            return View();
+            return View(currentLocation);
         }
 
-        public ActionResult Availability()
+        public ActionResult Availability(int? Id)
         {
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
@@ -38,11 +49,13 @@ namespace GeronimoHBS.Controllers
             };
             ViewBag.Collection = breadcrumbs;
 
-            return View();
+            var currentLocation = db.Location.Find(Id);
+
+            return View(currentLocation);
         }
 
 
-        public ActionResult Payment()
+        public ActionResult Payment(int? Id)
         {
 
             breadcrumbs = new string[][] {
@@ -51,6 +64,10 @@ namespace GeronimoHBS.Controllers
                 new string []{ "Room Selection", "../../Rooms/RoomSelection"},
                 new string []{ "Availability", "../../Rooms/Availability" }
             };
+
+
+            ViewBag.Collection = breadcrumbs;
+
             return View();
         }
 
