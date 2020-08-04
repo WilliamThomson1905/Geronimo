@@ -12,7 +12,7 @@ namespace GeronimoHBS.Controllers
         public ActionResult Index()
         {
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index" }
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" }
             };
             ViewBag.Collection = breadcrumbs;
 
@@ -21,7 +21,7 @@ namespace GeronimoHBS.Controllers
         public ActionResult RoomSelection()
         {
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index" },
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
                 new string []{ "Room Info", "../../Rooms/Index"}
             };
             ViewBag.Collection = breadcrumbs;
@@ -32,7 +32,7 @@ namespace GeronimoHBS.Controllers
         public ActionResult Availability()
         {
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index" },
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
                 new string []{ "Room Info", "../../Rooms/Index"},
                 new string []{ "Room Selection", "../../Rooms/RoomSelection"}
             };
@@ -44,6 +44,13 @@ namespace GeronimoHBS.Controllers
 
         public ActionResult Payment()
         {
+
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index" },
+                new string []{ "Room Info", "../../Rooms/Index"},
+                new string []{ "Room Selection", "../../Rooms/RoomSelection"},
+                new string []{ "Availability", "../../Rooms/Availability" }
+            };
             return View();
         }
 

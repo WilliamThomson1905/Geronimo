@@ -17,8 +17,7 @@ namespace GeronimoHBS.Controllers
         {
 
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index/1" },
-                new string []{ "Gym", "../../Gym/Index"}
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/1" }
             };
             ViewBag.Collection = breadcrumbs;
 
