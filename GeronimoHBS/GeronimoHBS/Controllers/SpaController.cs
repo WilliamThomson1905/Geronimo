@@ -13,9 +13,12 @@ namespace GeronimoHBS.Controllers
         {
             var currentSpaDetails = db.SpaOverview.Find(Id);
 
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" }
+            };
+
             ViewBag.Collection = breadcrumbs;
             ViewBag.Location = db.Location.Find(Id);
-
             return View(currentSpaDetails);
         }
     }

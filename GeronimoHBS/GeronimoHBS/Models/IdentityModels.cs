@@ -107,10 +107,11 @@ namespace GeronimoHBS.Models
 
         public string Header { get; set; }
 
-        public string Content { get; set; }
+        public string IntroductionParagraph { get; set; }
 
-      
+        public string MainContent { get; set; }
 
+        public string SecondaryContent { get; set; }
 
         // Navigation property - multiple types of room:  standard, premium etc. 
         public virtual ICollection<RoomType> RoomType { get; set; }

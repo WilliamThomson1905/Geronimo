@@ -35,7 +35,11 @@ namespace GeronimoHBS.Controllers
         public ActionResult GymClassDetails(int Id)
         {
             var currentClassDetails = db.GymClasses.Find(Id);
-            
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
+                new string [] { "Gym", "../../Gym/Index/2" }
+            };
+
             ViewBag.Collection = breadcrumbs;
             return View(currentClassDetails);
         }
@@ -104,6 +108,13 @@ namespace GeronimoHBS.Controllers
                 Sunday = sunday.ToList(),
             };
 
+
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
+                new string [] { "Gym", "../../Gym/Index/2" }
+            };
+
+            ViewBag.Collection = breadcrumbs;
             return View(slvm);
         }
 

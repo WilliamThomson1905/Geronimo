@@ -29,6 +29,13 @@ namespace GeronimoHBS.Controllers
         // GET: Dining/Menu
         public ActionResult Menu()
         {
+
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
+                new string [] { "Geronimo Hotel", "../../Dining/Index/2" }
+            };
+
+            ViewBag.Collection = breadcrumbs;
             return View();
         }
 

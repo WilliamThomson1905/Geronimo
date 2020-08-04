@@ -201,46 +201,75 @@ namespace GeronimoHBS.DAL
                 new RoomOverview
                 {
                     Header = "Geronimo Rooms",
-                    Content = "Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    IntroductionParagraph = "Regardless of the location Geronimo Hotels.  ",
+                    MainContent = "Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
                     "There are Standard rooms and premium rooms available. ",
+                    SecondaryContent = "Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.",
                     RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Glasgow Rooms",
-                    Content = "When booking a room at the Glasgow Geronimo Hotel " +
+                    IntroductionParagraph = "",
+                    MainContent = "When booking a room at the Glasgow Geronimo Hotel " +
                     "you can choose from either a standard or premium room. ",
+                    SecondaryContent = "", 
                     RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Paris Rooms",
-                    Content = "When booking a room at the Paris Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. ",                    
+                    IntroductionParagraph = "When booking a room premium room. ",
+                    MainContent = "When booking a room at the Paris Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",  
+                    SecondaryContent = "When booking a room at the Paris Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. When booking a room at the Paris Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
                     RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "Amsterdam Rooms",
-                    Content = "When booking a room at the Amsterdam Geronimo Hotel " +
+                    IntroductionParagraph = "When booking a room at the Amsterdam Geronimo Hotel",
+                    MainContent = "When booking a room at the Amsterdam Geronimo Hotel " +
                     "you can choose from either a standard or premium room. " +
                     "When booking a room at the Amsterdam Geronimo Hotel " +
                     "you can choose from either a standard or premium room. ",
+                    SecondaryContent = "When booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo Hotel",
                     RoomType = roomTypes
                 }, 
                 new RoomOverview
                 {
                     Header = "New York Rooms",
-                    Content = "When booking a room at the New York New York Geronimo Hotel " +
+                    IntroductionParagraph = "When When booking a room at the New York New York Geronimo Hotelbooking a room at the New York New York Geronimo Hotel", 
+                    MainContent = "When booking a room at the New York New York Geronimo Hotel " +
                     "you can choose from either a standard or premium room. "+
                     "When booking a room at the New York Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
+                    SecondaryContent = "When booking a room at the New York New York Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. "+
+                    "When booking a room at the New York Geronimo HotelWhen booking a room at the New York Geronimo HotelWhen booking a room at the New York Geronimo Hotel " +
                     "you can choose from either a standard or premium room. ",
                     RoomType = roomTypes
                 },
                 new RoomOverview
                 {
                     Header = "London Rooms", 
-                    Content = "When booking a room at the London Geronimo Hotel " +
+                    IntroductionParagraph = "", 
+                    MainContent = "When booking a room at the London Geronimo Hotel " +
                     "you can choose from either a standard or premium room. "+
                     "When booking a room at the London Geronimo Hotel " +
                     "you can choose from either a standard or premium room. ",

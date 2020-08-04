@@ -1,4 +1,6 @@
-﻿
+﻿@model GeronimoHBS.Models.Location
+@using GeronimoHBS.Models
+
 @{
     ViewBag.Title = "RoomAvailability";
 }
@@ -10,11 +12,7 @@
     <div>
 
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-
+   
 
             <h2>Make selection</h2>
             <p>
@@ -38,13 +36,13 @@
 
 
                 </ol>
-                @Html.ActionLink("Show Availability", "Availability", "Rooms", new { @class = "button primary" })
+                <a href="/Rooms/Availability/@Model.LocationID" class="button primary">Show Availability</a>
             </p>
 
-        }
+        
 
         <div>
-            @Html.ActionLink("Back to List", "Index", "Rooms",  new { @class= "secondaryLink" })
+            <a href="/Rooms/Index/@Model.LocationID" class="secondaryLink">Back to List</a>
         </div>
 
 
