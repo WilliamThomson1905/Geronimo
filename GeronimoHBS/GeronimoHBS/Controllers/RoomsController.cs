@@ -1,6 +1,8 @@
-﻿using System;
+﻿using GeronimoHBS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,12 +13,17 @@ namespace GeronimoHBS.Controllers
         // GET: Rooms
         public ActionResult Index(int? Id)
         {
-       
+
             var currentLocation = db.Location.First();
-            if (Id != null)
+            if (Id == null)
+            {
+                ViewBag.Location = "Welcome to Geronimo Hotel";
+            }
+            else
             {
                 currentLocation = db.Location.Find(Id);
             }
+
 
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/2" }
@@ -40,6 +47,7 @@ namespace GeronimoHBS.Controllers
             return View(currentLocation);
         }
 
+
         public ActionResult Availability(int? Id)
         {
             breadcrumbs = new string[][] {
@@ -54,6 +62,28 @@ namespace GeronimoHBS.Controllers
             return View(currentLocation);
         }
 
+
+        [HttpPost]
+        public ActionResult Availability(int LocationId, string guestsCount, string roomTypeId, string startDate, string endDate)
+        {
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
+                new string []{ "Room Info", "../../Rooms/Index"}
+            };
+            ViewBag.Collection = breadcrumbs;
+            var currentLocation = db.Location.Find(LocationId);
+            ViewBag.GuestsCount = guestsCount;
+            ViewBag.StartDate = startDate;
+            ViewBag.EndDate = endDate;
+
+            int roomTypeIdint = int.Parse(roomTypeId);
+
+            var roomType = db.RoomType.Find(roomTypeIdint);
+            ViewBag.RoomType = roomType;
+
+
+            return View(currentLocation);
+        }
 
         public ActionResult Payment(int? Id)
         {

@@ -10,11 +10,19 @@
 <div class="container">
 
     <div>
+        <h2>Choose from a selection of wonderful rooms! </h2>
 
 
-   
+    </div>
+</div>
 
-            <h2>Make selection</h2>
+
+<div class="containter">
+
+    @using (Html.BeginForm("Availability", "Rooms", FormMethod.Post))
+    {
+
+        @*<h2>Make selection</h2>
             <p>
                 Fill in form details
                 <ol>
@@ -37,16 +45,27 @@
 
                 </ol>
                 <a href="/Rooms/Availability/@Model.LocationID" class="button primary">Show Availability</a>
-            </p>
-
-        
-
-        <div>
-            <a href="/Rooms/Index/@Model.LocationID" class="secondaryLink">Back to List</a>
-        </div>
+            </p>*@
 
 
-    </div>
+        <input type="text" name="guestsCount" id="guestsCount" placeholder="How many guests?" />
+        <input type="text" name="roomTypeId" id="roomTypeId" placeholder="Room Selection" />
+        <input type="date" name="startDate" id="startDate" placeholder="Start Date of reservation" />
+        <input type="date" name="endDate" id="endDate" placeholder="End Date of reservation" />
+
+        @* Declare hidden values for each of the folowing *@
+        <input type="hidden" value=@Model.LocationID id="Id" name="LocationId" />
+
+
+        <button type="submit" class="button primary"><i class="fa fa-search"></i>Show Availability</button>
+
+
+
+    }
+
+
+
+
 </div>
 
 
