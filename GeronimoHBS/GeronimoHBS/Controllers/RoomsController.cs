@@ -1,6 +1,8 @@
-﻿using System;
+﻿using GeronimoHBS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,11 +13,10 @@ namespace GeronimoHBS.Controllers
         // GET: Rooms
         public ActionResult Index(int? Id)
         {
-       
-            var currentLocation = db.Location.First();
-            if (Id != null)
+
+            if (Id == 0)
             {
-                currentLocation = db.Location.Find(Id);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
             breadcrumbs = new string[][] {
@@ -23,6 +24,18 @@ namespace GeronimoHBS.Controllers
             };
 
             ViewBag.Collection = breadcrumbs;
+
+            var currentLocation = this.db.Location.First();
+            
+            if (currentLocation == null)
+            {
+                return HttpNotFound();
+            }
+
+
+
+
+
             return View(currentLocation);            
         }
 
