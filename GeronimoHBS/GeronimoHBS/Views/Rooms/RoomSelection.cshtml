@@ -10,11 +10,19 @@
 <div class="container">
 
     <div>
+        <h2>Choose from a selection of wonderful rooms! </h2>
 
 
-   
+    </div>
+</div>
 
-            <h2>Make selection</h2>
+
+<div class="containter">
+
+    @using (Html.BeginForm("Availability", "Rooms", FormMethod.Post))
+    {
+
+        @*<h2>Make selection</h2>
             <p>
                 Fill in form details
                 <ol>
@@ -37,16 +45,24 @@
 
                 </ol>
                 <a href="/Rooms/Availability/@Model.LocationID" class="button primary">Show Availability</a>
-            </p>
+            </p>*@
 
+
+        <input type="text" name="firstName" id="firstName" placeholder="Your name goes here" />
         
-
-        <div>
-            <a href="/Rooms/Availability/@Model.LocationID" class="secondaryLink">Back to List</a>
-        </div>
+        @* Declare hidden values for each of the folowing *@
+        <input type="hidden" value=@Model.LocationID id="Id" name="Id" />
 
 
-    </div>
+        <button type="submit" class="button primary"><i class="fa fa-search"></i>Show Availability</button>
+
+
+
+    }
+
+
+
+
 </div>
 
 

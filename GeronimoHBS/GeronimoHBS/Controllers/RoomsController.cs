@@ -14,28 +14,22 @@ namespace GeronimoHBS.Controllers
         public ActionResult Index(int? Id)
         {
 
-            if (Id == 0)
+            var currentLocation = db.Location.First();
+            if (Id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                ViewBag.Location = "Welcome to Geronimo Hotel";
             }
+            else
+            {
+                currentLocation = db.Location.Find(Id);
+            }
+
 
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/2" }
             };
 
             ViewBag.Collection = breadcrumbs;
-
-            var currentLocation = this.db.Location.First();
-            
-            if (currentLocation == null)
-            {
-                return HttpNotFound();
-            }
-
-
-
-
-
             return View(currentLocation);            
         }
 
@@ -53,6 +47,7 @@ namespace GeronimoHBS.Controllers
             return View(currentLocation);
         }
 
+
         public ActionResult Availability(int? Id)
         {
             breadcrumbs = new string[][] {
@@ -67,6 +62,20 @@ namespace GeronimoHBS.Controllers
             return View(currentLocation);
         }
 
+
+        [HttpPost]
+        public ActionResult Availability(string firstName, int? Id)
+        {
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
+                new string []{ "Room Info", "../../Rooms/Index"}
+            };
+            ViewBag.Collection = breadcrumbs;
+            var currentLocation = db.Location.Find(Id);
+            ViewBag.FirstName = firstName; 
+
+            return View(currentLocation);
+        }
 
         public ActionResult Payment(int? Id)
         {

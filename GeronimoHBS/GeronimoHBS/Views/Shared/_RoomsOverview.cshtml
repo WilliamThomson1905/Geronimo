@@ -49,7 +49,8 @@
             Free Wifi is available throughout all our Hotels.
         </p>
         <p>
-            @Html.ActionLink("Book Now", "Index", new { controller = "Rooms" }, htmlAttributes: new { @class = "button primary" })
+            <a href="/Rooms/Index/@Model.LocationID" class="button primary">View Details</a>
+
         </p>
     </div>
     i++;
