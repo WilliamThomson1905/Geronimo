@@ -17,7 +17,12 @@
                 All the rooms that are available for the booking. <br />
                 With an option(s) to select options to book.
             </li>
-
+            <li>
+                @ViewBag.GuestsCount = guestsCount;
+                @ViewBag.StartDate = startDate;
+                @ViewBag.EndDate = endDate;
+                @ViewBag.RoomType.Name = roomType;
+            </li>
 
         </ol>
         <a href="/Rooms/Payment/@Model.LocationID" class="button primary">Payment</a>

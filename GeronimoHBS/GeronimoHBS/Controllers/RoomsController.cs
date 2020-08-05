@@ -64,15 +64,23 @@ namespace GeronimoHBS.Controllers
 
 
         [HttpPost]
-        public ActionResult Availability(string firstName, int? Id)
+        public ActionResult Availability(int LocationId, string guestsCount, string roomTypeId, string startDate, string endDate)
         {
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
                 new string []{ "Room Info", "../../Rooms/Index"}
             };
             ViewBag.Collection = breadcrumbs;
-            var currentLocation = db.Location.Find(Id);
-            ViewBag.FirstName = firstName; 
+            var currentLocation = db.Location.Find(LocationId);
+            ViewBag.GuestsCount = guestsCount;
+            ViewBag.StartDate = startDate;
+            ViewBag.EndDate = endDate;
+
+            int roomTypeIdint = int.Parse(roomTypeId);
+
+            var roomType = db.RoomType.Find(roomTypeIdint);
+            ViewBag.RoomType = roomType;
+
 
             return View(currentLocation);
         }

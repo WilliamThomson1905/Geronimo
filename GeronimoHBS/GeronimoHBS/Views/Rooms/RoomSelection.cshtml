@@ -48,10 +48,13 @@
             </p>*@
 
 
-        <input type="text" name="firstName" id="firstName" placeholder="Your name goes here" />
-        
+        <input type="text" name="guestsCount" id="guestsCount" placeholder="How many guests?" />
+        <input type="text" name="roomTypeId" id="roomTypeId" placeholder="Room Selection" />
+        <input type="date" name="startDate" id="startDate" placeholder="Start Date of reservation" />
+        <input type="date" name="endDate" id="endDate" placeholder="End Date of reservation" />
+
         @* Declare hidden values for each of the folowing *@
-        <input type="hidden" value=@Model.LocationID id="Id" name="Id" />
+        <input type="hidden" value=@Model.LocationID id="Id" name="LocationId" />
 
 
         <button type="submit" class="button primary"><i class="fa fa-search"></i>Show Availability</button>
