@@ -8,47 +8,106 @@
 @{ Html.RenderPartial("_Breadcrumbs");}
 
 <div class="container">
+    @using (Html.BeginForm("Payment", "Rooms", FormMethod.Post))
+    {
 
-                
-    <h2>@Model.LocationName Room Availability: @ViewBag.FirstName</h2>
-    <p>
-        <ol>
-            <li>
-                All the rooms that are available for the booking. <br />
-                With an option(s) to select options to book.
-            </li>
-            <li>
-                @Model.RoomOverview.Header = RoomOverview.Header
-            </li>
-            <li>
-                @ViewBag.RoomsCount = guestsCount;
-            </li>
-            <li>
-                @ViewBag.StartDate = startDate;
-            </li>
-            <li>
-                @ViewBag.EndDate = endDate;
-            </li>
-            <li>
-                @ViewBag.RoomType.Name = roomType;
-            </li>
-            <li>
-                @foreach (Room room in ViewBag.Rooms)
+        <h2>@Model.LocationName Room Availability: @ViewBag.FirstName</h2>
+
+
+
+        <div class="table-responsive">
+
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th> Room No </th>
+                    <th> Room </th>
+                    <th> No of Beds </th>
+                    <th> Price </th>
+                    <th> Floor No </th>
+                    <th> Room Description </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var room in ViewBag.Rooms)
                 {
-                    @room.RoomNumber
-                    <br />
-                    @room.Name <br />
-                    @room.NumberOfBeds<br />
-                    @room.Price<br />
-                    @room.FloorNumber<br />
-                    @room.Description<br />
+                    <tr>
+                        <td>
+                            <input id="RoomsSelected@(room.RoomID)" type="checkbox" name="RoomsSelected" value=@room.RoomID />
+                            <label for="RoomsSelected@(room.RoomID)"></label>
+                        </td>
+                        <td>
+                            @room.RoomNumber
+                        </td>
+                        <td>
+                            @room.Name
+                        </td>
+
+                        <td>
+                            @room.NumberOfBeds
+                        </td>
+                        <td>
+                            @room.Price
+                        </td>
+                        <td>
+                            @room.FloorNumber
+                        </td>
+                        <td>
+                            @room.Description
+                        </td>
+                        <td></td>
+
+                    </tr>
+
 
                 }
-            </li>
+
+            </table>
+
+        </div>
+        <button type="submit" class="button primary"><i class="fa fa-search"></i>Payment</button>
 
 
-
-        </ol>
-        <a href="/Rooms/Payment/@Model.LocationID" class="button primary">Payment</a>
-    </p>
+    }
 </div>
+
+
+
+
+@*<ol>
+    <li>
+        All the rooms that are available for the booking. <br />
+        With an option(s) to select options to book.
+    </li>
+    <li>
+        INPUTS:
+        @Model.RoomOverview.Header = RoomOverview.Header
+        @ViewBag.RoomsCount = guestsCount;
+        @ViewBag.StartDate = startDate;
+        @ViewBag.EndDate = endDate;
+        @ViewBag.RoomType.Name = roomType;
+    </li>
+
+    <li>
+        @foreach (Room room in ViewBag.Rooms)
+        {
+            <div>
+                <div>Room No: @room.RoomNumber</div>
+                <div>Room:  @room.Name</div>
+                <div>No of Beds: @room.NumberOfBeds</div>
+                <div>Price: @room.Price</div>
+                <div>Floor No: @room.FloorNumber</div>
+                <div>Room Description: @room.Description</div>
+
+                <input id="Remember" type="checkbox" name="RoomsSelected" value=@room.RoomID />
+
+                <label for="RoomsSelected">Choose room</label><br>
+
+                <hr />
+            </div>
+        }
+    </li>
+
+
+
+</ol>*@
