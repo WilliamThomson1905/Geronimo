@@ -48,6 +48,8 @@ namespace GeronimoHBS.DAL
 
         public DbSet<RoomOverview> RoomOverview { get; set; }
         public DbSet<RoomType> RoomType { get; set; }
+        public DbSet<Room> Room { get; set; }
+        public DbSet<Amenity> Amenities { get; set; }
 
 
         public DbSet<Location> Location { get; set; }

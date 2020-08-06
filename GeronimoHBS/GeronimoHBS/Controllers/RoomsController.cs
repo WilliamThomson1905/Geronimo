@@ -43,6 +43,8 @@ namespace GeronimoHBS.Controllers
             };
             ViewBag.Collection = breadcrumbs;
             var currentLocation = db.Location.Find(Id);
+            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName");
+            ViewBag.RoomTypeID = new SelectList(db.RoomType, "RoomTypeID", "Name");
 
             return View(currentLocation);
         }
@@ -64,7 +66,7 @@ namespace GeronimoHBS.Controllers
 
 
         [HttpPost]
-        public ActionResult Availability(int LocationId, string guestsCount, string roomTypeId, string startDate, string endDate)
+        public ActionResult Availability(int LocationId, string roomsCount, string roomTypeId, string startDate, string endDate)
         {
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
@@ -72,7 +74,7 @@ namespace GeronimoHBS.Controllers
             };
             ViewBag.Collection = breadcrumbs;
             var currentLocation = db.Location.Find(LocationId);
-            ViewBag.GuestsCount = guestsCount;
+            ViewBag.RoomsCount = roomsCount;
             ViewBag.StartDate = startDate;
             ViewBag.EndDate = endDate;
 
@@ -81,11 +83,33 @@ namespace GeronimoHBS.Controllers
             var roomType = db.RoomType.Find(roomTypeIdint);
             ViewBag.RoomType = roomType;
 
+            //get rooms for locations which meets criteria
+            var rooms = db.Room.Where(e => e.LocationID.Equals(LocationId));
+            ViewBag.Rooms = rooms;
 
             return View(currentLocation);
         }
 
+
+
         public ActionResult Payment(int? Id)
+        {
+
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index" },
+                new string []{ "Room Info", "../../Rooms/Index"},
+                new string []{ "Room Selection", "../../Rooms/RoomSelection"},
+                new string []{ "Availability", "../../Rooms/Availability" }
+            };
+
+
+            ViewBag.Collection = breadcrumbs;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Payment(int[] RoomsSelected)
         {
 
             breadcrumbs = new string[][] {
