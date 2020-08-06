@@ -157,6 +157,7 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel will have rooms  
         public virtual Location Location { get; set; }
 
+        public ICollection<Amenity> Amenities { get; set; }
 
     }
 
@@ -164,9 +165,12 @@ namespace GeronimoHBS.Models
     // Example: wifi
     public class Amenity
     {
+        [Key]
         public int AmenityID { get; set; }
 
         public string Name { get; set; }
+
+        public ICollection<Room> Rooms { get; set; }
 
     }
 

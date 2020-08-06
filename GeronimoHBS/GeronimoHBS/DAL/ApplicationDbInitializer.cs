@@ -2016,6 +2016,46 @@ namespace GeronimoHBS.DAL
 
 
 
+
+
+            var amenities = new List<Amenity>
+            {
+                new Amenity{
+                    Name = "Free WiFi"
+                },
+                new Amenity{
+                    Name = "Mini Bar"
+                },
+                new Amenity{
+                    Name = "Coffee Maker"
+                },
+                new Amenity{
+                    Name = "Iron & Ironing Board"
+                },
+                new Amenity{
+                    Name = "Microwave"
+                },
+                new Amenity{
+                    Name = "Praviate Balcony"
+                },
+                new Amenity{
+                    Name = "Crib"
+                },
+                new Amenity{
+                    Name = "TV Facilities"
+                },
+                new Amenity{
+                    Name = "Air Conditioned"
+                }
+
+            };
+            amenities.ForEach(l => context.Amenities.Add(l));
+            context.SaveChanges();
+
+
+
+
+
             var glasgowRooms = new List<Room>
             {
                 new Room{
@@ -2026,7 +2066,8 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 12,
                     Price = 20.00,
                     RoomType = roomTypes[1],
-                    LocationID = 2
+                    LocationID = 2,
+                    Amenities = amenities
                 },
                 new Room{
                     RoomNumber = 2,
@@ -2036,7 +2077,8 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 1,
                     Price = 20.00,
                     RoomType = roomTypes[1],
-                    LocationID = 2
+                    LocationID = 2,
+                    Amenities = amenities
                 },
                 new Room{
                     RoomNumber = 3,
@@ -2046,7 +2088,8 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 2,
                     Price = 20.00,
                     RoomType = roomTypes[0],
-                    LocationID = 2
+                    LocationID = 2,
+                    Amenities = amenities
                 },
                 new Room{
                     RoomNumber = 4,
@@ -2056,7 +2099,8 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 1,
                     Price = 20.00,
                     RoomType = roomTypes[0],
-                    LocationID = 2
+                    LocationID = 2,
+                    Amenities = amenities
                 },
                 new Room{
                     RoomNumber = 5,
@@ -2066,7 +2110,8 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 2,
                     Price = 50.00,
                     RoomType = roomTypes[1],
-                    LocationID = 2
+                    LocationID = 2,
+                    Amenities = amenities
                 }
 
             };
