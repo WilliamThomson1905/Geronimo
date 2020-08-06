@@ -18,9 +18,18 @@
                 With an option(s) to select options to book.
             </li>
             <li>
-                @ViewBag.GuestsCount = guestsCount;
+                @Model.RoomOverview.Header
+            </li>
+            <li>
+                @ViewBag.RoomsCount = guestsCount;
+            </li>
+            <li>
                 @ViewBag.StartDate = startDate;
+            </li>
+            <li>
                 @ViewBag.EndDate = endDate;
+            </li>
+            <li>
                 @ViewBag.RoomType.Name = roomType;
             </li>
 
