@@ -18,7 +18,7 @@
                 With an option(s) to select options to book.
             </li>
             <li>
-                @Model.RoomOverview.Header
+                @Model.RoomOverview.Header = RoomOverview.Header
             </li>
             <li>
                 @ViewBag.RoomsCount = guestsCount;
@@ -32,6 +32,21 @@
             <li>
                 @ViewBag.RoomType.Name = roomType;
             </li>
+            <li>
+                @foreach (Room room in ViewBag.Rooms)
+                {
+                    @room.RoomNumber
+                    <br />
+                    @room.Name <br />
+                    @room.NumberOfBeds<br />
+                    @room.Price<br />
+                    @room.FloorNumber<br />
+                    @room.Description<br />
+
+                }
+            </li>
+
+
 
         </ol>
         <a href="/Rooms/Payment/@Model.LocationID" class="button primary">Payment</a>

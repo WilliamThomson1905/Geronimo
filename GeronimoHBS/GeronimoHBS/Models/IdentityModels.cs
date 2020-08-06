@@ -131,7 +131,9 @@ namespace GeronimoHBS.Models
 
     public class Room
     {
-        //Primary Key  
+        //Primary Key 
+        [Key]
+
         public int RoomID { get; set; }
 
         public int FloorNumber { get; set; }
@@ -142,6 +144,18 @@ namespace GeronimoHBS.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+
+
+        // Foriegn key 
+        public int RoomTypeID { get; set; }
+        // Corresponding navigation property - each hotel will have rooms  
+        public virtual RoomType RoomType { get; set; }
+
+
+        // Foriegn key 
+        public int LocationID { get; set; }
+        // Corresponding navigation property - each hotel will have rooms  
+        public virtual Location Location { get; set; }
 
 
     }

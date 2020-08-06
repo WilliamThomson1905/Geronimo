@@ -83,6 +83,9 @@ namespace GeronimoHBS.Controllers
             var roomType = db.RoomType.Find(roomTypeIdint);
             ViewBag.RoomType = roomType;
 
+            //get rooms for locations which meets criteria
+            var rooms = db.Room;
+            ViewBag.Rooms = rooms;
 
             return View(currentLocation);
         }
