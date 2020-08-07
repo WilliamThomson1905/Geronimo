@@ -29,7 +29,7 @@
                     <th></th>
                 </tr>
 
-                @foreach (Room room in ViewBag.Rooms)
+                @foreach (Room room in Model.Rooms)
                 {
                     <tr>
                         <td>
@@ -58,8 +58,10 @@
                         <td>
                             @foreach (Amenity amenity in room.Amenities)
                             {
-                               <span>@amenity.Name</span>
+                                <span>@amenity.Name</span>
+
                             }
+                            
                         </td>
                         <td></td>
 

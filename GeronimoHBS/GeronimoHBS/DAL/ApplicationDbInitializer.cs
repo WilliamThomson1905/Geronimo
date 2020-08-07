@@ -196,6 +196,169 @@ namespace GeronimoHBS.DAL
             roomTypes.ForEach(l => context.RoomType.Add(l));
             context.SaveChanges();
 
+
+
+
+
+
+
+            var amenities = new List<Amenity>
+            {
+                new Amenity{
+                    Name = "Free WiFi"
+                },
+                new Amenity{
+                    Name = "Mini Bar"
+                },
+                new Amenity{
+                    Name = "Coffee Maker"
+                },
+                new Amenity{
+                    Name = "Iron & Ironing Board"
+                },
+                new Amenity{
+                    Name = "Microwave"
+                },
+                new Amenity{
+                    Name = "Private Balcony"
+                },
+                new Amenity{
+                    Name = "Crib"
+                },
+                new Amenity{
+                    Name = "TV Facilities"
+                },
+                new Amenity{
+                    Name = "Air Conditioned"
+                }
+
+            };
+            amenities.ForEach(l => context.Amenities.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+            var glasgowRooms = new List<Room>
+            {
+                new Room{
+                    RoomNumber = 1,
+                    Name = "GRoom One",
+                    Description = "",
+                    FloorNumber = 1,
+                    NumberOfBeds = 12,
+                    Price = 20.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities
+                },
+                new Room{
+                    RoomNumber = 2,
+                    Name = "GRoom Two",
+                    Description = "GRoom Two GRoom Two GRoom Two",
+                    FloorNumber = 1,
+                    NumberOfBeds = 1,
+                    Price = 20.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities
+                },
+                new Room{
+                    RoomNumber = 3,
+                    Name = "GRoom Three",
+                    Description = "GRoom Three GRoom Three GRoom Three ",
+                    FloorNumber = 1,
+                    NumberOfBeds = 2,
+                    Price = 20.00,
+                    RoomType = roomTypes[0],
+                    Amenities = amenities
+                },
+                new Room{
+                    RoomNumber = 4,
+                    Name = "GRoom Four",
+                    Description = "GRoom Four GRoom Four GRoom Four",
+                    FloorNumber = 2,
+                    NumberOfBeds = 1,
+                    Price = 20.00,
+                    RoomType = roomTypes[0],
+                    Amenities = amenities
+                },
+                new Room{
+                    RoomNumber = 5,
+                    Name = "GRoom Five",
+                    Description = "GRoom Five GRoom Five GRoom Five",
+                    FloorNumber = 2,
+                    NumberOfBeds = 2,
+                    Price = 50.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities
+                }
+
+            };
+            glasgowRooms.ForEach(l => context.Room.Add(l));
+            context.SaveChanges();
+
+
+
+            var londonRooms = new List<Room>
+            {
+                new Room{
+                    RoomNumber = 1,
+                    Name = "LRoom One",
+                    Description = "",
+                    FloorNumber = 1,
+                    NumberOfBeds = 12,
+                    Price = 60.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities
+                },
+                new Room{
+                    RoomNumber = 2,
+                    Name = "LRoom Two",
+                    Description = "LRoom Two LRoom Two LRoom Two",
+                    FloorNumber = 1,
+                    NumberOfBeds = 1,
+                    Price = 20.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities
+                },
+                new Room{
+                    RoomNumber = 3,
+                    Name = "LRoom Three",
+                    Description = "LRoom Three LRoom Three LRoom Three ",
+                    FloorNumber = 1,
+                    NumberOfBeds = 2,
+                    Price = 50.00,
+                    RoomType = roomTypes[0],
+                    Amenities = amenities
+                },
+                new Room{
+                    RoomNumber = 4,
+                    Name = "LRoom Four",
+                    Description = "LRoom Four LRoom Four LRoom Four",
+                    FloorNumber = 2,
+                    NumberOfBeds = 1,
+                    Price = 20.00,
+                    RoomType = roomTypes[0],
+                    Amenities = amenities
+                },
+                new Room{
+                    RoomNumber = 5,
+                    Name = "LRoom Five",
+                    Description = "LRoom Five LRoom Five LRoom Five",
+                    FloorNumber = 2,
+                    NumberOfBeds = 2,
+                    Price = 30.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities
+                }
+
+            };
+            londonRooms.ForEach(l => context.Room.Add(l));
+            context.SaveChanges();
+
+
+
+
             var roomOverview = new List<RoomOverview>
             {
                 new RoomOverview
@@ -1957,7 +2120,8 @@ namespace GeronimoHBS.DAL
                     GymOverviewID = 2,
                     SpaOverviewID = 2,
                     DiningOverviewID = 2,
-                    EventOverviewID = 2
+                    EventOverviewID = 2,
+                    Rooms = glasgowRooms
 
                 },
                 new Location{
@@ -2006,7 +2170,8 @@ namespace GeronimoHBS.DAL
                     GymOverviewID = 6,
                     SpaOverviewID = 6,
                     DiningOverviewID = 6,
-                    EventOverviewID = 6
+                    EventOverviewID = 6,
+                    Rooms = london
                 }
 
             };
@@ -2014,109 +2179,6 @@ namespace GeronimoHBS.DAL
             context.SaveChanges();
 
 
-
-
-
-
-            var amenities = new List<Amenity>
-            {
-                new Amenity{
-                    Name = "Free WiFi"
-                },
-                new Amenity{
-                    Name = "Mini Bar"
-                },
-                new Amenity{
-                    Name = "Coffee Maker"
-                },
-                new Amenity{
-                    Name = "Iron & Ironing Board"
-                },
-                new Amenity{
-                    Name = "Microwave"
-                },
-                new Amenity{
-                    Name = "Praviate Balcony"
-                },
-                new Amenity{
-                    Name = "Crib"
-                },
-                new Amenity{
-                    Name = "TV Facilities"
-                },
-                new Amenity{
-                    Name = "Air Conditioned"
-                }
-
-            };
-            amenities.ForEach(l => context.Amenities.Add(l));
-            context.SaveChanges();
-
-
-
-
-
-            var glasgowRooms = new List<Room>
-            {
-                new Room{
-                    RoomNumber = 1,
-                    Name = "GRoom One",
-                    Description = "",
-                    FloorNumber = 1,
-                    NumberOfBeds = 12,
-                    Price = 20.00,
-                    RoomType = roomTypes[1],
-                    LocationID = 2,
-                    Amenities = amenities
-                },
-                new Room{
-                    RoomNumber = 2,
-                    Name = "GRoom Two",
-                    Description = "GRoom Two GRoom Two GRoom Two",
-                    FloorNumber = 1,
-                    NumberOfBeds = 1,
-                    Price = 20.00,
-                    RoomType = roomTypes[1],
-                    LocationID = 2,
-                    Amenities = amenities
-                },
-                new Room{
-                    RoomNumber = 3,
-                    Name = "GRoom Three",
-                    Description = "GRoom Three GRoom Three GRoom Three ",
-                    FloorNumber = 1,
-                    NumberOfBeds = 2,
-                    Price = 20.00,
-                    RoomType = roomTypes[0],
-                    LocationID = 2,
-                    Amenities = amenities
-                },
-                new Room{
-                    RoomNumber = 4,
-                    Name = "GRoom Four",
-                    Description = "GRoom Four GRoom Four GRoom Four",
-                    FloorNumber = 2,
-                    NumberOfBeds = 1,
-                    Price = 20.00,
-                    RoomType = roomTypes[0],
-                    LocationID = 2,
-                    Amenities = amenities
-                },
-                new Room{
-                    RoomNumber = 5,
-                    Name = "GRoom Five",
-                    Description = "GRoom Five GRoom Five GRoom Five",
-                    FloorNumber = 2,
-                    NumberOfBeds = 2,
-                    Price = 50.00,
-                    RoomType = roomTypes[1],
-                    LocationID = 2,
-                    Amenities = amenities
-                }
-
-            };
-            glasgowRooms.ForEach(l => context.Room.Add(l));
-            context.SaveChanges();
 
 
         }

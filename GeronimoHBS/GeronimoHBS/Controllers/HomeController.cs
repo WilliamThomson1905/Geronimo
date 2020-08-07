@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeronimoHBS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace GeronimoHBS.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName");
+            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName", 0);
             ViewBag.LocationsCount = db.Location.Count() - 1;
 
             return View();

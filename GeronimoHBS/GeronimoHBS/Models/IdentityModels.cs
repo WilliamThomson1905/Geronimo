@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -67,6 +68,9 @@ namespace GeronimoHBS.Models
         public string LocationIntroduction { get; set; }
 
 
+        public virtual ICollection<Room> Rooms { get; set; }
+
+
 
         // Foriegn key 
         public int RoomOverviewID { get; set; }
@@ -98,6 +102,8 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel might have events  
         public virtual EventOverview EventOverview { get; set; }
 
+
+
     }
 
     public class RoomOverview
@@ -115,6 +121,7 @@ namespace GeronimoHBS.Models
 
         // Navigation property - multiple types of room:  standard, premium etc. 
         public virtual ICollection<RoomType> RoomType { get; set; }
+
     }
 
     public class RoomType 
@@ -151,13 +158,12 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel will have rooms  
         public virtual RoomType RoomType { get; set; }
 
+        public int RoomOverviewID { get; set; }
 
-        // Foriegn key 
-        public int LocationID { get; set; }
-        // Corresponding navigation property - each hotel will have rooms  
         public virtual Location Location { get; set; }
 
-        public ICollection<Amenity> Amenities { get; set; }
+
+        public virtual ICollection<Amenity> Amenities { get; set; }
 
     }
 
@@ -170,7 +176,7 @@ namespace GeronimoHBS.Models
 
         public string Name { get; set; }
 
-        public ICollection<Room> Rooms { get; set; }
+        public virtual ICollection<Room> Rooms { get; set; }
 
     }
 
