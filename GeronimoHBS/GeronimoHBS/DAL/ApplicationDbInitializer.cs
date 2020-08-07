@@ -239,6 +239,40 @@ namespace GeronimoHBS.DAL
 
 
 
+            var roomStatus = new List<RoomStatus>
+            {
+                new RoomStatus{
+                    RoomStatusName = "vacant"
+                },
+                new RoomStatus{
+                    RoomStatusName = "occupied"
+                },
+                new RoomStatus{
+                    RoomStatusName = "dirty"
+                },
+                new RoomStatus{
+                    RoomStatusName = "clean"
+                },
+                new RoomStatus{
+                    RoomStatusName = "ready"
+                },
+                new RoomStatus{
+                    RoomStatusName = "outOfOrder"
+                },
+                //occupied, vacant, dirty, clean, ready and out of order.
+            };
+            roomStatus.ForEach(l => context.RoomStatus.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+
+
+
+
+
 
             var glasgowRooms = new List<Room>
             {
@@ -250,7 +284,11 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 12,
                     Price = 20.00,
                     RoomType = roomTypes[1],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID
+
                 },
                 new Room{
                     RoomNumber = 2,
@@ -260,7 +298,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 1,
                     Price = 20.00,
                     RoomType = roomTypes[1],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[1],
+                    RoomStatusID = roomStatus[1].RoomStatusID
                 },
                 new Room{
                     RoomNumber = 3,
@@ -270,7 +311,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 2,
                     Price = 20.00,
                     RoomType = roomTypes[0],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID
                 },
                 new Room{
                     RoomNumber = 4,
@@ -280,7 +324,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 1,
                     Price = 20.00,
                     RoomType = roomTypes[0],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID
                 },
                 new Room{
                     RoomNumber = 5,
@@ -290,7 +337,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 2,
                     Price = 50.00,
                     RoomType = roomTypes[1],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID
                 }
 
             };
@@ -309,7 +359,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 12,
                     Price = 60.00,
                     RoomType = roomTypes[1],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID
                 },
                 new Room{
                     RoomNumber = 2,
@@ -319,7 +372,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 1,
                     Price = 20.00,
                     RoomType = roomTypes[1],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[1],
+                    RoomStatusID = roomStatus[1].RoomStatusID
                 },
                 new Room{
                     RoomNumber = 3,
@@ -329,7 +385,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 2,
                     Price = 50.00,
                     RoomType = roomTypes[0],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID
                 },
                 new Room{
                     RoomNumber = 4,
@@ -339,7 +398,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 1,
                     Price = 20.00,
                     RoomType = roomTypes[0],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID
                 },
                 new Room{
                     RoomNumber = 5,
@@ -349,7 +411,10 @@ namespace GeronimoHBS.DAL
                     NumberOfBeds = 2,
                     Price = 30.00,
                     RoomType = roomTypes[1],
-                    Amenities = amenities
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID
                 }
 
             };
@@ -2171,7 +2236,7 @@ namespace GeronimoHBS.DAL
                     SpaOverviewID = 6,
                     DiningOverviewID = 6,
                     EventOverviewID = 6,
-                    Rooms = london
+                    Rooms = londonRooms
                 }
 
             };

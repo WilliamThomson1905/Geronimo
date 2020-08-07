@@ -147,7 +147,9 @@ namespace GeronimoHBS.Models
         public int RoomNumber { get; set; }
         public int NumberOfBeds { get; set; }
 
+        public int Capacity { get; set; }
 
+        
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
@@ -159,13 +161,25 @@ namespace GeronimoHBS.Models
         public virtual RoomType RoomType { get; set; }
 
         public int RoomOverviewID { get; set; }
-
         public virtual Location Location { get; set; }
-
 
         public virtual ICollection<Amenity> Amenities { get; set; }
 
+        public int RoomStatusID { get; set; }
+        // Corresponding navigation property - each event will have a Venue -  
+        public virtual RoomStatus RoomStatus { get; set; }
     }
+
+    /// <summary>
+    /// Each room will need its own status - to check its availability 
+    /// - Confirmed, 
+    /// </summary>
+    public class RoomStatus
+    {
+        public int RoomStatusID { get; set; }
+        public string RoomStatusName { get; set; }
+    }
+
 
 
     // Example: wifi
@@ -516,7 +530,9 @@ namespace GeronimoHBS.Models
         public virtual Venue Venue { get; set; }
     }
 
-
+    /// <summary>
+    /// Events happen at Venues - 
+    /// </summary>
     public class Venue
     {
         public int VenueID { get; set; }
