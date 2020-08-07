@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -67,6 +68,9 @@ namespace GeronimoHBS.Models
         public string LocationIntroduction { get; set; }
 
 
+        public virtual ICollection<Room> Rooms { get; set; }
+
+
 
         // Foriegn key 
         public int RoomOverviewID { get; set; }
@@ -98,6 +102,8 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel might have events  
         public virtual EventOverview EventOverview { get; set; }
 
+
+
     }
 
     public class RoomOverview
@@ -115,6 +121,7 @@ namespace GeronimoHBS.Models
 
         // Navigation property - multiple types of room:  standard, premium etc. 
         public virtual ICollection<RoomType> RoomType { get; set; }
+
     }
 
     public class RoomType 
@@ -140,7 +147,9 @@ namespace GeronimoHBS.Models
         public int RoomNumber { get; set; }
         public int NumberOfBeds { get; set; }
 
+        public int Capacity { get; set; }
 
+        
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
@@ -151,15 +160,26 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel will have rooms  
         public virtual RoomType RoomType { get; set; }
 
-
-        // Foriegn key 
-        public int LocationID { get; set; }
-        // Corresponding navigation property - each hotel will have rooms  
+        public int RoomOverviewID { get; set; }
         public virtual Location Location { get; set; }
 
-        public ICollection<Amenity> Amenities { get; set; }
+        public virtual ICollection<Amenity> Amenities { get; set; }
 
+        public int RoomStatusID { get; set; }
+        // Corresponding navigation property - each event will have a Venue -  
+        public virtual RoomStatus RoomStatus { get; set; }
     }
+
+    /// <summary>
+    /// Each room will need its own status - to check its availability 
+    /// - Confirmed, 
+    /// </summary>
+    public class RoomStatus
+    {
+        public int RoomStatusID { get; set; }
+        public string RoomStatusName { get; set; }
+    }
+
 
 
     // Example: wifi
@@ -170,7 +190,7 @@ namespace GeronimoHBS.Models
 
         public string Name { get; set; }
 
-        public ICollection<Room> Rooms { get; set; }
+        public virtual ICollection<Room> Rooms { get; set; }
 
     }
 
@@ -510,7 +530,9 @@ namespace GeronimoHBS.Models
         public virtual Venue Venue { get; set; }
     }
 
-
+    /// <summary>
+    /// Events happen at Venues - 
+    /// </summary>
     public class Venue
     {
         public int VenueID { get; set; }

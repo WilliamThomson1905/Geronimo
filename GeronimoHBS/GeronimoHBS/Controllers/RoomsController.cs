@@ -70,7 +70,8 @@ namespace GeronimoHBS.Controllers
         {
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
-                new string []{ "Room Info", "../../Rooms/Index"}
+                new string []{ "Room Info", "../../Rooms/Index"},
+                new string []{ "Room Selection", "../../Rooms/RoomSelection"}
             };
             ViewBag.Collection = breadcrumbs;
             var currentLocation = db.Location.Find(LocationId);
@@ -84,9 +85,10 @@ namespace GeronimoHBS.Controllers
             ViewBag.RoomType = roomType;
 
             //get rooms for locations which meets criteria
-            var rooms = db.Room.Where(e => e.LocationID.Equals(LocationId));
-            ViewBag.Rooms = rooms;
+            ViewBag.Rooms = db.Room.Where(e => e.Location.LocationID == (LocationId) && e.RoomStatus.RoomStatusName.Equals("vacant")).AsQueryable().ToList();
 
+
+            // e.RoomStatusID.Equals("vacant")
             return View(currentLocation);
         }
 
