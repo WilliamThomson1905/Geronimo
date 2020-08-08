@@ -12,17 +12,18 @@
         {
 
             <h2>@Model.LocationName Room Availability: @ViewBag.FirstName</h2>
+            <br />
             foreach (Room room in ViewBag.Rooms)
             {
                 <div class="box">
                     
                     <div class="roomContainer">
-                        <h2><b>@room.Name / @room.RoomType.Name</b></h2>
+                        <h2><b>@room.Name - @room.RoomType.Name</b></h2>
                         <p>@room.Description</p>
-                        <p>Room No: @room.RoomNumber</p>
+                        <p>Room @room.RoomNumber / Floor @room.FloorNumber</p>
                         <p>No of Beds: @room.NumberOfBeds</p>
                         <p>Price: @room.Price</p>
-                        <p>Floor Number: @room.FloorNumber</p>
+                        <p>Max Capacity: @room.Capacity</p>
                         <p>
                             Amenities:
                             @foreach (Amenity amenity in room.Amenities)
@@ -30,11 +31,13 @@
                                 <span>@amenity.Name</span>
                             }
                         </p>
-                        <p>Max Capacity: @room.Capacity</p>
                         @*<p>RoomStatus: @room.RoomStatus.RoomStatusName</p>*@
                         <div class="selectRoom">
-                            <input id="RoomsSelected@(room.RoomID)" type="checkbox" name="RoomsSelected" value=@room.RoomID />
-                            <label for="RoomsSelected@(room.RoomID)"></label>
+                            <label for="RoomsSelected@(room.RoomID)" class="checkboxContainer">
+                              <input id="RoomsSelected@(room.RoomID)" type="checkbox" name="RoomsSelected" value=@room.RoomID />
+                              <span class="checkmark"></span>
+                            </label>
+                           
                         </div>
                     </div>
 
