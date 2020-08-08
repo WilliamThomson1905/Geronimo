@@ -7,77 +7,106 @@
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
-<div class="container">
-    @using (Html.BeginForm("Payment", "Rooms", FormMethod.Post))
-    {
+    <div class="container">
+        @using (Html.BeginForm("Payment", "Rooms", FormMethod.Post))
+        {
 
-        <h2>@Model.LocationName Room Availability: @ViewBag.FirstName</h2>
-
-
-
-        <div class="table-responsive">
-
-            <table class="table">
-                <tr>
-                    <th></th>
-                    <th> Room No </th>
-                    <th> Room </th>
-                    <th> No of Beds </th>
-                    <th> Price </th>
-                    <th> Floor No </th>
-                    <th> Room Description </th>
-                    <th></th>
-                </tr>
-
-                @foreach (Room room in ViewBag.Rooms)
-                {
-                    <tr>
-                        <td>
-                            <input id="RoomsSelected@(room.RoomID)" type="checkbox" name="RoomsSelected" value=@room.RoomID />
-                            <label for="RoomsSelected@(room.RoomID)"></label>
-                        </td>
-                        <td>
-                            @room.RoomNumber
-                        </td>
-                        <td>
-                            @room.Name
-                        </td>
-
-                        <td>
-                            @room.NumberOfBeds
-                        </td>
-                        <td>
-                            @room.Price
-                        </td>
-                        <td>
-                            @room.FloorNumber
-                        </td>
-                        <td>
-                            @room.Description
-                        </td>
-                        <td>
+            <h2>@Model.LocationName Room Availability: @ViewBag.FirstName</h2>
+            foreach (Room room in ViewBag.Rooms)
+            {
+                <div class="box">
+                    
+                    <div class="roomContainer">
+                        <h2><b>@room.Name / @room.RoomType.Name</b></h2>
+                        <p>@room.Description</p>
+                        <p>Room No: @room.RoomNumber</p>
+                        <p>No of Beds: @room.NumberOfBeds</p>
+                        <p>Price: @room.Price</p>
+                        <p>Floor Number: @room.FloorNumber</p>
+                        <p>
+                            Amenities:
                             @foreach (Amenity amenity in room.Amenities)
                             {
                                 <span>@amenity.Name</span>
-
                             }
-                            
-                        </td>
-                        <td></td>
+                        </p>
+                        <p>Max Capacity: @room.Capacity</p>
+                        @*<p>RoomStatus: @room.RoomStatus.RoomStatusName</p>*@
+                        <div class="selectRoom">
+                            <input id="RoomsSelected@(room.RoomID)" type="checkbox" name="RoomsSelected" value=@room.RoomID />
+                            <label for="RoomsSelected@(room.RoomID)"></label>
+                        </div>
+                    </div>
 
+                </div>
+
+
+            }
+
+
+            <button type="submit" class="button primary"><i class="fa fa-search"></i>Payment</button>
+            @*<div class="table-responsive">
+
+                <table class="table">
+                    <tr>
+                        <th></th>
+                        <th> Room No </th>
+                        <th> Room </th>
+                        <th> No of Beds </th>
+                        <th> Price </th>
+                        <th> Floor No </th>
+                        <th> Room Description </th>
+                        <th></th>
                     </tr>
 
+                    @foreach (Room room in ViewBag.Rooms)
+                    {
+                        <tr>
+                            <td>
+                                <input id="RoomsSelected@(room.RoomID)" type="checkbox" name="RoomsSelected" value=@room.RoomID />
+                                <label for="RoomsSelected@(room.RoomID)"></label>
+                            </td>
+                            <td>
+                                @room.RoomNumber
+                            </td>
+                            <td>
+                                @room.Name
+                            </td>
 
-                }
+                            <td>
+                                @room.NumberOfBeds
+                            </td>
+                            <td>
+                                @room.Price
+                            </td>
+                            <td>
+                                @room.FloorNumber
+                            </td>
+                            <td>
+                                @room.Description
+                            </td>
+                            <td>
+                                @foreach (Amenity amenity in room.Amenities)
+                                {
+                                    <span>@amenity.Name</span>
 
-            </table>
+                                }
 
-        </div>
-        <button type="submit" class="button primary"><i class="fa fa-search"></i>Payment</button>
+                            </td>
+                            <td></td>
+
+                        </tr>
 
 
-    }
-</div>
+                    }
+
+                </table>
+
+            </div>*@
+
+
+        }
+    </div>
 
 
 

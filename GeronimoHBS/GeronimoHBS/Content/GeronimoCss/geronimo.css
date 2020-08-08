@@ -820,3 +820,23 @@ div.scrollmenu {
 
 
 
+/* Room Display */
+
+
+.roomContainer {
+    padding: 2px 16px;
+    position: relative; 
+    background-color: rgba(122, 122, 122, 0.2); 
+}
+
+.roomContainer p {
+    padding: 0px;
+    margin: 0px; 
+    font-size: 0.8em;
+}
+
+.selectRoom {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
