@@ -36,8 +36,8 @@ namespace GeronimoHBS.Controllers
         {
             var currentClassDetails = db.GymClasses.Find(Id);
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
-                new string [] { "Gym", "../../Gym/Index/2" }
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + Id },
+                new string [] { "Gym", "../../Gym/Index/ " + Id }
             };
 
             ViewBag.Collection = breadcrumbs;
@@ -110,8 +110,8 @@ namespace GeronimoHBS.Controllers
 
 
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
-                new string [] { "Gym", "../../Gym/Index/2" }
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + Id },
+                new string [] { "Gym", "../../Gym/Index/" + Id }
             };
 
             ViewBag.Collection = breadcrumbs;

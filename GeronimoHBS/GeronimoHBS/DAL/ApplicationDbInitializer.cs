@@ -1490,8 +1490,12 @@ namespace GeronimoHBS.DAL
                 {
                     GymOverviewID = 1,
                     Header = "Geronimo Gym",
-                    Content = "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. " +
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ", 
+                    MainContent = "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. " +
                     "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. ",
+                    SecondaryContent = "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. " +
+                    "All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports ", 
+                    
                     // Equipment = equipmentDefault,
                     // GymClasses = gymClassesDefault,
                     // Timetable = timetableDefault
@@ -1500,7 +1504,9 @@ namespace GeronimoHBS.DAL
                 {
                     GymOverviewID = 2,
                     Header = "Glasgow Gym",
-                    Content = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentGlasgow,
                     GymClasses = gymClassesGlasgow,
                     Timetable = timetableGlasgow
@@ -1509,8 +1515,10 @@ namespace GeronimoHBS.DAL
                 new GymOverview
                 {                    
                     GymOverviewID = 3,
-                    Header = "Paris Gym",
-                    Content = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    Header = "Paris Gym", 
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentParis,
                     GymClasses = gymClassesParis,
                     Timetable = timetableParis
@@ -1519,7 +1527,9 @@ namespace GeronimoHBS.DAL
                 {
                     GymOverviewID = 4,
                     Header = "Amsterdam Gym",
-                    Content = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment.  Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment.  Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentAmsterdam,
                     GymClasses = gymClassesAmsterdam,
                     Timetable = timetableAmsterdam
@@ -1528,7 +1538,9 @@ namespace GeronimoHBS.DAL
                 {
                     GymOverviewID = 5,
                     Header = "New York Gym",
-                    Content = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    IntroductionParagraph = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    MainContent = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentNewYork,
                     GymClasses = gymClassesNewYork,
                     Timetable = timetableNewYork
@@ -1537,7 +1549,9 @@ namespace GeronimoHBS.DAL
                 {
                     GymOverviewID = 6,
                     Header = "London Gym",
-                    Content = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     Equipment = equipmentLondon,
                     GymClasses = gymClassesLondon,
                     Timetable = timetableLondon
@@ -2164,6 +2178,7 @@ namespace GeronimoHBS.DAL
             var locations = new List<Location>
             {
                 new Location{
+                    LocationID = 1,
                     LocationName="Geronimo Hotels", 
                     LocationIntroduction="Geronimo Hotels is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " + 
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " + 
@@ -2176,6 +2191,7 @@ namespace GeronimoHBS.DAL
                     EventOverviewID = 1
                 },
                 new Location{
+                    LocationID = 2,
                     LocationName="Glasgow",
                     LocationIntroduction="Geronimo Hotels - Glasgow is a lovely hotel - but there's more - anyone who attends the gym acquires great Scottish powers. They can speak sooo fast that it's almost incomprehensible. Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur aliqua consectetur consectetur adipiscing elit, sed do eiusmod tempor " +
@@ -2190,6 +2206,7 @@ namespace GeronimoHBS.DAL
 
                 },
                 new Location{
+                    LocationID = 3,
                     LocationName="Paris",
                     LocationIntroduction="Geronimo Hotels - Paris is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur amet, consectetur amet, consectetur adipiscing elit, sed do eiusmod tempor " +
@@ -2203,6 +2220,7 @@ namespace GeronimoHBS.DAL
 
                 },
                 new Location{
+                    LocationID = 4,
                     LocationName="Amsterdam",
                     LocationIntroduction="Geronimo Hotels - Amsterdam is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
@@ -2215,6 +2233,7 @@ namespace GeronimoHBS.DAL
                     EventOverviewID = 4
                 },
                 new Location{
+                    LocationID = 5,
                     LocationName="New York",
                     LocationIntroduction="Geronimo Hotels - New York is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
@@ -2226,7 +2245,8 @@ namespace GeronimoHBS.DAL
                     DiningOverviewID = 5,
                     EventOverviewID = 5
                 },
-                new Location{
+                new Location {
+                    LocationID = 6,
                     LocationName="London",
                     LocationIntroduction="Geronimo Hotels - London is located in the centre of London - but there's more - it's situated . Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
