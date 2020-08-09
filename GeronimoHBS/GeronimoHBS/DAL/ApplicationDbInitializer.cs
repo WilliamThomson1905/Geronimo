@@ -2164,6 +2164,7 @@ namespace GeronimoHBS.DAL
             var locations = new List<Location>
             {
                 new Location{
+                    LocationID = 1,
                     LocationName="Geronimo Hotels", 
                     LocationIntroduction="Geronimo Hotels is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " + 
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " + 
@@ -2176,6 +2177,7 @@ namespace GeronimoHBS.DAL
                     EventOverviewID = 1
                 },
                 new Location{
+                    LocationID = 2,
                     LocationName="Glasgow",
                     LocationIntroduction="Geronimo Hotels - Glasgow is a lovely hotel - but there's more - anyone who attends the gym acquires great Scottish powers. They can speak sooo fast that it's almost incomprehensible. Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur aliqua consectetur consectetur adipiscing elit, sed do eiusmod tempor " +
@@ -2190,6 +2192,7 @@ namespace GeronimoHBS.DAL
 
                 },
                 new Location{
+                    LocationID = 3,
                     LocationName="Paris",
                     LocationIntroduction="Geronimo Hotels - Paris is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur amet, consectetur amet, consectetur adipiscing elit, sed do eiusmod tempor " +
@@ -2203,6 +2206,7 @@ namespace GeronimoHBS.DAL
 
                 },
                 new Location{
+                    LocationID = 4,
                     LocationName="Amsterdam",
                     LocationIntroduction="Geronimo Hotels - Amsterdam is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
@@ -2215,6 +2219,7 @@ namespace GeronimoHBS.DAL
                     EventOverviewID = 4
                 },
                 new Location{
+                    LocationID = 5,
                     LocationName="New York",
                     LocationIntroduction="Geronimo Hotels - New York is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
@@ -2226,7 +2231,8 @@ namespace GeronimoHBS.DAL
                     DiningOverviewID = 5,
                     EventOverviewID = 5
                 },
-                new Location{
+                new Location {
+                    LocationID = 6,
                     LocationName="London",
                     LocationIntroduction="Geronimo Hotels - London is located in the centre of London - but there's more - it's situated . Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +

@@ -69,9 +69,9 @@ namespace GeronimoHBS.Controllers
         public ActionResult Availability(int LocationId, string roomsCount, string roomTypeId, string startDate, string endDate)
         {
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index/2" },
-                new string []{ "Room Info", "../../Rooms/Index"},
-                new string []{ "Room Selection", "../../Rooms/RoomSelection"}
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + LocationId  },
+                new string []{ "Room Info", "../../Rooms/Index/" + LocationId },
+                new string []{ "Room Selection", "../../Rooms/RoomSelection/" + LocationId }
             };
             ViewBag.Collection = breadcrumbs;
             var currentLocation = db.Location.Find(LocationId);
@@ -84,7 +84,7 @@ namespace GeronimoHBS.Controllers
             var roomType = db.RoomType.Find(roomTypeIdint);
             ViewBag.RoomType = roomType;
 
-            //get rooms for locations which meets criteria
+            //get rooms for locations which are vacant from a specific location
             ViewBag.Rooms = db.Room.Where(e => e.Location.LocationID == (LocationId) && e.RoomStatus.RoomStatusName.Equals("vacant")).AsQueryable().ToList();
 
 
