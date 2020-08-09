@@ -27,7 +27,7 @@ namespace GeronimoHBS.Controllers
         }
 
         // GET: Dining/Menu
-        public ActionResult Menu()
+        public ActionResult Menu(int? Id)
         {
 
             breadcrumbs = new string[][] {

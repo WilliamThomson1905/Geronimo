@@ -4,47 +4,49 @@
 
 @{
     ViewBag.Title = "RoomAvailability";
-    int i; 
+    int i;
 }
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
-
+<div class="jumbo">
     <div class="container">
-
-        <h2>Rooms Information View</h2>
-        <h2>
+        <h1>
             @Html.DisplayFor(modelItem => Model.RoomOverview.Header)
-        </h2>
-
+        </h1>
         <p>
             @Html.DisplayFor(modelItem => Model.RoomOverview.IntroductionParagraph)
         </p>
-        <p>
-            @Html.DisplayFor(modelItem => Model.RoomOverview.MainContent)
-        </p>
-        <p>
-            @Html.DisplayFor(modelItem => Model.RoomOverview.SecondaryContent)
-        </p>
-        @{ i = 1;}
-
-        <p>There are @Model.RoomOverview.RoomType.Count() types of room available at Geronimo Hotels @Model.LocationName</p>
-        @foreach (var item in Model.RoomOverview.RoomType)
-        {
-
-            <div>
-                <h3>@item.Name</h3>
-                <p>
-                    @item.Description
-                </p>
-                <p>
-                    Free Wifi is available throughout all our Hotels.
-                </p>
-            </div>
-            i++;
-        }
-        <p>
-            <a href="/Rooms/RoomSelection/@Model.LocationID" class="button primary">Room Selection</a>
-        </p>
-
     </div>
+</div>
+
+
+<div class="container">
+    <p>
+        @Html.DisplayFor(modelItem => Model.RoomOverview.MainContent)
+    </p>
+    <p>
+        @Html.DisplayFor(modelItem => Model.RoomOverview.SecondaryContent)
+    </p>
+    @{ i = 1;}
+
+    <p>There are @Model.RoomOverview.RoomType.Count() types of room available at Geronimo Hotels @Model.LocationName</p>
+    @foreach (var item in Model.RoomOverview.RoomType)
+    {
+
+        <div>
+            <h3>@item.Name</h3>
+            <p>
+                @item.Description
+            </p>
+            <p>
+                Free Wifi is available throughout all our Hotels.
+            </p>
+        </div>
+        i++;
+    }
+    <p>
+        <a href="/Rooms/RoomSelection/@Model.LocationID" class="button primary">Room Selection</a>
+    </p>
+
+</div>
