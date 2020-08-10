@@ -1,113 +1,64 @@
 ﻿@model GeronimoHBS.Models.Location
 @using GeronimoHBS.Models
 
-@{
-    ViewBag.Title = Model.LocationName + " Gym Classes";
-}
 
+
+@{
+    ViewBag.Title = "Geronimo Gym";
+}
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
 
-<!-- MAIN (Center website) -->
-<div class="container">
-
-    <h2>Gym Classes</h2>
-    <p>Geronimo @Model.LocationName has a range of classes that anyone can attend. </p>
-
-    <div id="myBtnContainer">
-        <button class=" primary small btn activeTabOption" onclick="filterSelection('all')"> All</button>
-        @foreach (ClassFocus item in ViewBag.ClassFocus)
-        {
-            <button class="primary small btn" onclick="filterSelection('@item.Title')">@item.DisplayTitle</button>
-
-        }
-        @*<button class="btn" onclick="filterSelection('strength')">Strength</button>
-            <button class="btn" onclick="filterSelection('flexibility')"> Mobility</button>*@
+<div class="jumbo">
+    <div class="container">
+        <h2>@Html.DisplayFor(modelItem => Model.GymOverview.Header)</h2>
+        <p>@Html.DisplayFor(modelItem => Model.GymOverview.IntroductionParagraph)</p>
     </div>
-
-    <!-- Portfolio Gallery Grid -->
-    <div class="row">
-
-
-
-        @foreach (var item in Model.GymOverview.GymClasses)
-        {
-            <div class="column @foreach (var focus in item.Focus) { @Html.Raw(focus.Title + " ") }">
-                <div class="content">
-                    <img src="../../images/hotel/hotel1.jpg" alt="Gym Class" style="width:100%">
-                    <div class="centeredBoxText"><h2>@item.Title</h2></div>
-                </div>
-                <div class="innerContent">
-                    <p>@item.Description.Substring(0, (item.Description.Length > 100) ? 100 : item.Description.Length )</p>
-
-                </div>
-                <a href="../../Gym/GymClassDetails/@item.GymClassesID" class="button default small fit">View</a>
-
-            </div>
-
-        }
-
-
-        <!-- END GRID -->
-    </div>
-
-    <!-- END MAIN -->
 </div>
+
+<div class="container">
+    <p>@Html.DisplayFor(modelItem => Model.GymOverview.MainContent)</p>
+    <p>@Html.DisplayFor(modelItem => Model.GymOverview.SecondaryContent)</p>
+</div>
+
+@if (Model.GymOverview.GymClasses != null)
+{
+    <div class="container">
+        <h2>Gym Classes</h2>
+
+        <div class="">
+            @foreach (var item in Model.GymOverview.GymClasses)
+            {
+                <h3>@item.Title</h3>
+                <p>@item.Introduction</p>
+             
+                <p> 
+                    @foreach (var focus in item.Focus)
+                    {
+                        @focus.DisplayTitle 
+
+                    }
+                </p>
+                <hr />
+            }
+        </div>
+
+    </div>
+}
+else
+{
+    <div>
+        No Gym Classes Right Now
+    </div>
+}
+
 <div class="tertiaryContainer">
     <div class="align-center">
+        <a href="/Gym/GymClasses/@Model.LocationID" class="button primary">View @Model.LocationName Classes</a>
         <a href="/Gym/Timetable/@Model.LocationID" class="button primary">View @Model.LocationName Timetable</a>
-        <a href="/Spa/Index/@Model.LocationID" class="button primary">View @Model.LocationName Spa</a>
 
     </div>
 </div>
 
-
-
-
-<script>
-    filterSelection("all")
-    function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("column");
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-        }
-    }
-
-    function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-        }
-    }
-
-    function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-                arr1.splice(arr1.indexOf(arr2[i]), 1);
-            }
-        }
-        element.className = arr1.join(" ");
-    }
-
-
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
-    var btns = btnContainer.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("activeTabOption");
-            current[0].className = current[0].className.replace(" activeTabOption", "");
-            this.className += " activeTabOption";
-        });
-    }
-</script>
 
