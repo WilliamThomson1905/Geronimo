@@ -3,30 +3,28 @@
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
+<div class="secondaryContainer">
+
+    <h2>@Model.Title</h2>
+    <p>@Model.Introduction</p>
+
+</div>
+
+
 
 <div class="classFocus">
-    <p class="statusKey" style="display: inline; font-weight: 400;">Class Focus: </p>
+    <p style="display: inline;">CLASS FOCUS: </p>
     @foreach (var item in Model.Focus)
     {
-        <div class="statusKey">
-            @item.Title
-        </div>
+        <span>
+            @item.DisplayTitle@Html.Raw(", ")
+        </span>
     }
 
 </div>
+
+
 <div class="container">
-    <div class="jumbo">
-
-        <h1>@Model.Title</h1>
-        <p class="introductionPara">@Model.Introduction</p>
-
-    </div>
-
-
-</div>
-
-
-<div class="tertiaryContainer">
 
     <h2>About @Model.Title</h2>
     <p>@Model.Description</p>

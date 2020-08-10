@@ -451,10 +451,10 @@ namespace GeronimoHBS.DAL
                 new RoomOverview
                 {
                     Header = "Glasgow Rooms",
-                    IntroductionParagraph = "",
+                    IntroductionParagraph = "Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. ",
                     MainContent = "When booking a room at the Glasgow Geronimo Hotel " +
                     "you can choose from either a standard or premium room. ",
-                    SecondaryContent = "", 
+                    SecondaryContent = "Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. ", 
                     RoomType = roomTypes
                 },
                 new RoomOverview

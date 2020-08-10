@@ -10,9 +10,9 @@
 }
 
 .secondaryContainer {
-    margin: 0px 15% 80px 15%;
+    margin: 50px 10% 80px 10%;
     padding: 20px 40px;
-    min-width: 70%;
+    min-width: 80%;
     display: inline-block;
 }
 
@@ -34,9 +34,8 @@
     }
 
     .secondaryContainer {
-        margin: 0px 5% 80px 5%;
-        padding: 20px 40px;
-        min-width: 90%;
+        padding: 20px 10%;
+        min-width: 100%;
         display: inline-block;
     }
 
@@ -55,7 +54,7 @@
 .jumbo {
     width: 100%;
     padding: 50px 0px;
-    background-color: rgba(85, 85, 85, 0.1);
+    background-color: #f8f7f7;
 }
 
 
@@ -170,34 +169,6 @@
 }
 
 
-.pageOverview {
-    background-color: rgba(55, 71, 79, 0.1);
-    fill-opacity: 0.6;
-    padding: 20px 30px;
-    height: auto;
-  
-}
-
-    .pageOverview > h1, h2, h3 {
-        color: #555555;
-    }
-
-
-
-@media only screen and (max-width: 736px) {
-    .pageOverview {
-        background-color: rgba(55, 71, 79, 0.1);
-        fill-opacity: 0.6;
-        padding: 10px 15px;
-        height: auto;
-    }
-
-        .pageOverview > h1, h2, h3 {
-            color: #555555;
-        }
-
-   
-}
 
 
 
@@ -212,6 +183,7 @@ ul.breadcrumb {
     margin-bottom: 0px;
     padding: 10px 16px;
     list-style: none;
+    background-color: #f8f7f7;
 }
 
     ul.breadcrumb li {
@@ -222,7 +194,7 @@ ul.breadcrumb {
         ul.breadcrumb li + li:before {
             padding: 8px;
             color: #555555;
-            content: "\003e";
+            content: "/";
         }
 
         ul.breadcrumb li a {
@@ -770,11 +742,13 @@ li {
 
 /* Individual class specifics */
 .classFocus {
-    background-color: #555555;
-    color: white;
+    background-color: #f8f7f7; 
+    color: #555555;
+    text-transform: uppercase;
     width: auto;
     padding: 10px 30px 10px 0px;
-    text-align: right;
+    text-align: center;
+    font-size: 0.8em; 
 }
 
 

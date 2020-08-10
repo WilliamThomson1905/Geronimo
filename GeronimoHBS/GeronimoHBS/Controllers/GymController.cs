@@ -13,8 +13,29 @@ namespace GeronimoHBS.Controllers
         // GET: Rooms
         public ActionResult Index(int? Id)
         {
+    
+
+            var currentLocation = db.Location.First();
+            if (Id == null)
+            {
+                ViewBag.Location = "Welcome to Geronimo Hotel";
+            }
+            else
+            {
+                currentLocation = db.Location.Find(Id);
+                ViewBag.Location = "Geronimo: " + currentLocation.LocationName.ToString();
+            }
+
+            ViewBag.Collection = breadcrumbs;
+            return View(currentLocation);
+        }
+
+
+
+        public ActionResult GymClasses(int? Id)
+        {
             ViewBag.ClassFocus = from classFocus in db.ClassFocus
-                              select classFocus;
+                                 select classFocus;
 
             var currentLocation = db.Location.First();
             if (Id == null)

@@ -7,69 +7,44 @@
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
+
+
+
+
 <div class="container">
 
-    <div>
-        <h2>Choose from a selection of wonderful rooms! </h2>
+    <h2>Choose from a selection of wonderful rooms! </h2>
 
 
-    </div>
-</div>
-
-
-<div class="containter">
 
     @using (Html.BeginForm("Availability", "Rooms", FormMethod.Post))
     {
-    <div class="secondaryContainer">
-        @*<h2>Make selection</h2>
-        <p>
-            Fill in form details
-            <ol>
-                <li>
-                    Location
-                </li>
-                <li>
-                    Guests - total guests
-                </li>
-                <li>
-                    Rooms - count of rooms required -
-                </li>
-                <li>
-                    Choose from selection. Start date -> End date
-                </li>
-                <li>
-                    Show the availability of rooms.
-                </li>
+        <div class="">
 
+            <div class="">
+                <label for="LocationId">Choose a location</label>
+                @Html.DropDownList("LocationID", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
 
-            </ol>
-            <a href="/Rooms/Availability/@Model.LocationID" class="button primary">Show Availability</a>
-        </p>*@
-        <div class="form-group">
-            <label for="LocationId">Choose a location</label>
-            @Html.DropDownList("LocationID", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
+                <label for="roomsCount">How many rooms</label>
+                <input type="number" name="roomsCount" id="roomsCount" placeholder="How many rooms?" />
 
-            <label for="roomsCount">How many rooms</label>
-            <input type="number" name="roomsCount" id="roomsCount" placeholder="How many rooms?" />
+                <label for="roomTypeId">Choose a room type</label>
+                @Html.DropDownList("roomTypeId", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
 
-            <label for="roomTypeId">Choose a room type</label>
-            @Html.DropDownList("roomTypeId", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
+                <label for="startDate">Check In</label>
+                <input type="date" name="startDate" id="startDate" placeholder="Start Date of reservation" />
 
-            <label for="startDate">Check In</label>
-            <input type="date" name="startDate" id="startDate" placeholder="Start Date of reservation" />
+                <label for="endDate">Check Out</label>
+                <input type="date" name="endDate" id="endDate" placeholder="End Date of reservation" />
 
-            <label for="endDate">Check Out</label>
-            <input type="date" name="endDate" id="endDate" placeholder="End Date of reservation" />
+                @* Declare hidden values for each of the folowing *@
+                @*<input type="hidden" value=@Model.LocationID id="Id" name="LocationId" />*@
 
-            @* Declare hidden values for each of the folowing *@
-            @*<input type="hidden" value=@Model.LocationID id="Id" name="LocationId" />*@
+                <hr />
+                <button type="submit" class="button primary"><i class="fa fa-search"></i>Show Availability</button>
 
-
-            <button type="submit" class="button primary"><i class="fa fa-search"></i>Show Availability</button>
-
+            </div>
         </div>
-    </div>
 
     }
 
