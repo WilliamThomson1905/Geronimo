@@ -551,7 +551,8 @@ li {
     border-left: 2px solid #555555;
     width: 100%;
     display: block;
-    background-color: rgba(128, 128, 128, 0.1);
+/*    background-color: rgba(128, 128, 128, 0.1);*/
+    background-color: #f8f7f7;
     margin: 10px 0px;
     font-weight: 200;
     font-family: "Roboto", Helvetica, sans-serif;
