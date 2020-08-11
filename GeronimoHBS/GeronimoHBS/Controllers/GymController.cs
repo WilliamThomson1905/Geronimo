@@ -48,17 +48,24 @@ namespace GeronimoHBS.Controllers
                 ViewBag.Location = "Geronimo: " + currentLocation.LocationName.ToString();
             }
 
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + Id },
+                new string [] { "Gym", "../../Gym/Index/ " + Id }
+            };
+
             ViewBag.Collection = breadcrumbs;
             return View(currentLocation);
         }
 
         // GET: Gym/GymClassDetails/Id
-        public ActionResult GymClassDetails(int Id)
+        public ActionResult GymClassDetails(int Id, int LocationId)
         {
             var currentClassDetails = db.GymClasses.Find(Id);
             breadcrumbs = new string[][] {
                 new string [] { "Geronimo Hotel", "../../Hotel/Index/" + Id },
-                new string [] { "Gym", "../../Gym/Index/ " + Id }
+                new string [] { "Gym", "../../Gym/Index/ " + Id },
+                new string [] { "Gym Classes", "../../Gym/GymClasses/ " + LocationId },
+                
             };
 
             ViewBag.Collection = breadcrumbs;

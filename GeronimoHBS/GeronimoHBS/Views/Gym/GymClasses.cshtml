@@ -8,12 +8,8 @@
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
-<div class="secondaryContainer">
-    <h2>@Html.DisplayFor(modelItem => Model.GymOverview.Header)</h2>
-    <p>@Html.DisplayFor(modelItem => Model.GymOverview.IntroductionParagraph)</p>
-</div>
 
-<div class="container">
+<div class="secondaryContainer">
 
     <h2>Gym Classes</h2>
     <p>Geronimo @Model.LocationName has a range of classes that anyone can attend. </p>
@@ -34,18 +30,19 @@
 
         @foreach (var item in Model.GymOverview.GymClasses)
         {
-            <div class="column @foreach (var focus in item.Focus) { @Html.Raw(focus.Title + " ") }">
-                <div class="content">
-                    <img src="../../images/hotel/hotel1.jpg" alt="Gym Class" style="width:100%">
-                    <div class="centeredBoxText"><h2>@item.Title</h2></div>
-                </div>
-                <div class="innerContent">
-                    <p>@item.Description.Substring(0, (item.Description.Length > 100) ? 100 : item.Description.Length )</p>
-
-                </div>
-                <a href="../../Gym/GymClassDetails/@item.GymClassesID" class="button default small fit">View</a>
+        <div class="column @foreach (var focus in item.Focus) { @Html.Raw(focus.Title + " ") }">
+            <div class="content">
+                <img src="../../images/hotel/hotel1.jpg" alt="Gym Class" style="width:100%">
+                <div class="centeredBoxText"><h2>@item.Title</h2></div>
+            </div>
+            <div class="innerContent">
+                <p>@item.Description.Substring(0, (item.Description.Length > 100) ? 100 : item.Description.Length)</p>
 
             </div>
+            @Html.ActionLink("View", "GymClassDetails", "Gym", new { Id = item.GymClassesID, LocationId = Model.LocationID }, new {@class= "button default small fit" })
+
+
+        </div>
 
         }
 
