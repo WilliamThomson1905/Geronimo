@@ -52,8 +52,8 @@
         <p>
             # of Participants: @item.NoOfParticipants
         </p>
-        }
-    </div>
+    }
+</div>
 }
 else
 {
@@ -62,9 +62,12 @@ else
     </div>
 }
 
+<div class="tertiaryContainer">
+    <div class="align-center">
+        <a href="/Dining/Index/@Model.LocationID" class="button primary">@Model.LocationName Dining</a>
+        <a href="/Gym/Timetable/@Model.LocationID" class="button primary">View @Model.LocationName Timetable</a>
 
-<div class="container">
-    <h2>Events Display</h2>
-    <p>Show all events - that were created by staff/admin</p>
-    <p>Might have an Eventbrite API integration...watch this space. </p>
+    </div>
 </div>
+
+
