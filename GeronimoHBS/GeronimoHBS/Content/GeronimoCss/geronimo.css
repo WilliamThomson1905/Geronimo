@@ -864,3 +864,48 @@ div.scrollmenu {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+
+
+.detailedContentOuter {
+    position: relative;
+    margin: 50px 0px;
+}
+
+.detailedContent {
+    padding: 0px 10%;
+    min-width: 100%;
+}
+
+.detailedContent::before {
+    position: absolute;
+    top: 0px;
+    left: -210px;
+    content: "";
+    border-bottom: 3rem solid #3F2D5B;
+    width: 6rem;
+    margin: 0 1rem;
+    transform: translateY(0rem);
+}
+
+.lineHeading {
+
+    color: #3F2D5B;
+}
+/*.lineHeading::after {
+    display: inline-block;
+    content: "";
+    border-bottom: .1rem solid #3F2D5B;
+    width: 6rem;
+    margin: 0 1rem;
+    transform: translateY(0rem);
+}*/
+
+.detailedContentSub {
+    font-size: 0.8em;
+    color: #555555;
+    font-style: italic;
+    margin: 0px;
+    padding: 0px;
+
+}
