@@ -24,27 +24,20 @@
 
 @if (Model.GymOverview.GymClasses != null)
 {
-    <div class="container">
-        <h2>Gym Classes</h2>
-
-        <div class="">
-            @foreach (var item in Model.GymOverview.GymClasses)
-            {
-                <h3>@item.Title</h3>
-                <p>@item.Introduction</p>
-             
-                <p> 
-                    @foreach (var focus in item.Focus)
-                    {
-                        @focus.DisplayTitle 
-
-                    }
-                </p>
-                <hr />
-            }
-        </div>
-
-    </div>
+    <div class="secondaryContainer">
+        @foreach (var item in Model.GymOverview.GymClasses)
+        {
+            <div class="detailedContentOuter">
+                <div class="detailedContent">
+                    <h2 class="lineHeading">@item.Title</h2>
+                    <p class="detailedContentSub">Focus: @foreach (var focus in item.Focus) { @focus.DisplayTitle}</p>
+                    <p>@item.Description</p>
+                    <hr />
+                </div>
+            </div>
+            
+        }
+    </div>;
 }
 else
 {

@@ -9,45 +9,44 @@
 
 @{ Html.RenderPartial("_Breadcrumbs");}
 
+
+
 <div class="jumbo">
     <div class="container">
         <h2>@Html.DisplayFor(modelItem => Model.RoomOverview.Header)</h2>
-        <p>
-            @Html.DisplayFor(modelItem => Model.RoomOverview.IntroductionParagraph)
-        </p>
+        <p>@Html.DisplayFor(modelItem => Model.RoomOverview.IntroductionParagraph)</p>
     </div>
 </div>
-
-
 <div class="container">
-    <p>
-        @Html.DisplayFor(modelItem => Model.RoomOverview.MainContent)
-    </p>
-    <p>
-        @Html.DisplayFor(modelItem => Model.RoomOverview.SecondaryContent)
-    </p>
-    @{ i = 1;}
-
-    <p>There are @Model.RoomOverview.RoomType.Count() types of room available at Geronimo Hotels @Model.LocationName</p>
-    @foreach (var item in Model.RoomOverview.RoomType)
-    {
-
-        <div>
-            <h3>@item.Name</h3>
-            <p>
-                @item.Description
-            </p>
-            <p>
-                Free Wifi is available throughout all our Hotels.
-            </p>
-        </div>
-        i++;
-    }
-    <p>
-        <a href="/Rooms/RoomSelection/@Model.LocationID" class="button primary">Room Selection</a>
-    </p>
-
+    <p>@Html.DisplayFor(modelItem => Model.RoomOverview.MainContent)</p>
+    <p>@Html.DisplayFor(modelItem => Model.RoomOverview.SecondaryContent)</p>
 </div>
+@if (Model.RoomOverview.RoomType != null)
+{
+    <div class="secondaryContainer">
+        @foreach (var item in Model.RoomOverview.RoomType)
+        {
+            <div class="detailedContentOuter">
+                <div class="detailedContent">
+                    <h2 class="lineHeading">@item.Name</h2>
+                    <p>@item.Description</p>
+                    <hr />
+                </div>
+            </div>
+
+        }
+        <p>
+            <a href="/Rooms/RoomSelection/@Model.LocationID" class="button primary">Room Selection</a>
+        </p>
+    </div>
+}
+else
+{
+    <div>
+        No Room Types Right Now - there should be seeded data so you probably shouldn't be seeing this. 
+    </div>
+}
+
 
 <div class="tertiaryContainer">
     <div class="align-center">
