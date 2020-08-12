@@ -500,13 +500,14 @@ namespace GeronimoHBS.Models
         public int EventID { get; set; }
 
         public string EventName { get; set; }
+        public string Description { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy HH:mm}")]
         public DateTime? StartDate { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy HH:mm}")]
         public DateTime? EndDate { get; set; }
 
         public int NoOfParticipants { get; set; }

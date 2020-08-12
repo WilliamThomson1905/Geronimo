@@ -17,43 +17,25 @@
     <p>@Html.DisplayFor(modelItem => Model.EventOverview.MainContent)</p>
     <p>@Html.DisplayFor(modelItem => Model.EventOverview.SecondaryContent)</p>
 </div>
-@if (Model.EventOverview.Events.Count() != 0)
+@if (Model.EventOverview.Events != null)
 {
-
-<div class="container">
-    <h3>All Events</h3>
-    @foreach (var item in Model.EventOverview.Events)
-    {
-        <h3>@item.EventName</h3>
-        <p>
-            Start Date: @item.StartDate
-        </p>
-        <p>
-            End Date: @item.EndDate
-        </p>
-        <p>
-            Amount Paid: @item.AmountPaid
-        </p>
-        <p>
-            Aditional Cost: @item.ExtraCost
-        </p>
-        <p>
-            Total Cost: @item.CalculatedCost
-        </p>
-        <p>
-            Event Status: @item.EventStatus.EventStatusName
-        </p>
-        <p>
-            Venue: @item.Venue.VenueName
-        </p>
-        <p>
-            Public Event: @item.PublicEvent
-        </p>
-        <p>
-            # of Participants: @item.NoOfParticipants
-        </p>
-    }
-</div>
+    <div class="secondaryContainer">
+        @foreach (var item in Model.EventOverview.Events)
+        {
+            if (item.PublicEvent)
+            {
+                <div class="detailedContentOuter">
+                    <div class="detailedContent">
+                        <h2 class="lineHeading">@item.EventName</h2>
+                        <p class="detailedContentSub">Venue: @item.Venue.VenueName</p>
+                        <p class="detailedContentSub">Event from: @Html.DisplayFor(modelItem => item.StartDate) - @Html.DisplayFor(modelItem => item.EndDate)</p>
+                        <p>@item.Description</p>
+                        <hr />
+                    </div>
+                </div>
+            }
+        }
+    </div>
 }
 else
 {

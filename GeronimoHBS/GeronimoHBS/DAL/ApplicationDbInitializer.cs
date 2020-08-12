@@ -1812,11 +1812,12 @@ namespace GeronimoHBS.DAL
             {
                 new Event {
                     EventName = "BDay Party 2020!!",
+                    Description = "BDay Party 2020!! Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event. ", 
                     StartDate = new DateTime(2020, 9, 29),
                     EndDate = new DateTime(2020, 9, 29),
                     AmountPaid = 0.00,
                     CalculatedCost = 350.00,
-                    PublicEvent = false,
+                    PublicEvent = true,
                     ExtraCost = 0.00,
                     NoOfParticipants = 100,
                     VenueID = venues[0].VenueID,
@@ -1826,6 +1827,8 @@ namespace GeronimoHBS.DAL
                 },
                 new Event {
                     EventName = "Man-Droid Conference",
+                    Description = "Man-Droid Conference: Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event. ",
+
                     StartDate = new DateTime(2020, 9, 29),
                     EndDate = new DateTime(2020, 9, 29),
                     AmountPaid = 0.00,
@@ -1840,6 +1843,8 @@ namespace GeronimoHBS.DAL
                 },
                 new Event {
                     EventName = "Wedding 2020",
+                    Description = "Wedding 2020: Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event.  Lengthy description about event. ",
+
                     StartDate = new DateTime(2020, 9, 29),
                     EndDate = new DateTime(2020, 9, 29),
                     AmountPaid = 0.00,
