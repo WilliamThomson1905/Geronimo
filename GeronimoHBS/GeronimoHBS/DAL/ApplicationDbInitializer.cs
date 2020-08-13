@@ -1823,7 +1823,9 @@ namespace GeronimoHBS.DAL
                     VenueID = venues[0].VenueID,
                     Venue = venues[0],
                     EventStatusID = 1,
-                    EventStatus = eventsStatus[0]
+                    EventStatus = eventsStatus[0],
+                    GuestId = guests[0].Id,
+                    Guest = guests[0]
                 },
                 new Event {
                     EventName = "Man-Droid Conference",
@@ -1839,7 +1841,9 @@ namespace GeronimoHBS.DAL
                     VenueID = venues[0].VenueID,
                     Venue = venues[0],
                     EventStatusID = 1,
-                    EventStatus = eventsStatus[0]
+                    EventStatus = eventsStatus[0],
+                    GuestId = guests[1].Id,
+                    Guest = guests[1]
                 },
                 new Event {
                     EventName = "Wedding 2020",
@@ -1855,13 +1859,43 @@ namespace GeronimoHBS.DAL
                     VenueID = venues[0].VenueID,
                     Venue = venues[0],
                     EventStatusID = 1,
-                    EventStatus = eventsStatus[0]
+                    EventStatus = eventsStatus[0],
+                    GuestId = guests[1].Id,
+                    Guest = guests[1]
                 },
 
             };
             events.ForEach(l => context.Events.Add(l));
             context.SaveChanges();
 
+
+
+            var glasgowEventsInformation = new List<EventInfo>
+            {
+                // Glasgow general events - admin 
+                new EventInfo
+                {
+                    Name = "Birthday Events",
+                    Description = "At Geronimo Hotels a guest can host events using one of our many venues. ",
+                    IsPublic = false
+                },
+                new EventInfo
+                {
+                    Name = "Wedding Extravaganza",
+                    Description = "All Geronimo Hotels",
+                    IsPublic = true
+                },
+                new EventInfo
+                {
+                    Name = "Banana Split",
+                    Description = "All Geronimo Hotels 2",
+                    IsPublic = true
+                },
+
+            };
+
+            glasgowEventsInformation.ForEach(l => context.EventInfo.Add(l));
+            context.SaveChanges();
 
 
             // Seeding EventOverview data for each hotel instance
@@ -1888,7 +1922,8 @@ namespace GeronimoHBS.DAL
                     SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. " +
                     "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. " +
                     "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. ",
-                    Events = events
+                    Events = events,
+                    EventInfo = glasgowEventsInformation
                     
                 },
                 new EventOverview
@@ -2267,8 +2302,6 @@ namespace GeronimoHBS.DAL
             };
             locations.ForEach(l => context.Location.Add(l));
             context.SaveChanges();
-
-
 
 
         }

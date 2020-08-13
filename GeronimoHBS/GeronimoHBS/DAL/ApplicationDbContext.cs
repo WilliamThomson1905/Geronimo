@@ -13,6 +13,7 @@ namespace GeronimoHBS.DAL
     {
 
         public DbSet<Staff> Staff { get; set; }
+        public DbSet<Guest> Guest { get; set; }
 
 
         public DbSet<GymOverview> GymOverview { get; set; }
@@ -38,6 +39,7 @@ namespace GeronimoHBS.DAL
 
         public DbSet<EventOverview> EventOverview { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<EventInfo> EventInfo { get; set; }
         public DbSet<EventStatus> EventsStatus { get; set; }
         public DbSet<Venue> Venues { get; set; }
         public DbSet<VenueStatus> VenuesStatus { get; set; }

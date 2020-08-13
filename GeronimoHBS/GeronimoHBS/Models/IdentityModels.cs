@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -473,6 +474,7 @@ namespace GeronimoHBS.Models
         public string SecondaryContent { get; set; }
 
         public virtual ICollection<Event> Events { get; set; }
+        public virtual ICollection<EventInfo> EventInfo { get; set; }
 
 
     }
@@ -491,6 +493,18 @@ namespace GeronimoHBS.Models
 
     }
 
+
+    public class EventInfo
+    {
+        public int EventInfoID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+
+        public bool IsPublic { get; set; }
+
+        public virtual ICollection<EventOverview> EventOverview { get; set; }
+
+    }
 
     // Two types of events:
     // 1. Created by Admin - events at hotel
@@ -534,6 +548,12 @@ namespace GeronimoHBS.Models
         public int VenueID { get; set; }
         // Corresponding navigation property - each event will have a Venue -  
         public virtual Venue Venue { get; set; }
+
+
+        //Navigational Properties - Guest can create their own events that are NOT public to other users
+        [ForeignKey("Guest")]
+        public string GuestId { get; set; }
+        public virtual Guest Guest { get; set; }
     }
 
     /// <summary>

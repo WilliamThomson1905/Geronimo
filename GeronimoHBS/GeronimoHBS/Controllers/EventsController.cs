@@ -21,6 +21,7 @@ namespace GeronimoHBS.Controllers
                 currentLocation = db.Location.Find(Id);
             }
 
+
             ViewBag.Location = db.Location.Find(Id);
             ViewBag.Collection = breadcrumbs;
             return View(currentLocation);

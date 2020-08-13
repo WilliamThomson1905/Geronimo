@@ -20,15 +20,13 @@
 @if (Model.EventOverview.Events != null)
 {
     <div class="secondaryContainer">
-        @foreach (var item in Model.EventOverview.Events)
+        @foreach (var item in Model.EventOverview.EventInfo)
         {
-            if (item.PublicEvent)
+            if (item.IsPublic)
             {
                 <div class="detailedContentOuter">
                     <div class="detailedContent">
-                        <h2 class="lineHeading">@item.EventName</h2>
-                        <p class="detailedContentSub">Venue: @item.Venue.VenueName</p>
-                        <p class="detailedContentSub">Event from: @Html.DisplayFor(modelItem => item.StartDate) - @Html.DisplayFor(modelItem => item.EndDate)</p>
+                        <h2 class="lineHeading">@item.Name</h2>
                         <p>@item.Description</p>
                         <hr />
                     </div>
