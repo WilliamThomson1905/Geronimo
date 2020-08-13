@@ -1789,21 +1789,23 @@ namespace GeronimoHBS.DAL
 
 
             // Seeded Venues     
-            var venues = new List<Venue>()
+            var glasgowVenues = new List<Venue>()
             {
                 new Venue {
                     VenueName = "Hall A",
                     VenueCapacity = 150,
                     RateForDay = 200.00,
-                    VenueStatusID = 1
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[0]
                 },
                 new Venue {
                     VenueName = "Hall B",
                     VenueCapacity = 250,
                     RateForDay = 300.00,
-                    VenueStatusID = 1                }
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[0]               }
             };
-            venues.ForEach(l => context.Venues.Add(l));
+            glasgowVenues.ForEach(l => context.Venues.Add(l));
             context.SaveChanges();
 
 
@@ -1820,8 +1822,8 @@ namespace GeronimoHBS.DAL
                     PublicEvent = true,
                     ExtraCost = 0.00,
                     NoOfParticipants = 100,
-                    VenueID = venues[0].VenueID,
-                    Venue = venues[0],
+                    VenueID = glasgowVenues[0].VenueID,
+                    Venue = glasgowVenues[0],
                     EventStatusID = 1,
                     EventStatus = eventsStatus[0],
                     GuestId = guests[0].Id,
@@ -1838,8 +1840,8 @@ namespace GeronimoHBS.DAL
                     PublicEvent = false,
                     ExtraCost = 0.00,
                     NoOfParticipants = 100,
-                    VenueID = venues[0].VenueID,
-                    Venue = venues[0],
+                    VenueID = glasgowVenues[0].VenueID,
+                    Venue = glasgowVenues[0],
                     EventStatusID = 1,
                     EventStatus = eventsStatus[0],
                     GuestId = guests[1].Id,
@@ -1856,8 +1858,8 @@ namespace GeronimoHBS.DAL
                     PublicEvent = false,
                     ExtraCost = 0.00,
                     NoOfParticipants = 100,
-                    VenueID = venues[0].VenueID,
-                    Venue = venues[0],
+                    VenueID = glasgowVenues[0].VenueID,
+                    Venue = glasgowVenues[0],
                     EventStatusID = 1,
                     EventStatus = eventsStatus[0],
                     GuestId = guests[1].Id,
@@ -1923,8 +1925,10 @@ namespace GeronimoHBS.DAL
                     "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. " +
                     "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. ",
                     Events = events,
-                    EventInfo = glasgowEventsInformation
-                    
+                    EventInfo = glasgowEventsInformation,
+                    Venues = glasgowVenues
+
+
                 },
                 new EventOverview
                 {

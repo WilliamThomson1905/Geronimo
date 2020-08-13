@@ -476,6 +476,7 @@ namespace GeronimoHBS.Models
         public virtual ICollection<Event> Events { get; set; }
         public virtual ICollection<EventInfo> EventInfo { get; set; }
 
+        public virtual ICollection<Venue> Venues { get; set; }
 
     }
 
@@ -573,6 +574,11 @@ namespace GeronimoHBS.Models
         public int VenueStatusID { get; set; }
         // Corresponding navigation property - each event will have a Venue -  
         public virtual VenueStatus VenueStatus { get; set; }
+
+
+        public virtual ICollection<EventOverview> EventOverview { get; set; }
+
+
     }
 
     /// <summary>

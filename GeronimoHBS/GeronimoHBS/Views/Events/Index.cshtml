@@ -42,6 +42,33 @@ else
     </div>
 }
 
+@if (Model.EventOverview.Venues != null)
+{
+    <div class="secondaryContainer">
+        @foreach (var item in Model.EventOverview.Venues)
+        {
+            
+            <div class="detailedContentOuter">
+                <div class="detailedContent">
+                    <h2 class="lineHeading">@item.VenueName</h2>
+                    <p class="detailedContentSub">Capacity: @item.VenueCapacity</p>
+                    <p class="detailedContentSub">Status: @item.VenueStatus.VenueStatusName</p>
+
+                    <p>Daily Rate: @item.RateForDay</p>
+                    <hr />
+                </div>
+            </div>
+            
+        }
+    </div>
+}
+else
+{
+    <div>
+        No Events Details Right Now
+    </div>
+}
+
 <div class="tertiaryContainer">
     <div class="align-center">
         <a href="/Dining/Index/@Model.LocationID" class="button primary">@Model.LocationName Dining</a>
