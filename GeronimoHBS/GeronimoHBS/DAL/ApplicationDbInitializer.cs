@@ -1808,6 +1808,87 @@ namespace GeronimoHBS.DAL
             glasgowVenues.ForEach(l => context.Venues.Add(l));
             context.SaveChanges();
 
+            // Seeded Venues     
+            var parisVenues = new List<Venue>()
+            {
+                new Venue {
+                    VenueName = "Hall A",
+                    VenueCapacity = 150,
+                    RateForDay = 200.00,
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[1]
+                },
+                new Venue {
+                    VenueName = "Hall B",
+                    VenueCapacity = 250,
+                    RateForDay = 300.00,
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[1]               
+                }
+            };
+            parisVenues.ForEach(l => context.Venues.Add(l));
+            context.SaveChanges();
+
+            // Seeded Venues     
+            var amsterdamVenues = new List<Venue>()
+            {
+                new Venue {
+                    VenueName = "Hall A",
+                    VenueCapacity = 150,
+                    RateForDay = 200.00,
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[0]
+                },
+                new Venue {
+                    VenueName = "Hall B",
+                    VenueCapacity = 250,
+                    RateForDay = 300.00,
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[1]               }
+            };
+            amsterdamVenues.ForEach(l => context.Venues.Add(l));
+            context.SaveChanges();
+
+            // Seeded Venues     
+            var newyorkVenues = new List<Venue>()
+            {
+                new Venue {
+                    VenueName = "Hall A",
+                    VenueCapacity = 150,
+                    RateForDay = 200.00,
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[0]
+                },
+                new Venue {
+                    VenueName = "Hall B",
+                    VenueCapacity = 250,
+                    RateForDay = 300.00,
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[0]               }
+            };
+            newyorkVenues.ForEach(l => context.Venues.Add(l));
+            context.SaveChanges();
+
+            // Seeded Venues     
+            var londonVenues = new List<Venue>()
+            {
+                new Venue {
+                    VenueName = "Hall A",
+                    VenueCapacity = 150,
+                    RateForDay = 200.00,
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[0]
+                },
+                new Venue {
+                    VenueName = "Hall B",
+                    VenueCapacity = 250,
+                    RateForDay = 300.00,
+                    VenueStatusID = 1,
+                    VenueStatus = venueStatus[1]               }
+            };
+            londonVenues.ForEach(l => context.Venues.Add(l));
+            context.SaveChanges();
+
 
             // Seeded Events     
             var events = new List<Event>()
@@ -1937,7 +2018,8 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "Paris Events - basic overview of location's Events. ",
                     MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. ",
                     SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Events with the lastest and greatest Events equipment. ",
-                    Events = events
+                    Events = events,
+                    Venues = parisVenues
                 },
                 new EventOverview
                 {
@@ -1946,7 +2028,8 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "Amsterdam Events - basic overview of location's Events. ",
                     MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Events with the lastest and greatest Events equipment. ",
                     SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Events with the lastest and greatest Events equipment. ",
-                    Events = events
+                    Events = events,
+                    Venues = amsterdamVenues
                 },
                 new EventOverview
                 {
@@ -1955,7 +2038,8 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "New York Events - basic overview of location's Events. ",
                     MainContent = "Geronimo Hotels - New York sports a fantabulous Events with the lastest and greatest Events equipment. ",
                     SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Events with the lastest and greatest Events equipment. " ,
-                    Events = events
+                    Events = events,
+                    Venues = newyorkVenues
                 },
                 new EventOverview
                 {
@@ -1964,7 +2048,8 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "London Events - basic overview of location's Events. ",
                     MainContent = "Geronimo Hotels - London sports a fantabulous Events with the lastest and greatest Events equipment. ",
                     SecondaryContent = "Geronimo Hotels - London sports a fantabulous Events with the lastest and greatest Events equipment. ",
-                    Events = events
+                    Events = events,
+                    Venues = londonVenues
                 }
 
             };
