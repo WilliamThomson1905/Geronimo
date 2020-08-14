@@ -22,18 +22,10 @@
         <div class="">
 
             <div class="">
-                <label for="LocationId">Choose a location</label>
-                @Html.DropDownList("LocationID", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
-
-                <label for="roomTypeId">Choose a room type</label>
+          
+                <label for="roomTypeId">Change @Model.LocationName Venue Selection</label>
                 @Html.DropDownList("VenueID", null, null, htmlAttributes: new { @class = "form-control", id = "chooseLocation" })
-
-                <label for="startDate">From</label>
-                <input type="date" name="startDate" id="startDate" placeholder="Start Date of Venue booking" />
-
-                <label for="endDate">To</label>
-                <input type="date" name="endDate" id="endDate" placeholder="End Date of Venue booking" />
-
+ 
                 @* Declare hidden values for each of the folowing *@
                 @*<input type="hidden" value=@Model.LocationID id="Id" name="LocationId" />*@
 

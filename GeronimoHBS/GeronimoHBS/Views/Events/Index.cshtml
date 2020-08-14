@@ -55,7 +55,7 @@ else
                     <p class="detailedContentSub">Capacity: @item.VenueCapacity</p>
                     <p class="detailedContentSub">Daily Rate: @item.RateForDay</p>
                     <p>@item.VenueDescription</p>
-                    <a href="/Event/VenueSelection/@Model.LocationID" class="button primary">Book Venue</a>
+                    @Html.ActionLink("Book Venue", "VenueAvailability", "Events", new { VenueId = item.VenueID, LocationId = Model.LocationID }, new { @class = "button primary" })
 
                     <hr />
                 </div>

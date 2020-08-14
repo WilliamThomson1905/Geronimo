@@ -31,18 +31,21 @@ namespace GeronimoHBS.Controllers
 
 
 
-        public ActionResult EventSelection(int? Id)
+        public ActionResult VenueAvailability(int? VenueId, int LocationId)
         {
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + Id },
-                new string []{ "Event", "../../Events/Index/" + Id }
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + LocationId },
+                new string []{ "Events", "../../Events/Index/" + LocationId }
             };
             ViewBag.Collection = breadcrumbs;
 
 
-            var currentLocation = db.Location.Find(Id);
+            var currentLocation = db.Location.Find(LocationId);
+
+
+            var locationsVenues = currentLocation.EventOverview.Venues;
             ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName");
-            ViewBag.VenueID = new SelectList(db.Venues, "VenueID", "VenueName");
+            ViewBag.VenueID = new SelectList(locationsVenues, "VenueID", "VenueName");
 
             return View(currentLocation);
 
