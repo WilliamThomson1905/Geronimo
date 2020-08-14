@@ -562,18 +562,18 @@ namespace GeronimoHBS.Models
     /// </summary>
     public class Venue
     {
+        [Key]
         public int VenueID { get; set; }
 
         public string VenueName { get; set; }
+        public string VenueDescription { get; set; }
 
         public int VenueCapacity { get; set; }
 
         public double RateForDay { get; set; }
 
-        // Foriegn key 
-        public int VenueStatusID { get; set; }
-        // Corresponding navigation property - each event will have a Venue -  
-        public virtual VenueStatus VenueStatus { get; set; }
+        // Corresponding navigation property - each Venue will have a collection of VenueStatus  
+        public virtual ICollection<VenueStatus> VenueStatus { get; set; }
 
 
         public virtual ICollection<EventOverview> EventOverview { get; set; }
@@ -587,8 +587,23 @@ namespace GeronimoHBS.Models
     /// </summary>
     public class VenueStatus
     {
+        [Key]
         public int VenueStatusID { get; set; }
         public string VenueStatusName { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy HH:mm}")]
+        public DateTime? StartDate { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy HH:mm}")]
+        public DateTime? EndDate { get; set; }
+
+
+        // Foriegn key 
+        public int VenueID { get; set; }
+        // Corresponding navigation property - each VenueStatus will belong to a Venue  
+        public virtual Venue Venue { get; set; }
+
     }
 
 

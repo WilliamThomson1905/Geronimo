@@ -1773,18 +1773,7 @@ namespace GeronimoHBS.DAL
 
 
 
-            // Seeded VenueStatus     
-            var venueStatus = new List<VenueStatus>()
-            {
-                new VenueStatus {
-                    VenueStatusName = "Unavailable"
-                },
-                new VenueStatus {
-                    VenueStatusName = "Available"
-                }
-            };
-            venueStatus.ForEach(l => context.VenuesStatus.Add(l));
-            context.SaveChanges();
+         
 
 
 
@@ -1795,18 +1784,112 @@ namespace GeronimoHBS.DAL
                     VenueName = "Hall A",
                     VenueCapacity = 150,
                     RateForDay = 200.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[0]
+                    VenueDescription = "Lengthy description of Hall A and its infinite awesomeness. Lengthy description of Hall A and its infinite awesomeness. Lengthy description of Hall A and its infinite awesomeness. Lengthy description of Hall A and its infinite awesomeness. Lengthy description of Hall A and its infinite awesomeness. "
                 },
                 new Venue {
                     VenueName = "Hall B",
                     VenueCapacity = 250,
                     RateForDay = 300.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[0]               }
+                    VenueDescription = "Lengthy description of Hall B and its infinite awesomeness. Lengthy description of Hall B and its infinite awesomeness. Lengthy description of Hall B and its infinite awesomeness. Lengthy description of Hall B and its infinite awesomeness. Lengthy description of Hall B and its infinite awesomeness. ",
+                },
+                new Venue {
+                    VenueName = "Hall C",
+                    VenueCapacity = 100,
+                    RateForDay = 50.00,
+                    VenueDescription = "Lengthy description of Hall C and its infinite awesomeness. Lengthy description of Hall C and its infinite awesomeness. Lengthy description of Hall C and its infinite awesomeness. Lengthy description of Hall C and its infinite awesomeness. Lengthy description of Hall C and its infinite awesomeness. ",
+
+                },
+                 new Venue {
+                    VenueName = "Hall D",
+                    VenueCapacity = 100,
+                    RateForDay = 50.00,
+                    VenueDescription = "Lengthy description of Hall D and its infinite awesomeness. Lengthy description of Hall D and its infinite awesomeness. Lengthy description of Hall D and its infinite awesomeness. Lengthy description of Hall D and its infinite awesomeness. Lengthy description of Hall D and its infinite awesomeness. ",
+                },
+                  new Venue {
+                    VenueName = "Hall E",
+                    VenueCapacity = 100,
+                    RateForDay = 50.00,
+                    VenueDescription = "Lengthy description of Hall E and its infinite awesomeness. Lengthy description of Hall E and its infinite awesomeness. Lengthy description of Hall E and its infinite awesomeness. Lengthy description of Hall E and its infinite awesomeness. Lengthy description of Hall E and its infinite awesomeness. ",
+                },
             };
             glasgowVenues.ForEach(l => context.Venues.Add(l));
             context.SaveChanges();
+
+
+            // Seeded VenueStatus     
+            var glasgowVenueOneStatus = new List<VenueStatus>()
+            {
+                                 
+                // Glasgow Venue 1 
+                new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2020, 9, 29, 8, 0, 0),
+                    EndDate = new DateTime(2020, 9, 29, 12, 0, 0),
+                    VenueID = glasgowVenues[0].VenueID
+                },
+                 new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2021, 8, 14, 8, 0, 0),
+                    EndDate = new DateTime(2021, 8, 17, 22, 0, 0),
+                    VenueID = glasgowVenues[0].VenueID
+                },
+                 // Glasgow Venue 2 
+                  new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2021, 8, 14, 8, 0, 0),
+                    EndDate = new DateTime(2021, 8, 17, 22, 0, 0),
+                    VenueID = glasgowVenues[1].VenueID
+                },
+                   new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2020, 9, 29, 8, 0, 0),
+                    EndDate = new DateTime(2020, 9, 29, 12, 0, 0),
+                    VenueID = glasgowVenues[1].VenueID
+                },                 
+                   // Glasgow Venue 3 
+                 new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2021, 8, 14, 8, 0, 0),
+                    EndDate = new DateTime(2021, 8, 17, 22, 0, 0),
+                    VenueID = glasgowVenues[2].VenueID
+                },
+                  new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2021, 8, 14, 8, 0, 0),
+                    EndDate = new DateTime(2021, 8, 17, 22, 0, 0),
+                    VenueID = glasgowVenues[2].VenueID
+                },
+                   // Glasgow Venue 4
+                   new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2020, 9, 29, 8, 0, 0),
+                    EndDate = new DateTime(2020, 9, 29, 12, 0, 0),
+                    VenueID = glasgowVenues[3].VenueID
+                },
+                 new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2021, 8, 14, 8, 0, 0),
+                    EndDate = new DateTime(2021, 8, 17, 22, 0, 0),
+                    VenueID = glasgowVenues[3].VenueID
+                },
+                 // Glasgow Venue 5
+                  new VenueStatus {
+                    VenueStatusName = "Unavailable",
+                    StartDate = new DateTime(2021, 8, 14, 8, 0, 0),
+                    EndDate = new DateTime(2021, 8, 17, 22, 0, 0),
+                    VenueID = glasgowVenues[4].VenueID
+                },
+
+            };
+            glasgowVenueOneStatus.ForEach(l => context.VenuesStatus.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+
+
 
             // Seeded Venues     
             var parisVenues = new List<Venue>()
@@ -1814,16 +1897,12 @@ namespace GeronimoHBS.DAL
                 new Venue {
                     VenueName = "Hall A",
                     VenueCapacity = 150,
-                    RateForDay = 200.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[1]
+                    RateForDay = 200.00
                 },
                 new Venue {
                     VenueName = "Hall B",
                     VenueCapacity = 250,
-                    RateForDay = 300.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[1]               
+                    RateForDay = 300.00            
                 }
             };
             parisVenues.ForEach(l => context.Venues.Add(l));
@@ -1835,16 +1914,13 @@ namespace GeronimoHBS.DAL
                 new Venue {
                     VenueName = "Hall A",
                     VenueCapacity = 150,
-                    RateForDay = 200.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[0]
+                    RateForDay = 200.00
                 },
                 new Venue {
                     VenueName = "Hall B",
                     VenueCapacity = 250,
-                    RateForDay = 300.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[1]               }
+                    RateForDay = 300.00
+                }
             };
             amsterdamVenues.ForEach(l => context.Venues.Add(l));
             context.SaveChanges();
@@ -1855,16 +1931,13 @@ namespace GeronimoHBS.DAL
                 new Venue {
                     VenueName = "Hall A",
                     VenueCapacity = 150,
-                    RateForDay = 200.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[0]
+                    RateForDay = 200.00
                 },
                 new Venue {
                     VenueName = "Hall B",
                     VenueCapacity = 250,
-                    RateForDay = 300.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[0]               }
+                    RateForDay = 300.00
+                }
             };
             newyorkVenues.ForEach(l => context.Venues.Add(l));
             context.SaveChanges();
@@ -1875,16 +1948,13 @@ namespace GeronimoHBS.DAL
                 new Venue {
                     VenueName = "Hall A",
                     VenueCapacity = 150,
-                    RateForDay = 200.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[0]
+                    RateForDay = 200.00
                 },
                 new Venue {
                     VenueName = "Hall B",
                     VenueCapacity = 250,
-                    RateForDay = 300.00,
-                    VenueStatusID = 1,
-                    VenueStatus = venueStatus[1]               }
+                    RateForDay = 300.00
+                }
             };
             londonVenues.ForEach(l => context.Venues.Add(l));
             context.SaveChanges();

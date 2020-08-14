@@ -26,6 +26,28 @@ namespace GeronimoHBS.Controllers
             ViewBag.Collection = breadcrumbs;
             return View(currentLocation);
         }
-        
+
+
+
+
+
+        public ActionResult EventSelection(int? Id)
+        {
+            breadcrumbs = new string[][] {
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + Id },
+                new string []{ "Event", "../../Events/Index/" + Id }
+            };
+            ViewBag.Collection = breadcrumbs;
+
+
+            var currentLocation = db.Location.Find(Id);
+            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName");
+            ViewBag.VenueID = new SelectList(db.Venues, "VenueID", "VenueName");
+
+            return View(currentLocation);
+
+        }
+
+
     }
 }

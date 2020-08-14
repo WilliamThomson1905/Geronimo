@@ -53,9 +53,10 @@ else
                 <div class="detailedContent">
                     <h2 class="lineHeading">@item.VenueName</h2>
                     <p class="detailedContentSub">Capacity: @item.VenueCapacity</p>
-                    <p class="detailedContentSub">Status: @item.VenueStatus.VenueStatusName</p>
+                    <p class="detailedContentSub">Daily Rate: @item.RateForDay</p>
+                    <p>@item.VenueDescription</p>
+                    <a href="/Event/VenueSelection/@Model.LocationID" class="button primary">Book Venue</a>
 
-                    <p>Daily Rate: @item.RateForDay</p>
                     <hr />
                 </div>
             </div>
