@@ -18,16 +18,23 @@
     @Html.DisplayFor(modelItem => Model.EventOverview.SecondaryContent)
 
 </p>
-@foreach (var item in Model.EventOverview.EventInfo)
+@if (Model.EventOverview.EventInfo.Any())
 {
-    if (item.IsPublic)
+    foreach (var item in Model.EventOverview.EventInfo)
     {
-        <h3>@item.Name</h3>
-        <p>
-            @item.Description
-        </p>
+        if (item.IsPublic)
+        {
+            <h2 class="lineHeading">@item.Name</h2>
+            <p>@item.Description</p>
+            <hr />
+        }
     }
 }
+else
+{
+    <p>No Event Information to Display</p>
+}
+
 
 
 

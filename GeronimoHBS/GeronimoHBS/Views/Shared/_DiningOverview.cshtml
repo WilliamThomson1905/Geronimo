@@ -8,9 +8,6 @@
     @Html.DisplayFor(modelItem => Model.DiningOverview.IntroductionParagraph)
 
 </p>
-
-
-<h3>Dining</h3>
 <p>
     @Html.DisplayFor(modelItem => Model.DiningOverview.MainContent)
 
@@ -38,7 +35,7 @@
         {
             <div class="">
                 <h3 class="lineHeading">@menuItem.MealType: @menuItem.MenuItemName</h3>
-                <p class="detailedContentSub">Price: @menuItem.MenuItemCost</p>
+                <p class="detailedContentSub">Price: £@menuItem.MenuItemCost</p>
                 <p class="detailedContentSub">
                     Dietary Restrictions : 
                     @if (menuItem.IsVegetarian)

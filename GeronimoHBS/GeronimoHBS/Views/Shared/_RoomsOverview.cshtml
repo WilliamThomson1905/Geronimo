@@ -1,5 +1,5 @@
 ﻿@model GeronimoHBS.Models.Location
-@{ 
+@{
     int i = 1;
 }
 
@@ -29,32 +29,31 @@
 
 
 @{ i = 1;}
-
-@foreach (var item in Model.RoomOverview.RoomType)
+@if (Model.RoomOverview.RoomType.Any())
 {
+    foreach (var item in Model.RoomOverview.RoomType)
+    {
 
-    <div id="roomtype@(i)" class="tabcontent" @if(i == 1) { @Html.Raw("style = \"display: block;\"");  }>
-        <p>
-            @item.Description
-        </p>
-        <p>
-            Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
-            Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
-            Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
-            Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
-            Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
-            Standard rooms are extraordinarily ordinary. Standard rooms are extraordinarily ordinary.
-        </p>
-        <p>
-            Free Wifi is available throughout all our Hotels.
-        </p>
-        <p>
-            <a href="/Rooms/Index/@Model.LocationID" class="button primary">View Details</a>
+        <div id="roomtype@(i)" class="tabcontent" @if (i == 1) { @Html.Raw("style = \"display: block;\"") ; }>
+            <p>
+                @item.Description
+            </p>
 
-        </p>
-    </div>
-    i++;
+            <p>
+                <a href="/Rooms/Index/@Model.LocationID" class="button primary">View Details</a>
+
+            </p>
+        </div>
+        i++;
+    }
 }
+else
+{
+    <p>No Event Information to Display</p>
+}
+
+
+
 
 
 
