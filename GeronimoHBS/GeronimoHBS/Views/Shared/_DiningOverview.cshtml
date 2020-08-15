@@ -22,58 +22,47 @@
 
 <p>
     <a href="/Dining/Index/@Model.LocationID" class="button primary">Seating & Menu</a>
-
 </p>
-<h3>
-    Current Menu
-</h3>
+
 
 @foreach (var item in Model.DiningOverview.Menus)
 {
     if (item.IsAvailable)
     {
-        <h4>@item.Name</h4>
+        <h2 class="lineHeading">Current Menu: @item.Name</h2>
+        <p class="detailedContentSub">Menu Availability: @Html.DisplayFor(modelItem => item.AvailableFrom) - @Html.DisplayFor(modelItem => item.AvailableTo)</p>
         <p>@item.Description</p>
-        <p>Menu Availability: @Html.DisplayFor(modelItem => item.AvailableFrom) - @Html.DisplayFor(modelItem => item.AvailableTo)</p>
         <hr /> 
 
         foreach (var menuItem in item.MenuItems)
         {
+            <div class="">
+                <h3 class="lineHeading">@menuItem.MealType: @menuItem.MenuItemName</h3>
+                <p class="detailedContentSub">Price: @menuItem.MenuItemCost</p>
+                <p class="detailedContentSub">
+                    Dietary Restrictions : 
+                    @if (menuItem.IsVegetarian)
+                    {
+                        @Html.Raw("Vegetarian");
+                    }
+                    @if (menuItem.IsVegan)
+                    {
+                        @Html.Raw("Vegan");
+                    }
+                    @if (!menuItem.IsVegan && !menuItem.IsVegetarian)
+                    {
+                        @Html.Raw("N/A");
+                    }
+                </p>
+                <p>@menuItem.MenuItemDescription</p>
+                <hr />
+            </div>
 
-            <p>@menuItem.MealType </p>
-            <h4>@menuItem.MenuItemName</h4>
-            <p>@menuItem.MenuItemDescription</p>
-            <p>@menuItem.MenuItemCost </p>
-            <p>Vegetarian: @menuItem.IsVegetarian </p>
-            <p>Vegan: @menuItem.IsVegan </p>
-            <hr />
 
         }
     }
 }
 
-<p>
-
-</p>
-<p>
-
-</p>
-
-
-<h3>Bookings</h3>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.
-</p>
 
 <p>
     @Html.ActionLink("Seating & Menu", "Index", new { controller = "Dining" }, htmlAttributes: new { @class = "button primary" })
