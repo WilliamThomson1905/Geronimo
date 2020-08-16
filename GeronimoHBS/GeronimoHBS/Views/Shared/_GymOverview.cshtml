@@ -6,78 +6,91 @@
 <p>
     @Html.DisplayFor(modelItem => Model.GymOverview.IntroductionParagraph)
 </p>
-
 <p>
-    <a href="/Gym/Index/@Model.LocationID" class = "button primary">View @Model.LocationName Gym</a>
-
-</p>
-
-<h3>Gym Classes</h3>
-<p>
-    @Html.ActionLink("View classes", "Index", new { controller = "Gym" }, htmlAttributes: new { @class = "secondaryLink" })
-
     @Html.DisplayFor(modelItem => Model.GymOverview.MainContent)
-
-
-
-
-
-
 </p>
-
-
-@if (Model.GymOverview.Equipment.Count() > 1)
-{
-<h3>Gym Equipment</h3>
 <p>
     @Html.DisplayFor(modelItem => Model.GymOverview.SecondaryContent)
+</p>
 
+<p>
+    <a href="/Gym/Index/@Model.LocationID" class="button primary">View @Model.LocationName Gym</a>
 </p>
 
 
-<div class="table-wrapper">
-    <table class="alt">
-        <thead>
-            <tr>
-                <th>Equipment</th>
-                <th>Description</th>
-                <th>Quantity</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.GymOverview.Equipment)
-            {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Description</td>
-                    <td>@item.Quantity</td>
-                </tr>
-            }
-        </tbody>
 
-    </table>
-</div>
+@if (Model.GymOverview.GymClasses.Any())
+{
+
+    <hr />
+    <h2  class="lineHeading">Gym Classes Overview</h2>
+
+    foreach (var item in Model.GymOverview.GymClasses)
+    {
+        <h3 class="lineHeading">@item.Title</h3>
+        <p class="detailedContentSub">Focus: @foreach (var focus in item.Focus) {@focus.DisplayTitle}</p>
+        <p>@item.Description</p>
+        <hr />
+
+    }
+
+
+
+
+
+}
+else
+{
+    <p>No Gym Classes Information to Display for @Model.LocationName</p>
 }
 
 
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum.
-</p>
+
+
+
+@if (Model.GymOverview.Equipment.Any())
+{
+
+    <h2 class="lineHeading">Gym Equipment</h2>
+    <hr />
+    <p>
+        @Html.DisplayFor(modelItem => Model.GymOverview.SecondaryContent)
+    </p>
+
+
+    <div class="table-wrapper">
+        <table class="alt">
+            <thead>
+                <tr>
+                    <th>Equipment</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var innerItem in Model.GymOverview.Equipment)
+                {
+                    <tr>
+                        <td>@innerItem.Name</td>
+                        <td>@innerItem.Description</td>
+                        <td>@innerItem.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+
+}
+else
+{
+    <p>No Equipment Information to Display for @Model.LocationName</p>
+}
+
+
 
 <p>
     @Html.ActionLink("Book Now", "Index", new { controller = "Gym" }, htmlAttributes: new { @class = "button primary" })

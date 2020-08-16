@@ -8,10 +8,6 @@
     @Html.DisplayFor(modelItem => Model.SpaOverview.IntroductionParagraph)
 
 </p>
-
-<p>
-    <a href="/Spa/Index/@Model.SpaOverviewID" class="button primary">Visit @Model.LocationName Spa</a>
-</p>
 <p>
     @Html.DisplayFor(modelItem => Model.SpaOverview.MainContent)
 
@@ -19,17 +15,31 @@
 <p>
     @Html.DisplayFor(modelItem => Model.SpaOverview.SecondaryContent)
 </p>
+<p>
+    <a href="/Spa/Index/@Model.SpaOverviewID" class="button primary">Visit @Model.LocationName Spa</a>
+</p>
+
+
 
 <p>
-    Geronimo Hotels @Model.LocationName has a range of spa promotions and events available.
-
-
+    Geronimo Hotels @Model.LocationName has a range of spa promotions available:
 </p>
-@foreach (var item in Model.SpaOverview.SpaPromotions)
-{
-    <h3>@item.Title</h3>
-    <p>@item.Description</p>
 
+@if (Model.SpaOverview.SpaPromotions.Any())
+{
+    foreach (var item in Model.SpaOverview.SpaPromotions)
+    {
+        
+        <h2 class="lineHeading">@item.Title</h2>
+        <p class="detailedContentSub">Promotion: @Html.DisplayFor(modelItem => item.StartDate) - @Html.DisplayFor(modelItem => item.EndDate)</p>
+        <p>@item.Description</p>
+        <hr />
+        
+    }
+}
+else
+{
+    <p>No Spa Information to Display at @Model.LocationName</p>
 }
 
 
