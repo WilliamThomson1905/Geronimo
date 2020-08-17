@@ -38,6 +38,9 @@ namespace GeronimoHBS.Controllers
         // GET: Equipments/Create
         public ActionResult Create()
         {
+            // Get all Locations which the uer can select rom when g=creating Equipment for their hotels gym
+            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName", 0);
+
             return View();
         }
 
