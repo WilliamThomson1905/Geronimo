@@ -11,7 +11,7 @@ using GeronimoHBS.Models;
 
 namespace GeronimoHBS.Controllers
 {
-    public class EquipmentController : BaseController
+    public class EquipmentsController : BaseController
     {
 
         // GET: Equipments
@@ -38,9 +38,6 @@ namespace GeronimoHBS.Controllers
         // GET: Equipments/Create
         public ActionResult Create()
         {
-            // Get all Locations which the uer can select rom when g=creating Equipment for their hotels gym
-            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "LocationName", 0);
-
             return View();
         }
 
@@ -49,14 +46,12 @@ namespace GeronimoHBS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EquipmentID,Name,Quantity,Description")] Equipment equipment, int LocationID)
+        public ActionResult Create([Bind(Include = "EquipmentID,Name,Quantity,Description,GymOverviewID")] Equipment equipment)
         {
-            var Location = db.Location.Find(LocationID);
-
             if (ModelState.IsValid)
             {
-                Location.GymOverview.Equipment.Add(equipment);
-                // db.Equipment.Add(equipment);
+
+                db.Equipment.Add(equipment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -84,7 +79,7 @@ namespace GeronimoHBS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EquipmentID,Name,Quantity,Description")] Equipment equipment)
+        public ActionResult Edit([Bind(Include = "EquipmentID,Name,Quantity,Description,GymOverviewID")] Equipment equipment)
         {
             if (ModelState.IsValid)
             {

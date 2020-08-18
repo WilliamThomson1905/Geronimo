@@ -696,33 +696,7 @@ namespace GeronimoHBS.DAL
 
 
 
-            // GLASGOW DATA
-            // Seeded Equipment - Glasgow
-            var equipmentGlasgow = new List<Equipment>
-            {
-                new Equipment
-                {
-                    Name = "Glasgow Gym Item 1",
-                    Description = "Glasgow Gym Item 1 description item1 description item1 description. Glasgow Gym Item 1 description item1 description item1 description. ",
-                    Quantity = 13
-                },
-                new Equipment
-                {
-                    Name = "Glasgow Gym Item 2",
-                    Description = "item2 description item2 description item2 description. ",
-                    Quantity = 21
-
-                },new Equipment
-                {
-                    Name = "Glasgow Gym Item 3",
-                    Description = "item3 description item3 description item3 description. ",
-                    Quantity = 7
-
-                }
-
-            };
-            equipmentGlasgow.ForEach(l => context.Equipment.Add(l));
-            context.SaveChanges();
+            
 
             // Seeded Gym Classes - Glasgow    
             var gymClassesGlasgow = new List<GymClasses>()
@@ -929,33 +903,7 @@ namespace GeronimoHBS.DAL
 
 
 
-            // PARIS DATA
-            // Seeded Equipment - Paris
-            var equipmentParis = new List<Equipment>
-            {
-                new Equipment
-                {
-                    Name = "P_item1",
-                    Description = "item1 description item1 description item1 description. ",
-                    Quantity = 13
-                },
-                new Equipment
-                {
-                    Name = "P_item2",
-                    Description = "item2 description item2 description item2 description. ",
-                    Quantity = 21
-
-                },new Equipment
-                {
-                    Name = "P_item3",
-                    Description = "item3 description item3 description item3 description. ",
-                    Quantity = 7
-
-                }
-
-            };
-            equipmentParis.ForEach(l => context.Equipment.Add(l));
-            context.SaveChanges();
+            
 
 
             // Seeded Gym Classes - Paris    
@@ -1068,34 +1016,7 @@ namespace GeronimoHBS.DAL
 
 
 
-            // AMSTERDAM DATA
-            // Seeded Equipment - Amsterdam
-            var equipmentAmsterdam = new List<Equipment>
-            {
-                new Equipment
-                {
-                    Name = "A_item1",
-                    Description = "item1 description item1 description item1 description. ",
-                    Quantity = 13
-                },
-                new Equipment
-                {
-                    Name = "A_item2",
-                    Description = "item2 description item2 description item2 description. ",
-                    Quantity = 21
-
-                },new Equipment
-                {
-                    Name = "A_item3",
-                    Description = "item3 description item3 description item3 description. ",
-                    Quantity = 7
-
-                }
-
-            };
-            equipmentAmsterdam.ForEach(l => context.Equipment.Add(l));
-            context.SaveChanges();
-
+            
             // Seeded Gym Classes - Amsterdam    
             var gymClassesAmsterdam = new List<GymClasses>()
             {
@@ -1206,33 +1127,7 @@ namespace GeronimoHBS.DAL
 
 
 
-            // NEW YORK DATA
-            // Seeded Equipment - NewYork
-            var equipmentNewYork = new List<Equipment>
-            {
-                new Equipment
-                {
-                    Name = "NY_item1",
-                    Description = "item1 description item1 description item1 description. ",
-                    Quantity = 13
-                },
-                new Equipment
-                {
-                    Name = "NY_item2",
-                    Description = "item2 description item2 description item2 description. ",
-                    Quantity = 21
-
-                },new Equipment
-                {
-                    Name = "NY_item3",
-                    Description = "item3 description item3 description item3 description. ",
-                    Quantity = 7
-
-                }
-
-            };
-            equipmentNewYork.ForEach(l => context.Equipment.Add(l));
-            context.SaveChanges();
+          
 
             // Seeded Gym Classes - NewYork    
             var gymClassesNewYork = new List<GymClasses>()
@@ -1344,33 +1239,7 @@ namespace GeronimoHBS.DAL
 
 
 
-            // LONDON DATA
-            // Seeded Equipment - London
-            var equipmentLondon = new List<Equipment>
-            {
-                new Equipment
-                {
-                    Name = "L_item1",
-                    Description = "item1 description item1 description item1 description. ",
-                    Quantity = 13
-                },
-                new Equipment
-                {
-                    Name = "L_item2",
-                    Description = "item2 description item2 description item2 description. ",
-                    Quantity = 21
-
-                },new Equipment
-                {
-                    Name = "L_item3",
-                    Description = "item3 description item3 description item3 description. ",
-                    Quantity = 7
-
-                }
-
-            };
-            equipmentLondon.ForEach(l => context.Equipment.Add(l));
-            context.SaveChanges();
+            
 
             // Seeded Gym Classes - London    
             var gymClassesLondon = new List<GymClasses>()
@@ -1479,98 +1348,6 @@ namespace GeronimoHBS.DAL
             };
             timetableLondon.ForEach(l => context.Timetable.Add(l));
             context.SaveChanges();
-
-
-
-
-            // Seeding GymOverview data for each hotel instance
-            var gymOverview = new List<GymOverview>
-            {
-                new GymOverview
-                {
-                    GymOverviewID = 1,
-                    Header = "Geronimo Gym",
-                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ", 
-                    MainContent = "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. " +
-                    "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. ",
-                    SecondaryContent = "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. " +
-                    "All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports ", 
-                    
-                    // Equipment = equipmentDefault,
-                    // GymClasses = gymClassesDefault,
-                    // Timetable = timetableDefault
-                },
-                new GymOverview
-                {
-                    GymOverviewID = 2,
-                    Header = "Glasgow Gym",
-                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
-                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    Equipment = equipmentGlasgow,
-                    GymClasses = gymClassesGlasgow,
-                    Timetable = timetableGlasgow
-
-                },
-                new GymOverview
-                {                    
-                    GymOverviewID = 3,
-                    Header = "Paris Gym", 
-                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
-                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    Equipment = equipmentParis,
-                    GymClasses = gymClassesParis,
-                    Timetable = timetableParis
-                },
-                new GymOverview
-                {
-                    GymOverviewID = 4,
-                    Header = "Amsterdam Gym",
-                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
-                    MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment.  Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment.  Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    Equipment = equipmentAmsterdam,
-                    GymClasses = gymClassesAmsterdam,
-                    Timetable = timetableAmsterdam
-                },
-                new GymOverview
-                {
-                    GymOverviewID = 5,
-                    Header = "New York Gym",
-                    IntroductionParagraph = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    MainContent = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    Equipment = equipmentNewYork,
-                    GymClasses = gymClassesNewYork,
-                    Timetable = timetableNewYork
-                },
-                new GymOverview
-                {
-                    GymOverviewID = 6,
-                    Header = "London Gym",
-                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
-                    MainContent = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    SecondaryContent = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    Equipment = equipmentLondon,
-                    GymClasses = gymClassesLondon,
-                    Timetable = timetableLondon
-                }
-
-            };
-            gymOverview.ForEach(l => context.GymOverview.Add(l));
-            context.SaveChanges();
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2384,7 +2161,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " + 
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
                     RoomOverviewID = 1,
-                    GymOverviewID = 1,
                     SpaOverviewID = 1,
                     DiningOverviewID = 1,
                     EventOverviewID = 1
@@ -2397,7 +2173,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 2,
-                    GymOverviewID = 2,
                     SpaOverviewID = 2,
                     DiningOverviewID = 2,
                     EventOverviewID = 2,
@@ -2412,7 +2187,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et doloredoloredoloredolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 3,
-                    GymOverviewID = 3,
                     SpaOverviewID = 3,
                     DiningOverviewID = 3,
                     EventOverviewID = 3
@@ -2426,7 +2200,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 4,
-                    GymOverviewID = 4,
                     SpaOverviewID = 4,
                     DiningOverviewID = 4,
                     EventOverviewID = 4
@@ -2439,7 +2212,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 5,
-                    GymOverviewID = 5,
                     SpaOverviewID = 5,
                     DiningOverviewID = 5,
                     EventOverviewID = 5
@@ -2451,7 +2223,6 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",                     
                     RoomOverviewID = 6,
-                    GymOverviewID = 6,
                     SpaOverviewID = 6,
                     DiningOverviewID = 6,
                     EventOverviewID = 6,
@@ -2461,6 +2232,263 @@ namespace GeronimoHBS.DAL
             };
             locations.ForEach(l => context.Location.Add(l));
             context.SaveChanges();
+
+
+
+
+            // Seeding GymOverview data for each hotel instance
+            var gymOverview = new List<GymOverview>
+            {
+                new GymOverview
+                {
+                    LocationID = 1,
+                    Header = "Geronimo Gym",
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. " +
+                    "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. ",
+                    SecondaryContent = "All Geronimo Hotels sports a fantabulous gym, equipped with  the lastest and greatest gym equipment. " +
+                    "All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports All Geronimo Hotels sports ", 
+                    
+                    // Equipment = equipmentDefault,
+                    // GymClasses = gymClassesDefault,
+                    // Timetable = timetableDefault
+                },
+                new GymOverview
+                {
+                    LocationID = 2,
+                    Location = locations[1],
+                    Header = "Glasgow Gym",
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    GymClasses = gymClassesGlasgow,
+                    Timetable = timetableGlasgow
+
+                },
+                new GymOverview
+                {
+                    LocationID = 3,
+                    Location = locations[2],
+                    Header = "Paris Gym",
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    GymClasses = gymClassesParis,
+                    Timetable = timetableParis
+                },
+                new GymOverview
+                {
+                    LocationID = 4,
+                    Location = locations[3],
+                    Header = "Amsterdam Gym",
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment.  Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment.  Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    GymClasses = gymClassesAmsterdam,
+                    Timetable = timetableAmsterdam
+                },
+                new GymOverview
+                {
+                    LocationID = 5,
+                    Location = locations[4],
+                    Header = "New York Gym",
+                    IntroductionParagraph = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    MainContent = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    GymClasses = gymClassesNewYork,
+                    Timetable = timetableNewYork
+                },
+                new GymOverview
+                {
+                    LocationID = 6,
+                    Location = locations[5],
+                    Header = "London Gym",
+                    IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
+                    MainContent = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    SecondaryContent = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
+                    GymClasses = gymClassesLondon,
+                    Timetable = timetableLondon
+                }
+
+            };
+
+            gymOverview.ForEach(l => context.GymOverview.Add(l));
+            context.SaveChanges();
+
+            // GLASGOW DATA
+            // Seeded Equipment - Glasgow
+            var equipmentGlasgow = new List<Equipment>
+            {
+                new Equipment
+                {
+                    Name = "Glasgow Gym Item 1",
+                    Description = "Glasgow Gym Item 1 description item1 description item1 description. Glasgow Gym Item 1 description item1 description item1 description. ",
+                    Quantity = 13,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Equipment
+                {
+                    Name = "Glasgow Gym Item 2",
+                    Description = "item2 description item2 description item2 description. ",
+                    Quantity = 21,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+
+                },new Equipment
+                {
+                    Name = "Glasgow Gym Item 3",
+                    Description = "item3 description item3 description item3 description. ",
+                    Quantity = 7,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+
+                }
+
+            };
+            equipmentGlasgow.ForEach(l => context.Equipment.Add(l));
+            context.SaveChanges();
+
+            // PARIS DATA
+            // Seeded Equipment - Paris
+            var equipmentParis = new List<Equipment>
+            {
+                new Equipment
+                {
+                    Name = "P_item1",
+                    Description = "item1 description item1 description item1 description. ",
+                    Quantity = 13,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new Equipment
+                {
+                    Name = "P_item2",
+                    Description = "item2 description item2 description item2 description. ",
+                    Quantity = 21,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+
+                },new Equipment
+                {
+                    Name = "P_item3",
+                    Description = "item3 description item3 description item3 description. ",
+                    Quantity = 7,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+
+                }
+
+            };
+            equipmentParis.ForEach(l => context.Equipment.Add(l));
+            context.SaveChanges();
+
+            // AMSTERDAM DATA
+            // Seeded Equipment - Amsterdam
+            var equipmentAmsterdam = new List<Equipment>
+            {
+                new Equipment
+                {
+                    Name = "A_item1",
+                    Description = "item1 description item1 description item1 description. ",
+                    Quantity = 13,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new Equipment
+                {
+                    Name = "A_item2",
+                    Description = "item2 description item2 description item2 description. ",
+                    Quantity = 21,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+
+                },new Equipment
+                {
+                    Name = "A_item3",
+                    Description = "item3 description item3 description item3 description. ",
+                    Quantity = 7,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+
+                }
+
+            };
+            equipmentAmsterdam.ForEach(l => context.Equipment.Add(l));
+            context.SaveChanges();
+
+
+
+
+            // NEW YORK DATA
+            // Seeded Equipment - NewYork
+            var equipmentNewYork = new List<Equipment>
+            {
+                new Equipment
+                {
+                    Name = "NY_item1",
+                    Description = "item1 description item1 description item1 description. ",
+                    Quantity = 13,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new Equipment
+                {
+                    Name = "NY_item2",
+                    Description = "item2 description item2 description item2 description. ",
+                    Quantity = 21,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+
+                },new Equipment
+                {
+                    Name = "NY_item3",
+                    Description = "item3 description item3 description item3 description. ",
+                    Quantity = 7,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+
+                }
+
+            };
+            equipmentNewYork.ForEach(l => context.Equipment.Add(l));
+            context.SaveChanges();
+
+
+            // LONDON DATA
+            // Seeded Equipment - London
+            var equipmentLondon = new List<Equipment>
+            {
+                new Equipment
+                {
+                    Name = "L_item1",
+                    Description = "item1 description item1 description item1 description. ",
+                    Quantity = 13,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new Equipment
+                {
+                    Name = "L_item2",
+                    Description = "item2 description item2 description item2 description. ",
+                    Quantity = 21,
+                    GymOverview = gymOverview[5]
+
+                },new Equipment
+                {
+                    Name = "L_item3",
+                    Description = "item3 description item3 description item3 description. ",
+                    Quantity = 7,
+                    GymOverview = gymOverview[5]
+
+                }
+
+            };
+            equipmentLondon.ForEach(l => context.Equipment.Add(l));
+            context.SaveChanges();
+
+
+
 
 
         }
