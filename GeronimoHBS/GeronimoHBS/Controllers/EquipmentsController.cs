@@ -38,7 +38,14 @@ namespace GeronimoHBS.Controllers
         // GET: Equipments/Create
         public ActionResult Create()
         {
-            ViewBag.LocationID = new SelectList(db.Location.Where(e => e.LocationID != 0), "GymOverviewID", "LocationName", 0);
+
+            var locations = from location in db.Location
+                         where location.LocationID != 1
+                         orderby location.LocationID
+                         select location;
+
+
+            ViewBag.GymOverviewID = new SelectList(locations, "LocationID", "LocationName");
 
 
             return View();

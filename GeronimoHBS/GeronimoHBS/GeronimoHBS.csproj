@@ -191,7 +191,6 @@
     <Compile Include="Models\UserRolesDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\EquipmentsController.cs" />
   </ItemGroup>
   <ItemGroup>
