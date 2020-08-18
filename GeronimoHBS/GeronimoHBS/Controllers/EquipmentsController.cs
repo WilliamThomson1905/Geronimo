@@ -38,6 +38,9 @@ namespace GeronimoHBS.Controllers
         // GET: Equipments/Create
         public ActionResult Create()
         {
+            ViewBag.LocationID = new SelectList(db.Location.Where(e => e.LocationID != 0), "GymOverviewID", "LocationName", 0);
+
+
             return View();
         }
 
@@ -48,10 +51,16 @@ namespace GeronimoHBS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EquipmentID,Name,Quantity,Description,GymOverviewID")] Equipment equipment)
         {
+
+            var currentEqipment = db.GymOverview.Find(equipment.GymOverviewID);
+
             if (ModelState.IsValid)
             {
 
-                db.Equipment.Add(equipment);
+
+                currentEqipment.Equipment.Add(equipment);
+
+                // db.Equipment.Add(equipment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
