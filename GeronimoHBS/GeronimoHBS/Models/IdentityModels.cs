@@ -84,12 +84,10 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel might have a gym 
         public virtual GymOverview GymOverview { get; set; }
 
-
-
-        // Foriegn key 
-        public int SpaOverviewID { get; set; }
         // Corresponding navigation property - each hotel might have a spa 
         public virtual SpaOverview SpaOverview { get; set; }
+
+
 
 
         // Foriegn key 
@@ -255,7 +253,6 @@ namespace GeronimoHBS.Models
 
     }
 
-
     public class GymClasses
     {
         [Key]
@@ -286,9 +283,6 @@ namespace GeronimoHBS.Models
         public virtual ICollection<GymClasses> GymClasses { get; set; }
 
     }
-
-
-
 
     public class Timetable
     {
@@ -334,7 +328,6 @@ namespace GeronimoHBS.Models
 
     }
 
-
     public enum GymClassStatus
     {
         AVAILABLE, FULLYBOOKED, CANCELLED
@@ -349,10 +342,12 @@ namespace GeronimoHBS.Models
 
 
 
+
+
+
     public class SpaOverview
     {
-        [Key]
-        public int SpaOverviewID { get; set; }
+
 
         public string Header { get; set; }
 
@@ -365,9 +360,15 @@ namespace GeronimoHBS.Models
         // Navigation property - multiple promotions per spa:  
         // the same promotions can be used between locations. 
         public virtual ICollection<SpaPromotion> SpaPromotions { get; set; }
+
+
+
+        [Key]
+        [ForeignKey("Location")]
+        public int LocationID { get; set; }
+        // Corresponding navigation property - each hotel might have a gym 
+        public virtual Location Location { get; set; }
     }
-
-
 
     public class SpaPromotion
     {
@@ -385,7 +386,10 @@ namespace GeronimoHBS.Models
         public DateTime? EndDate { get; set; }
 
 
-        public virtual ICollection<SpaOverview> SpaOverview { get; set; }
+        public int SpaOverviewID { get; set; }
+        public virtual SpaOverview SpaOverview { get; set; }
+        
+
 
         // Foriegn key 
         public int PromotionCategoryID { get; set; }
@@ -401,6 +405,10 @@ namespace GeronimoHBS.Models
 
         public string PromotionName { get; set; }
     }
+
+
+
+
 
 
     public class DiningOverview

@@ -670,147 +670,6 @@ namespace GeronimoHBS.DAL
 
 
 
-            // SPA DATA
-            // Seeded Promotion Categories
-            var promotionCategories = new List<PromotionCategory>
-            {
-                new PromotionCategory
-                {
-                    PromotionName = "Coupon Promotion"
-                },
-                new PromotionCategory
-                {
-                    PromotionName = "Loyalty Promotion"
-                },
-                new PromotionCategory
-                {
-                    PromotionName = "Marketing Promotion"
-                }
-
-
-            };
-            promotionCategories.ForEach(l => context.PromotionCategory.Add(l));
-            context.SaveChanges();
-
-
-            // Seeded Spa Promotions - Using PromotionCategories above    
-            var spaPromotions = new List<SpaPromotion>()
-            {
-                new SpaPromotion {
-                    Title ="Spa Promotion 1",
-                    Description = "Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. ",
-                    StartDate = new DateTime(2020, 9, 21),
-                    EndDate = new DateTime(2020, 10, 21),
-                    PromotionCategoryID = 1,
-                    PromotionCategory = promotionCategories[0]
-                    
-                },
-                new SpaPromotion {
-                    Title ="Spa Promotion 2",
-                    Description = "Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. ",
-                    StartDate = new DateTime(2020, 9, 21),
-                    EndDate = new DateTime(2020, 10, 21),
-                    PromotionCategoryID = 2,
-                    PromotionCategory = promotionCategories[1]
-
-                },
-                new SpaPromotion {
-                    Title ="Spa Promotion 3",
-                    Description = "Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. ",
-                    StartDate = new DateTime(2020, 9, 21),
-                    EndDate = new DateTime(2020, 10, 21),
-                    PromotionCategoryID = 2,
-                    PromotionCategory = promotionCategories[1]
-                },
-                new SpaPromotion {
-                    Title ="Spa Promotion 4",
-                    Description = "Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. ",
-                    StartDate = new DateTime(2020, 9, 21),
-                    EndDate = new DateTime(2021, 10, 21),
-                    PromotionCategoryID = 3,
-                    PromotionCategory = promotionCategories[2]
-                },
-                new SpaPromotion {
-                    Title ="Spa Promotion 5",
-                    Description = "Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. ",
-                    StartDate = new DateTime(2020, 7, 10),
-                    EndDate = new DateTime(2020, 11, 1),
-                    PromotionCategoryID = 1,
-                    PromotionCategory = promotionCategories[0]
-                },
-
-
-            };
-            spaPromotions.ForEach(l => context.SpaPromotion.Add(l));
-            context.SaveChanges();
-
-        
-            // Seeding SpaOverview data for each hotel instance
-            var spaOverview = new List<SpaOverview>
-            {
-                new SpaOverview
-                {
-                    SpaOverviewID = 1,
-                    Header = "Geronimo Spa",
-                    MainContent = "All Geronimo Hotels sports a fantabulous spa, equipped with  the lastest and greatest gym equipment. " +
-                    "All Geronimo Hotels sports a fantabulous spa, equipped with  the lastest and greatest gym equipment. ",
-                    // Equipment = equipmentDefault,
-                    // GymClasses = gymClassesDefault,
-                    // Timetable = timetableDefault
-                },
-                new SpaOverview
-                {
-                    SpaOverviewID = 2,
-                    Header = "Glasgow Spa",
-                    IntroductionParagraph = "Glasgow Spa - basic overview of location's spa. Glasgow Spa - basic overview of location's spa. ",
-                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
-                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
-                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
-                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
-                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SpaPromotions = spaPromotions
-                },
-                new SpaOverview
-                {
-                    SpaOverviewID = 3,
-                    Header = "Paris Spa",
-                    IntroductionParagraph = "Paris Spa - basic overview of location's spa. ",
-                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SpaPromotions = spaPromotions
-                },
-                new SpaOverview
-                {
-                    SpaOverviewID = 4,
-                    Header = "Amsterdam Spa",
-                    IntroductionParagraph = "Amsterdam Spa - basic overview of location's spa. ",
-                    MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SpaPromotions = spaPromotions
-                },
-                new SpaOverview
-                {
-                    SpaOverviewID = 5,
-                    Header = "New York Spa",
-                    IntroductionParagraph = "New York Spa - basic overview of location's spa. ",
-                    MainContent = "Geronimo Hotels - New York sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SpaPromotions = spaPromotions
-                },
-                new SpaOverview
-                {
-                    SpaOverviewID = 6,
-                    Header = "London Spa",
-                    IntroductionParagraph = "London Spa - basic overview of location's spa. ",
-                    MainContent = "Geronimo Hotels - London sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SecondaryContent = "Geronimo Hotels - London sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
-                    SpaPromotions = spaPromotions
-                }
-
-            };
-            spaOverview.ForEach(l => context.SpaOverview.Add(l));
-            context.SaveChanges();
 
 
 
@@ -961,12 +820,6 @@ namespace GeronimoHBS.DAL
             };
             glasgowVenueOneStatus.ForEach(l => context.VenuesStatus.Add(l));
             context.SaveChanges();
-
-
-
-
-
-
 
 
             // Seeded Venues     
@@ -1462,7 +1315,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " + 
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
                     RoomOverviewID = 1,
-                    SpaOverviewID = 1,
                     DiningOverviewID = 1,
                     EventOverviewID = 1
                 },
@@ -1474,7 +1326,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 2,
-                    SpaOverviewID = 2,
                     DiningOverviewID = 2,
                     EventOverviewID = 2,
                     Rooms = glasgowRooms
@@ -1488,7 +1339,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et doloredoloredoloredolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 3,
-                    SpaOverviewID = 3,
                     DiningOverviewID = 3,
                     EventOverviewID = 3
 
@@ -1501,7 +1351,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 4,
-                    SpaOverviewID = 4,
                     DiningOverviewID = 4,
                     EventOverviewID = 4
                 },
@@ -1513,7 +1362,6 @@ namespace GeronimoHBS.DAL
                     "incididunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     RoomOverviewID = 5,
-                    SpaOverviewID = 5,
                     DiningOverviewID = 5,
                     EventOverviewID = 5
                 },
@@ -1524,7 +1372,6 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",                     
                     RoomOverviewID = 6,
-                    SpaOverviewID = 6,
                     DiningOverviewID = 6,
                     EventOverviewID = 6,
                     Rooms = londonRooms
@@ -1537,6 +1384,21 @@ namespace GeronimoHBS.DAL
 
 
 
+
+
+
+
+
+
+
+
+
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
             // Seeding GymOverview data for each hotel instance
             var gymOverview = new List<GymOverview>
             {
@@ -1783,14 +1645,7 @@ namespace GeronimoHBS.DAL
             context.SaveChanges();
 
 
-
-
-
-
-
-
             // FLEXIBILITY, MOBILITY, MUSCULARENDURANCE, MUSCULARSTRENGTH, CARDIOVASCULARENDURANCE, BODYCOMPOSITION
-
             // GLASGOW DATA
             // Seeded Equipment - Glasgow
             var classFocus = new List<ClassFocus>
@@ -2197,7 +2052,9 @@ namespace GeronimoHBS.DAL
                     GymClassStatus = GymClassStatus.AVAILABLE,
                     Instructor = "P_Tim Timothy",
                     GymClasses = gymClassesParis[2],
-                    GymClassesID = gymClassesParis[2].GymClassesID
+                    GymClassesID = gymClassesParis[2].GymClassesID,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
                 }
             };
             timetableParis.ForEach(l => context.Timetable.Add(l));
@@ -2610,6 +2467,178 @@ namespace GeronimoHBS.DAL
             timetableLondon.ForEach(l => context.Timetable.Add(l));
             context.SaveChanges();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            // SPA DATA
+            // Seeded Promotion Categories
+            // Seeding SpaOverview data for each hotel instance
+            var spaOverview = new List<SpaOverview>
+            {
+                new SpaOverview
+                {
+                    LocationID = 1,
+                    Header = "Geronimo Spa",
+                    MainContent = "All Geronimo Hotels sports a fantabulous spa, equipped with  the lastest and greatest gym equipment. " +
+                    "All Geronimo Hotels sports a fantabulous spa, equipped with  the lastest and greatest gym equipment. ",
+                    // Equipment = equipmentDefault,
+                    // GymClasses = gymClassesDefault,
+                    // Timetable = timetableDefault
+                },
+                new SpaOverview
+                {
+                    LocationID = 2,
+                    Header = "Glasgow Spa",
+                    IntroductionParagraph = "Glasgow Spa - basic overview of location's spa. Glasgow Spa - basic overview of location's spa. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. " +
+                    "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                },
+                new SpaOverview
+                {
+                    LocationID = 3,
+                    Header = "Paris Spa",
+                    IntroductionParagraph = "Paris Spa - basic overview of location's spa. ",
+                    MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                },
+                new SpaOverview
+                {
+                    LocationID = 4,
+                    Header = "Amsterdam Spa",
+                    IntroductionParagraph = "Amsterdam Spa - basic overview of location's spa. ",
+                    MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                },
+                new SpaOverview
+                {
+                    LocationID = 5,
+                    Header = "New York Spa",
+                    IntroductionParagraph = "New York Spa - basic overview of location's spa. ",
+                    MainContent = "Geronimo Hotels - New York sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                },
+                new SpaOverview
+                {
+                    LocationID = 6,
+                    Header = "London Spa",
+                    IntroductionParagraph = "London Spa - basic overview of location's spa. ",
+                    MainContent = "Geronimo Hotels - London sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                    SecondaryContent = "Geronimo Hotels - London sports a fantabulous Spa with the lastest and greatest Spa equipment. ",
+                }
+
+            };
+            spaOverview.ForEach(l => context.SpaOverview.Add(l));
+            context.SaveChanges();
+
+
+            var promotionCategories = new List<PromotionCategory>
+            {
+                new PromotionCategory
+                {
+                    PromotionName = "Coupon Promotion"
+                },
+                new PromotionCategory
+                {
+                    PromotionName = "Loyalty Promotion"
+                },
+                new PromotionCategory
+                {
+                    PromotionName = "Marketing Promotion"
+                }
+
+
+            };
+            promotionCategories.ForEach(l => context.PromotionCategory.Add(l));
+            context.SaveChanges();
+
+
+            // Seeded Spa Promotions - Using PromotionCategories above    
+            var spaPromotions = new List<SpaPromotion>()
+            {
+                new SpaPromotion {
+                    Title ="Spa Promotion 1",
+                    Description = "Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. Spa Promotion 1 description. ",
+                    StartDate = new DateTime(2020, 9, 21),
+                    EndDate = new DateTime(2020, 10, 21),
+                    PromotionCategoryID = 1,
+                    PromotionCategory = promotionCategories[0],
+                    SpaOverviewID = 2,
+                    SpaOverview = spaOverview[1]
+
+                },
+                new SpaPromotion {
+                    Title ="Spa Promotion 2",
+                    Description = "Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. Spa Promotion 2 description. ",
+                    StartDate = new DateTime(2020, 9, 21),
+                    EndDate = new DateTime(2020, 10, 21),
+                    PromotionCategoryID = 2,
+                    PromotionCategory = promotionCategories[1],
+                    SpaOverviewID = 2,
+                    SpaOverview = spaOverview[1]
+
+                },
+                new SpaPromotion {
+                    Title ="Spa Promotion 3",
+                    Description = "Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. Spa Promotion 3 description. ",
+                    StartDate = new DateTime(2020, 9, 21),
+                    EndDate = new DateTime(2020, 10, 21),
+                    PromotionCategoryID = 2,
+                    PromotionCategory = promotionCategories[1],
+                    SpaOverviewID = 2,
+                    SpaOverview = spaOverview[1]
+                },
+                new SpaPromotion {
+                    Title ="Spa Promotion 4",
+                    Description = "Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. Spa Promotion 4 description. ",
+                    StartDate = new DateTime(2020, 9, 21),
+                    EndDate = new DateTime(2021, 10, 21),
+                    PromotionCategoryID = 3,
+                    PromotionCategory = promotionCategories[2],
+                    SpaOverviewID = 2,
+                    SpaOverview = spaOverview[1]
+                },
+                new SpaPromotion {
+                    Title ="Spa Promotion 5",
+                    Description = "Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. Spa Promotion 5 description. ",
+                    StartDate = new DateTime(2020, 7, 10),
+                    EndDate = new DateTime(2020, 11, 1),
+                    PromotionCategoryID = 1,
+                    PromotionCategory = promotionCategories[0],
+                    SpaOverviewID = 2,
+                    SpaOverview = spaOverview[1]
+                },
+
+
+            };
+            spaPromotions.ForEach(l => context.SpaPromotion.Add(l));
+            context.SaveChanges();
+
+
+            
 
         }
     }
