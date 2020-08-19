@@ -87,11 +87,6 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel might have a spa 
         public virtual SpaOverview SpaOverview { get; set; }
 
-
-
-
-        // Foriegn key 
-        public int DiningOverviewID { get; set; }
         // Corresponding navigation property - each hotel might have a restaurant  
         public virtual DiningOverview DiningOverview { get; set; }
 
@@ -413,8 +408,6 @@ namespace GeronimoHBS.Models
 
     public class DiningOverview
     {
-        [Key]
-        public int DiningOverviewID { get; set; }
 
         public string Header { get; set; }
 
@@ -425,6 +418,13 @@ namespace GeronimoHBS.Models
 
         public virtual ICollection<Menu> Menus { get; set; }
 
+
+
+        [Key]
+        [ForeignKey("Location")]
+        public int LocationID { get; set; }
+        // Corresponding navigation property - each hotel might have a gym 
+        public virtual Location Location { get; set; }
 
     }
 
@@ -445,9 +445,11 @@ namespace GeronimoHBS.Models
 
         public bool IsAvailable { get; set; }
 
-        public virtual ICollection<DiningOverview> DiningOverview { get; set; }
 
         public virtual ICollection<MenuItem> MenuItems { get; set; }
+
+        public int DiningOverviewID { get; set; }
+        public virtual DiningOverview DiningOverview { get; set; }
 
     }
 

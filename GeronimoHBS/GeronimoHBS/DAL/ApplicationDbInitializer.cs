@@ -1074,6 +1074,104 @@ namespace GeronimoHBS.DAL
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var locations = new List<Location>
+            {
+                new Location{
+                    LocationID = 1,
+                    LocationName="Geronimo Hotels", 
+                    LocationIntroduction="Geronimo Hotels is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " + 
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " + 
+                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " + 
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+                    RoomOverviewID = 1,
+                    EventOverviewID = 1
+                },
+                new Location{
+                    LocationID = 2,
+                    LocationName="Glasgow",
+                    LocationIntroduction="Geronimo Hotels - Glasgow is a lovely hotel - but there's more - anyone who attends the gym acquires great Scottish powers. They can speak sooo fast that it's almost incomprehensible. Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur aliqua consectetur consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    RoomOverviewID = 2,
+                    EventOverviewID = 2,
+                    Rooms = glasgowRooms
+
+                },
+                new Location{
+                    LocationID = 3,
+                    LocationName="Paris",
+                    LocationIntroduction="Geronimo Hotels - Paris is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur amet, consectetur amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "incididunt ut labore et doloredoloredoloredolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    RoomOverviewID = 3,
+                    EventOverviewID = 3
+
+                },
+                new Location{
+                    LocationID = 4,
+                    LocationName="Amsterdam",
+                    LocationIntroduction="Geronimo Hotels - Amsterdam is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    RoomOverviewID = 4,
+                    EventOverviewID = 4
+                },
+                new Location{
+                    LocationID = 5,
+                    LocationName="New York",
+                    LocationIntroduction="Geronimo Hotels - New York is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "incididunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    RoomOverviewID = 5,
+                    EventOverviewID = 5
+                },
+                new Location {
+                    LocationID = 6,
+                    LocationName="London",
+                    LocationIntroduction="Geronimo Hotels - London is located in the centre of London - but there's more - it's situated . Loved and adored by every damn person on the planet. " +
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",                     
+                    RoomOverviewID = 6,
+                    EventOverviewID = 6,
+                    Rooms = londonRooms
+                }
+
+            };
+            locations.ForEach(l => context.Location.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+
+
+
+
+
             // DINING DATA
             // Seeded Menu Items 
             var menuItems = new List<MenuItem>
@@ -1175,46 +1273,6 @@ namespace GeronimoHBS.DAL
             menuItems.ForEach(l => context.MenuItems.Add(l));
             context.SaveChanges();
 
-            // Seeded Menus for restaurants    
-            var menus = new List<Menu>()
-            {
-                new Menu {
-                    Name ="Autumn Time Menu",
-                    Description = "Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. ",
-                    AvailableFrom = new DateTime(2020, 9, 22),
-                    AvailableTo = new DateTime(2020, 12, 21),
-                    IsAvailable = false,
-                    MenuItems = menuItems
-                },
-                new Menu {
-                    Name ="Winter Time Menu",
-                    Description = "Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. ",
-                    AvailableFrom = new DateTime(2020, 12, 21),
-                    AvailableTo = new DateTime(2020, 3, 20),
-                    IsAvailable = false,
-                    MenuItems = menuItems
-                },
-                new Menu {
-                    Name ="Spring Time Menu",
-                    Description = "Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. ",
-                    AvailableFrom = new DateTime(2020, 3, 20),
-                    AvailableTo = new DateTime(2020, 6, 21),
-                    IsAvailable = false,
-                    MenuItems = menuItems
-                },
-                new Menu {
-                    Name ="Summer Time Menu",
-                    Description = "Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. ",
-                    AvailableFrom = new DateTime(2020, 6, 21),
-                    AvailableTo = new DateTime(2020, 9, 22),
-                    IsAvailable = true,
-                    MenuItems = menuItems
-                }
-
-
-            };
-            menus.ForEach(l => context.Menus.Add(l));
-            context.SaveChanges();
 
 
             // Seeding SpaOverview data for each hotel instance
@@ -1222,7 +1280,7 @@ namespace GeronimoHBS.DAL
             {
                 new DiningOverview
                 {
-                    DiningOverviewID = 1,
+                    LocationID = 1,
                     Header = "Geronimo Dining",
                     MainContent = "All Geronimo Hotels sports a fantabulous Dining, equipped with  the lastest and greatest gym equipment. " +
                     "All Geronimo Hotels sports a fantabulous Dining, equipped with  the lastest and greatest gym equipment. ",
@@ -1232,7 +1290,7 @@ namespace GeronimoHBS.DAL
                 },
                 new DiningOverview
                 {
-                    DiningOverviewID = 2,
+                    LocationID = 2,
                     Header = "Glasgow Dining",
                     IntroductionParagraph = "Glasgow Dining - basic overview of location's Dining. Glasgow Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. " +
@@ -1241,43 +1299,39 @@ namespace GeronimoHBS.DAL
                     SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. " +
                     "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. " +
                     "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-                    Menus = menus
                 },
                 new DiningOverview
                 {
-                    DiningOverviewID = 3,
+                    LocationID = 3,
                     Header = "Paris Dining",
                     IntroductionParagraph = "Paris Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
                     SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-                    Menus = menus
+             
                 },
                 new DiningOverview
                 {
-                    DiningOverviewID = 4,
+                    LocationID = 4,
                     Header = "Amsterdam Dining",
                     IntroductionParagraph = "Amsterdam Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
                     SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-                    Menus = menus
                 },
                 new DiningOverview
                 {
-                    DiningOverviewID = 5,
+                    LocationID = 5,
                     Header = "New York Dining",
                     IntroductionParagraph = "New York Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - New York sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
                     SecondaryContent = "Geronimo Hotels - New York sports a fantabulous Dining with the lastest and greatest Dining equipment. " ,
-                    Menus = menus
                 },
                 new DiningOverview
                 {
-                    DiningOverviewID = 6,
+                    LocationID = 6,
                     Header = "London Dining",
                     IntroductionParagraph = "London Dining - basic overview of location's Dining. ",
                     MainContent = "Geronimo Hotels - London sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
                     SecondaryContent = "Geronimo Hotels - London sports a fantabulous Dining with the lastest and greatest Dining equipment. ",
-                    Menus = menus
                 }
 
             };
@@ -1287,106 +1341,54 @@ namespace GeronimoHBS.DAL
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            var locations = new List<Location>
+            // Seeded Menus for restaurants    
+            var menus = new List<Menu>()
             {
-                new Location{
-                    LocationID = 1,
-                    LocationName="Geronimo Hotels", 
-                    LocationIntroduction="Geronimo Hotels is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " + 
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " + 
-                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " + 
-                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-                    RoomOverviewID = 1,
-                    DiningOverviewID = 1,
-                    EventOverviewID = 1
+                new Menu {
+                    Name ="Autumn Menu",
+                    Description = "Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. Autumn Time Menu description. ",
+                    AvailableFrom = new DateTime(2020, 9, 22),
+                    AvailableTo = new DateTime(2020, 12, 21),
+                    IsAvailable = false,
+                    MenuItems = menuItems,
+                    DiningOverview = diningOverview[1]
+                    
                 },
-                new Location{
-                    LocationID = 2,
-                    LocationName="Glasgow",
-                    LocationIntroduction="Geronimo Hotels - Glasgow is a lovely hotel - but there's more - anyone who attends the gym acquires great Scottish powers. They can speak sooo fast that it's almost incomprehensible. Loved and adored by every damn person on the planet. " +
-                    "Lorem ipsum dolor sit amet, consectetur aliqua consectetur consectetur adipiscing elit, sed do eiusmod tempor " +
-                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
-                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    RoomOverviewID = 2,
-                    DiningOverviewID = 2,
-                    EventOverviewID = 2,
-                    Rooms = glasgowRooms
-
+                new Menu {
+                    Name ="Winter Menu",
+                    Description = "Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. Winter Time Menu description. ",
+                    AvailableFrom = new DateTime(2020, 12, 21),
+                    AvailableTo = new DateTime(2020, 3, 20),
+                    IsAvailable = false,
+                    MenuItems = menuItems,
+                    DiningOverview = diningOverview[1]
                 },
-                new Location{
-                    LocationID = 3,
-                    LocationName="Paris",
-                    LocationIntroduction="Geronimo Hotels - Paris is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
-                    "Lorem ipsum dolor sit amet, consectetur amet, consectetur amet, consectetur adipiscing elit, sed do eiusmod tempor " +
-                    "incididunt ut labore et doloredoloredoloredolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
-                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    RoomOverviewID = 3,
-                    DiningOverviewID = 3,
-                    EventOverviewID = 3
-
+                new Menu {
+                    Name ="Spring Menu",
+                    Description = "Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. Spring Time Menu description. ",
+                    AvailableFrom = new DateTime(2020, 3, 20),
+                    AvailableTo = new DateTime(2020, 6, 21),
+                    IsAvailable = false,
+                    MenuItems = menuItems,
+                    DiningOverview = diningOverview[1]
                 },
-                new Location{
-                    LocationID = 4,
-                    LocationName="Amsterdam",
-                    LocationIntroduction="Geronimo Hotels - Amsterdam is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
-                    "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
-                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    RoomOverviewID = 4,
-                    DiningOverviewID = 4,
-                    EventOverviewID = 4
-                },
-                new Location{
-                    LocationID = 5,
-                    LocationName="New York",
-                    LocationIntroduction="Geronimo Hotels - New York is a international hotels - but there's more - it also possess magical abilities. Loved and adored by every damn person on the planet. " +
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
-                    "incididunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
-                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    RoomOverviewID = 5,
-                    DiningOverviewID = 5,
-                    EventOverviewID = 5
-                },
-                new Location {
-                    LocationID = 6,
-                    LocationName="London",
-                    LocationIntroduction="Geronimo Hotels - London is located in the centre of London - but there's more - it's situated . Loved and adored by every damn person on the planet. " +
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
-                    "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",                     
-                    RoomOverviewID = 6,
-                    DiningOverviewID = 6,
-                    EventOverviewID = 6,
-                    Rooms = londonRooms
+                new Menu {
+                    Name ="Summer Menu",
+                    Description = "Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. Summer Time Menu description. ",
+                    AvailableFrom = new DateTime(2020, 6, 21),
+                    AvailableTo = new DateTime(2020, 9, 22),
+                    IsAvailable = true,
+                    MenuItems = menuItems,
+                    DiningOverview = diningOverview[1]
                 }
 
+
             };
-            locations.ForEach(l => context.Location.Add(l));
+            menus.ForEach(l => context.Menus.Add(l));
             context.SaveChanges();
 
 
-
-
-
-
-
+            
 
 
 
