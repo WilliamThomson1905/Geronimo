@@ -58,13 +58,13 @@ namespace GeronimoHBS.Controllers
         }
 
         // GET: Gym/GymClassDetails/Id
-        public ActionResult GymClassDetails(int Id, int LocationId)
+        public ActionResult GymClassDetails(int Id)
         {
             var currentClassDetails = db.GymClasses.Find(Id);
             breadcrumbs = new string[][] {
-                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + Id },
-                new string [] { "Gym", "../../Gym/Index/ " + Id },
-                new string [] { "Gym Classes", "../../Gym/GymClasses/ " + LocationId },
+                new string [] { "Geronimo Hotel", "../../Hotel/Index/" + currentClassDetails.GymOverviewID },
+                new string [] { "Gym", "../../Gym/Index/ " + currentClassDetails.GymOverviewID },
+                new string [] { "Gym Classes", "../../Gym/GymClasses/ " + currentClassDetails.GymOverviewID },
                 
             };
 
