@@ -270,8 +270,9 @@ namespace GeronimoHBS.Models
 
         public virtual ICollection<ClassFocus> Focus { get; set; }
 
-        public virtual ICollection<GymOverview> GymOverview { get; set; }
 
+        public int GymOverviewID { get; set; }
+        public virtual GymOverview GymOverview { get; set; }
 
     }
 
@@ -326,8 +327,10 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property 
         public virtual GymClasses GymClasses { get; set; }
 
-   
 
+
+        public int GymOverviewID { get; set; }
+        public virtual GymOverview GymOverview { get; set; }
 
     }
 

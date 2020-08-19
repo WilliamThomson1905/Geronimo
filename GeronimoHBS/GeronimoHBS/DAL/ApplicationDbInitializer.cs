@@ -650,706 +650,7 @@ namespace GeronimoHBS.DAL
             //context.SaveChanges();
 
 
-            // FLEXIBILITY, MOBILITY, MUSCULARENDURANCE, MUSCULARSTRENGTH, CARDIOVASCULARENDURANCE, BODYCOMPOSITION
-
-            // GLASGOW DATA
-            // Seeded Equipment - Glasgow
-            var classFocus = new List<ClassFocus>
-            {
-                new ClassFocus
-                {
-                    Title = "FLEXIBILITY",
-                    DisplayTitle = "Flexibility"
-                },
-                new ClassFocus
-                {
-                    Title = "MOBILITY",
-                    DisplayTitle = "Mobility"
-
-                },new ClassFocus
-                {
-                    Title = "MUSCULARENDURANCE",
-                    DisplayTitle = "Muscular Endurance"
-                },
-                 new ClassFocus
-                {
-                    Title = "MUSCULARSTRENGTH",
-                    DisplayTitle = "Muscular Strength"
-                },
-                new ClassFocus
-                {
-                    Title = "CARDIOVASCULARENDURANCE",
-                    DisplayTitle = "Cardiovascular Endurance"
-
-                },
-                new ClassFocus
-                {
-                    Title = "BODYCOMPOSITION",
-                    DisplayTitle = "Body Composition"
-                },
-
-            };
-            classFocus.ForEach(l => context.ClassFocus.Add(l));
-            context.SaveChanges();
-
-
-
-
-
             
-
-            // Seeded Gym Classes - Glasgow    
-            var gymClassesGlasgow = new List<GymClasses>()
-            {
-                new GymClasses {
-                    Title ="HIIT the Floor",
-                    Introduction = "HIIT the Floor introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
-                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
-                    Description = "Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. ",
-                    Focus = new List<ClassFocus>
-                    {
-                        classFocus[0],
-                        classFocus[1]
-                    },
-                    Benefits = "A1 lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. "
-
-
-                },
-                new GymClasses {
-                    Title ="G_Gym Class 2", 
-                    Introduction = "Gym Class 2 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
-                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
-                    Description = "Gym Class 2 description. ",
-                    Focus = new List<ClassFocus>
-                    {
-                        classFocus[2],
-                        classFocus[3]
-                    }, 
-                    Benefits = "A2 lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. "
-                },
-                new GymClasses {
-                    Title ="G_Gym Class 3",
-                    Description = "Gym Class 3 description. ",
-                     Introduction = "Gym Class 3 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
-                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
-                    Focus = new List<ClassFocus>
-                    {
-                        classFocus[4],
-                        classFocus[5]
-                    },
-                    Benefits = "A3 lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. "
-
-                },
-                new GymClasses {
-                    Title ="G_Gym Class 4",
-                     Introduction = "Gym Class 4 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
-                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
-                    Description = "Gym Class 4 description. ",
-                    Focus = new List<ClassFocus>
-                    {
-                        classFocus[0],
-                        classFocus[2]
-                    },
-                    Benefits = "A4 lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. "
-
-                },
-                new GymClasses {
-                    Title ="G_Gym Class 5",
-                    Introduction = "Gym Class 5 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
-                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
-                    Description = "Gym Class 5 description. ",
-                    Focus = new List<ClassFocus>
-                    {
-                        classFocus[0],
-                        classFocus[1],
-                        classFocus[3]
-                    },
-                    Benefits = "A5 lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. " +
-                    "A lengthy descro=iption of the benefits of attending this class. "
-
-                },
-
-
-            };
-            gymClassesGlasgow.ForEach(l => context.GymClasses.Add(l));
-            context.SaveChanges();
-
-            // Seeded Timetable - Glasgow
-            var timetableGlasgow = new List<Timetable>
-            {
-                // MONDAY
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[0],
-                    GymClassesID = gymClassesGlasgow[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[0],
-                    GymClassesID = gymClassesGlasgow[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(14, 0, 0),
-                    EndTime = new TimeSpan(17, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[0],
-                    GymClassesID = gymClassesGlasgow[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(8, 0, 0),
-                    EndTime = new TimeSpan(11, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[1],
-                    GymClassesID = gymClassesGlasgow[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(17, 0, 0),
-                    EndTime = new TimeSpan(19, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[2],
-                    GymClassesID = gymClassesGlasgow[2].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.TUESDAY,
-                    StartTime = new TimeSpan(8, 0, 0),
-                    EndTime = new TimeSpan(10, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[0],
-                    GymClassesID = gymClassesGlasgow[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.WEDNESDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[1],
-                    GymClassesID = gymClassesGlasgow[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.THURSDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.CANCELLED,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[3],
-                    GymClassesID = gymClassesGlasgow[3].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.FRIDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[1],
-                    GymClassesID = gymClassesGlasgow[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SATURDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[4],
-                    GymClassesID = gymClassesGlasgow[4].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SUNDAY,
-                    StartTime = new TimeSpan(14, 0, 0),
-                    EndTime = new TimeSpan(18, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "G_Tim Timothy",
-                    GymClasses = gymClassesGlasgow[2],
-                    GymClassesID = gymClassesGlasgow[2].GymClassesID
-                }
-            };
-            timetableGlasgow.ForEach(l => context.Timetable.Add(l));
-            context.SaveChanges();
-
-
-
-            
-
-
-            // Seeded Gym Classes - Paris    
-            var gymClassesParis = new List<GymClasses>()
-            {
-                new GymClasses {
-                    Title ="P_Gym Class 1",
-                    Description = "Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. ",
-
-                },
-                new GymClasses {
-                    Title ="P_Gym Class 2",
-                    Description = "Gym Class 2 description. Gym Class 2 description. Gym Class 2 description. "
-                },
-                new GymClasses {
-                    Title ="Gym Class 3",
-                    Description = "Gym Class 3 description. "
-                },
-                new GymClasses {
-                    Title ="P_Gym Class 4",
-                    Description = "Gym Class 4 description. "
-                },
-                new GymClasses {
-                    Title ="P_Gym Class 5",
-                    Description = "Gym Class 5 description. "
-                },
-
-
-            };
-            gymClassesParis.ForEach(l => context.GymClasses.Add(l));
-            context.SaveChanges();
-
-            // Seeded Timetable - Paris
-            var timetableParis = new List<Timetable>
-            {
-                // MONDAY
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "P_Tim Timothy",
-                    GymClasses = gymClassesParis[0],
-                    GymClassesID = gymClassesParis[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.TUESDAY,
-                    StartTime = new TimeSpan(8, 0, 0),
-                    EndTime = new TimeSpan(10, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "P_Tim Timothy",
-                    GymClasses = gymClassesParis[0],
-                    GymClassesID = gymClassesParis[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.WEDNESDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "P_Tim Timothy",
-                    GymClasses = gymClassesParis[1],
-                    GymClassesID = gymClassesParis[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.THURSDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.CANCELLED,
-                    Instructor = "P_Tim Timothy",
-                    GymClasses = gymClassesParis[3],
-                    GymClassesID = gymClassesParis[3].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.FRIDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "P_Tim Timothy",
-                    GymClasses = gymClassesParis[1],
-                    GymClassesID = gymClassesParis[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SATURDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "P_Tim Timothy",
-                    GymClasses = gymClassesParis[4],
-                    GymClassesID = gymClassesParis[4].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SUNDAY,
-                    StartTime = new TimeSpan(14, 0, 0),
-                    EndTime = new TimeSpan(18, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "P_Tim Timothy",
-                    GymClasses = gymClassesParis[2],
-                    GymClassesID = gymClassesParis[2].GymClassesID
-                }
-            };
-            timetableParis.ForEach(l => context.Timetable.Add(l));
-            context.SaveChanges();
-
-
-
-            
-            // Seeded Gym Classes - Amsterdam    
-            var gymClassesAmsterdam = new List<GymClasses>()
-            {
-                new GymClasses {
-                    Title ="A_Gym Class 1",
-                    Description = "Gym Class 1 description. ",
-
-                },
-                new GymClasses {
-                    Title ="A_Gym Class 2",
-                    Description = "Gym Class 2 description. "
-                },
-                new GymClasses {
-                    Title ="A_Gym Class 3",
-                    Description = "Gym Class 3 description. "
-                },
-                new GymClasses {
-                    Title ="A_Gym Class 4",
-                    Description = "Gym Class 4 description. "
-                },
-                new GymClasses {
-                    Title ="A_Gym Class 5",
-                    Description = "Gym Class 5 description. "
-                },
-
-
-            };
-            gymClassesAmsterdam.ForEach(l => context.GymClasses.Add(l));
-            context.SaveChanges();
-
-            // Seeded Timetable - Amsterdam
-            var timetableAmsterdam = new List<Timetable>
-            {
-                // MONDAY
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "A_Tim Timothy",
-                    GymClasses = gymClassesAmsterdam[0],
-                    GymClassesID = gymClassesAmsterdam[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.TUESDAY,
-                    StartTime = new TimeSpan(8, 0, 0),
-                    EndTime = new TimeSpan(10, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "A_Tim Timothy",
-                    GymClasses = gymClassesAmsterdam[0],
-                    GymClassesID = gymClassesAmsterdam[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.WEDNESDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "A_Tim Timothy",
-                    GymClasses = gymClassesAmsterdam[1],
-                    GymClassesID = gymClassesAmsterdam[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.THURSDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.CANCELLED,
-                    Instructor = "A_Tim Timothy",
-                    GymClasses = gymClassesAmsterdam[3],
-                    GymClassesID = gymClassesAmsterdam[3].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.FRIDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "A_Tim Timothy",
-                    GymClasses = gymClassesAmsterdam[1],
-                    GymClassesID = gymClassesAmsterdam[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SATURDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "A_Tim Timothy",
-                    GymClasses = gymClassesAmsterdam[4],
-                    GymClassesID = gymClassesAmsterdam[4].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SUNDAY,
-                    StartTime = new TimeSpan(14, 0, 0),
-                    EndTime = new TimeSpan(18, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "A_Tim Timothy",
-                    GymClasses = gymClassesAmsterdam[2],
-                    GymClassesID = gymClassesAmsterdam[2].GymClassesID
-                }
-            };
-            timetableAmsterdam.ForEach(l => context.Timetable.Add(l));
-            context.SaveChanges();
-
-
-
-          
-
-            // Seeded Gym Classes - NewYork    
-            var gymClassesNewYork = new List<GymClasses>()
-            {
-                new GymClasses {
-                    Title ="NY_Gym Class 1",
-                    Description = "Gym Class 1 description. ",
-
-                },
-                new GymClasses {
-                    Title ="NY_Gym Class 2",
-                    Description = "Gym Class 2 description. "
-                },
-                new GymClasses {
-                    Title ="NY_Gym Class 3",
-                    Description = "Gym Class 3 description. "
-                },
-                new GymClasses {
-                    Title ="NY_Gym Class 4",
-                    Description = "Gym Class 4 description. "
-                },
-                new GymClasses {
-                    Title ="NY_Gym Class 5",
-                    Description = "Gym Class 5 description. "
-                },
-
-
-            };
-            gymClassesNewYork.ForEach(l => context.GymClasses.Add(l));
-            context.SaveChanges();
-
-            // Seeded Timetable - NewYork
-            var timetableNewYork = new List<Timetable>
-            {
-                // MONDAY
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "NY_Tim Timothy",
-                    GymClasses = gymClassesNewYork[0],
-                    GymClassesID = gymClassesNewYork[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.TUESDAY,
-                    StartTime = new TimeSpan(8, 0, 0),
-                    EndTime = new TimeSpan(10, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "NY_Tim Timothy",
-                    GymClasses = gymClassesNewYork[0],
-                    GymClassesID = gymClassesNewYork[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.WEDNESDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "NY_Tim Timothy",
-                    GymClasses = gymClassesNewYork[1],
-                    GymClassesID = gymClassesNewYork[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.THURSDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.CANCELLED,
-                    Instructor = "NY_Tim Timothy",
-                    GymClasses = gymClassesNewYork[3],
-                    GymClassesID = gymClassesNewYork[3].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.FRIDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "NY_Tim Timothy",
-                    GymClasses = gymClassesNewYork[1],
-                    GymClassesID = gymClassesNewYork[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SATURDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "NY_Tim Timothy",
-                    GymClasses = gymClassesNewYork[4],
-                    GymClassesID = gymClassesNewYork[4].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SUNDAY,
-                    StartTime = new TimeSpan(14, 0, 0),
-                    EndTime = new TimeSpan(18, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "NY_Tim Timothy",
-                    GymClasses = gymClassesNewYork[2],
-                    GymClassesID = gymClassesNewYork[2].GymClassesID
-                }
-            };
-            timetableNewYork.ForEach(l => context.Timetable.Add(l));
-            context.SaveChanges();
-
-
-
-            
-
-            // Seeded Gym Classes - London    
-            var gymClassesLondon = new List<GymClasses>()
-            {
-                new GymClasses {
-                    Title ="L_Gym Class 1",
-                    Description = "Gym Class 1 description. ",
-
-                },
-                new GymClasses {
-                    Title ="L_Gym Class 2",
-                    Description = "Gym Class 2 description. "
-                },
-                new GymClasses {
-                    Title ="L_Gym Class 3",
-                    Description = "Gym Class 3 description. "
-                },
-                new GymClasses {
-                    Title ="L_Gym Class 4",
-                    Description = "Gym Class 4 description. "
-                },
-                new GymClasses {
-                    Title ="L_Gym Class 5",
-                    Description = "Gym Class 5 description. "
-                },
-
-
-            };
-            gymClassesLondon.ForEach(l => context.GymClasses.Add(l));
-            context.SaveChanges();
-
-            // Seeded Timetable - London
-            var timetableLondon = new List<Timetable>
-            {
-                // MONDAY
-                new Timetable()
-                {
-                    Day = Day.MONDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.FULLYBOOKED,
-                    Instructor = "L_Tim Timothy",
-                    GymClasses = gymClassesLondon[0],
-                    GymClassesID = gymClassesLondon[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.TUESDAY,
-                    StartTime = new TimeSpan(8, 0, 0),
-                    EndTime = new TimeSpan(10, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "L_Tim Timothy",
-                    GymClasses = gymClassesLondon[0],
-                    GymClassesID = gymClassesLondon[0].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.WEDNESDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "L_Tim Timothy",
-                    GymClasses = gymClassesLondon[1],
-                    GymClassesID = gymClassesLondon[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.THURSDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.CANCELLED,
-                    Instructor = "L_Tim Timothy",
-                    GymClasses = gymClassesLondon[3],
-                    GymClassesID = gymClassesLondon[3].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.FRIDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "L_Tim Timothy",
-                    GymClasses = gymClassesLondon[1],
-                    GymClassesID = gymClassesLondon[1].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SATURDAY,
-                    StartTime = new TimeSpan(7, 0, 0),
-                    EndTime = new TimeSpan(12, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "L_Tim Timothy",
-                    GymClasses = gymClassesLondon[4],
-                    GymClassesID = gymClassesLondon[4].GymClassesID
-                },
-                new Timetable()
-                {
-                    Day = Day.SUNDAY,
-                    StartTime = new TimeSpan(14, 0, 0),
-                    EndTime = new TimeSpan(18, 0, 0),
-                    GymClassStatus = GymClassStatus.AVAILABLE,
-                    Instructor = "Tim Timothy",
-                    GymClasses = gymClassesLondon[2],
-                    GymClassesID = gymClassesLondon[2].GymClassesID
-                }
-            };
-            timetableLondon.ForEach(l => context.Timetable.Add(l));
-            context.SaveChanges();
-
-
 
 
 
@@ -2261,8 +1562,6 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
                     MainContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    GymClasses = gymClassesGlasgow,
-                    Timetable = timetableGlasgow
 
                 },
                 new GymOverview
@@ -2273,8 +1572,7 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
                     MainContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     SecondaryContent = "Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - Glasgow sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    GymClasses = gymClassesParis,
-                    Timetable = timetableParis
+                    
                 },
                 new GymOverview
                 {
@@ -2284,8 +1582,7 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
                     MainContent = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     SecondaryContent = "Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment.  Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment.  Geronimo Hotels - Amsterdam sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    GymClasses = gymClassesAmsterdam,
-                    Timetable = timetableAmsterdam
+                   
                 },
                 new GymOverview
                 {
@@ -2295,8 +1592,7 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     MainContent = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     SecondaryContent = "Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - New York sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    GymClasses = gymClassesNewYork,
-                    Timetable = timetableNewYork
+               
                 },
                 new GymOverview
                 {
@@ -2306,8 +1602,7 @@ namespace GeronimoHBS.DAL
                     IntroductionParagraph = "Geronimo Hotels introduction details. Geronimo Hotels introduction details. ",
                     MainContent = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
                     SecondaryContent = "Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. Geronimo Hotels - London sports a fantabulous gym with the lastest and greatest gym equipment. ",
-                    GymClasses = gymClassesLondon,
-                    Timetable = timetableLondon
+                   
                 }
 
             };
@@ -2489,6 +1784,831 @@ namespace GeronimoHBS.DAL
 
 
 
+
+
+
+
+
+            // FLEXIBILITY, MOBILITY, MUSCULARENDURANCE, MUSCULARSTRENGTH, CARDIOVASCULARENDURANCE, BODYCOMPOSITION
+
+            // GLASGOW DATA
+            // Seeded Equipment - Glasgow
+            var classFocus = new List<ClassFocus>
+            {
+                new ClassFocus
+                {
+                    Title = "FLEXIBILITY",
+                    DisplayTitle = "Flexibility"
+                },
+                new ClassFocus
+                {
+                    Title = "MOBILITY",
+                    DisplayTitle = "Mobility"
+
+                },new ClassFocus
+                {
+                    Title = "MUSCULARENDURANCE",
+                    DisplayTitle = "Muscular Endurance"
+                },
+                 new ClassFocus
+                {
+                    Title = "MUSCULARSTRENGTH",
+                    DisplayTitle = "Muscular Strength"
+                },
+                new ClassFocus
+                {
+                    Title = "CARDIOVASCULARENDURANCE",
+                    DisplayTitle = "Cardiovascular Endurance"
+
+                },
+                new ClassFocus
+                {
+                    Title = "BODYCOMPOSITION",
+                    DisplayTitle = "Body Composition"
+                },
+
+            };
+            classFocus.ForEach(l => context.ClassFocus.Add(l));
+            context.SaveChanges();
+
+            // Seeded Gym Classes - Glasgow    
+            var gymClassesGlasgow = new List<GymClasses>()
+            {
+                new GymClasses {
+                    Title ="HIIT the Floor",
+                    Introduction = "HIIT the Floor introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
+                    Description = "Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[0],
+                        classFocus[1]
+                    },
+                    Benefits = "A1 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. ",
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+
+
+                },
+                new GymClasses {
+                    Title ="G_Gym Class 2",
+                    Introduction = "Gym Class 2 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
+                    Description = "Gym Class 2 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[2],
+                        classFocus[3]
+                    },
+                    Benefits = "A2 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. ",
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new GymClasses {
+                    Title ="G_Gym Class 3",
+                    Description = "Gym Class 3 description. ",
+                     Introduction = "Gym Class 3 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[4],
+                        classFocus[5]
+                    },
+                    Benefits = "A3 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. ",
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+
+                },
+                new GymClasses {
+                    Title ="G_Gym Class 4",
+                     Introduction = "Gym Class 4 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
+                    Description = "Gym Class 4 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[0],
+                        classFocus[2]
+                    },
+                    Benefits = "A4 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. ",
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+
+                },
+                new GymClasses {
+                    Title ="G_Gym Class 5",
+                    Introduction = "Gym Class 5 introduction. Gym Class 1 introduction. Gym Class 1 introduction. " +
+                    "Gym Class 1 introduction. Gym Class 1 introduction. Gym Class 1 introduction. ",
+                    Description = "Gym Class 5 description. ",
+                    Focus = new List<ClassFocus>
+                    {
+                        classFocus[0],
+                        classFocus[1],
+                        classFocus[3]
+                    },
+                    Benefits = "A5 lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. " +
+                    "A lengthy descro=iption of the benefits of attending this class. ",
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+
+                },
+
+
+            };
+            gymClassesGlasgow.ForEach(l => context.GymClasses.Add(l));
+            context.SaveChanges();
+
+
+
+
+            // Seeded Timetable - Glasgow
+            var timetableGlasgow = new List<Timetable>
+            {
+                // MONDAY
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[0],
+                    GymClassesID = gymClassesGlasgow[0].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[0],
+                    GymClassesID = gymClassesGlasgow[0].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(14, 0, 0),
+                    EndTime = new TimeSpan(17, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[0],
+                    GymClassesID = gymClassesGlasgow[0].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(8, 0, 0),
+                    EndTime = new TimeSpan(11, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[1],
+                    GymClassesID = gymClassesGlasgow[1].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(17, 0, 0),
+                    EndTime = new TimeSpan(19, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[2],
+                    GymClassesID = gymClassesGlasgow[2].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.TUESDAY,
+                    StartTime = new TimeSpan(8, 0, 0),
+                    EndTime = new TimeSpan(10, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[0],
+                    GymClassesID = gymClassesGlasgow[0].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.WEDNESDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[1],
+                    GymClassesID = gymClassesGlasgow[1].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.THURSDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.CANCELLED,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[3],
+                    GymClassesID = gymClassesGlasgow[3].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.FRIDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[1],
+                    GymClassesID = gymClassesGlasgow[1].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.SATURDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[4],
+                    GymClassesID = gymClassesGlasgow[4].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                },
+                new Timetable()
+                {
+                    Day = Day.SUNDAY,
+                    StartTime = new TimeSpan(14, 0, 0),
+                    EndTime = new TimeSpan(18, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "G_Tim Timothy",
+                    GymClasses = gymClassesGlasgow[2],
+                    GymClassesID = gymClassesGlasgow[2].GymClassesID,
+                    GymOverviewID = 2,
+                    GymOverview = gymOverview[1]
+                }
+            };
+            timetableGlasgow.ForEach(l => context.Timetable.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+
+            // Seeded Gym Classes - Paris    
+            var gymClassesParis = new List<GymClasses>()
+            {
+                new GymClasses {
+                    Title ="P_Gym Class 1",
+                    Description = "Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. Gym Class 1 description. ",
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new GymClasses {
+                    Title ="P_Gym Class 2",
+                    Description = "Gym Class 2 description. Gym Class 2 description. Gym Class 2 description. ",
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new GymClasses {
+                    Title ="Gym Class 3",
+                    Description = "Gym Class 3 description. ",
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new GymClasses {
+                    Title ="P_Gym Class 4",
+                    Description = "Gym Class 4 description. ",
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new GymClasses {
+                    Title ="P_Gym Class 5",
+                    Description = "Gym Class 5 description. ",
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+
+
+            };
+            gymClassesParis.ForEach(l => context.GymClasses.Add(l));
+            context.SaveChanges();
+
+            // Seeded Timetable - Paris
+            var timetableParis = new List<Timetable>
+            {
+                // MONDAY
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "P_Tim Timothy",
+                    GymClasses = gymClassesParis[0],
+                    GymClassesID = gymClassesParis[0].GymClassesID,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new Timetable()
+                {
+                    Day = Day.TUESDAY,
+                    StartTime = new TimeSpan(8, 0, 0),
+                    EndTime = new TimeSpan(10, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "P_Tim Timothy",
+                    GymClasses = gymClassesParis[0],
+                    GymClassesID = gymClassesParis[0].GymClassesID,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new Timetable()
+                {
+                    Day = Day.WEDNESDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "P_Tim Timothy",
+                    GymClasses = gymClassesParis[1],
+                    GymClassesID = gymClassesParis[1].GymClassesID,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new Timetable()
+                {
+                    Day = Day.THURSDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.CANCELLED,
+                    Instructor = "P_Tim Timothy",
+                    GymClasses = gymClassesParis[3],
+                    GymClassesID = gymClassesParis[3].GymClassesID,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new Timetable()
+                {
+                    Day = Day.FRIDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "P_Tim Timothy",
+                    GymClasses = gymClassesParis[1],
+                    GymClassesID = gymClassesParis[1].GymClassesID,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new Timetable()
+                {
+                    Day = Day.SATURDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "P_Tim Timothy",
+                    GymClasses = gymClassesParis[4],
+                    GymClassesID = gymClassesParis[4].GymClassesID,
+                    GymOverviewID = 3,
+                    GymOverview = gymOverview[2]
+                },
+                new Timetable()
+                {
+                    Day = Day.SUNDAY,
+                    StartTime = new TimeSpan(14, 0, 0),
+                    EndTime = new TimeSpan(18, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "P_Tim Timothy",
+                    GymClasses = gymClassesParis[2],
+                    GymClassesID = gymClassesParis[2].GymClassesID
+                }
+            };
+            timetableParis.ForEach(l => context.Timetable.Add(l));
+            context.SaveChanges();
+
+
+
+
+            // Seeded Gym Classes - Amsterdam    
+            var gymClassesAmsterdam = new List<GymClasses>()
+            {
+                new GymClasses {
+                    Title ="A_Gym Class 1",
+                    Description = "Gym Class 1 description. ",
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+
+                },
+                new GymClasses {
+                    Title ="A_Gym Class 2",
+                    Description = "Gym Class 2 description. ",
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new GymClasses {
+                    Title ="A_Gym Class 3",
+                    Description = "Gym Class 3 description. ",
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new GymClasses {
+                    Title ="A_Gym Class 4",
+                    Description = "Gym Class 4 description. ",
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new GymClasses {
+                    Title ="A_Gym Class 5",
+                    Description = "Gym Class 5 description. ",
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+
+
+            };
+            gymClassesAmsterdam.ForEach(l => context.GymClasses.Add(l));
+            context.SaveChanges();
+
+            // Seeded Timetable - Amsterdam
+            var timetableAmsterdam = new List<Timetable>
+            {
+                // MONDAY
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "A_Tim Timothy",
+                    GymClasses = gymClassesAmsterdam[0],
+                    GymClassesID = gymClassesAmsterdam[0].GymClassesID,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new Timetable()
+                {
+                    Day = Day.TUESDAY,
+                    StartTime = new TimeSpan(8, 0, 0),
+                    EndTime = new TimeSpan(10, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "A_Tim Timothy",
+                    GymClasses = gymClassesAmsterdam[0],
+                    GymClassesID = gymClassesAmsterdam[0].GymClassesID,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new Timetable()
+                {
+                    Day = Day.WEDNESDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "A_Tim Timothy",
+                    GymClasses = gymClassesAmsterdam[1],
+                    GymClassesID = gymClassesAmsterdam[1].GymClassesID,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new Timetable()
+                {
+                    Day = Day.THURSDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.CANCELLED,
+                    Instructor = "A_Tim Timothy",
+                    GymClasses = gymClassesAmsterdam[3],
+                    GymClassesID = gymClassesAmsterdam[3].GymClassesID,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new Timetable()
+                {
+                    Day = Day.FRIDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "A_Tim Timothy",
+                    GymClasses = gymClassesAmsterdam[1],
+                    GymClassesID = gymClassesAmsterdam[1].GymClassesID,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new Timetable()
+                {
+                    Day = Day.SATURDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "A_Tim Timothy",
+                    GymClasses = gymClassesAmsterdam[4],
+                    GymClassesID = gymClassesAmsterdam[4].GymClassesID,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                },
+                new Timetable()
+                {
+                    Day = Day.SUNDAY,
+                    StartTime = new TimeSpan(14, 0, 0),
+                    EndTime = new TimeSpan(18, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "A_Tim Timothy",
+                    GymClasses = gymClassesAmsterdam[2],
+                    GymClassesID = gymClassesAmsterdam[2].GymClassesID,
+                    GymOverviewID = 4,
+                    GymOverview = gymOverview[3]
+                }
+            };
+            timetableAmsterdam.ForEach(l => context.Timetable.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+            // Seeded Gym Classes - NewYork    
+            var gymClassesNewYork = new List<GymClasses>()
+            {
+                new GymClasses {
+                    Title ="NY_Gym Class 1",
+                    Description = "Gym Class 1 description. ",
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+
+                },
+                new GymClasses {
+                    Title ="NY_Gym Class 2",
+                    Description = "Gym Class 2 description. ",
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new GymClasses {
+                    Title ="NY_Gym Class 3",
+                    Description = "Gym Class 3 description. ",
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new GymClasses {
+                    Title ="NY_Gym Class 4",
+                    Description = "Gym Class 4 description. ",
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new GymClasses {
+                    Title ="NY_Gym Class 5",
+                    Description = "Gym Class 5 description. ",
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+
+
+            };
+            gymClassesNewYork.ForEach(l => context.GymClasses.Add(l));
+            context.SaveChanges();
+
+            // Seeded Timetable - NewYork
+            var timetableNewYork = new List<Timetable>
+            {
+                // MONDAY
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "NY_Tim Timothy",
+                    GymClasses = gymClassesNewYork[0],
+                    GymClassesID = gymClassesNewYork[0].GymClassesID,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new Timetable()
+                {
+                    Day = Day.TUESDAY,
+                    StartTime = new TimeSpan(8, 0, 0),
+                    EndTime = new TimeSpan(10, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "NY_Tim Timothy",
+                    GymClasses = gymClassesNewYork[0],
+                    GymClassesID = gymClassesNewYork[0].GymClassesID,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new Timetable()
+                {
+                    Day = Day.WEDNESDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "NY_Tim Timothy",
+                    GymClasses = gymClassesNewYork[1],
+                    GymClassesID = gymClassesNewYork[1].GymClassesID,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new Timetable()
+                {
+                    Day = Day.THURSDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.CANCELLED,
+                    Instructor = "NY_Tim Timothy",
+                    GymClasses = gymClassesNewYork[3],
+                    GymClassesID = gymClassesNewYork[3].GymClassesID,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new Timetable()
+                {
+                    Day = Day.FRIDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "NY_Tim Timothy",
+                    GymClasses = gymClassesNewYork[1],
+                    GymClassesID = gymClassesNewYork[1].GymClassesID,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new Timetable()
+                {
+                    Day = Day.SATURDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "NY_Tim Timothy",
+                    GymClasses = gymClassesNewYork[4],
+                    GymClassesID = gymClassesNewYork[4].GymClassesID,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                },
+                new Timetable()
+                {
+                    Day = Day.SUNDAY,
+                    StartTime = new TimeSpan(14, 0, 0),
+                    EndTime = new TimeSpan(18, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "NY_Tim Timothy",
+                    GymClasses = gymClassesNewYork[2],
+                    GymClassesID = gymClassesNewYork[2].GymClassesID,
+                    GymOverviewID = 5,
+                    GymOverview = gymOverview[4]
+                }
+            };
+            timetableNewYork.ForEach(l => context.Timetable.Add(l));
+            context.SaveChanges();
+
+
+
+
+
+            // Seeded Gym Classes - London    
+            var gymClassesLondon = new List<GymClasses>()
+            {
+                new GymClasses {
+                    Title ="L_Gym Class 1",
+                    Description = "Gym Class 1 description." ,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+
+                },
+                new GymClasses {
+                    Title ="L_Gym Class 2",
+                    Description = "Gym Class 2 description. ",
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new GymClasses {
+                    Title ="L_Gym Class 3",
+                    Description = "Gym Class 3 description. ",
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new GymClasses {
+                    Title ="L_Gym Class 4",
+                    Description = "Gym Class 4 description. ",
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new GymClasses {
+                    Title ="L_Gym Class 5",
+                    Description = "Gym Class 5 description. ",
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+
+
+            };
+            gymClassesLondon.ForEach(l => context.GymClasses.Add(l));
+            context.SaveChanges();
+
+            // Seeded Timetable - London
+            var timetableLondon = new List<Timetable>
+            {
+                // MONDAY
+                new Timetable()
+                {
+                    Day = Day.MONDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.FULLYBOOKED,
+                    Instructor = "L_Tim Timothy",
+                    GymClasses = gymClassesLondon[0],
+                    GymClassesID = gymClassesLondon[0].GymClassesID,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new Timetable()
+                {
+                    Day = Day.TUESDAY,
+                    StartTime = new TimeSpan(8, 0, 0),
+                    EndTime = new TimeSpan(10, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "L_Tim Timothy",
+                    GymClasses = gymClassesLondon[0],
+                    GymClassesID = gymClassesLondon[0].GymClassesID,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new Timetable()
+                {
+                    Day = Day.WEDNESDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "L_Tim Timothy",
+                    GymClasses = gymClassesLondon[1],
+                    GymClassesID = gymClassesLondon[1].GymClassesID,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new Timetable()
+                {
+                    Day = Day.THURSDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.CANCELLED,
+                    Instructor = "L_Tim Timothy",
+                    GymClasses = gymClassesLondon[3],
+                    GymClassesID = gymClassesLondon[3].GymClassesID,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new Timetable()
+                {
+                    Day = Day.FRIDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "L_Tim Timothy",
+                    GymClasses = gymClassesLondon[1],
+                    GymClassesID = gymClassesLondon[1].GymClassesID,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new Timetable()
+                {
+                    Day = Day.SATURDAY,
+                    StartTime = new TimeSpan(7, 0, 0),
+                    EndTime = new TimeSpan(12, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "L_Tim Timothy",
+                    GymClasses = gymClassesLondon[4],
+                    GymClassesID = gymClassesLondon[4].GymClassesID,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                },
+                new Timetable()
+                {
+                    Day = Day.SUNDAY,
+                    StartTime = new TimeSpan(14, 0, 0),
+                    EndTime = new TimeSpan(18, 0, 0),
+                    GymClassStatus = GymClassStatus.AVAILABLE,
+                    Instructor = "Tim Timothy",
+                    GymClasses = gymClassesLondon[2],
+                    GymClassesID = gymClassesLondon[2].GymClassesID,
+                    GymOverviewID = 6,
+                    GymOverview = gymOverview[5]
+                }
+            };
+            timetableLondon.ForEach(l => context.Timetable.Add(l));
+            context.SaveChanges();
 
 
         }
