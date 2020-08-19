@@ -85,7 +85,7 @@ namespace GeronimoHBS.Controllers
             ViewBag.RoomType = roomType;
 
             //get rooms for locations which are vacant from a specific location
-            ViewBag.Rooms = db.Room.Where(e => e.Location.LocationID == (LocationId) && e.RoomStatus.RoomStatusName.Equals("vacant")).AsQueryable().ToList();
+            ViewBag.Rooms = db.Room.Where(e => e.RoomOverviewID == (LocationId) && e.RoomStatus.RoomStatusName.Equals("vacant")).AsQueryable().ToList();
 
 
             // e.RoomStatusID.Equals("vacant")

@@ -177,337 +177,6 @@ namespace GeronimoHBS.DAL
 
 
 
-            List<RoomType> roomTypes = new List<RoomType>
-            {
-                new RoomType
-                {
-                    Name = "Standard Suite",
-                    Description = "Standard Suite description extraordinaire. " +
-                    "Standard Suite description extraordinaire. Standard Suite description extraordinaire. "
-                },
-                new RoomType
-                {
-                    Name = "Premium Suite",
-                    Description = "Premium Suite description extraordinaire. " +
-                    "Premium Suite description extraordinaire. Premium Suite description extraordinaire. Premium Suite description extraordinaire. "
-                }
-            };
-
-            roomTypes.ForEach(l => context.RoomType.Add(l));
-            context.SaveChanges();
-
-
-
-
-
-
-
-            var amenities = new List<Amenity>
-            {
-                new Amenity{
-                    Name = "Free WiFi"
-                },
-                new Amenity{
-                    Name = "Mini Bar"
-                },
-                new Amenity{
-                    Name = "Coffee Maker"
-                },
-                new Amenity{
-                    Name = "Iron & Ironing Board"
-                },
-                new Amenity{
-                    Name = "Microwave"
-                },
-                new Amenity{
-                    Name = "Private Balcony"
-                },
-                new Amenity{
-                    Name = "Crib"
-                },
-                new Amenity{
-                    Name = "TV Facilities"
-                },
-                new Amenity{
-                    Name = "Air Conditioned"
-                }
-
-            };
-            amenities.ForEach(l => context.Amenities.Add(l));
-            context.SaveChanges();
-
-
-
-
-            var roomStatus = new List<RoomStatus>
-            {
-                new RoomStatus{
-                    RoomStatusName = "vacant"
-                },
-                new RoomStatus{
-                    RoomStatusName = "occupied"
-                },
-                new RoomStatus{
-                    RoomStatusName = "dirty"
-                },
-                new RoomStatus{
-                    RoomStatusName = "clean"
-                },
-                new RoomStatus{
-                    RoomStatusName = "ready"
-                },
-                new RoomStatus{
-                    RoomStatusName = "outOfOrder"
-                },
-                //occupied, vacant, dirty, clean, ready and out of order.
-            };
-            roomStatus.ForEach(l => context.RoomStatus.Add(l));
-            context.SaveChanges();
-
-
-
-
-
-
-
-
-
-
-
-            var glasgowRooms = new List<Room>
-            {
-                new Room{
-                    RoomNumber = 1,
-                    Name = "GRoom One",
-                    Description = "",
-                    FloorNumber = 1,
-                    NumberOfBeds = 12,
-                    Price = 20.00,
-                    RoomType = roomTypes[1],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[0],
-                    RoomStatusID = roomStatus[0].RoomStatusID
-
-                },
-                new Room{
-                    RoomNumber = 2,
-                    Name = "GRoom Two",
-                    Description = "GRoom Two GRoom Two GRoom Two",
-                    FloorNumber = 1,
-                    NumberOfBeds = 1,
-                    Price = 20.00,
-                    RoomType = roomTypes[1],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[1],
-                    RoomStatusID = roomStatus[1].RoomStatusID
-                },
-                new Room{
-                    RoomNumber = 3,
-                    Name = "GRoom Three",
-                    Description = "GRoom Three GRoom Three GRoom Three ",
-                    FloorNumber = 1,
-                    NumberOfBeds = 2,
-                    Price = 20.00,
-                    RoomType = roomTypes[0],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[0],
-                    RoomStatusID = roomStatus[0].RoomStatusID
-                },
-                new Room{
-                    RoomNumber = 4,
-                    Name = "GRoom Four",
-                    Description = "GRoom Four GRoom Four GRoom Four",
-                    FloorNumber = 2,
-                    NumberOfBeds = 1,
-                    Price = 20.00,
-                    RoomType = roomTypes[0],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[0],
-                    RoomStatusID = roomStatus[0].RoomStatusID
-                },
-                new Room{
-                    RoomNumber = 5,
-                    Name = "GRoom Five",
-                    Description = "GRoom Five GRoom Five GRoom Five",
-                    FloorNumber = 2,
-                    NumberOfBeds = 2,
-                    Price = 50.00,
-                    RoomType = roomTypes[1],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[0],
-                    RoomStatusID = roomStatus[0].RoomStatusID
-                }
-
-            };
-            glasgowRooms.ForEach(l => context.Room.Add(l));
-            context.SaveChanges();
-
-
-
-            var londonRooms = new List<Room>
-            {
-                new Room{
-                    RoomNumber = 1,
-                    Name = "LRoom One",
-                    Description = "",
-                    FloorNumber = 1,
-                    NumberOfBeds = 12,
-                    Price = 60.00,
-                    RoomType = roomTypes[1],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[0],
-                    RoomStatusID = roomStatus[0].RoomStatusID
-                },
-                new Room{
-                    RoomNumber = 2,
-                    Name = "LRoom Two",
-                    Description = "LRoom Two LRoom Two LRoom Two",
-                    FloorNumber = 1,
-                    NumberOfBeds = 1,
-                    Price = 20.00,
-                    RoomType = roomTypes[1],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[1],
-                    RoomStatusID = roomStatus[1].RoomStatusID
-                },
-                new Room{
-                    RoomNumber = 3,
-                    Name = "LRoom Three",
-                    Description = "LRoom Three LRoom Three LRoom Three ",
-                    FloorNumber = 1,
-                    NumberOfBeds = 2,
-                    Price = 50.00,
-                    RoomType = roomTypes[0],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[0],
-                    RoomStatusID = roomStatus[0].RoomStatusID
-                },
-                new Room{
-                    RoomNumber = 4,
-                    Name = "LRoom Four",
-                    Description = "LRoom Four LRoom Four LRoom Four",
-                    FloorNumber = 2,
-                    NumberOfBeds = 1,
-                    Price = 20.00,
-                    RoomType = roomTypes[0],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[0],
-                    RoomStatusID = roomStatus[0].RoomStatusID
-                },
-                new Room{
-                    RoomNumber = 5,
-                    Name = "LRoom Five",
-                    Description = "LRoom Five LRoom Five LRoom Five",
-                    FloorNumber = 2,
-                    NumberOfBeds = 2,
-                    Price = 30.00,
-                    RoomType = roomTypes[1],
-                    Amenities = amenities,
-                    Capacity = 4,
-                    RoomStatus = roomStatus[0],
-                    RoomStatusID = roomStatus[0].RoomStatusID
-                }
-
-            };
-            londonRooms.ForEach(l => context.Room.Add(l));
-            context.SaveChanges();
-
-
-
-
-            var roomOverview = new List<RoomOverview>
-            {
-                new RoomOverview
-                {
-                    Header = "Geronimo Rooms",
-                    IntroductionParagraph = "Regardless of the location Geronimo Hotels.  ",
-                    MainContent = "Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available. ",
-                    SecondaryContent = "Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
-                    "There are Standard rooms and premium rooms available.",
-                    RoomType = roomTypes
-                },
-                new RoomOverview
-                {
-                    Header = "Glasgow Rooms",
-                    IntroductionParagraph = "Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. ",
-                    MainContent = "When booking a room at the Glasgow Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. ",
-                    SecondaryContent = "Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. ", 
-                    RoomType = roomTypes
-                },
-                new RoomOverview
-                {
-                    Header = "Paris Rooms",
-                    IntroductionParagraph = "When booking a room premium room. ",
-                    MainContent = "When booking a room at the Paris Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. ",  
-                    SecondaryContent = "When booking a room at the Paris Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. When booking a room at the Paris Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. ",
-                    RoomType = roomTypes
-                },
-                new RoomOverview
-                {
-                    Header = "Amsterdam Rooms",
-                    IntroductionParagraph = "When booking a room at the Amsterdam Geronimo Hotel",
-                    MainContent = "When booking a room at the Amsterdam Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. " +
-                    "When booking a room at the Amsterdam Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. ",
-                    SecondaryContent = "When booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo Hotel",
-                    RoomType = roomTypes
-                }, 
-                new RoomOverview
-                {
-                    Header = "New York Rooms",
-                    IntroductionParagraph = "When When booking a room at the New York New York Geronimo Hotelbooking a room at the New York New York Geronimo Hotel", 
-                    MainContent = "When booking a room at the New York New York Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. "+
-                    "When booking a room at the New York Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. ",
-                    SecondaryContent = "When booking a room at the New York New York Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. "+
-                    "When booking a room at the New York Geronimo HotelWhen booking a room at the New York Geronimo HotelWhen booking a room at the New York Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. ",
-                    RoomType = roomTypes
-                },
-                new RoomOverview
-                {
-                    Header = "London Rooms", 
-                    IntroductionParagraph = "", 
-                    MainContent = "When booking a room at the London Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. "+
-                    "When booking a room at the London Geronimo Hotel " +
-                    "you can choose from either a standard or premium room. ",
-                    RoomType = roomTypes
-                },
-
-            };
-            roomOverview.ForEach(l => context.RoomOverview.Add(l));
-            context.SaveChanges();
-
 
 
 
@@ -1102,7 +771,6 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " + 
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " + 
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
-                    RoomOverviewID = 1,
                     EventOverviewID = 1
                 },
                 new Location{
@@ -1112,9 +780,7 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur aliqua consectetur consectetur adipiscing elit, sed do eiusmod tempor " +
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    RoomOverviewID = 2,
                     EventOverviewID = 2,
-                    Rooms = glasgowRooms
 
                 },
                 new Location{
@@ -1124,7 +790,6 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur amet, consectetur amet, consectetur adipiscing elit, sed do eiusmod tempor " +
                     "incididunt ut labore et doloredoloredoloredolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    RoomOverviewID = 3,
                     EventOverviewID = 3
 
                 },
@@ -1135,7 +800,6 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
                     "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    RoomOverviewID = 4,
                     EventOverviewID = 4
                 },
                 new Location{
@@ -1145,7 +809,6 @@ namespace GeronimoHBS.DAL
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
                     "incididunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim didunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    RoomOverviewID = 5,
                     EventOverviewID = 5
                 },
                 new Location {
@@ -1154,13 +817,342 @@ namespace GeronimoHBS.DAL
                     LocationIntroduction="Geronimo Hotels - London is located in the centre of London - but there's more - it's situated . Loved and adored by every damn person on the planet. " +
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
                     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",                     
-                    RoomOverviewID = 6,
                     EventOverviewID = 6,
-                    Rooms = londonRooms
                 }
 
             };
             locations.ForEach(l => context.Location.Add(l));
+            context.SaveChanges();
+
+
+
+            List<RoomType> roomTypes = new List<RoomType>
+            {
+                new RoomType
+                {
+                    Name = "Standard Suite",
+                    Description = "Standard Suite description extraordinaire. " +
+                    "Standard Suite description extraordinaire. Standard Suite description extraordinaire. "
+                },
+                new RoomType
+                {
+                    Name = "Premium Suite",
+                    Description = "Premium Suite description extraordinaire. " +
+                    "Premium Suite description extraordinaire. Premium Suite description extraordinaire. Premium Suite description extraordinaire. "
+                }
+            };
+            roomTypes.ForEach(l => context.RoomType.Add(l));
+            context.SaveChanges();
+
+
+            var amenities = new List<Amenity>
+            {
+                new Amenity{
+                    Name = "Free WiFi"
+                },
+                new Amenity{
+                    Name = "Mini Bar"
+                },
+                new Amenity{
+                    Name = "Coffee Maker"
+                },
+                new Amenity{
+                    Name = "Iron & Ironing Board"
+                },
+                new Amenity{
+                    Name = "Microwave"
+                },
+                new Amenity{
+                    Name = "Private Balcony"
+                },
+                new Amenity{
+                    Name = "Crib"
+                },
+                new Amenity{
+                    Name = "TV Facilities"
+                },
+                new Amenity{
+                    Name = "Air Conditioned"
+                }
+
+            };
+            amenities.ForEach(l => context.Amenities.Add(l));
+            context.SaveChanges();
+
+
+            //occupied, vacant, dirty, clean, ready and out of order.
+            var roomStatus = new List<RoomStatus>
+            {
+                new RoomStatus{
+                    RoomStatusName = "vacant"
+                },
+                new RoomStatus{
+                    RoomStatusName = "occupied"
+                },
+                new RoomStatus{
+                    RoomStatusName = "dirty"
+                },
+                new RoomStatus{
+                    RoomStatusName = "clean"
+                },
+                new RoomStatus{
+                    RoomStatusName = "ready"
+                },
+                new RoomStatus{
+                    RoomStatusName = "outOfOrder"
+                },
+            };
+            roomStatus.ForEach(l => context.RoomStatus.Add(l));
+            context.SaveChanges();
+
+            var roomOverview = new List<RoomOverview>
+            {
+                new RoomOverview
+                {
+                    LocationID = 1, 
+                    Header = "Geronimo Rooms",
+                    IntroductionParagraph = "Regardless of the location Geronimo Hotels.  ",
+                    MainContent = "Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available. ",
+                    SecondaryContent = "Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.Regardless of the location Geronimo Hotels has a range of rooms available to be booked. " +
+                    "There are Standard rooms and premium rooms available.",
+                    RoomType = roomTypes
+                },
+                new RoomOverview
+                {      
+                    LocationID = 2,
+                    Header = "Glasgow Rooms",
+                    IntroductionParagraph = "Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. Awesome introduction about Glasgow based rooms. ",
+                    MainContent = "When booking a room at the Glasgow Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
+                    SecondaryContent = "Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. Awesome sec content about Glasgow based rooms. ",
+                    RoomType = roomTypes
+                },
+                new RoomOverview
+                {
+                    LocationID = 3,
+                    Header = "Paris Rooms",
+                    IntroductionParagraph = "When booking a room premium room. ",
+                    MainContent = "When booking a room at the Paris Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
+                    SecondaryContent = "When booking a room at the Paris Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. When booking a room at the Paris Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
+                    RoomType = roomTypes
+                },
+                new RoomOverview
+                {
+                    LocationID = 4,
+                    Header = "Amsterdam Rooms",
+                    IntroductionParagraph = "When booking a room at the Amsterdam Geronimo Hotel",
+                    MainContent = "When booking a room at the Amsterdam Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. " +
+                    "When booking a room at the Amsterdam Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
+                    SecondaryContent = "When booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo HotelWhen booking a room at the Amsterdam Geronimo Hotel",
+                    RoomType = roomTypes
+                },
+                new RoomOverview
+                {
+                    LocationID = 5,
+                    Header = "New York Rooms",
+                    IntroductionParagraph = "When When booking a room at the New York New York Geronimo Hotelbooking a room at the New York New York Geronimo Hotel",
+                    MainContent = "When booking a room at the New York New York Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. "+
+                    "When booking a room at the New York Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
+                    SecondaryContent = "When booking a room at the New York New York Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. "+
+                    "When booking a room at the New York Geronimo HotelWhen booking a room at the New York Geronimo HotelWhen booking a room at the New York Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
+                    RoomType = roomTypes
+                },
+                new RoomOverview
+                {
+                    LocationID = 6,
+                    Header = "London Rooms",
+                    IntroductionParagraph = "",
+                    MainContent = "When booking a room at the London Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. "+
+                    "When booking a room at the London Geronimo Hotel " +
+                    "you can choose from either a standard or premium room. ",
+                    RoomType = roomTypes
+                },
+
+            };
+            roomOverview.ForEach(l => context.RoomOverview.Add(l));
+            context.SaveChanges();
+
+            var rooms = new List<Room>
+            {
+                new Room{
+                    RoomNumber = 1,
+                    Name = "GRoom One",
+                    Description = "",
+                    FloorNumber = 1,
+                    NumberOfBeds = 12,
+                    Price = 20.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID,
+                    RoomOverviewID = roomOverview[1].LocationID,
+                    RoomOverview = roomOverview[1]
+
+                },
+                new Room{
+                    RoomNumber = 2,
+                    Name = "GRoom Two",
+                    Description = "GRoom Two GRoom Two GRoom Two",
+                    FloorNumber = 1,
+                    NumberOfBeds = 1,
+                    Price = 20.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[1],
+                    RoomStatusID = roomStatus[1].RoomStatusID,
+                    RoomOverviewID = roomOverview[1].LocationID,
+                    RoomOverview = roomOverview[1]
+                },
+                new Room{
+                    RoomNumber = 3,
+                    Name = "GRoom Three",
+                    Description = "GRoom Three GRoom Three GRoom Three ",
+                    FloorNumber = 1,
+                    NumberOfBeds = 2,
+                    Price = 20.00,
+                    RoomType = roomTypes[0],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID,
+                    RoomOverviewID = roomOverview[1].LocationID,
+                    RoomOverview = roomOverview[1]
+                },
+                new Room{
+                    RoomNumber = 4,
+                    Name = "GRoom Four",
+                    Description = "GRoom Four GRoom Four GRoom Four",
+                    FloorNumber = 2,
+                    NumberOfBeds = 1,
+                    Price = 20.00,
+                    RoomType = roomTypes[0],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID,
+                    RoomOverviewID = roomOverview[1].LocationID,
+                    RoomOverview = roomOverview[1]
+                },
+                new Room{
+                    RoomNumber = 5,
+                    Name = "GRoom Five",
+                    Description = "GRoom Five GRoom Five GRoom Five",
+                    FloorNumber = 2,
+                    NumberOfBeds = 2,
+                    Price = 50.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID,
+                    RoomOverviewID = roomOverview[1].LocationID,
+                    RoomOverview = roomOverview[1]
+                }, 
+
+                // london
+                new Room{
+                    RoomNumber = 1,
+                    Name = "LRoom One",
+                    Description = "",
+                    FloorNumber = 1,
+                    NumberOfBeds = 12,
+                    Price = 60.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID,
+                    RoomOverviewID = roomOverview[5].LocationID,
+                    RoomOverview = roomOverview[5]
+                },
+                new Room{
+                    RoomNumber = 2,
+                    Name = "LRoom Two",
+                    Description = "LRoom Two LRoom Two LRoom Two",
+                    FloorNumber = 1,
+                    NumberOfBeds = 1,
+                    Price = 20.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[1],
+                    RoomStatusID = roomStatus[1].RoomStatusID,
+                    RoomOverviewID = roomOverview[5].LocationID,
+                    RoomOverview = roomOverview[5]
+                },
+                new Room{
+                    RoomNumber = 3,
+                    Name = "LRoom Three",
+                    Description = "LRoom Three LRoom Three LRoom Three ",
+                    FloorNumber = 1,
+                    NumberOfBeds = 2,
+                    Price = 50.00,
+                    RoomType = roomTypes[0],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID,
+                    RoomOverviewID = roomOverview[5].LocationID,
+                    RoomOverview = roomOverview[5]
+                },
+                new Room{
+                    RoomNumber = 4,
+                    Name = "LRoom Four",
+                    Description = "LRoom Four LRoom Four LRoom Four",
+                    FloorNumber = 2,
+                    NumberOfBeds = 1,
+                    Price = 20.00,
+                    RoomType = roomTypes[0],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID,
+                    RoomOverviewID = roomOverview[5].LocationID,
+                    RoomOverview = roomOverview[5]
+                },
+                new Room{
+                    RoomNumber = 5,
+                    Name = "LRoom Five",
+                    Description = "LRoom Five LRoom Five LRoom Five",
+                    FloorNumber = 2,
+                    NumberOfBeds = 2,
+                    Price = 30.00,
+                    RoomType = roomTypes[1],
+                    Amenities = amenities,
+                    Capacity = 4,
+                    RoomStatus = roomStatus[0],
+                    RoomStatusID = roomStatus[0].RoomStatusID,
+                    RoomOverviewID = roomOverview[5].LocationID,
+                    RoomOverview = roomOverview[5]
+                }
+
+            };
+            rooms.ForEach(l => context.Room.Add(l));
             context.SaveChanges();
 
 
@@ -1172,6 +1164,18 @@ namespace GeronimoHBS.DAL
 
 
 
+
+
+
+
+
+
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
             // DINING DATA
             // Seeded Menu Items 
             var menuItems = new List<MenuItem>

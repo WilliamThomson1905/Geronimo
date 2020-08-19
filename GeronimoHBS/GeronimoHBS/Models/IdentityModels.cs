@@ -72,14 +72,8 @@ namespace GeronimoHBS.Models
         public virtual ICollection<Room> Rooms { get; set; }
 
 
-
-        // Foriegn key 
-        public int RoomOverviewID { get; set; }
         // Corresponding navigation property - each hotel has rooms 
         public virtual RoomOverview RoomOverview { get; set; }
-
-
-
 
         // Corresponding navigation property - each hotel might have a gym 
         public virtual GymOverview GymOverview { get; set; }
@@ -104,7 +98,11 @@ namespace GeronimoHBS.Models
     public class RoomOverview
     {
         [Key]
-        public int RoomOverviewID { get; set; }
+        [ForeignKey("Location")]
+        public int LocationID { get; set; }
+        public virtual Location Location { get; set; }
+
+
 
         public string Header { get; set; }
 
@@ -154,15 +152,16 @@ namespace GeronimoHBS.Models
         public int RoomTypeID { get; set; }
         // Corresponding navigation property - each hotel will have rooms  
         public virtual RoomType RoomType { get; set; }
-
-        public int RoomOverviewID { get; set; }
-        public virtual Location Location { get; set; }
-
         public virtual ICollection<Amenity> Amenities { get; set; }
 
         public int RoomStatusID { get; set; }
+
+
         // Corresponding navigation property - each event will have a Venue -  
         public virtual RoomStatus RoomStatus { get; set; }
+
+        public int RoomOverviewID { get; set; }
+        public virtual RoomOverview RoomOverview { get; set; }
     }
 
     /// <summary>
@@ -215,7 +214,6 @@ namespace GeronimoHBS.Models
         [Key]
         [ForeignKey("Location")]
         public int LocationID { get; set; }
-        // Corresponding navigation property - each hotel might have a gym 
         public virtual Location Location { get; set; }
 
 
