@@ -84,10 +84,6 @@ namespace GeronimoHBS.Models
         // Corresponding navigation property - each hotel might have a restaurant  
         public virtual DiningOverview DiningOverview { get; set; }
 
-
-
-        // Foriegn key 
-        public int EventOverviewID { get; set; }
         // Corresponding navigation property - each hotel might have events  
         public virtual EventOverview EventOverview { get; set; }
 
@@ -479,10 +475,18 @@ namespace GeronimoHBS.Models
 
 
 
+
+
+
     public class EventOverview
     {
         [Key]
-        public int EventOverviewID { get; set; }
+        [ForeignKey("Location")]
+        public int LocationID { get; set; }
+        public virtual Location Location { get; set; }
+
+
+
 
         public string Header { get; set; }
 
@@ -492,6 +496,7 @@ namespace GeronimoHBS.Models
         public string SecondaryContent { get; set; }
 
         public virtual ICollection<Event> Events { get; set; }
+
         public virtual ICollection<EventInfo> EventInfo { get; set; }
 
         public virtual ICollection<Venue> Venues { get; set; }
@@ -521,8 +526,8 @@ namespace GeronimoHBS.Models
 
         public bool IsPublic { get; set; }
 
-        public virtual ICollection<EventOverview> EventOverview { get; set; }
-
+        public int EventOverviewID { get; set; }
+        public virtual EventOverview EventOverview { get; set; }
     }
 
     // Two types of events:
@@ -552,8 +557,9 @@ namespace GeronimoHBS.Models
 
         public bool PublicEvent { get; set; }
 
-        public virtual ICollection<EventOverview> EventOverview { get; set; }
 
+        public int EventOverviewID { get; set; }
+        public virtual EventOverview EventOverview { get; set; }
 
 
         // Foriegn key 
@@ -594,8 +600,9 @@ namespace GeronimoHBS.Models
         public virtual ICollection<VenueStatus> VenueStatus { get; set; }
 
 
-        public virtual ICollection<EventOverview> EventOverview { get; set; }
 
+        public int EventOverviewID { get; set; }
+        public virtual EventOverview EventOverview { get; set; }
 
     }
 
