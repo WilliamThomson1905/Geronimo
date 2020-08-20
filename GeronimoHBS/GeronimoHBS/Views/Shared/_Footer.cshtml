@@ -1,37 +1,56 @@
 ﻿<footer>
     <div class="footerContainer">
         <div class="columns">
-            <div class="footerColumn">
 
-
-                <h2>Locations</h2>
-                <ul class="links">
-                    <li>@Html.RouteLink("Glasgow", "GetHotel", new { Id = 2, Name = "Glasgow" })</li>
-
-                    <li>@Html.RouteLink("Paris", "GetHotel", new { Id = 3, Name = "Paris" })</li>
-                    <li>@Html.RouteLink("Amsterdam", "GetHotel", new { Id = 4, Name = "Amsterdam" })</li>
-                    <li>@Html.RouteLink("New York", "GetHotel", new { Id = 5, Name = "New York" })</li>
-                    <li>@Html.RouteLink("London", "GetHotel", new { Id = 6, Name = "London" })</li>
-
-                </ul>
-
-            </div>
-
-            <div class="footerColumn">
-                <h2>Services</h2>
-                <ul class="links">
-                    <li><a href="/Rooms/Index/1">Rooms</a></li>
-                    <li><a href="/Gym/Index/1">Gym</a></li>
-                    <li><a href="/Spa/Index/1">Spa</a></li>
-                    <li><a href="/Events/Index/1">Events</a></li>
-                    <li><a href="/Dining/Index/1">Dining</a></li>
-                </ul>
-
-            </div>
-
-
-
+            @if (User.IsInRole("Administrator"))
+            {
+                <div class="footerColumn">
+                    <h2>Locations</h2>
+                    <ul class="links">
+                        <li>@Html.RouteLink("Glasgow", "GetHotel", new { Id = 2, Name = "Glasgow" })</li>
+                        <li>@Html.RouteLink("Paris", "GetHotel", new { Id = 3, Name = "Paris" })</li>
+                        <li>@Html.RouteLink("Amsterdam", "GetHotel", new { Id = 4, Name = "Amsterdam" })</li>
+                        <li>@Html.RouteLink("New York", "GetHotel", new { Id = 5, Name = "New York" })</li>
+                        <li>@Html.RouteLink("London", "GetHotel", new { Id = 6, Name = "London" })</li>
+                    </ul>
+                </div>
+                <div class="footerColumn">
+                    <h2>Services</h2>
+                    <ul class="links">
+                        <li><a href="/Rooms/Index/1">Rooms</a></li>
+                        <li><a href="/Gym/Index/1">Gym</a></li>
+                        <li><a href="/Spa/Index/1">Spa</a></li>
+                        <li><a href="/Events/Index/1">Events</a></li>
+                        <li><a href="/Dining/Index/1">Dining</a></li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <div class="footerColumn">
+                    <h2>Amin</h2>
+                    <ul class="links">
+                        <li><a href="/GymClasses/Index/">GymClasses</a></li>
+                        <li><a href="/Equipments/Index/1">Equipment</a></li>
+                        <li><a href="/Spa/Index/1">Spa</a></li>
+                        <li><a href="/Events/Index/1">Events</a></li>
+                        <li><a href="/Dining/Index/1">Dining</a></li>
+                    </ul>
+                </div>
+                <div class="footerColumn">
+                    <h2>Services</h2>
+                    <ul class="links">
+                        <li><a href="/Rooms/Index/1">Rooms</a></li>
+                        <li><a href="/Gym/Index/1">Gym</a></li>
+                        <li><a href="/Spa/Index/1">Spa</a></li>
+                        <li><a href="/Events/Index/1">Events</a></li>
+                        <li><a href="/Dining/Index/1">Dining</a></li>
+                    </ul>
+                </div>
+            }
         </div>
+
+
         <div class="">
             <ul class="socialLinks">
                 <li><a class="socialLink" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
