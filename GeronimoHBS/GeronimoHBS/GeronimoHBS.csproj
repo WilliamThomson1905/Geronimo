@@ -178,6 +178,7 @@
     <Compile Include="Controllers\GymController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\SpaController.cs" />
+    <Compile Include="Controllers\TimetableController.cs" />
     <Compile Include="DAL\ApplicationDbContext.cs" />
     <Compile Include="DAL\ApplicationDbInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -349,6 +350,11 @@
     <Content Include="Views\GymClasses\Details.cshtml" />
     <Content Include="Views\GymClasses\Edit.cshtml" />
     <Content Include="Views\GymClasses\Index.cshtml" />
+    <Content Include="Views\Timetable\Create.cshtml" />
+    <Content Include="Views\Timetable\Delete.cshtml" />
+    <Content Include="Views\Timetable\Details.cshtml" />
+    <Content Include="Views\Timetable\Edit.cshtml" />
+    <Content Include="Views\Timetable\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
