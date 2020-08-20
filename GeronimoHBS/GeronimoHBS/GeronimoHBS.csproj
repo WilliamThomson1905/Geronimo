@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ClassFocusController.cs" />
     <Compile Include="Controllers\DiningController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\GymClassesController.cs" />
@@ -361,6 +362,11 @@
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\ClassFocus\Create.cshtml" />
+    <Content Include="Views\ClassFocus\Delete.cshtml" />
+    <Content Include="Views\ClassFocus\Details.cshtml" />
+    <Content Include="Views\ClassFocus\Edit.cshtml" />
+    <Content Include="Views\ClassFocus\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
