@@ -45,7 +45,6 @@ namespace GeronimoHBS.Controllers
             else
             {
                 currentLocation = db.Location.Find(Id);
-                ViewBag.Location = "Geronimo: " + currentLocation.LocationName.ToString();
             }
 
             breadcrumbs = new string[][] {

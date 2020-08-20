@@ -1,0 +1,58 @@
+﻿@model GeronimoHBS.Models.GymClasses
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GymClasses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Introduction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Introduction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Benefits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Benefits)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GymOverviewID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GymOverviewID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GymClassesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

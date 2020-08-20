@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GeronimoHBS.Models.GymClasses>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Introduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Benefits)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GymOverview.Location.LocationName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Introduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Benefits)
+        </td>
+        <td>
+            @foreach (var focus in item.Focus)
+            {
+
+
+                @Html.DisplayFor(modelItem => focus.DisplayTitle)
+
+
+
+
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GymOverview.Location.LocationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GymClassesID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GymClassesID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GymClassesID })
+        </td>
+    </tr>
+}
+
+</table>

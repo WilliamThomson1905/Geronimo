@@ -171,6 +171,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DiningController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\GymClassesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -343,6 +344,11 @@
     <Content Include="Views\Equipments\Details.cshtml" />
     <Content Include="Views\Equipments\Edit.cshtml" />
     <Content Include="Views\Equipments\Index.cshtml" />
+    <Content Include="Views\GymClasses\Create.cshtml" />
+    <Content Include="Views\GymClasses\Delete.cshtml" />
+    <Content Include="Views\GymClasses\Details.cshtml" />
+    <Content Include="Views\GymClasses\Edit.cshtml" />
+    <Content Include="Views\GymClasses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
