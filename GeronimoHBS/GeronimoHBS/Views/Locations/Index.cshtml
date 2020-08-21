@@ -36,38 +36,74 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocationName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocationIntroduction)
-        </td>
-        <td>
-            @if (item.DiningOverview != null) {
-                @Html.Raw("Yes");
-            } else { 
-                @Html.Raw("No"); }
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LocationName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LocationIntroduction)
+    </td>
+    <td>
+        @if (item.DiningOverview != null)
+        {
+            @Html.Raw("Yes");
+        }
+        else
+        {
+            @Html.Raw("No");
+        }
 
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventOverview.Header)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GymOverview.Header)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomOverview.Header)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SpaOverview.Header)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LocationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LocationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LocationID })
-        </td>
-    </tr>
+    </td>
+    <td>
+        @if (item.EventOverview != null)
+        {
+            @Html.Raw("Yes");
+        }
+        else
+        {
+            @Html.Raw("No");
+        }
+
+    </td>
+    <td>
+        @if (item.GymOverview != null)
+        {
+            @Html.Raw("Yes");
+        }
+        else
+        {
+            @Html.Raw("No");
+        }
+
+    </td>
+    <td>
+        @if (item.RoomOverview != null)
+        {
+            @Html.Raw("Yes");
+        }
+        else
+        {
+            @Html.Raw("No");
+        }
+
+    </td>
+    <td>
+        @if (item.SpaOverview != null)
+        {
+            @Html.Raw("Yes");
+        }
+        else
+        {
+            @Html.Raw("No");
+        }
+
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.LocationID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.LocationID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.LocationID })
+    </td>
+</tr>
 }
 
 </table>
