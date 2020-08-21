@@ -84,11 +84,6 @@ namespace GeronimoHBS.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LocationID = new SelectList(db.DiningOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.EventOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.GymOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.RoomOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.SpaOverview, "LocationID", "Header", location.LocationID);
             return View(location);
         }
 
@@ -104,11 +99,7 @@ namespace GeronimoHBS.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.LocationID = new SelectList(db.DiningOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.EventOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.GymOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.RoomOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.SpaOverview, "LocationID", "Header", location.LocationID);
+
             return View(location);
         }
 
@@ -117,19 +108,17 @@ namespace GeronimoHBS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "LocationID,LocationName,LocationIntroduction")] Location location)
+        public ActionResult Edit([Bind(Include = "LocationID,LocationName,LocationIntroduction")] Location location, string[] hotelFacilities)
         {
+            
+
             if (ModelState.IsValid)
             {
-                db.Entry(location).State = EntityState.Modified;
+                db.Entry(currentLocation).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LocationID = new SelectList(db.DiningOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.EventOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.GymOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.RoomOverview, "LocationID", "Header", location.LocationID);
-            ViewBag.LocationID = new SelectList(db.SpaOverview, "LocationID", "Header", location.LocationID);
+           
             return View(location);
         }
 
