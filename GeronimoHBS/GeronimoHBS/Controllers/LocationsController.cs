@@ -53,10 +53,32 @@ namespace GeronimoHBS.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LocationID,LocationName,LocationIntroduction")] Location location)
+        public ActionResult Create([Bind(Include = "LocationID,LocationName,LocationIntroduction")] Location location, string[] hotelFacilities)
         {
+
+            if (hotelFacilities.Contains("Rooms"))
+                location.RoomOverview = new RoomOverview();
+
+            if (hotelFacilities.Contains("Gym"))
+                location.GymOverview = new GymOverview();
+
+            if (hotelFacilities.Contains("Spa"))
+                location.SpaOverview = new SpaOverview();
+
+            if (hotelFacilities.Contains("Venues"))
+                location.EventOverview = new EventOverview();
+
+            if (hotelFacilities.Contains("Dining"))
+                location.DiningOverview = new DiningOverview();
+
+
+
+
+
             if (ModelState.IsValid)
             {
+
+
                 db.Location.Add(location);
                 db.SaveChanges();
                 return RedirectToAction("Index");
