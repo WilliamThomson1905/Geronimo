@@ -1,0 +1,26 @@
+﻿@model GeronimoHBS.Models.EventStatus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EventStatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventStatusName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventStatusID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

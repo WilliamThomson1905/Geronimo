@@ -173,6 +173,7 @@
     <Compile Include="Controllers\DiningController.cs" />
     <Compile Include="Controllers\EventInfoController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\EventStatusController.cs" />
     <Compile Include="Controllers\GymClassesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
@@ -373,6 +374,11 @@
     <Content Include="Views\EventInfo\Details.cshtml" />
     <Content Include="Views\EventInfo\Edit.cshtml" />
     <Content Include="Views\EventInfo\Index.cshtml" />
+    <Content Include="Views\EventStatus\Create.cshtml" />
+    <Content Include="Views\EventStatus\Delete.cshtml" />
+    <Content Include="Views\EventStatus\Details.cshtml" />
+    <Content Include="Views\EventStatus\Edit.cshtml" />
+    <Content Include="Views\EventStatus\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
