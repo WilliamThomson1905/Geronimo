@@ -1,0 +1,58 @@
+﻿@model GeronimoHBS.Models.Venue
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Venue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RateForDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RateForDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventOverviewID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventOverviewID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VenueID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

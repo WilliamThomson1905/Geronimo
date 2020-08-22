@@ -1,0 +1,64 @@
+﻿@model GeronimoHBS.Models.Venue
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Venue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RateForDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RateForDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventOverviewID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventOverviewID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
