@@ -110,7 +110,28 @@ namespace GeronimoHBS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "LocationID,LocationName,LocationIntroduction")] Location location, string[] hotelFacilities)
         {
-            
+            Location currentLocation = db.Location.Find(location.LocationID);
+            currentLocation.LocationID = location.LocationID;
+            currentLocation.LocationName = location.LocationName;
+            currentLocation.LocationIntroduction = location.LocationIntroduction;
+
+
+            if (!hotelFacilities.Contains("Rooms"))
+                currentLocation.RoomOverview = null;
+
+            if (!hotelFacilities.Contains("Gym"))
+                currentLocation.GymOverview = null;
+
+            if (!hotelFacilities.Contains("Spa"))
+                currentLocation.SpaOverview = null;
+
+            if (!hotelFacilities.Contains("Venues"))
+                currentLocation.EventOverview = null;
+
+            if (!hotelFacilities.Contains("Dining"))
+                currentLocation.DiningOverview = new DiningOverview();
+
+
 
             if (ModelState.IsValid)
             {
