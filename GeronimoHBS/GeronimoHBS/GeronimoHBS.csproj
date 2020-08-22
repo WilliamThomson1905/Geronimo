@@ -183,6 +183,7 @@
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\SpaController.cs" />
     <Compile Include="Controllers\TimetableController.cs" />
+    <Compile Include="Controllers\VenueStatusController.cs" />
     <Compile Include="DAL\ApplicationDbContext.cs" />
     <Compile Include="DAL\ApplicationDbInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -379,6 +380,11 @@
     <Content Include="Views\EventStatus\Details.cshtml" />
     <Content Include="Views\EventStatus\Edit.cshtml" />
     <Content Include="Views\EventStatus\Index.cshtml" />
+    <Content Include="Views\VenueStatus\Create.cshtml" />
+    <Content Include="Views\VenueStatus\Delete.cshtml" />
+    <Content Include="Views\VenueStatus\Details.cshtml" />
+    <Content Include="Views\VenueStatus\Edit.cshtml" />
+    <Content Include="Views\VenueStatus\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
