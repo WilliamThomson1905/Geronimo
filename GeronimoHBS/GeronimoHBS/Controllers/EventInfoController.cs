@@ -37,6 +37,13 @@ namespace GeronimoHBS.Controllers
         // GET: EventInfo/Create
         public ActionResult Create()
         {
+            var locations = from location in db.Location
+                            where location.LocationID != 1
+                            orderby location.LocationID
+                            select location;
+
+
+            ViewBag.EventOverviewID = new SelectList(locations, "LocationID", "LocationName");
             return View();
         }
 

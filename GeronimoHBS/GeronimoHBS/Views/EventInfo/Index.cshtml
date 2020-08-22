@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IsPublic)
+            @(item.IsPublic ? "yes" : "no")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EventOverview.Location.LocationName)
