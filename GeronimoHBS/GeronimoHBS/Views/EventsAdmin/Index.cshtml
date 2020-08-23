@@ -1,0 +1,105 @@
+﻿@model IEnumerable<GeronimoHBS.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventStatus.EventStatusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Guest.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Venue.VenueName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfParticipants)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalculatedCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtraCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicEvent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventOverview.Location.LocationName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventStatus.EventStatusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Guest.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Venue.VenueName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfParticipants)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountPaid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalculatedCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtraCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicEvent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventOverview.Location.LocationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventID })
+        </td>
+    </tr>
+}
+
+</table>

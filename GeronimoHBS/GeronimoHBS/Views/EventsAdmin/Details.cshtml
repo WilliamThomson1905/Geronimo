@@ -1,0 +1,122 @@
+﻿@model GeronimoHBS.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventStatus.EventStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventStatus.EventStatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guest.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guest.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Venue.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Venue.VenueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfParticipants)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfParticipants)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalculatedCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalculatedCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicEvent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublicEvent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventOverviewID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventOverviewID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
