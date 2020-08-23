@@ -1,0 +1,63 @@
+﻿@model IEnumerable<GeronimoHBS.Models.MenuItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuItemCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuItemDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVegan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVegetarian)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MealType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenuItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenuItemCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenuItemDescription)
+        </td>
+        <td>
+            @(item.IsVegan ? "YES" : "NO")
+        </td>
+        <td>
+            @(item.IsVegetarian ? "YES" : "NO")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MealType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MenuItemID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MenuItemID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MenuItemID })
+        </td>
+    </tr>
+}
+
+</table>

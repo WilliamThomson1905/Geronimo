@@ -181,6 +181,7 @@
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\GymController.cs" />
+    <Compile Include="Controllers\MenuItemsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\SpaController.cs" />
     <Compile Include="Controllers\TimetableController.cs" />
@@ -397,6 +398,11 @@
     <Content Include="Views\EventsAdmin\Details.cshtml" />
     <Content Include="Views\EventsAdmin\Edit.cshtml" />
     <Content Include="Views\EventsAdmin\Index.cshtml" />
+    <Content Include="Views\MenuItems\Create.cshtml" />
+    <Content Include="Views\MenuItems\Delete.cshtml" />
+    <Content Include="Views\MenuItems\Details.cshtml" />
+    <Content Include="Views\MenuItems\Edit.cshtml" />
+    <Content Include="Views\MenuItems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
