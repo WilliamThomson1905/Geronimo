@@ -129,16 +129,12 @@ namespace GeronimoHBS.Models
     {
         //Primary Key 
         [Key]
-
         public int RoomID { get; set; }
 
         public int FloorNumber { get; set; }
         public int RoomNumber { get; set; }
         public int NumberOfBeds { get; set; }
-
         public int Capacity { get; set; }
-
-        
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }

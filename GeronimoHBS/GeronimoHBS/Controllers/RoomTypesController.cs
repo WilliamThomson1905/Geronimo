@@ -11,90 +11,91 @@ using GeronimoHBS.Models;
 
 namespace GeronimoHBS.Controllers
 {
-    public class AmenitiesController : BaseController
+    public class RoomTypesController : BaseController
     {
-        // GET: Amenities
+        // GET: RoomTypes
         public ActionResult Index()
         {
-            return View(db.Amenities.ToList());
+            return View(db.RoomType.ToList());
         }
 
-        // GET: Amenities/Create
+
+        // GET: RoomTypes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Amenities/Create
+        // POST: RoomTypes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AmenityID,Name")] Amenity amenity)
+        public ActionResult Create([Bind(Include = "RoomTypeID,Name,Description")] RoomType roomType)
         {
             if (ModelState.IsValid)
             {
-                db.Amenities.Add(amenity);
+                db.RoomType.Add(roomType);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(amenity);
+            return View(roomType);
         }
 
-        // GET: Amenities/Edit/5
+        // GET: RoomTypes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Amenity amenity = db.Amenities.Find(id);
-            if (amenity == null)
+            RoomType roomType = db.RoomType.Find(id);
+            if (roomType == null)
             {
                 return HttpNotFound();
             }
-            return View(amenity);
+            return View(roomType);
         }
 
-        // POST: Amenities/Edit/5
+        // POST: RoomTypes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AmenityID,Name")] Amenity amenity)
+        public ActionResult Edit([Bind(Include = "RoomTypeID,Name,Description")] RoomType roomType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(amenity).State = EntityState.Modified;
+                db.Entry(roomType).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(amenity);
+            return View(roomType);
         }
 
-        // GET: Amenities/Delete/5
+        // GET: RoomTypes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Amenity amenity = db.Amenities.Find(id);
-            if (amenity == null)
+            RoomType roomType = db.RoomType.Find(id);
+            if (roomType == null)
             {
                 return HttpNotFound();
             }
-            return View(amenity);
+            return View(roomType);
         }
 
-        // POST: Amenities/Delete/5
+        // POST: RoomTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Amenity amenity = db.Amenities.Find(id);
-            db.Amenities.Remove(amenity);
+            RoomType roomType = db.RoomType.Find(id);
+            db.RoomType.Remove(roomType);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
