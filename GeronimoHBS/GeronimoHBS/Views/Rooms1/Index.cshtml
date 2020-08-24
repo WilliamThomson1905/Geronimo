@@ -1,0 +1,87 @@
+﻿@model IEnumerable<GeronimoHBS.Models.Room>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomOverview.Location.LocationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomStatus.RoomStatusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomType.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FloorNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfBeds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomOverview.Location.LocationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomStatus.RoomStatusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomType.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FloorNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfBeds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RoomID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RoomID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RoomID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -184,6 +184,7 @@
     <Compile Include="Controllers\GymController.cs" />
     <Compile Include="Controllers\MenuItemsController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
+    <Compile Include="Controllers\Rooms1Controller.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\RoomStatusController.cs" />
     <Compile Include="Controllers\RoomTypesController.cs" />
@@ -424,6 +425,11 @@
     <Content Include="Views\RoomStatus\Delete.cshtml" />
     <Content Include="Views\RoomStatus\Edit.cshtml" />
     <Content Include="Views\RoomStatus\Index.cshtml" />
+    <Content Include="Views\Rooms1\Create.cshtml" />
+    <Content Include="Views\Rooms1\Delete.cshtml" />
+    <Content Include="Views\Rooms1\Details.cshtml" />
+    <Content Include="Views\Rooms1\Edit.cshtml" />
+    <Content Include="Views\Rooms1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
