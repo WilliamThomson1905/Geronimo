@@ -173,7 +173,6 @@
     <Compile Include="Controllers\ClassFocusController.cs" />
     <Compile Include="Controllers\DiningController.cs" />
     <Compile Include="Controllers\EventInfoController.cs" />
-    <Compile Include="Controllers\EventsAdminController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\EventStatusController.cs" />
     <Compile Include="Controllers\GymClassesController.cs" />
@@ -184,7 +183,6 @@
     <Compile Include="Controllers\GymController.cs" />
     <Compile Include="Controllers\MenuItemsController.cs" />
     <Compile Include="Controllers\MenusController.cs" />
-    <Compile Include="Controllers\Rooms1Controller.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\RoomStatusController.cs" />
     <Compile Include="Controllers\RoomTypesController.cs" />
@@ -425,11 +423,11 @@
     <Content Include="Views\RoomStatus\Delete.cshtml" />
     <Content Include="Views\RoomStatus\Edit.cshtml" />
     <Content Include="Views\RoomStatus\Index.cshtml" />
-    <Content Include="Views\Rooms1\Create.cshtml" />
-    <Content Include="Views\Rooms1\Delete.cshtml" />
-    <Content Include="Views\Rooms1\Details.cshtml" />
-    <Content Include="Views\Rooms1\Edit.cshtml" />
-    <Content Include="Views\Rooms1\Index.cshtml" />
+    <Content Include="Views\Rooms\Create.cshtml" />
+    <Content Include="Views\Rooms\Delete.cshtml" />
+    <Content Include="Views\Rooms\Details.cshtml" />
+    <Content Include="Views\Rooms\Edit.cshtml" />
+    <Content Include="Views\Rooms\AdminIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
