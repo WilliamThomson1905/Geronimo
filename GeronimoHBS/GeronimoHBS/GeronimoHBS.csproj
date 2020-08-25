@@ -398,11 +398,11 @@
     <Content Include="Views\Venues\Details.cshtml" />
     <Content Include="Views\Venues\Edit.cshtml" />
     <Content Include="Views\Venues\Index.cshtml" />
-    <Content Include="Views\EventsAdmin\Create.cshtml" />
-    <Content Include="Views\EventsAdmin\Delete.cshtml" />
-    <Content Include="Views\EventsAdmin\Details.cshtml" />
-    <Content Include="Views\EventsAdmin\Edit.cshtml" />
-    <Content Include="Views\EventsAdmin\Index.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\AdminIndex.cshtml" />
     <Content Include="Views\MenuItems\Create.cshtml" />
     <Content Include="Views\MenuItems\Delete.cshtml" />
     <Content Include="Views\MenuItems\Details.cshtml" />
