@@ -177,5 +177,23 @@ namespace GeronimoHBS.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        // GET: Locations/GymOverview/5
+        public ActionResult GymOverview(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Location location = db.Location.Find(id);
+            if (location == null)
+            {
+                return HttpNotFound();
+            }
+            return View(location);
+        }
+
+
     }
 }

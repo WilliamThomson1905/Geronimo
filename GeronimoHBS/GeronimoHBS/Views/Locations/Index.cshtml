@@ -58,7 +58,8 @@
                 <td>
                     @if (item.GymOverview != null)
                     {
-                        @Html.Raw("Yes");
+                        @Html.ActionLink("YES", "GymOverview", new { id = item.LocationID }); 
+
                     }
                     else
                     {

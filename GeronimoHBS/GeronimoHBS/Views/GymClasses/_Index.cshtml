@@ -1,10 +1,10 @@
-﻿@model IEnumerable<GeronimoHBS.Models.GymClasses>
+﻿@model GeronimoHBS.Models.Location
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Gym Classes</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,24 +12,27 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            Title
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Introduction)
+            Introduction
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Description
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Benefits)
+            Benefits
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GymOverview.Location.LocationName)
+            Focus
+        </th>
+        <th>
+            Location Name
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.GymOverview.GymClasses) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Title)
@@ -59,9 +62,9 @@
             @Html.DisplayFor(modelItem => item.GymOverview.Location.LocationName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GymClassesID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GymClassesID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GymClassesID })
+            @Html.ActionLink("Edit", "Edit", "GymClasses", new { id=item.GymClassesID }) |
+            @Html.ActionLink("Details", "Details", "GymClasses", new { id=item.GymClassesID }) |
+            @Html.ActionLink("Delete", "Delete", "GymClasses", new { id=item.GymClassesID })
         </td>
     </tr>
 }

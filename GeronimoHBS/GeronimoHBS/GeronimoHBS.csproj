@@ -355,12 +355,12 @@
     <Content Include="Views\Equipments\Delete.cshtml" />
     <Content Include="Views\Equipments\Details.cshtml" />
     <Content Include="Views\Equipments\Edit.cshtml" />
-    <Content Include="Views\Equipments\Index.cshtml" />
+    <Content Include="Views\Equipments\_Index.cshtml" />
     <Content Include="Views\GymClasses\Create.cshtml" />
     <Content Include="Views\GymClasses\Delete.cshtml" />
     <Content Include="Views\GymClasses\Details.cshtml" />
     <Content Include="Views\GymClasses\Edit.cshtml" />
-    <Content Include="Views\GymClasses\Index.cshtml" />
+    <Content Include="Views\GymClasses\_Index.cshtml" />
     <Content Include="Views\Timetable\Create.cshtml" />
     <Content Include="Views\Timetable\Delete.cshtml" />
     <Content Include="Views\Timetable\Details.cshtml" />
@@ -428,6 +428,7 @@
     <Content Include="Views\Rooms\Details.cshtml" />
     <Content Include="Views\Rooms\Edit.cshtml" />
     <Content Include="Views\Rooms\AdminIndex.cshtml" />
+    <Content Include="Views\Locations\GymOverview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
