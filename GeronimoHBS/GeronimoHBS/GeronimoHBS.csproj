@@ -187,6 +187,7 @@
     <Compile Include="Controllers\RoomStatusController.cs" />
     <Compile Include="Controllers\RoomTypesController.cs" />
     <Compile Include="Controllers\SpaController.cs" />
+    <Compile Include="Controllers\SpaPromotionsController.cs" />
     <Compile Include="Controllers\TimetableController.cs" />
     <Compile Include="Controllers\VenuesController.cs" />
     <Compile Include="Controllers\VenueStatusController.cs" />
@@ -429,6 +430,11 @@
     <Content Include="Views\Rooms\Edit.cshtml" />
     <Content Include="Views\Rooms\AdminIndex.cshtml" />
     <Content Include="Views\Locations\GymOverview.cshtml" />
+    <Content Include="Views\SpaPromotions\Create.cshtml" />
+    <Content Include="Views\SpaPromotions\Delete.cshtml" />
+    <Content Include="Views\SpaPromotions\Details.cshtml" />
+    <Content Include="Views\SpaPromotions\Edit.cshtml" />
+    <Content Include="Views\SpaPromotions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
