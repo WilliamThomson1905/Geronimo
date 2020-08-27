@@ -5,9 +5,10 @@
     ViewBag.Title = "GymOverview";
 }
 
-<div class="container">
-    <h3>Welcome to @Model.LocationName Gym</h3>
-    @Html.Partial("~/Views/GymClasses/_Index.cshtml", (Location)Model)
-    @Html.Partial("~/Views/Equipments/_Index.cshtml", (Location)Model)
+    <div class="container">
+        <h3>Welcome to @Model.LocationName Gym</h3>
+        @Html.Partial("~/Views/GymClasses/_Index.cshtml", (Location)Model)
+        @Html.Partial("~/Views/Equipments/_Index.cshtml", (Location)Model)
+        @Html.Partial("~/Views/Timetable/_Index.cshtml", (Location)Model)
 
-</div>
+    </div>

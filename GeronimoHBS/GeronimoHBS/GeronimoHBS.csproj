@@ -365,7 +365,7 @@
     <Content Include="Views\Timetable\Delete.cshtml" />
     <Content Include="Views\Timetable\Details.cshtml" />
     <Content Include="Views\Timetable\Edit.cshtml" />
-    <Content Include="Views\Timetable\Index.cshtml" />
+    <Content Include="Views\Timetable\_Index.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
     <Content Include="Views\Locations\Details.cshtml" />

@@ -20,9 +20,6 @@
         <th>
             Description
         </th>
-        <th>
-            Location Name
-        </th>
         <th></th>
     </tr>
 
@@ -38,12 +35,9 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.GymOverview.Location.LocationName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EquipmentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EquipmentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EquipmentID })
+            @Html.ActionLink("Edit", "Edit", "Equipments", new { id=item.EquipmentID }, null) |
+            @Html.ActionLink("Details", "Details", "Equipments", new { id=item.EquipmentID }, null) |
+            @Html.ActionLink("Delete", "Delete", "Equipments", new { id=item.EquipmentID }, null)
         </td>
     </tr>
 }
