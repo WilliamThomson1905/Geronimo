@@ -70,7 +70,7 @@
                 <td>
                     @if (item.SpaOverview != null)
                     {
-                        @Html.Raw("Yes");
+                        @Html.ActionLink("YES", "SpaOverview", new { id = item.LocationID });
                     }
                     else
                     {

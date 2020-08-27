@@ -1,0 +1,58 @@
+﻿@model GeronimoHBS.Models.Location
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "SpaPromotions")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Promotion Name
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Start Date
+        </th>
+        <th>
+            End Date
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.SpaOverview.SpaPromotions)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PromotionCategory.PromotionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td> 
+            <td>
+                @Html.ActionLink("Edit", "Edit", "SpaPromotions", new { id = item.SpaPromotionID }) |
+                @Html.ActionLink("Details", "Details", "SpaPromotions", new { id = item.SpaPromotionID }) |
+                @Html.ActionLink("Delete", "Delete", "SpaPromotions", new { id = item.SpaPromotionID })
+            </td>
+        </tr>
+    }
+
+</table>

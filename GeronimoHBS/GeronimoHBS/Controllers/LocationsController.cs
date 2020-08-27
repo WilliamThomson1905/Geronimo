@@ -194,6 +194,21 @@ namespace GeronimoHBS.Controllers
             return View(location);
         }
 
+        // GET: Locations/SpaOverview/5
+        public ActionResult SpaOverview(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Location location = db.Location.Find(id);
+            if (location == null)
+            {
+                return HttpNotFound();
+            }
+            return View(location);
+        }
+
 
     }
 }

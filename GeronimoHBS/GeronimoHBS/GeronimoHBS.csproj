@@ -434,7 +434,9 @@
     <Content Include="Views\SpaPromotions\Delete.cshtml" />
     <Content Include="Views\SpaPromotions\Details.cshtml" />
     <Content Include="Views\SpaPromotions\Edit.cshtml" />
-    <Content Include="Views\SpaPromotions\Index.cshtml" />
+    <Content Include="Views\SpaPromotions\_Index.cshtml" />
+    <Content Include="Views\Locations\_Index.cshtml" />
+    <Content Include="Views\Locations\SpaOverview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

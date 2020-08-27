@@ -1,0 +1,12 @@
+﻿@model GeronimoHBS.Models.Location
+@using GeronimoHBS.Models;
+
+@{
+    ViewBag.Title = "GymOverview";
+}
+
+    <div class="container">
+        <h3>Welcome to @Model.LocationName Spa</h3>
+        @Html.Partial("~/Views/SpaPromotions/_Index.cshtml", (Location)Model)
+
+    </div>
