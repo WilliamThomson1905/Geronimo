@@ -343,7 +343,7 @@
     <Content Include="Views\Gym\Index.cshtml" />
     <Content Include="Views\Gym\Timetable.cshtml" />
     <Content Include="Views\Spa\Index.cshtml" />
-    <Content Include="Views\Dining\Index.cshtml" />
+    <Content Include="Views\Dining\_Index.cshtml" />
     <Content Include="Views\Dining\Menu.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Rooms\Availability.cshtml" />
@@ -437,6 +437,7 @@
     <Content Include="Views\SpaPromotions\_Index.cshtml" />
     <Content Include="Views\Locations\_Index.cshtml" />
     <Content Include="Views\Locations\SpaOverview.cshtml" />
+    <Content Include="Views\Locations\DiningOverview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
